@@ -1,0 +1,21 @@
+.contactBox {
+    color: white;
+    width: 50vw;
+    height: 30vh;
+    border: 1px solid rgb(75, 74, 74);
+}
+
+.contact-submit {
+    background-color: #2e2c2c; /* Dark button background */
+    color: #ffffff; /* Button text color */
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-submit:hover {
+    background-color: #333333; /* Slightly lighter on hover */
+}
