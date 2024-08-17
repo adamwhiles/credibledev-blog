@@ -4,17 +4,16 @@
     <title>Immutable on credibleDEV</title>
     <link>http://localhost:1313/tags/immutable/</link>
     <description>Recent content in Immutable on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/immutable/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/immutable/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What is an Immutable OS?</title>
       <link>http://localhost:1313/what-is-an-immutable-os/</link>
       <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/what-is-an-immutable-os/</guid>
       <description>Learn what an Immutable OS is, along with their benefits, drawbacks and possible use cases.</description>
     </item>
-    
   </channel>
 </rss>

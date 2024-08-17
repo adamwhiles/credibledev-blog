@@ -4,26 +4,23 @@
     <title>Onedrive on credibleDEV</title>
     <link>http://localhost:1313/tags/onedrive/</link>
     <description>Recent content in Onedrive on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/onedrive/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/onedrive/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install OneDrive GUI on Ubuntu</title>
       <link>http://localhost:1313/install-onedrive-gui-on-ubuntu/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-onedrive-gui-on-ubuntu/</guid>
       <description>Learn how to install and setup OneDrive on Ubuntu Linux using a console app and also a OneDrive GUI application.</description>
     </item>
-    
     <item>
       <title>Install OneDrive for Linux - Manjaro Edition</title>
       <link>http://localhost:1313/onedrive-for-linux/</link>
       <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/onedrive-for-linux/</guid>
       <description>OneDrive is a great backup and cloud storage service. In this post we show you how to install OneDrive on Manjaro Linux.</description>
     </item>
-    
   </channel>
 </rss>

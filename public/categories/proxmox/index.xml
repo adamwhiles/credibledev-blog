@@ -4,26 +4,23 @@
     <title>Proxmox on credibleDEV</title>
     <link>http://localhost:1313/categories/proxmox/</link>
     <description>Recent content in Proxmox on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/proxmox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/proxmox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Proxmox VS Hyper-V - Which Hypervisor Should You Choose?</title>
       <link>http://localhost:1313/proxmox-vs-hyper-v/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/proxmox-vs-hyper-v/</guid>
       <description>Trying to decide which Hypervisor is best for you? Find out in this detailed comparison of Proxmox and Hyper-V inlcuding GPU passthrough capabilities.</description>
     </item>
-    
     <item>
       <title>How to Install Synology NAS on Proxmox</title>
       <link>http://localhost:1313/how-to-install-synology-nas-on-proxmox/</link>
       <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/how-to-install-synology-nas-on-proxmox/</guid>
       <description>This guide will walk you through setting up a Synology NAS on your Proxmox server at home.</description>
     </item>
-    
   </channel>
 </rss>

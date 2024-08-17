@@ -4,26 +4,23 @@
     <title>Azure on credibleDEV</title>
     <link>http://localhost:1313/tags/azure/</link>
     <description>Recent content in Azure on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Find Apps and Policies Assigned to Azure AD Groups</title>
       <link>http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/</link>
       <pubDate>Fri, 06 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/</guid>
       <description>This guide explains how you can use the ADAM Tool to find out what apps, profiles, policies, remediations etc. are assigned to an Azure AD group.</description>
     </item>
-    
     <item>
       <title>Intune Hardware Hash Import During Task Sequence</title>
       <link>http://localhost:1313/intune-hardware-hash-import-during-task-sequence/</link>
       <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/intune-hardware-hash-import-during-task-sequence/</guid>
       <description>Easily collect and import the Intune device hardware hash using an SCCM task sequence while deploying Windows 10.</description>
     </item>
-    
   </channel>
 </rss>

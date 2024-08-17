@@ -4,26 +4,23 @@
     <title>Xrdp on credibleDEV</title>
     <link>http://localhost:1313/tags/xrdp/</link>
     <description>Recent content in Xrdp on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/xrdp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/xrdp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setup XRDP on a Fedora VM for Remote Desktop</title>
       <link>http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/</link>
       <pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/</guid>
       <description>This guide walks you through how to set up XRDP on Fedora 37 and use Remmina for the remote desktop connection from Linux.</description>
     </item>
-    
     <item>
       <title>XRDP and VNC: Which is the Better Remote Desktop</title>
       <link>http://localhost:1313/xrdp-and-vnc-which-is-the-better-remote-desktop/</link>
       <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/xrdp-and-vnc-which-is-the-better-remote-desktop/</guid>
       <description>XRDP and VNC are both popular remote desktop protocols that allow users to remotely connect to and control a computer from a different device.</description>
     </item>
-    
   </channel>
 </rss>

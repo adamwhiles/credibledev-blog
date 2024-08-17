@@ -4,35 +4,30 @@
     <title>Dotnet-Programming on credibleDEV</title>
     <link>http://localhost:1313/categories/dotnet-programming/</link>
     <description>Recent content in Dotnet-Programming on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/dotnet-programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/dotnet-programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install JetBrains Rider for C# on Linux</title>
       <link>http://localhost:1313/install-jetbrains-rider-for-c-on-linux/</link>
       <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-jetbrains-rider-for-c-on-linux/</guid>
       <description>JetBrains Rider is an excellent IDE to get started coding C# .NET Applications for all Linux distributions.</description>
     </item>
-    
     <item>
       <title>Linux C# .NET GUI App Using Avalonia UI</title>
       <link>http://localhost:1313/linux-c-net-gui-app-using-avalonia-ui/</link>
       <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/linux-c-net-gui-app-using-avalonia-ui/</guid>
       <description>Quickly get up and running building your first Linux GUI app using C#, .NET, Avalonia UI and Rider.</description>
     </item>
-    
     <item>
       <title>Easily Install dotNet In Linux - 2023 Guide</title>
       <link>http://localhost:1313/dotnet-in-linux/</link>
       <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/dotnet-in-linux/</guid>
       <description>Get started developing for dotnet in Linux with this simple Guide. Setup dotnet in VSCode for Linux and write your first C# app.</description>
     </item>
-    
   </channel>
 </rss>

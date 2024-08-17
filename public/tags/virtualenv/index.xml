@@ -4,17 +4,16 @@
     <title>Virtualenv on credibleDEV</title>
     <link>http://localhost:1313/tags/virtualenv/</link>
     <description>Recent content in Virtualenv on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/virtualenv/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/virtualenv/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>3 Easy Steps: Install VirtualEnv on Arch Linux for Python</title>
       <link>http://localhost:1313/install-virtualenv-on-arch-linux-for-python/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-virtualenv-on-arch-linux-for-python/</guid>
       <description>How to setup and use VirtualEnv on Arch Linux. Virtual Python environments are useful when working on multiple Python projects.</description>
     </item>
-    
   </channel>
 </rss>

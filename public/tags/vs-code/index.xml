@@ -4,17 +4,16 @@
     <title>Vs-Code on credibleDEV</title>
     <link>http://localhost:1313/tags/vs-code/</link>
     <description>Recent content in Vs-Code on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/vs-code/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vs-code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install VSCode on Manjaro Linux</title>
       <link>http://localhost:1313/install-vs-code-on-manjaro-linux/</link>
       <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-vs-code-on-manjaro-linux/</guid>
       <description>This guide walks you through how to quickly install VS code on Manjaro Linux using the Snap package manager.</description>
     </item>
-    
   </channel>
 </rss>

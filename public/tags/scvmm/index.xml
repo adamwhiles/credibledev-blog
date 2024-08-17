@@ -4,17 +4,16 @@
     <title>Scvmm on credibleDEV</title>
     <link>http://localhost:1313/tags/scvmm/</link>
     <description>Recent content in Scvmm on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/scvmm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/scvmm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SCVMM Gen2 VM Change Boot Order</title>
       <link>http://localhost:1313/scvmm-gen2-vm-change-boot-order/</link>
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/scvmm-gen2-vm-change-boot-order/</guid>
       <description>How to change boot order for a Gen2 VM in SCVMM. Allowing you to network boot a Gen2 VM for PXE booting.</description>
     </item>
-    
   </channel>
 </rss>

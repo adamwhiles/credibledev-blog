@@ -4,62 +4,51 @@
     <title>Powershell on credibleDEV</title>
     <link>http://localhost:1313/tags/powershell/</link>
     <description>Recent content in Powershell on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dynamic Azure Intune Groups Based on Installed Software</title>
       <link>http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/</link>
       <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/</guid>
       <description>This guide will show you how to use PowerShell with Azure and Intune to dynamically add devices to Azure Groups based on installed software.</description>
     </item>
-    
     <item>
       <title>Managed Desktop Icons and Shortcuts in Intune</title>
       <link>http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/</link>
       <pubDate>Sat, 21 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/</guid>
       <description>Managing desktop icons and shortcuts in Intune isn&amp;#39;t straightforward but there are PowerShell scripts to help make this easy.</description>
     </item>
-    
     <item>
       <title>Intune Hardware Hash Import During Task Sequence</title>
       <link>http://localhost:1313/intune-hardware-hash-import-during-task-sequence/</link>
       <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/intune-hardware-hash-import-during-task-sequence/</guid>
       <description>Easily collect and import the Intune device hardware hash using an SCCM task sequence while deploying Windows 10.</description>
     </item>
-    
     <item>
       <title>Deploy HKCU Registry Keys Using Intune</title>
       <link>http://localhost:1313/deploy-hkcu-registry-keys-using-intune/</link>
       <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/deploy-hkcu-registry-keys-using-intune/</guid>
       <description>Deploying registry keys to the HKCU hive in Intune isn&amp;#39;t straightforward. This guide will show you how to deploy keys to the current user hive.</description>
     </item>
-    
     <item>
       <title>Deploy PowerShell Scripts in Intune - 3 Easy Methods</title>
       <link>http://localhost:1313/powershell-scripts-in-intune/</link>
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/powershell-scripts-in-intune/</guid>
       <description>3 easy methods to deploy PowerShell scripts in Intune. Single scripts, proactive remediations and Win32 app methods.</description>
     </item>
-    
     <item>
       <title>PowerShell Force Compliance Baseline Evaluation</title>
       <link>http://localhost:1313/powershell-force-compliance-baseline-evaluation/</link>
       <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/powershell-force-compliance-baseline-evaluation/</guid>
       <description>Forcing a SCCM compliance rule is easy to do but you may not know how. This guide explains how PowerShell can be used to force this.</description>
     </item>
-    
   </channel>
 </rss>

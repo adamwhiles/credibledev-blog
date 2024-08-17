@@ -4,17 +4,16 @@
     <title>Litespeed on credibleDEV</title>
     <link>http://localhost:1313/tags/litespeed/</link>
     <description>Recent content in Litespeed on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/litespeed/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/litespeed/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Flask Dev Environment on Manjaro Linux</title>
       <link>http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/</link>
       <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/</guid>
       <description>This guide will walk you through setting up Python Flask on Manjaro and then deploy the app to a LiteSpeed production server using WSGI and CyberPanel.</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,122 +4,98 @@
     <title>Linux on credibleDEV</title>
     <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Proxmox VS Hyper-V - Which Hypervisor Should You Choose?</title>
       <link>http://localhost:1313/proxmox-vs-hyper-v/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/proxmox-vs-hyper-v/</guid>
       <description>Trying to decide which Hypervisor is best for you? Find out in this detailed comparison of Proxmox and Hyper-V inlcuding GPU passthrough capabilities.</description>
     </item>
-    
     <item>
       <title>Linux CPU Schedulers and Why They Are Important</title>
       <link>http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/</link>
       <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/</guid>
       <description>In this post we break down what CPU Schedulers are in Linux and why they are important. We also delve into CPU Scheduler options for Linux and which one may be best for Gaming on Linux.</description>
     </item>
-    
     <item>
       <title>Running Battle.net Games on Linux using Bottles</title>
       <link>http://localhost:1313/running-battle.net-games-on-linux-using-bottles/</link>
       <pubDate>Fri, 13 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/running-battle.net-games-on-linux-using-bottles/</guid>
       <description>This guide will walk you through setting up Bottles on Linux to run Battle.net games.</description>
     </item>
-    
     <item>
       <title>Fix OBS Studio Black Screen on Manjaro GNOME Edition</title>
       <link>http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/</link>
       <pubDate>Thu, 28 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/</guid>
       <description>Running OBS Studio on a fresh Manjaro GNOME install may result in a black screen. Here is a simple solution to fix a OBS black screen issue.</description>
     </item>
-    
     <item>
       <title>9 Things to Do After Installing Fedora 37</title>
       <link>http://localhost:1313/9-things-to-do-after-installing-fedora-37/</link>
       <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/9-things-to-do-after-installing-fedora-37/</guid>
       <description>Fedora 37 is an excellent Linux operating system that works well for new and experienced users. This list covers 9 things to do after install.</description>
     </item>
-    
     <item>
       <title>Setup XRDP on a Fedora VM for Remote Desktop</title>
       <link>http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/</link>
       <pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/</guid>
       <description>This guide walks you through how to set up XRDP on Fedora 37 and use Remmina for the remote desktop connection from Linux.</description>
     </item>
-    
     <item>
       <title>Mac OSX on Manjaro Linux Made Easy With Docker</title>
       <link>http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/</link>
       <pubDate>Tue, 21 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/</guid>
       <description>You can run macOS on Manjaro and other Linux distributions easily with Docker for testing and development work.</description>
     </item>
-    
     <item>
       <title>Install JetBrains Rider for C# on Linux</title>
       <link>http://localhost:1313/install-jetbrains-rider-for-c-on-linux/</link>
       <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-jetbrains-rider-for-c-on-linux/</guid>
       <description>JetBrains Rider is an excellent IDE to get started coding C# .NET Applications for all Linux distributions.</description>
     </item>
-    
     <item>
       <title>Linux C# .NET GUI App Using Avalonia UI</title>
       <link>http://localhost:1313/linux-c-net-gui-app-using-avalonia-ui/</link>
       <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/linux-c-net-gui-app-using-avalonia-ui/</guid>
       <description>Quickly get up and running building your first Linux GUI app using C#, .NET, Avalonia UI and Rider.</description>
     </item>
-    
     <item>
       <title>Join a Linux Device to Active Directory</title>
       <link>http://localhost:1313/join-a-linux-device-to-active-directory/</link>
       <pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/join-a-linux-device-to-active-directory/</guid>
       <description>This guide will help you connect your Linux devices and servers to an active directory domain so you can manage identities and privileges.</description>
     </item>
-    
     <item>
       <title>Install Plex Media Server on Manjaro Linux</title>
       <link>http://localhost:1313/install-plex-media-server-on-manjaro-linux/</link>
       <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-plex-media-server-on-manjaro-linux/</guid>
       <description>Install the popular media server Plex on Manjaro Linux and configure the proper permissions so Plex can access and stream your content.</description>
     </item>
-    
     <item>
       <title>8 Things to Do After Installing Manjaro Linux</title>
       <link>http://localhost:1313/8-things-to-do-after-installing-manjaro-linux/</link>
       <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/8-things-to-do-after-installing-manjaro-linux/</guid>
       <description>After installing Manjaro Linux, there are things you must do like updating, setup backups, install fonts, firewall and software.</description>
     </item>
-    
     <item>
       <title>Part 4 - Beginner&#39;s Guide to Bash Scripting</title>
       <link>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</link>
       <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</guid>
       <description>This guide is part of a series, be sure to check out the other parts as well.
 Part 1 - Introduction to Bash, Variables, Comments, User Input
@@ -128,278 +104,217 @@ Part 3 - Functions in Bash
 Part 4 - Creating Menus in Bash (This Page)
 In this part, we will be covering how to create menus in Bash scripting on Linux. We will first cover a basic menu that is really simple to set up and use but also flexible and works for most cases.</description>
     </item>
-    
     <item>
       <title>Part 3 – Beginners Guide to Bash Scripting</title>
       <link>http://localhost:1313/part-3-beginners-guide-to-bash-scripting/</link>
       <pubDate>Sat, 04 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/part-3-beginners-guide-to-bash-scripting/</guid>
       <description>In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python.</description>
     </item>
-    
     <item>
       <title>Install GCC on Ubuntu Linux</title>
       <link>http://localhost:1313/install-gcc-on-ubuntu-linux/</link>
       <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-gcc-on-ubuntu-linux/</guid>
       <description>Installing GCC on Ubuntu is an essential task if you plan to compile C or C&#43;&#43; programs. It can be installed using the build&amp;amp;#x2d;essential package or by itself.</description>
     </item>
-    
     <item>
       <title>Part 2 - Beginners Guide to Bash Scripting</title>
       <link>http://localhost:1313/part-2-beginners-guide-to-bash-scripting/</link>
       <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/part-2-beginners-guide-to-bash-scripting/</guid>
       <description>Conditional statements and looping are important in bash scripting. This guide has example bash scripts to show the proper use of if, while, until and for loops.</description>
     </item>
-    
     <item>
       <title>Install Pamac on EndeavourOS</title>
       <link>http://localhost:1313/install-pamac-on-endeavouros/</link>
       <pubDate>Tue, 31 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-pamac-on-endeavouros/</guid>
       <description>EndeavourOS doesn&amp;#39;t come with a GUI package manager so this guide will show you how to install pamac on EndeavourOS with just one command.</description>
     </item>
-    
     <item>
       <title>Beginners Guide to Bash Scripting</title>
       <link>http://localhost:1313/beginners-guide-to-bash-scripting/</link>
       <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/beginners-guide-to-bash-scripting/</guid>
       <description>In Part 1, this guide teaches readers the basics of bash scripting including variables, getting user input and doing basic math in bash.</description>
     </item>
-    
     <item>
       <title>How to Enable the AUR on Manjaro Linux</title>
       <link>http://localhost:1313/how-to-enable-the-aur-on-manjaro-linux/</link>
       <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/how-to-enable-the-aur-on-manjaro-linux/</guid>
       <description>The AUR is one of the most popular reasons for Linux users to run an Arch&amp;amp;#x2d;Based Linux Distribution. This guide explains how to enable the AUR on Manjaro.</description>
     </item>
-    
     <item>
       <title>Install OneDrive GUI on Ubuntu</title>
       <link>http://localhost:1313/install-onedrive-gui-on-ubuntu/</link>
       <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-onedrive-gui-on-ubuntu/</guid>
       <description>Learn how to install and setup OneDrive on Ubuntu Linux using a console app and also a OneDrive GUI application.</description>
     </item>
-    
     <item>
       <title>Python Flask Dev Environment on Manjaro Linux</title>
       <link>http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/</link>
       <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/</guid>
       <description>This guide will walk you through setting up Python Flask on Manjaro and then deploy the app to a LiteSpeed production server using WSGI and CyberPanel.</description>
     </item>
-    
     <item>
       <title>What is an Immutable OS?</title>
       <link>http://localhost:1313/what-is-an-immutable-os/</link>
       <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/what-is-an-immutable-os/</guid>
       <description>Learn what an Immutable OS is, along with their benefits, drawbacks and possible use cases.</description>
     </item>
-    
     <item>
       <title>Best Web Hosting for WordPress 2023</title>
       <link>http://localhost:1313/best-web-hosting-for-wordpress/</link>
       <pubDate>Wed, 25 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/best-web-hosting-for-wordpress/</guid>
       <description>Finding the best web host for a WordPress website can be challenging. I&amp;#39;ve used many hosts and in this guide, I&amp;#39;ll use my experience to help you find the best.</description>
     </item>
-    
     <item>
       <title>Setup Docker on Manjaro Linux</title>
       <link>http://localhost:1313/setup-docker-on-manjaro-linux/</link>
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/setup-docker-on-manjaro-linux/</guid>
       <description>Installing Docker on Manjaro Linux and other Arch based distros is pretty simple. This quick guide will help you setup and use Docker.</description>
     </item>
-    
     <item>
       <title>How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux</title>
       <link>http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/</link>
       <pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/</guid>
       <description>Flatpak&amp;#39;s make installing software on Linux a breeze. Today, we discuss how to get started with Flatpak on EndeavourOS, Manjaro and Arch Linux.</description>
     </item>
-    
     <item>
       <title>XRDP and VNC: Which is the Better Remote Desktop</title>
       <link>http://localhost:1313/xrdp-and-vnc-which-is-the-better-remote-desktop/</link>
       <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/xrdp-and-vnc-which-is-the-better-remote-desktop/</guid>
       <description>XRDP and VNC are both popular remote desktop protocols that allow users to remotely connect to and control a computer from a different device.</description>
     </item>
-    
     <item>
       <title>Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide</title>
       <link>http://localhost:1313/create-a-linode-linux-vps-part-3/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/create-a-linode-linux-vps-part-3/</guid>
       <description>Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.
 In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks.</description>
     </item>
-    
     <item>
       <title>11 Ways to Use Pacman on Manjaro Linux</title>
       <link>http://localhost:1313/how-to-use-pacman-on-manjaro-linux/</link>
       <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/how-to-use-pacman-on-manjaro-linux/</guid>
       <description>Pacman is the core package manager for arch based Linux distros like Manjaro. Learn how to use pacman to manage software on your Linux pc.</description>
     </item>
-    
     <item>
       <title>Spectacle: The Best Manjaro Screenshot Utility</title>
       <link>http://localhost:1313/spectacle-the-best-manjaro-screenshot-utility/</link>
       <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/spectacle-the-best-manjaro-screenshot-utility/</guid>
       <description>Spectacle is hands down the best screenshot utility for Linux. I use it on Manjaro Linux for all of my blog posts and documentation.</description>
     </item>
-    
     <item>
       <title>Manjaro i3 Window Manager Tips</title>
       <link>http://localhost:1313/manjaro-i3-window-manager-tips/</link>
       <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/manjaro-i3-window-manager-tips/</guid>
       <description>Setting up the Manjaro i3 window manager can be a journey. I&amp;#39;m sharing some tips to help you on your adventure into the i3 tiling window manager.</description>
     </item>
-    
     <item>
       <title>Install OneDrive for Linux - Manjaro Edition</title>
       <link>http://localhost:1313/onedrive-for-linux/</link>
       <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/onedrive-for-linux/</guid>
       <description>OneDrive is a great backup and cloud storage service. In this post we show you how to install OneDrive on Manjaro Linux.</description>
     </item>
-    
     <item>
       <title>My 6 Favorite Manjaro Apps</title>
       <link>http://localhost:1313/favorite-manjaro-apps/</link>
       <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/favorite-manjaro-apps/</guid>
       <description>After using Linux for quite some time, I&amp;#39;ve created a list of my favorite Manjaro apps. These are apps I use often and make Linux more enjoyable.</description>
     </item>
-    
     <item>
       <title>Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide</title>
       <link>http://localhost:1313/create-a-linode-linux-vps-part-2/</link>
       <pubDate>Fri, 16 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/create-a-linode-linux-vps-part-2/</guid>
       <description>In Part 2 of Creating a Linode Linux VPS, we setup add a new user, setup SSH keys and configure the Ubuntu and Linode firewalls for security.</description>
     </item>
-    
     <item>
       <title>Create a Linode Linux VPS - 2022 Quickstart Guide</title>
       <link>http://localhost:1313/create-a-linode-linux-vps/</link>
       <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/create-a-linode-linux-vps/</guid>
       <description>This guide will take you through the steps of creating a Linode Linux VPS for you to run a website, apps, game servers etc.</description>
     </item>
-    
     <item>
       <title>Easily Install dotNet In Linux - 2023 Guide</title>
       <link>http://localhost:1313/dotnet-in-linux/</link>
       <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/dotnet-in-linux/</guid>
       <description>Get started developing for dotnet in Linux with this simple Guide. Setup dotnet in VSCode for Linux and write your first C# app.</description>
     </item>
-    
     <item>
       <title>chmod Syntax in Linux Explained</title>
       <link>http://localhost:1313/chmod-syntax-in-linux/</link>
       <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/chmod-syntax-in-linux/</guid>
       <description>Quickly learn the proper chmod syntax to use for file permissions on your Linux system. Chmod is a power permission management app for Linux.</description>
     </item>
-    
     <item>
       <title>Using the Tail Command in Linux</title>
       <link>http://localhost:1313/tail-command-in-linux/</link>
       <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/tail-command-in-linux/</guid>
       <description>The Tail command in Linux is very useful for quickly getting content from logs files and other text documents.</description>
     </item>
-    
     <item>
       <title>How to Install Node.JS on Linux using NVM- 2023 Guide</title>
       <link>http://localhost:1313/linux-how-to-install-node-js/</link>
       <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/linux-how-to-install-node-js/</guid>
       <description>How to install Node JS on Linux
 If you are a Javascript developer and you use Linux, how to install Node.JS is probably a question that you have. Fortunately for you, it is actually easy to install node js on Linux. We already have a guide that explains how to install NodeJS on Manjaro Linux so today we will be explaining how to install Node.JS on Ubuntu and other Debian-based Linux distributions.</description>
     </item>
-    
     <item>
       <title>Install ExpressVPN on Linux</title>
       <link>http://localhost:1313/install-expressvpn-on-manjaro-linux/</link>
       <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-expressvpn-on-manjaro-linux/</guid>
       <description>Learn how to install ExpressVPN on Linux. This works for Ubuntu, PopOS, Linux Mint, Fedora, Arch, Manjaro and other Linux Distributions.</description>
     </item>
-    
     <item>
       <title>Install Java for VS Code on Manjaro Linux</title>
       <link>http://localhost:1313/install-java-for-vs-code-on-manjaro-linux/</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-java-for-vs-code-on-manjaro-linux/</guid>
       <description>This guide walks you through how to install Java for VS code on Manjaro Linux using the pacman package manager.</description>
     </item>
-    
     <item>
       <title>Install VSCode on Manjaro Linux</title>
       <link>http://localhost:1313/install-vs-code-on-manjaro-linux/</link>
       <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-vs-code-on-manjaro-linux/</guid>
       <description>This guide walks you through how to quickly install VS code on Manjaro Linux using the Snap package manager.</description>
     </item>
-    
     <item>
       <title>Install VNC on Manjaro for Remote Access</title>
       <link>http://localhost:1313/install-vnc-on-manjaro-for-remote-access/</link>
       <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-vnc-on-manjaro-for-remote-access/</guid>
       <description>Quickly install TigerVNC on Manjaro Linux so that you can remotely view and control the desktop from another device, such as Windows using TightVNC.</description>
     </item>
-    
     <item>
       <title>Install NodeJS on Manjaro Linux - 2023 Update</title>
       <link>http://localhost:1313/how-to-install-nodejs-on-manjaro-linux/</link>
       <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/how-to-install-nodejs-on-manjaro-linux/</guid>
       <description>How to install NodeJS on Manjaro Linux. This guide walks you through the steps to install NodeJS to get your next code project started.</description>
     </item>
-    
   </channel>
 </rss>

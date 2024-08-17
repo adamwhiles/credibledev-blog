@@ -4,14 +4,14 @@
     <title>Bash on credibleDEV</title>
     <link>http://localhost:1313/tags/bash/</link>
     <description>Recent content in Bash on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Part 4 - Beginner&#39;s Guide to Bash Scripting</title>
       <link>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</link>
       <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</guid>
       <description>This guide is part of a series, be sure to check out the other parts as well.
 Part 1 - Introduction to Bash, Variables, Comments, User Input
@@ -20,33 +20,26 @@ Part 3 - Functions in Bash
 Part 4 - Creating Menus in Bash (This Page)
 In this part, we will be covering how to create menus in Bash scripting on Linux. We will first cover a basic menu that is really simple to set up and use but also flexible and works for most cases.</description>
     </item>
-    
     <item>
       <title>Part 3 – Beginners Guide to Bash Scripting</title>
       <link>http://localhost:1313/part-3-beginners-guide-to-bash-scripting/</link>
       <pubDate>Sat, 04 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/part-3-beginners-guide-to-bash-scripting/</guid>
       <description>In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python.</description>
     </item>
-    
     <item>
       <title>Part 2 - Beginners Guide to Bash Scripting</title>
       <link>http://localhost:1313/part-2-beginners-guide-to-bash-scripting/</link>
       <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/part-2-beginners-guide-to-bash-scripting/</guid>
       <description>Conditional statements and looping are important in bash scripting. This guide has example bash scripts to show the proper use of if, while, until and for loops.</description>
     </item>
-    
     <item>
       <title>Beginners Guide to Bash Scripting</title>
       <link>http://localhost:1313/beginners-guide-to-bash-scripting/</link>
       <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/beginners-guide-to-bash-scripting/</guid>
       <description>In Part 1, this guide teaches readers the basics of bash scripting including variables, getting user input and doing basic math in bash.</description>
     </item>
-    
   </channel>
 </rss>

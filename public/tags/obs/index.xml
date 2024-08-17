@@ -4,17 +4,16 @@
     <title>Obs on credibleDEV</title>
     <link>http://localhost:1313/tags/obs/</link>
     <description>Recent content in Obs on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/obs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/obs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fix OBS Studio Black Screen on Manjaro GNOME Edition</title>
       <link>http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/</link>
       <pubDate>Thu, 28 Sep 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/</guid>
       <description>Running OBS Studio on a fresh Manjaro GNOME install may result in a black screen. Here is a simple solution to fix a OBS black screen issue.</description>
     </item>
-    
   </channel>
 </rss>

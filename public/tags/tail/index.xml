@@ -4,17 +4,16 @@
     <title>Tail on credibleDEV</title>
     <link>http://localhost:1313/tags/tail/</link>
     <description>Recent content in Tail on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/tail/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tail/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using the Tail Command in Linux</title>
       <link>http://localhost:1313/tail-command-in-linux/</link>
       <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/tail-command-in-linux/</guid>
       <description>The Tail command in Linux is very useful for quickly getting content from logs files and other text documents.</description>
     </item>
-    
   </channel>
 </rss>

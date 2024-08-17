@@ -4,17 +4,16 @@
     <title>Gcc on credibleDEV</title>
     <link>http://localhost:1313/tags/gcc/</link>
     <description>Recent content in Gcc on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/gcc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gcc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install GCC on Ubuntu Linux</title>
       <link>http://localhost:1313/install-gcc-on-ubuntu-linux/</link>
       <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-gcc-on-ubuntu-linux/</guid>
       <description>Installing GCC on Ubuntu is an essential task if you plan to compile C or C&#43;&#43; programs. It can be installed using the build&amp;amp;#x2d;essential package or by itself.</description>
     </item>
-    
   </channel>
 </rss>

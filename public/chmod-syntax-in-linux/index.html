@@ -11,9 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/chmod-syntax-in-linux/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.0ba738fc0cf168c64f26272ec0bf6ddc89c38c7ae5143058acf23526520defcd.css" integrity="sha256-C6c4/AzxaMZPJicuwL9t3InDjHrlFDBYrPI1JlIN780=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
-    onload="hljs.initHighlightingOnLoad();"></script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -94,7 +92,7 @@
   "keywords": [
     "chmod", "linux"
   ],
-  "articleBody": "\rIf you are a Linux user, then you have probably heard of chmod. But what is it, and how can you use it? Being a Linux user you also know how important the syntax of commands is, so we will discuss the proper chmod syntax that you should use. In this blog post, we will discuss the basics of chmod and show you how to use it in a few simple steps.\nYou might be interested in learning about other common commands, check out our guide on using the tail command in Linux.\nWhat is chmod? Chmod is a Linux command that stands for “change mode”. This command is used to change the permissions of a file or directory. With chmod, you can give different levels of access to different users. For example, you can give read and write permissions to one user, and read-only permissions to another. You can also apply file and folder permissions to groups using chmod.\nLet’s break down the structure and syntax for chmod in Linux so you can use it effectively as a Linux admin.\nLinux File Permissions Using ls -la We need to understand a bit about Linux file permissions and how to view them. These references below are based on what user and group have rights to the file. You can view this by using the directory listing command, ls, with the -la option. An example output is shown below for reference.\nIn the screenshot above, looking at the area where the root user is shown, root on the left side represents the user who owns the file and the root on the right represents the group. In this case, they are both root, this will not always be the case.\nAlso in the screenshot, you will see the specific read, write and execute permissions for the user, group, and everyone else (also referred to as “others”).\ndrwxr-xr-x In the above permission listing, the first character “d”, represents the file type. The characters following that represent the permission set for the user, group and others. The first set of 3 characters after the file type is for the user/owner of the file or directory. The next set is for the group and the last set is for “others” or everyone else. Each set will have 3 characters, one for read, write and execute permission. If a particular permission is enabled, the respective letter will be shown, if it is disabled or not allowed then a dash, “-”, will be present instead. In the example above, you can see that the write permission is not allowed for the group and “others”, where the owner has all 3 permissions allowed.\nTo recap these options, let’s go over each permission type.\nr\nr represents the read permission. If it’s enabled you will see an “r”, otherwise, it will be a “-” for not enabled. w\nw represents the write permission. If it’s enabled you will see a “w”, otherwise, it will be a “-” for not enabled. x\nx represents the execute permission. If it’s enabled you will see an “x”, otherwise, it will be a “-” for not enabled. Now we can move on to chmod and the chmod syntax to be used in Linux.\nchmod Syntax chmod [options] mode file The syntax for the chmod command can look quite different if you use a symbolic/text (r,w,x) and (u,g,o,a) or the numeric method such as 777 or 755 for example. Both are valid and will work in the same way, it is very much about user preference and which one you can remember. We will cover both here so you can decide which chmod syntax would like to use.\nchmod Symbolic Mode Syntax The first method of using the chmod command is to use the symbolic mode, where we use letters for the user, group etc. and also letters for the permissions such as r, w, and x. In the example below, we are giving read, write and execute permissions to the owner. Read and execute permissions to the group and read permission to everyone else.\nchmod u=rwx,g=rx,o=r /path/to/test/file The above command combined user, group and others into one line. You can set these seperately as well. Another example of how to use the chmod command with symbolic mode is to use the + to add and the - to remove permissions. In the following example, we add write permission to the group and execute permission to everyone else.\nchmod g+w /path/to/test/file chmod o+x /path/to/test/file -u\nThis option stands for “user”. With this option, you can change the permissions for the owner of the file. -g\nThis option stands for “group”. With this option, you can change the permissions -o\nThis option stands for “others”. With this option, you can change the permissions for all other users. -a\nThis option stands for “all”. With this option, you can change the permissions for all users. chmod Numeric Mode Syntax As I mentioned earlier, we can use chmod with numeric values representing user, groups and others. We will also use number to represent the individual permissions instead of the characters r, w, and x.\nLet’s look at an example for better understanding. The following chmod command gives the owner full permission to read, write and execute. The group receives read and execute permissions, while everyone else only receives read permission.\nchmod 754 /path/to/test/file But where do these numbers come from and how does chmod translate them to permissions? Let’s take a look.\nExecute has a value of 1. So one is equivelent to an x in the symbolic mode.\nWrite has a value of 2. Two is equivelent to a w.\nRead has a value of 4. Four is equivelent to an r.\nIn our example, we gave full read, write and execute permission to our user/owner of the file. If we add 1, 2 and 4 together we get 7. In numeric mode we use 3 numbers, the first is for the user/owner, second for the group and last for all others. So in our example, we gave the user a 7, representing full permission. We made the same caclulations for the group and all others in the example.\nSome very common chmod syntax you will see are 777 and 755. Let’s take a look at those.\nchmod 777 Chmod 777 will apply full read, write and execute permissions to everyone. This is a dangerous permission set, as everyone has full control of the file. Be careful with this option.\nchmod 755 Chmod 755 will apply full permission to the user/owner while giving the group and everyone else read and execute permission. This is much safer that 777, since only the owner would be able to modify or delete the file.\nchmod 400 Chmod 400 gives only the user/owner read permission, everyone else is completely restricted. This option is fairly common when protecting an SSH private key. Once the file is created, it can be locked down using chmod 400 for better protection.\nThere is pretty cool chmod calculator that exists to help you decide what to use if you have trouble, be sure to check that out.\nchmod Recursive Use One last thing I would like to mention is using chmod recursively. All of our examples have been used for one file or directory. Chmod is much more powerful, as you can apply file or directory permissions recursively so that it changes for all files or folders within the directory that you provide. We do so using the -R option. Let’s look at an example of using chmod recursively. Imagine we have a folder called test and we want to apply the same permissions to that folder and everying inside of it. We could use the following.\nchmod -R 755 /test Conclusion We have covered the basic chmod syntax here and the many ways you can use it on your Linux machine. Remember, chmod is powerful, especially when used in combination with the sudo command. Be sure you are telling the machine to do what you really want it to do, otherwise you can really do some damage by changing the wrong permissions. I would suggest practicing on a virtual machine before making changes on a real machine if you are unsure.\n",
+  "articleBody": " If you are a Linux user, then you have probably heard of chmod. But what is it, and how can you use it? Being a Linux user you also know how important the syntax of commands is, so we will discuss the proper chmod syntax that you should use. In this blog post, we will discuss the basics of chmod and show you how to use it in a few simple steps.\nYou might be interested in learning about other common commands, check out our guide on using the tail command in Linux.\nWhat is chmod? Chmod is a Linux command that stands for “change mode”. This command is used to change the permissions of a file or directory. With chmod, you can give different levels of access to different users. For example, you can give read and write permissions to one user, and read-only permissions to another. You can also apply file and folder permissions to groups using chmod.\nLet’s break down the structure and syntax for chmod in Linux so you can use it effectively as a Linux admin.\nLinux File Permissions Using ls -la We need to understand a bit about Linux file permissions and how to view them. These references below are based on what user and group have rights to the file. You can view this by using the directory listing command, ls, with the -la option. An example output is shown below for reference.\nIn the screenshot above, looking at the area where the root user is shown, root on the left side represents the user who owns the file and the root on the right represents the group. In this case, they are both root, this will not always be the case.\nAlso in the screenshot, you will see the specific read, write and execute permissions for the user, group, and everyone else (also referred to as “others”).\ndrwxr-xr-x In the above permission listing, the first character “d”, represents the file type. The characters following that represent the permission set for the user, group and others. The first set of 3 characters after the file type is for the user/owner of the file or directory. The next set is for the group and the last set is for “others” or everyone else. Each set will have 3 characters, one for read, write and execute permission. If a particular permission is enabled, the respective letter will be shown, if it is disabled or not allowed then a dash, “-”, will be present instead. In the example above, you can see that the write permission is not allowed for the group and “others”, where the owner has all 3 permissions allowed.\nTo recap these options, let’s go over each permission type.\nr\nr represents the read permission. If it’s enabled you will see an “r”, otherwise, it will be a “-” for not enabled. w\nw represents the write permission. If it’s enabled you will see a “w”, otherwise, it will be a “-” for not enabled. x\nx represents the execute permission. If it’s enabled you will see an “x”, otherwise, it will be a “-” for not enabled. Now we can move on to chmod and the chmod syntax to be used in Linux.\nchmod Syntax chmod [options] mode file The syntax for the chmod command can look quite different if you use a symbolic/text (r,w,x) and (u,g,o,a) or the numeric method such as 777 or 755 for example. Both are valid and will work in the same way, it is very much about user preference and which one you can remember. We will cover both here so you can decide which chmod syntax would like to use.\nchmod Symbolic Mode Syntax The first method of using the chmod command is to use the symbolic mode, where we use letters for the user, group etc. and also letters for the permissions such as r, w, and x. In the example below, we are giving read, write and execute permissions to the owner. Read and execute permissions to the group and read permission to everyone else.\nchmod u=rwx,g=rx,o=r /path/to/test/file The above command combined user, group and others into one line. You can set these seperately as well. Another example of how to use the chmod command with symbolic mode is to use the + to add and the - to remove permissions. In the following example, we add write permission to the group and execute permission to everyone else.\nchmod g+w /path/to/test/file chmod o+x /path/to/test/file -u\nThis option stands for “user”. With this option, you can change the permissions for the owner of the file. -g\nThis option stands for “group”. With this option, you can change the permissions -o\nThis option stands for “others”. With this option, you can change the permissions for all other users. -a\nThis option stands for “all”. With this option, you can change the permissions for all users. chmod Numeric Mode Syntax As I mentioned earlier, we can use chmod with numeric values representing user, groups and others. We will also use number to represent the individual permissions instead of the characters r, w, and x.\nLet’s look at an example for better understanding. The following chmod command gives the owner full permission to read, write and execute. The group receives read and execute permissions, while everyone else only receives read permission.\nchmod 754 /path/to/test/file But where do these numbers come from and how does chmod translate them to permissions? Let’s take a look.\nExecute has a value of 1. So one is equivelent to an x in the symbolic mode.\nWrite has a value of 2. Two is equivelent to a w.\nRead has a value of 4. Four is equivelent to an r.\nIn our example, we gave full read, write and execute permission to our user/owner of the file. If we add 1, 2 and 4 together we get 7. In numeric mode we use 3 numbers, the first is for the user/owner, second for the group and last for all others. So in our example, we gave the user a 7, representing full permission. We made the same caclulations for the group and all others in the example.\nSome very common chmod syntax you will see are 777 and 755. Let’s take a look at those.\nchmod 777 Chmod 777 will apply full read, write and execute permissions to everyone. This is a dangerous permission set, as everyone has full control of the file. Be careful with this option.\nchmod 755 Chmod 755 will apply full permission to the user/owner while giving the group and everyone else read and execute permission. This is much safer that 777, since only the owner would be able to modify or delete the file.\nchmod 400 Chmod 400 gives only the user/owner read permission, everyone else is completely restricted. This option is fairly common when protecting an SSH private key. Once the file is created, it can be locked down using chmod 400 for better protection.\nThere is pretty cool chmod calculator that exists to help you decide what to use if you have trouble, be sure to check that out.\nchmod Recursive Use One last thing I would like to mention is using chmod recursively. All of our examples have been used for one file or directory. Chmod is much more powerful, as you can apply file or directory permissions recursively so that it changes for all files or folders within the directory that you provide. We do so using the -R option. Let’s look at an example of using chmod recursively. Imagine we have a folder called test and we want to apply the same permissions to that folder and everying inside of it. We could use the following.\nchmod -R 755 /test Conclusion We have covered the basic chmod syntax here and the many ways you can use it on your Linux machine. Remember, chmod is powerful, especially when used in combination with the sudo command. Be sure you are telling the machine to do what you really want it to do, otherwise you can really do some damage by changing the wrong permissions. I would suggest practicing on a virtual machine before making changes on a real machine if you are unsure.\n",
   "wordCount" : "1378",
   "inLanguage": "en",
   "image":"http://localhost:1313/images/chmod-syntax.png","datePublished": "2022-10-19T00:00:00Z",
@@ -126,8 +124,6 @@
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="credibleDEV (Alt + H)">credibleDEV</a>
             <div class="logo-switches">
-                <ul class="lang-switch"><li>|</li>
-                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -169,58 +165,72 @@
 
 </div>
 
-<div class="share-buttons">
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on x"
-        href="https://x.com/intent/tweet/?text=chmod%20Syntax%20in%20Linux%20Explained&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&amp;hashtags=chmod%2clinux">
-        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&amp;title=chmod%20Syntax%20in%20Linux%20Explained&amp;summary=chmod%20Syntax%20in%20Linux%20Explained&amp;source=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
-        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on reddit"
-        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&title=chmod%20Syntax%20in%20Linux%20Explained">
-        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on facebook"
-        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
-        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on whatsapp"
-        href="https://api.whatsapp.com/send?text=chmod%20Syntax%20in%20Linux%20Explained%20-%20http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
-        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on telegram"
-        href="https://telegram.me/share/url?text=chmod%20Syntax%20in%20Linux%20Explained&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
-        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on ycombinator"
-        href="https://news.ycombinator.com/submitlink?t=chmod%20Syntax%20in%20Linux%20Explained&u=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
-        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
-            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
-            <path
-                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
-        </svg>
-    </a>
-</div>
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on x"
+            href="https://x.com/intent/tweet/?text=chmod%20Syntax%20in%20Linux%20Explained&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&amp;hashtags=chmod%2clinux">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&amp;title=chmod%20Syntax%20in%20Linux%20Explained&amp;summary=chmod%20Syntax%20in%20Linux%20Explained&amp;source=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&title=chmod%20Syntax%20in%20Linux%20Explained">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on whatsapp"
+            href="https://api.whatsapp.com/send?text=chmod%20Syntax%20in%20Linux%20Explained%20-%20http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on telegram"
+            href="https://telegram.me/share/url?text=chmod%20Syntax%20in%20Linux%20Explained&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=chmod%20Syntax%20in%20Linux%20Explained&u=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
 
   </header> 
 <figure class="entry-cover">
@@ -470,65 +480,80 @@ chmod o+x /path/to/test/file
       <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
     </ul>
 
-<div class="share-buttons">
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on x"
-        href="https://x.com/intent/tweet/?text=chmod%20Syntax%20in%20Linux%20Explained&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&amp;hashtags=chmod%2clinux">
-        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&amp;title=chmod%20Syntax%20in%20Linux%20Explained&amp;summary=chmod%20Syntax%20in%20Linux%20Explained&amp;source=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
-        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on reddit"
-        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&title=chmod%20Syntax%20in%20Linux%20Explained">
-        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on facebook"
-        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
-        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on whatsapp"
-        href="https://api.whatsapp.com/send?text=chmod%20Syntax%20in%20Linux%20Explained%20-%20http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
-        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on telegram"
-        href="https://telegram.me/share/url?text=chmod%20Syntax%20in%20Linux%20Explained&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
-        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
-            <path
-                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
-        </svg>
-    </a>
-    <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on ycombinator"
-        href="https://news.ycombinator.com/submitlink?t=chmod%20Syntax%20in%20Linux%20Explained&u=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
-        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
-            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
-            <path
-                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
-        </svg>
-    </a>
-</div>
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on x"
+            href="https://x.com/intent/tweet/?text=chmod%20Syntax%20in%20Linux%20Explained&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&amp;hashtags=chmod%2clinux">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&amp;title=chmod%20Syntax%20in%20Linux%20Explained&amp;summary=chmod%20Syntax%20in%20Linux%20Explained&amp;source=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f&title=chmod%20Syntax%20in%20Linux%20Explained">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on whatsapp"
+            href="https://api.whatsapp.com/send?text=chmod%20Syntax%20in%20Linux%20Explained%20-%20http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on telegram"
+            href="https://telegram.me/share/url?text=chmod%20Syntax%20in%20Linux%20Explained&amp;url=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share chmod Syntax in Linux Explained on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=chmod%20Syntax%20in%20Linux%20Explained&u=http%3a%2f%2flocalhost%3a1313%2fchmod-syntax-in-linux%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
 
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span>
+        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

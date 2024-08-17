@@ -4,53 +4,44 @@
     <title>Proxmox on credibleDEV</title>
     <link>http://localhost:1313/tags/proxmox/</link>
     <description>Recent content in Proxmox on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/proxmox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/proxmox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Install Synology NAS on Proxmox</title>
       <link>http://localhost:1313/how-to-install-synology-nas-on-proxmox/</link>
       <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/how-to-install-synology-nas-on-proxmox/</guid>
       <description>This guide will walk you through setting up a Synology NAS on your Proxmox server at home.</description>
     </item>
-    
     <item>
       <title>Import VirtualBox and Virt Manager VMs to Proxmox</title>
       <link>http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/</link>
       <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/</guid>
       <description>This guide explains how to import existing VirtualBox and Virt Manager VM&amp;#39;s into Proxmox without any data loss.</description>
     </item>
-    
     <item>
       <title>Install Docker and Portainer on Proxmox</title>
       <link>http://localhost:1313/install-docker-and-portainer-on-proxmox/</link>
       <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-docker-and-portainer-on-proxmox/</guid>
       <description>Learn how to install Docker on Proxmox and use Portainer to easily manager your Docker instance and containers.</description>
     </item>
-    
     <item>
       <title>Setup XRDP on a Fedora VM for Remote Desktop</title>
       <link>http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/</link>
       <pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/</guid>
       <description>This guide walks you through how to set up XRDP on Fedora 37 and use Remmina for the remote desktop connection from Linux.</description>
     </item>
-    
     <item>
       <title>Quickly Set Up a Windows Domain Controller on Proxmox - 2022 Guide</title>
       <link>http://localhost:1313/set-up-windows-domain-controller-on-proxmox/</link>
       <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/set-up-windows-domain-controller-on-proxmox/</guid>
       <description>This guide explains how to quickly set up a Windows Domain Controller on Proxmox as a virtual server and join a VM to the domain.</description>
     </item>
-    
   </channel>
 </rss>

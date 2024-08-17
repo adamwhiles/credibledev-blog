@@ -4,17 +4,16 @@
     <title>Npm on credibleDEV</title>
     <link>http://localhost:1313/tags/npm/</link>
     <description>Recent content in Npm on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/npm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install NodeJS on Manjaro Linux - 2023 Update</title>
       <link>http://localhost:1313/how-to-install-nodejs-on-manjaro-linux/</link>
       <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/how-to-install-nodejs-on-manjaro-linux/</guid>
       <description>How to install NodeJS on Manjaro Linux. This guide walks you through the steps to install NodeJS to get your next code project started.</description>
     </item>
-    
   </channel>
 </rss>

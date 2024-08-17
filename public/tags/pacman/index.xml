@@ -4,26 +4,23 @@
     <title>Pacman on credibleDEV</title>
     <link>http://localhost:1313/tags/pacman/</link>
     <description>Recent content in Pacman on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/pacman/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/pacman/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install Pamac on EndeavourOS</title>
       <link>http://localhost:1313/install-pamac-on-endeavouros/</link>
       <pubDate>Tue, 31 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-pamac-on-endeavouros/</guid>
       <description>EndeavourOS doesn&amp;#39;t come with a GUI package manager so this guide will show you how to install pamac on EndeavourOS with just one command.</description>
     </item>
-    
     <item>
       <title>11 Ways to Use Pacman on Manjaro Linux</title>
       <link>http://localhost:1313/how-to-use-pacman-on-manjaro-linux/</link>
       <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/how-to-use-pacman-on-manjaro-linux/</guid>
       <description>Pacman is the core package manager for arch based Linux distros like Manjaro. Learn how to use pacman to manage software on your Linux pc.</description>
     </item>
-    
   </channel>
 </rss>

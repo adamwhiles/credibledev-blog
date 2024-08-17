@@ -4,36 +4,31 @@
     <title>Vscode on credibleDEV</title>
     <link>http://localhost:1313/tags/vscode/</link>
     <description>Recent content in Vscode on credibleDEV</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.132.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Install Node.JS on Linux using NVM- 2023 Guide</title>
       <link>http://localhost:1313/linux-how-to-install-node-js/</link>
       <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/linux-how-to-install-node-js/</guid>
       <description>How to install Node JS on Linux
 If you are a Javascript developer and you use Linux, how to install Node.JS is probably a question that you have. Fortunately for you, it is actually easy to install node js on Linux. We already have a guide that explains how to install NodeJS on Manjaro Linux so today we will be explaining how to install Node.JS on Ubuntu and other Debian-based Linux distributions.</description>
     </item>
-    
     <item>
       <title>Install Java for VS Code on Manjaro Linux</title>
       <link>http://localhost:1313/install-java-for-vs-code-on-manjaro-linux/</link>
       <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-java-for-vs-code-on-manjaro-linux/</guid>
       <description>This guide walks you through how to install Java for VS code on Manjaro Linux using the pacman package manager.</description>
     </item>
-    
     <item>
       <title>Install VSCode on Manjaro Linux</title>
       <link>http://localhost:1313/install-vs-code-on-manjaro-linux/</link>
       <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/install-vs-code-on-manjaro-linux/</guid>
       <description>This guide walks you through how to quickly install VS code on Manjaro Linux using the Snap package manager.</description>
     </item>
-    
   </channel>
 </rss>
