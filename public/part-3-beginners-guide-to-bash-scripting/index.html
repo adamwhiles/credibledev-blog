@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Part 3 – Beginners Guide to Bash Scripting | credibleDEV</title>
+<meta name="keywords" content="bash, linux">
+<meta name="description" content="In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python.">
+<meta name="author" content="Adam">
+<link rel="canonical" href="http://localhost:1313/part-3-beginners-guide-to-bash-scripting/">
+<meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0ba738fc0cf168c64f26272ec0bf6ddc89c38c7ae5143058acf23526520defcd.css" integrity="sha256-C6c4/AzxaMZPJicuwL9t3InDjHrlFDBYrPI1JlIN780=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/part-3-beginners-guide-to-bash-scripting/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BCWKMZ21D2');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="Part 3 – Beginners Guide to Bash Scripting" />
+<meta property="og:description" content="In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/part-3-beginners-guide-to-bash-scripting/" />
+<meta property="og:image" content="http://localhost:1313/images/beginners-guide-to-shell-scripting-part-3.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-02-04T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/images/beginners-guide-to-shell-scripting-part-3.png" />
+<meta name="twitter:title" content="Part 3 – Beginners Guide to Bash Scripting"/>
+<meta name="twitter:description" content="In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Part 3 – Beginners Guide to Bash Scripting",
+      "item": "http://localhost:1313/part-3-beginners-guide-to-bash-scripting/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Part 3 – Beginners Guide to Bash Scripting",
+  "name": "Part 3 – Beginners Guide to Bash Scripting",
+  "description": "In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python.",
+  "keywords": [
+    "bash", "linux"
+  ],
+  "articleBody": "This guide is part of a series, be sure to check out the other parts as well.\nPart 1 - Introduction to Bash, Variables, Comments, User Input\nPart 2 - If/Else Statements, Looping\nPart 3 - Functions in Bash (This Page)\nPart 4 - Creating Menus in Bash\nWelcome back to Part 3 of our Beginners Guide to Bash Scripting. In this guide, we’ll be talking about functions in bash scripting.\nFunctions are a very important part of any programming or scripting language. A function can be thought of as a block of code that you give a name to and it can be run multiple times without having to rewrite the code. This allows you to reuse the same code in a clean and efficient manner. So whenever you have repeated code, you should consider using a function instead.\nFunctions can also take parameters or arguments, these parameters are data that you pass into the function. The function can manipulate this data or really whatever you want. Consider a calculator function, you pass in two numbers and what math operation you want it to do, then the function returns the result of the calculation.\nLet’s take a closer look at functions in bash scripting.\nSyntax for a Bash Script Function If you have used other programming or scripting languages, then functions in bash scripting will look familiar and work in a similar way. Here is the basic syntax for a bash function.\nWith the Function Keyword # Declare a function using the \"function\" keyword, then give the function a name function function_name() { # This is the body of the function where we put the code we want to execute some_command } Without the Function Keyword # This example omits the function keyword and just has the function name function_name() { # This is the body of the function where we put the code we want to execute some_command } Single Line Bash Functions You may prefer to declare a short function in bash on a single line, this is valid in bash scripting. When using the single-line function syntax, be sure to include a semi-colon after your function body as shown in the example below.\nfunction_name() { some_command; } How to Call or Execute a Bash Function In order to call or use the bash function shown above, we simply use its name in our script.\nfunction_name # No () or anything are needed, just the name of the function Bash Script Function Example Let’s take a look at a real example of a bash script function. This function is the calculator that I referenced earlier in this post.\ncalculator() { case $3 in \"+\") result=$(($1 + $2)) ;; \"-\") result=$(($1 - $2)) ;; \"*\") result=$(($1 * $2)) ;; \"/\") result=$(($1 / $2)) ;; *) echo \"Invalid operator.\" return 1 ;; esac echo \"Result: $result\" return 0 } This calculator example will take three parameters or arguments. The first argument is the first number, then another number, and the third is the mathematical operator you want to use. There is limited error checking done here, just checking for an invalid operator, we do not verify the first two arguments are actual numbers. How would you call this bash function with arguments?\nUsing Arguments in a Bash Function Bash works a bit differently when it comes to arguments in a function as you can tell from the above example. Typically, when you declare a function you would also include the possible parameters, such as “function_name(int x, int y, string z)” for example. In bash, you don’t declare the arguments in the function definition at all. We simply refer to parameters within the body of the function using a “$” followed by the number of the argument in order starting with 1.\nIn the example above, you can see that we use arguments $1, $2, and $3. The “case” statement and usage may be unfamiliar to you and that’s ok, we will cover it in a future lesson. For now, just understand that for the case we are looking at the 3rd argument which is our mathematical operator. We compare the 3rd argument with the available options +, -, *, or /.\nCalling a Bash Function with Arguments So, how do we call this function with three arguments? Calling a bash function with arguments is also different than other languages. In other languages, you would call a function like this “function_name(1, 2, “+”)” for example. In bash, we don’t use parenthesis or commas. To add “2+2”, this is how the function call would look.\ncalculator 2 2 + # We make sure to put spaces between each argument. If you add that line to the bottom of the script we used above you should see “Result: 4” output in the terminal. It’s important to note that in bash scripts you must declare the function before you use it. If you call a bash function before declaring it, you will get a “command not found” error message.\nHow to Return Values in Bash Functions Using return values in bash functions is a bit different than in other programming languages too. One of the simplest methods to return something from a function is to set a global variable. By default in bash, all variables declared inside of a function are global. This is another difference when comparing bash with other languages. If you want the variable to be local to the function, you must use the “local” keyword before the name of the variable.\nReturn Using a Global Variable In the example below, we simply set a global variable and a local variable inside the function body, then reference both variables outside of the function itself. Notice that we fail to get the value of the local variable since it is only valid from within the function body. In order to reference the global variable, we must first call the function.\nreturn_test() { name=thecd # this is a global variable local age=100 # this is a local variable } return_test # here we call the function echo $name # here we echo the global variable echo $age # here we attempt to call the local variable which fails Using the Return Keyword In most programming languages, you can use the “return” keyword to return some type of data. In bash, you can only return a numeric value such as an exit code. You also must access this return value immediately after running the function. In the example below, you’ll see that we return 100 and it shows up in the output the first time. The next time we try to access it, we get 0 instead of 100. This is because we access the return value using the special variable “#?”. This variable gives us the exit code of the last thing that bash ran. The second time we call “#?”, the function was no longer the last thing that ran, which is why we don’t get 100 as you might expect.\nAssign the Output of a Function to a Variable One last example of getting a return value from a function is to assign the result to a variable. In this bash function example, we echo “credibleDEV” in the body of the function, then we assign the function to a variable rather than calling it as we have been.\nreturn_test() { echo \"credibleDEV\" } result=$(return_test) echo $result Conclusion That’s it for part 3 of the beginner’s guide to bash scripting. Stay tuned for part 4 as we continue learning! Give us a follow on Twitter so you don’t miss out and check out our YouTube channel as well for more content!\n",
+  "wordCount" : "1280",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/images/beginners-guide-to-shell-scripting-part-3.png","datePublished": "2023-02-04T00:00:00Z",
+  "dateModified": "2023-02-04T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Adam"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/part-3-beginners-guide-to-bash-scripting/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "credibleDEV",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="credibleDEV (Alt + H)">credibleDEV</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="contact">
+                    <span>contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Part 3 – Beginners Guide to Bash Scripting
+    </h1>
+    <div class="post-description">
+      In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python.
+    </div>
+    <div class="post-meta"><span title='2023-02-04 00:00:00 +0000 UTC'>02-04-2023</span>&nbsp;·&nbsp;Adam
+
+</div>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on x"
+        href="https://x.com/intent/tweet/?text=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting&amp;url=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f&amp;hashtags=bash%2clinux">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f&amp;title=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting&amp;summary=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting&amp;source=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f&title=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on whatsapp"
+        href="https://api.whatsapp.com/send?text=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting%20-%20http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on telegram"
+        href="https://telegram.me/share/url?text=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting&amp;url=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on ycombinator"
+        href="https://news.ycombinator.com/submitlink?t=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting&u=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f">
+        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+            <path
+                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+        </svg>
+    </a>
+</div>
+
+  </header> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu1142732138797366043.webp 360w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu13997637363724904849.webp 480w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu681835313554893085.webp 720w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu16558274781485130839.webp 1080w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3.png" alt="" 
+            width="1280" height="720">
+        
+</figure><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#syntax-for-a-bash-script-function" aria-label="Syntax for a Bash Script Function">Syntax for a Bash Script Function</a><ul>
+                        
+                <li>
+                    <a href="#with-the-function-keyword" aria-label="With the Function Keyword">With the Function Keyword</a></li>
+                <li>
+                    <a href="#without-the-function-keyword" aria-label="Without the Function Keyword">Without the Function Keyword</a></li>
+                <li>
+                    <a href="#single-line-bash-functions" aria-label="Single Line Bash Functions">Single Line Bash Functions</a></li></ul>
+                </li>
+                <li>
+                    <a href="#how-to-call-or-execute-a-bash-function" aria-label="How to Call or Execute a Bash Function">How to Call or Execute a Bash Function</a></li>
+                <li>
+                    <a href="#bash-script-function-example" aria-label="Bash Script Function Example">Bash Script Function Example</a></li>
+                <li>
+                    <a href="#using-arguments-in-a-bash-function" aria-label="Using Arguments in a Bash Function">Using Arguments in a Bash Function</a></li>
+                <li>
+                    <a href="#calling-a-bash-function-with-arguments" aria-label="Calling a Bash Function with Arguments">Calling a Bash Function with Arguments</a></li>
+                <li>
+                    <a href="#how-to-return-values-in-bash-functions" aria-label="How to Return Values in Bash Functions">How to Return Values in Bash Functions</a><ul>
+                        
+                <li>
+                    <a href="#return-using-a-global-variable" aria-label="Return Using a Global Variable">Return Using a Global Variable</a></li>
+                <li>
+                    <a href="#using-the-return-keyword" aria-label="Using the Return Keyword">Using the Return Keyword</a></li>
+                <li>
+                    <a href="#assign-the-output-of-a-function-to-a-variable" aria-label="Assign the Output of a Function to a Variable">Assign the Output of a Function to a Variable</a></li></ul>
+                </li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+
+  <div class="custom-sidebar">
+    <h3>Related Posts</h3>
+    <ul class="sidebar-related">
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
+            width="1200" height="628">
+</figure>
+          <a href="/proxmox-vs-hyper-v/">Proxmox VS Hyper-V - Which Hypervisor Should You Choose?</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
+            width="1200" height="628">
+</figure>
+          <a href="/linux-cpu-schedulers-gaming-cpu-scheduler/">Linux CPU Schedulers and Why They Are Important</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
+            width="1200" height="628">
+</figure>
+          <a href="/running-battle.net-games-on-linux-using-bottles/">Running Battle.net Games on Linux using Bottles</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
+            width="1076" height="472">
+</figure>
+          <a href="/fix-obs-studio-black-screen-on-manjaro-gnome-edition/">Fix OBS Studio Black Screen on Manjaro GNOME Edition</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
+            width="1280" height="720">
+</figure>
+          <a href="/9-things-to-do-after-installing-fedora-37/">9 Things to Do After Installing Fedora 37</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+  <div class="post-content"><p>This guide is part of a series, be sure to check out the other parts as well.</p>
+<ul>
+<li>
+<p><a href="https://credibledev.com/beginners-guide-to-bash-scripting/" target="_blank">Part 1 - Introduction to Bash, Variables, Comments, User Input</a></p>
+</li>
+<li>
+<p><a href="https://credibledev.com/part-2-beginners-guide-to-bash-scripting/" target="_blank">Part 2 - If/Else Statements, Looping</a></p>
+</li>
+<li>
+<p>Part 3 - Functions in Bash (This Page)</p>
+</li>
+<li>
+<p><a href="https://credibledev.com/part-4-beginners-guide-to-bash-scripting/" target="_blank">Part 4 - Creating Menus in Bash</a></p>
+</li>
+</ul>
+<p>Welcome back to Part 3 of our <strong>Beginners Guide to Bash Scripting</strong>. In this guide, we&rsquo;ll be talking about <strong>functions in bash scripting</strong>.</p>
+<p>Functions are a very important part of any programming or scripting language. A function can be thought of as a block of code that you give a name to and it can be run multiple times without having to rewrite the code. This allows you to reuse the same code in a clean and efficient manner. So whenever you have repeated code, you should consider using a function instead.</p>
+<p>Functions can also take parameters or arguments, these parameters are data that you pass into the function. The function can manipulate this data or really whatever you want. Consider a calculator function, you pass in two numbers and what math operation you want it to do, then the function returns the result of the calculation.</p>
+<p>Let&rsquo;s take a closer look at functions in bash scripting.</p>
+<h2 id="syntax-for-a-bash-script-function">Syntax for a Bash Script Function<a hidden class="anchor" aria-hidden="true" href="#syntax-for-a-bash-script-function">#</a></h2>
+<p>If you have used other programming or scripting languages, then functions in bash scripting will look familiar and work in a similar way. Here is the basic syntax for a bash function.</p>
+<h3 id="with-the-function-keyword">With the Function Keyword<a hidden class="anchor" aria-hidden="true" href="#with-the-function-keyword">#</a></h3>
+<pre tabindex="0"><code># Declare a function using the &#34;function&#34; keyword, then give the function a name
+function function_name() {
+  # This is the body of the function where we put the code we want to execute
+  some_command
+}
+</code></pre><h3 id="without-the-function-keyword">Without the Function Keyword<a hidden class="anchor" aria-hidden="true" href="#without-the-function-keyword">#</a></h3>
+<pre tabindex="0"><code># This example omits the function keyword and just has the function name
+function_name() {
+  # This is the body of the function where we put the code we want to execute
+  some_command
+}
+</code></pre><h3 id="single-line-bash-functions">Single Line Bash Functions<a hidden class="anchor" aria-hidden="true" href="#single-line-bash-functions">#</a></h3>
+<p>You may prefer to declare a short function in bash on a single line, this is valid in bash scripting. When using the single-line function syntax, be sure to include a semi-colon after your function body as shown in the example below.</p>
+<pre tabindex="0"><code>function_name() { some_command; }
+</code></pre><h2 id="how-to-call-or-execute-a-bash-function">How to Call or Execute a Bash Function<a hidden class="anchor" aria-hidden="true" href="#how-to-call-or-execute-a-bash-function">#</a></h2>
+<p>In order to call or use the bash function shown above, we simply use its name in our script.</p>
+<pre tabindex="0"><code>function_name # No () or anything are needed, just the name of the function
+</code></pre><h2 id="bash-script-function-example">Bash Script Function Example<a hidden class="anchor" aria-hidden="true" href="#bash-script-function-example">#</a></h2>
+<p>Let&rsquo;s take a look at a real <strong>example of a bash script function</strong>. This function is the calculator that I referenced earlier in this post.</p>
+<pre tabindex="0"><code>calculator() {
+  case $3 in
+    &#34;+&#34;) result=$(($1 + $2)) ;;
+    &#34;-&#34;) result=$(($1 - $2)) ;;
+    &#34;*&#34;) result=$(($1 * $2)) ;;
+    &#34;/&#34;) result=$(($1 / $2)) ;;
+    *) echo &#34;Invalid operator.&#34;
+       return 1
+       ;;
+  esac
+  echo &#34;Result: $result&#34;
+  return 0
+}
+</code></pre><p>This calculator example will take three parameters or arguments. The first argument is the first number, then another number, and the third is the mathematical operator you want to use. There is limited error checking done here, just checking for an invalid operator, we do not verify the first two arguments are actual numbers. How would you call this bash function with arguments?</p>
+<h2 id="using-arguments-in-a-bash-function">Using Arguments in a Bash Function<a hidden class="anchor" aria-hidden="true" href="#using-arguments-in-a-bash-function">#</a></h2>
+<p>Bash works a bit differently when it comes to arguments in a function as you can tell from the above example. Typically, when you declare a function you would also include the possible parameters, such as &ldquo;function_name(int x, int y, string z)&rdquo; for example. In bash, you don&rsquo;t declare the arguments in the function definition at all. We simply refer to parameters within the body of the function using a &ldquo;$&rdquo; followed by the number of the argument in order starting with 1.</p>
+<p>In the example above, you can see that we use arguments $1, $2, and $3. The &ldquo;case&rdquo; statement and usage may be unfamiliar to you and that&rsquo;s ok, we will cover it in a future lesson. For now, just understand that for the case we are looking at the 3rd argument which is our mathematical operator. We compare the 3rd argument with the available options +, -, *, or /.</p>
+<h2 id="calling-a-bash-function-with-arguments">Calling a Bash Function with Arguments<a hidden class="anchor" aria-hidden="true" href="#calling-a-bash-function-with-arguments">#</a></h2>
+<p>So, how do we call this function with three arguments? <strong>Calling a bash function with arguments</strong> is also different than other languages. In other languages, you would call a function like this &ldquo;function_name(1, 2, &ldquo;+&rdquo;)&rdquo; for example. In bash, we don&rsquo;t use parenthesis or commas. To add &ldquo;2+2&rdquo;, this is how the function call would look.</p>
+<pre tabindex="0"><code>calculator 2 2 + # We make sure to put spaces between each argument.
+</code></pre><p>If you add that line to the bottom of the script we used above you should see &ldquo;Result: 4&rdquo; output in the terminal. It&rsquo;s important to note that in bash scripts you must declare the function before you use it. If you call a bash function before declaring it, you will get a &ldquo;command not found&rdquo; error message.</p>
+<p><img loading="lazy" src="images/image-13.png" alt="Calling a Bash Script Function with Arguments"  />
+</p>
+<h2 id="how-to-return-values-in-bash-functions">How to Return Values in Bash Functions<a hidden class="anchor" aria-hidden="true" href="#how-to-return-values-in-bash-functions">#</a></h2>
+<p>Using return values in bash functions is a bit different than in other programming languages too. One of the simplest methods to return something from a function is to set a global variable. By default in bash, all variables declared inside of a function are global. This is another difference when comparing bash with other languages. If you want the variable to be local to the function, you must use the &ldquo;local&rdquo; keyword before the name of the variable.</p>
+<h3 id="return-using-a-global-variable">Return Using a Global Variable<a hidden class="anchor" aria-hidden="true" href="#return-using-a-global-variable">#</a></h3>
+<p>In the example below, we simply set a global variable and a local variable inside the function body, then reference both variables outside of the function itself. Notice that we fail to get the value of the local variable since it is only valid from within the function body. In order to reference the global variable, we must first call the function.</p>
+<pre tabindex="0"><code>return_test() {
+    name=thecd # this is a global variable
+    local age=100 # this is a local variable
+}
+
+return_test # here we call the function
+
+echo $name # here we echo the global variable
+echo $age # here we attempt to call the local variable which fails
+</code></pre><p><img loading="lazy" src="images/image-14.png" alt="Returning Variables in Bash Scripting"  />
+</p>
+<h3 id="using-the-return-keyword">Using the Return Keyword<a hidden class="anchor" aria-hidden="true" href="#using-the-return-keyword">#</a></h3>
+<p>In most programming languages, you can use the &ldquo;return&rdquo; keyword to return some type of data. In bash, you can only return a numeric value such as an exit code. You also must access this return value immediately after running the function. In the example below, you&rsquo;ll see that we return 100 and it shows up in the output the first time. The next time we try to access it, we get 0 instead of 100. This is because we access the return value using the special variable &ldquo;#?&rdquo;. This variable gives us the exit code of the last thing that bash ran. The second time we call &ldquo;#?&rdquo;, the function was no longer the last thing that ran, which is why we don&rsquo;t get 100 as you might expect.</p>
+<p><img loading="lazy" src="images/image-15.png" alt="Using the return keyword in bash"  />
+</p>
+<h3 id="assign-the-output-of-a-function-to-a-variable">Assign the Output of a Function to a Variable<a hidden class="anchor" aria-hidden="true" href="#assign-the-output-of-a-function-to-a-variable">#</a></h3>
+<p>One last example of getting a return value from a function is to assign the result to a variable. In this <strong>bash function example</strong>, we echo &ldquo;credibleDEV&rdquo; in the body of the function, then we assign the function to a variable rather than calling it as we have been.</p>
+<pre tabindex="0"><code>return_test() {
+    echo &#34;credibleDEV&#34;
+}
+
+result=$(return_test)
+
+echo $result
+</code></pre><p><img loading="lazy" src="images/image-16.png" alt="Assign function to a variable in bash scripting"  />
+</p>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>That&rsquo;s it for part 3 of the beginner&rsquo;s guide to bash scripting. Stay tuned for part 4 as we continue learning! Give us a follow on <a href="https://twitter.com/thecredibleDEV" target="_blank">Twitter</a> so you don&rsquo;t miss out and check out our <a href="https://www.youtube.com/@credibledev" target="_blank">YouTube channel</a> as well for more content!</p>
+
+
+  </div>
+  <aside class="">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related Posts</p>
+    <ul class="">
+	   
+	     <li  class="mb2">
+          <a href="/part-2-beginners-guide-to-bash-scripting/">Part 2 - Beginners Guide to Bash Scripting</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/beginners-guide-to-bash-scripting/">Beginners Guide to Bash Scripting</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/install-gcc-on-ubuntu-linux/">Install GCC on Ubuntu Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/install-pamac-on-endeavouros/">Install Pamac on EndeavourOS</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/how-to-enable-the-aur-on-manjaro-linux/">How to Enable the AUR on Manjaro Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/install-onedrive-gui-on-ubuntu/">Install OneDrive GUI on Ubuntu</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/python-flask-dev-environment-on-manjaro-linux/">Python Flask Dev Environment on Manjaro Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/what-is-an-immutable-os/">What is an Immutable OS?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/best-web-hosting-for-wordpress/">Best Web Hosting for WordPress 2023</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/setup-docker-on-manjaro-linux/">Setup Docker on Manjaro Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/install-flatpak-endeavouros-manjaro-arch-linux/">How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/xrdp-and-vnc-which-is-the-better-remote-desktop/">XRDP and VNC: Which is the Better Remote Desktop</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/create-a-linode-linux-vps-part-3/">Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/how-to-use-pacman-on-manjaro-linux/">11 Ways to Use Pacman on Manjaro Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/spectacle-the-best-manjaro-screenshot-utility/">Spectacle: The Best Manjaro Screenshot Utility</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/bash/">Bash</a></li>
+      <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
+    </ul>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on x"
+        href="https://x.com/intent/tweet/?text=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting&amp;url=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f&amp;hashtags=bash%2clinux">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f&amp;title=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting&amp;summary=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting&amp;source=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f&title=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on whatsapp"
+        href="https://api.whatsapp.com/send?text=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting%20-%20http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on telegram"
+        href="https://telegram.me/share/url?text=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting&amp;url=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Part 3 – Beginners Guide to Bash Scripting on ycombinator"
+        href="https://news.ycombinator.com/submitlink?t=Part%203%20%e2%80%93%20Beginners%20Guide%20to%20Bash%20Scripting&u=http%3a%2f%2flocalhost%3a1313%2fpart-3-beginners-guide-to-bash-scripting%2f">
+        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+            <path
+                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

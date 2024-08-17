@@ -1,0 +1,22 @@
+{{- define "main" }}
+<header class="page-header">
+    <h1>Contact Me</h1>
+</header>
+<form
+  action="https://formspree.io/f/xrgwodly"
+  method="POST"
+>
+<div id="searchbox">
+  <label>
+    Your email:
+    <input id="searchInput" type="email" name="email">
+  </label>
+  <label>
+    Your message: <br />
+    <textarea class="contactbox" name="message" width="300px" height="200px"></textarea>
+  </label><br />
+  <button type="submit">Send</button>
+</form>
+</div>
+
+{{- end }}{{/* end main */}}

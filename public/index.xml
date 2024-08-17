@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>credibleDEV</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fix Virtual Keyboard in Chromium Apps in KDE Wayland</title>
+      <link>http://localhost:1313/fix-virtual-keyboard-in-chromium-apps-in-kde-wayland/</link>
+      <pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/fix-virtual-keyboard-in-chromium-apps-in-kde-wayland/</guid>
+      <description>Need to downgrade a Linode server or plan? It&amp;#39;s really easy to do and we will walk you through the process from start to finish.</description>
+    </item>
+    
+    <item>
+      <title>Proxmox VS Hyper-V - Which Hypervisor Should You Choose?</title>
+      <link>http://localhost:1313/proxmox-vs-hyper-v/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/proxmox-vs-hyper-v/</guid>
+      <description>Trying to decide which Hypervisor is best for you? Find out in this detailed comparison of Proxmox and Hyper-V inlcuding GPU passthrough capabilities.</description>
+    </item>
+    
+    <item>
+      <title>testpage</title>
+      <link>http://localhost:1313/2023-12-07-testpage/</link>
+      <pubDate>Thu, 07 Dec 2023 13:29:40 +0000</pubDate>
+      
+      <guid>http://localhost:1313/2023-12-07-testpage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux CPU Schedulers and Why They Are Important</title>
+      <link>http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/</guid>
+      <description>In this post we break down what CPU Schedulers are in Linux and why they are important. We also delve into CPU Scheduler options for Linux and which one may be best for Gaming on Linux.</description>
+    </item>
+    
+    <item>
+      <title>5 Steps To Succeed In Your First IT Job</title>
+      <link>http://localhost:1313/5-steps-to-succeed-in-your-first-it-job/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/5-steps-to-succeed-in-your-first-it-job/</guid>
+      <description>This article provides you with strategies and tips on how to succeed and excel in your first IT job that you can start using immediately.</description>
+    </item>
+    
+    <item>
+      <title>Running Battle.net Games on Linux using Bottles</title>
+      <link>http://localhost:1313/running-battle.net-games-on-linux-using-bottles/</link>
+      <pubDate>Fri, 13 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/running-battle.net-games-on-linux-using-bottles/</guid>
+      <description>This guide will walk you through setting up Bottles on Linux to run Battle.net games.</description>
+    </item>
+    
+    <item>
+      <title>How to Install Synology NAS on Proxmox</title>
+      <link>http://localhost:1313/how-to-install-synology-nas-on-proxmox/</link>
+      <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/how-to-install-synology-nas-on-proxmox/</guid>
+      <description>This guide will walk you through setting up a Synology NAS on your Proxmox server at home.</description>
+    </item>
+    
+    <item>
+      <title>Find Apps and Policies Assigned to Azure AD Groups</title>
+      <link>http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/</link>
+      <pubDate>Fri, 06 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/</guid>
+      <description>This guide explains how you can use the ADAM Tool to find out what apps, profiles, policies, remediations etc. are assigned to an Azure AD group.</description>
+    </item>
+    
+    <item>
+      <title>How to Add NodeJS to SiteGround Shared Hosting</title>
+      <link>http://localhost:1313/how-to-add-nodejs-to-siteground-shared-hosting/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/how-to-add-nodejs-to-siteground-shared-hosting/</guid>
+      <description>This guide explains how to install and set up NodeJS on a shared hosting provider like SiteGround who offer SSH.</description>
+    </item>
+    
+    <item>
+      <title>Fix OBS Studio Black Screen on Manjaro GNOME Edition</title>
+      <link>http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/</link>
+      <pubDate>Thu, 28 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/</guid>
+      <description>Running OBS Studio on a fresh Manjaro GNOME install may result in a black screen. Here is a simple solution to fix a OBS black screen issue.</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Azure Intune Groups Based on Installed Software</title>
+      <link>http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/</guid>
+      <description>This guide will show you how to use PowerShell with Azure and Intune to dynamically add devices to Azure Groups based on installed software.</description>
+    </item>
+    
+    <item>
+      <title>Import VirtualBox and Virt Manager VMs to Proxmox</title>
+      <link>http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/</link>
+      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/</guid>
+      <description>This guide explains how to import existing VirtualBox and Virt Manager VM&amp;#39;s into Proxmox without any data loss.</description>
+    </item>
+    
+    <item>
+      <title>Install Docker and Portainer on Proxmox</title>
+      <link>http://localhost:1313/install-docker-and-portainer-on-proxmox/</link>
+      <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-docker-and-portainer-on-proxmox/</guid>
+      <description>Learn how to install Docker on Proxmox and use Portainer to easily manager your Docker instance and containers.</description>
+    </item>
+    
+    <item>
+      <title>9 Things to Do After Installing Fedora 37</title>
+      <link>http://localhost:1313/9-things-to-do-after-installing-fedora-37/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/9-things-to-do-after-installing-fedora-37/</guid>
+      <description>Fedora 37 is an excellent Linux operating system that works well for new and experienced users. This list covers 9 things to do after install.</description>
+    </item>
+    
+    <item>
+      <title>Install Pi-hole on a Proxmox Ubuntu Container</title>
+      <link>http://localhost:1313/install-pihole-on-a-proxmox-ubuntu-container/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-pihole-on-a-proxmox-ubuntu-container/</guid>
+      <description>This guide will walk you through each step to install Pi-hole on a Promox container and configure your network to use Pi-hole DNS.</description>
+    </item>
+    
+    <item>
+      <title>Setup XRDP on a Fedora VM for Remote Desktop</title>
+      <link>http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/</link>
+      <pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/</guid>
+      <description>This guide walks you through how to set up XRDP on Fedora 37 and use Remmina for the remote desktop connection from Linux.</description>
+    </item>
+    
+    <item>
+      <title>Mac OSX on Manjaro Linux Made Easy With Docker</title>
+      <link>http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/</link>
+      <pubDate>Tue, 21 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/</guid>
+      <description>You can run macOS on Manjaro and other Linux distributions easily with Docker for testing and development work.</description>
+    </item>
+    
+    <item>
+      <title>Install JetBrains Rider for C# on Linux</title>
+      <link>http://localhost:1313/install-jetbrains-rider-for-c-on-linux/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-jetbrains-rider-for-c-on-linux/</guid>
+      <description>JetBrains Rider is an excellent IDE to get started coding C# .NET Applications for all Linux distributions.</description>
+    </item>
+    
+    <item>
+      <title>Linux C# .NET GUI App Using Avalonia UI</title>
+      <link>http://localhost:1313/linux-c-net-gui-app-using-avalonia-ui/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/linux-c-net-gui-app-using-avalonia-ui/</guid>
+      <description>Quickly get up and running building your first Linux GUI app using C#, .NET, Avalonia UI and Rider.</description>
+    </item>
+    
+    <item>
+      <title>Join a Linux Device to Active Directory</title>
+      <link>http://localhost:1313/join-a-linux-device-to-active-directory/</link>
+      <pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/join-a-linux-device-to-active-directory/</guid>
+      <description>This guide will help you connect your Linux devices and servers to an active directory domain so you can manage identities and privileges.</description>
+    </item>
+    
+    <item>
+      <title>Install Plex Media Server on Manjaro Linux</title>
+      <link>http://localhost:1313/install-plex-media-server-on-manjaro-linux/</link>
+      <pubDate>Wed, 15 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-plex-media-server-on-manjaro-linux/</guid>
+      <description>Install the popular media server Plex on Manjaro Linux and configure the proper permissions so Plex can access and stream your content.</description>
+    </item>
+    
+    <item>
+      <title>8 Things to Do After Installing Manjaro Linux</title>
+      <link>http://localhost:1313/8-things-to-do-after-installing-manjaro-linux/</link>
+      <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/8-things-to-do-after-installing-manjaro-linux/</guid>
+      <description>After installing Manjaro Linux, there are things you must do like updating, setup backups, install fonts, firewall and software.</description>
+    </item>
+    
+    <item>
+      <title>Part 4 - Beginner&#39;s Guide to Bash Scripting</title>
+      <link>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</link>
+      <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</guid>
+      <description>This guide is part of a series, be sure to check out the other parts as well.
+Part 1 - Introduction to Bash, Variables, Comments, User Input
+Part 2 - If/Else Statements, Looping
+Part 3 - Functions in Bash
+Part 4 - Creating Menus in Bash (This Page)
+In this part, we will be covering how to create menus in Bash scripting on Linux. We will first cover a basic menu that is really simple to set up and use but also flexible and works for most cases.</description>
+    </item>
+    
+    <item>
+      <title>3 Bash VS Code Linux Extensions You Should be Using</title>
+      <link>http://localhost:1313/3-bash-vscode-linux-extensions/</link>
+      <pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/3-bash-vscode-linux-extensions/</guid>
+      <description>These are the 3 powerful VScode Linux extensions that you should be using for bash scripting in Microsoft VScode.</description>
+    </item>
+    
+    <item>
+      <title>Manjaro vs Ubuntu - Rolling Better than LTS?</title>
+      <link>http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/</link>
+      <pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/</guid>
+      <description>Comparing Ubuntu and Manjaro may seem unfair, given how long Ubuntu has been around. Both share things in common but have major differences to</description>
+    </item>
+    
+    <item>
+      <title>Part 3 – Beginners Guide to Bash Scripting</title>
+      <link>http://localhost:1313/part-3-beginners-guide-to-bash-scripting/</link>
+      <pubDate>Sat, 04 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/part-3-beginners-guide-to-bash-scripting/</guid>
+      <description>In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python.</description>
+    </item>
+    
+    <item>
+      <title>Install GCC on Ubuntu Linux</title>
+      <link>http://localhost:1313/install-gcc-on-ubuntu-linux/</link>
+      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-gcc-on-ubuntu-linux/</guid>
+      <description>Installing GCC on Ubuntu is an essential task if you plan to compile C or C&#43;&#43; programs. It can be installed using the build&amp;amp;#x2d;essential package or by itself.</description>
+    </item>
+    
+    <item>
+      <title>Part 2 - Beginners Guide to Bash Scripting</title>
+      <link>http://localhost:1313/part-2-beginners-guide-to-bash-scripting/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/part-2-beginners-guide-to-bash-scripting/</guid>
+      <description>Conditional statements and looping are important in bash scripting. This guide has example bash scripts to show the proper use of if, while, until and for loops.</description>
+    </item>
+    
+    <item>
+      <title>Install Pamac on EndeavourOS</title>
+      <link>http://localhost:1313/install-pamac-on-endeavouros/</link>
+      <pubDate>Tue, 31 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-pamac-on-endeavouros/</guid>
+      <description>EndeavourOS doesn&amp;#39;t come with a GUI package manager so this guide will show you how to install pamac on EndeavourOS with just one command.</description>
+    </item>
+    
+    <item>
+      <title>Beginners Guide to Bash Scripting</title>
+      <link>http://localhost:1313/beginners-guide-to-bash-scripting/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/beginners-guide-to-bash-scripting/</guid>
+      <description>In Part 1, this guide teaches readers the basics of bash scripting including variables, getting user input and doing basic math in bash.</description>
+    </item>
+    
+    <item>
+      <title>How to Enable the AUR on Manjaro Linux</title>
+      <link>http://localhost:1313/how-to-enable-the-aur-on-manjaro-linux/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/how-to-enable-the-aur-on-manjaro-linux/</guid>
+      <description>The AUR is one of the most popular reasons for Linux users to run an Arch&amp;amp;#x2d;Based Linux Distribution. This guide explains how to enable the AUR on Manjaro.</description>
+    </item>
+    
+    <item>
+      <title>The Next Y2K: Year 2038 Problem</title>
+      <link>http://localhost:1313/the-next-y2k-year-2038-problem/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/the-next-y2k-year-2038-problem/</guid>
+      <description>The new Y2K is the year 2038 problem, also known as the Y2K38 bug. The Unix Timestamp is to blame but there is a simple fix which is already in the works.</description>
+    </item>
+    
+    <item>
+      <title>Install OneDrive GUI on Ubuntu</title>
+      <link>http://localhost:1313/install-onedrive-gui-on-ubuntu/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-onedrive-gui-on-ubuntu/</guid>
+      <description>Learn how to install and setup OneDrive on Ubuntu Linux using a console app and also a OneDrive GUI application.</description>
+    </item>
+    
+    <item>
+      <title>Python Flask Dev Environment on Manjaro Linux</title>
+      <link>http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/</link>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/</guid>
+      <description>This guide will walk you through setting up Python Flask on Manjaro and then deploy the app to a LiteSpeed production server using WSGI and CyberPanel.</description>
+    </item>
+    
+    <item>
+      <title>What is an Immutable OS?</title>
+      <link>http://localhost:1313/what-is-an-immutable-os/</link>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/what-is-an-immutable-os/</guid>
+      <description>Learn what an Immutable OS is, along with their benefits, drawbacks and possible use cases.</description>
+    </item>
+    
+    <item>
+      <title>Best Web Hosting for WordPress 2023</title>
+      <link>http://localhost:1313/best-web-hosting-for-wordpress/</link>
+      <pubDate>Wed, 25 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/best-web-hosting-for-wordpress/</guid>
+      <description>Finding the best web host for a WordPress website can be challenging. I&amp;#39;ve used many hosts and in this guide, I&amp;#39;ll use my experience to help you find the best.</description>
+    </item>
+    
+    <item>
+      <title>Managed Desktop Icons and Shortcuts in Intune</title>
+      <link>http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/</link>
+      <pubDate>Sat, 21 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/</guid>
+      <description>Managing desktop icons and shortcuts in Intune isn&amp;#39;t straightforward but there are PowerShell scripts to help make this easy.</description>
+    </item>
+    
+    <item>
+      <title>Intune Hardware Hash Import During Task Sequence</title>
+      <link>http://localhost:1313/intune-hardware-hash-import-during-task-sequence/</link>
+      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/intune-hardware-hash-import-during-task-sequence/</guid>
+      <description>Easily collect and import the Intune device hardware hash using an SCCM task sequence while deploying Windows 10.</description>
+    </item>
+    
+    <item>
+      <title>Deploy HKCU Registry Keys Using Intune</title>
+      <link>http://localhost:1313/deploy-hkcu-registry-keys-using-intune/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/deploy-hkcu-registry-keys-using-intune/</guid>
+      <description>Deploying registry keys to the HKCU hive in Intune isn&amp;#39;t straightforward. This guide will show you how to deploy keys to the current user hive.</description>
+    </item>
+    
+    <item>
+      <title>Setup Docker on Manjaro Linux</title>
+      <link>http://localhost:1313/setup-docker-on-manjaro-linux/</link>
+      <pubDate>Sat, 14 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/setup-docker-on-manjaro-linux/</guid>
+      <description>Installing Docker on Manjaro Linux and other Arch based distros is pretty simple. This quick guide will help you setup and use Docker.</description>
+    </item>
+    
+    <item>
+      <title>How to Deploy a Scheduled Task in Intune</title>
+      <link>http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/</link>
+      <pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/</guid>
+      <description>Deploying a scheduled task in Intune isn&amp;#39;t difficult. This post will walk you though all of steps needed to deploy your scheduled task in Intune.</description>
+    </item>
+    
+    <item>
+      <title>How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux</title>
+      <link>http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/</link>
+      <pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/</guid>
+      <description>Flatpak&amp;#39;s make installing software on Linux a breeze. Today, we discuss how to get started with Flatpak on EndeavourOS, Manjaro and Arch Linux.</description>
+    </item>
+    
+    <item>
+      <title>XRDP and VNC: Which is the Better Remote Desktop</title>
+      <link>http://localhost:1313/xrdp-and-vnc-which-is-the-better-remote-desktop/</link>
+      <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/xrdp-and-vnc-which-is-the-better-remote-desktop/</guid>
+      <description>XRDP and VNC are both popular remote desktop protocols that allow users to remotely connect to and control a computer from a different device.</description>
+    </item>
+    
+    <item>
+      <title>3 Easy Steps to Downgrade a Linode Server</title>
+      <link>http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/</link>
+      <pubDate>Sun, 08 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/</guid>
+      <description>Need to downgrade a Linode server or plan? It&amp;#39;s really easy to do and we will walk you through the process from start to finish.</description>
+    </item>
+    
+    <item>
+      <title>How to Create a Ubuntu 22.10 VM on Proxmox</title>
+      <link>http://localhost:1313/creating-a-ubuntu-vm-on-proxmox/</link>
+      <pubDate>Thu, 05 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/creating-a-ubuntu-vm-on-proxmox/</guid>
+      <description>Learn how to quickly setup and use a Ubuntu Linux Virtual Machine using the free and opensource Proxmox Hypervisor.</description>
+    </item>
+    
+    <item>
+      <title>Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide</title>
+      <link>http://localhost:1313/create-a-linode-linux-vps-part-3/</link>
+      <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/create-a-linode-linux-vps-part-3/</guid>
+      <description>Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.
+In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks.</description>
+    </item>
+    
+    <item>
+      <title>11 Ways to Use Pacman on Manjaro Linux</title>
+      <link>http://localhost:1313/how-to-use-pacman-on-manjaro-linux/</link>
+      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/how-to-use-pacman-on-manjaro-linux/</guid>
+      <description>Pacman is the core package manager for arch based Linux distros like Manjaro. Learn how to use pacman to manage software on your Linux pc.</description>
+    </item>
+    
+    <item>
+      <title>Spectacle: The Best Manjaro Screenshot Utility</title>
+      <link>http://localhost:1313/spectacle-the-best-manjaro-screenshot-utility/</link>
+      <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/spectacle-the-best-manjaro-screenshot-utility/</guid>
+      <description>Spectacle is hands down the best screenshot utility for Linux. I use it on Manjaro Linux for all of my blog posts and documentation.</description>
+    </item>
+    
+    <item>
+      <title>Manjaro i3 Window Manager Tips</title>
+      <link>http://localhost:1313/manjaro-i3-window-manager-tips/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/manjaro-i3-window-manager-tips/</guid>
+      <description>Setting up the Manjaro i3 window manager can be a journey. I&amp;#39;m sharing some tips to help you on your adventure into the i3 tiling window manager.</description>
+    </item>
+    
+    <item>
+      <title>Install OneDrive for Linux - Manjaro Edition</title>
+      <link>http://localhost:1313/onedrive-for-linux/</link>
+      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/onedrive-for-linux/</guid>
+      <description>OneDrive is a great backup and cloud storage service. In this post we show you how to install OneDrive on Manjaro Linux.</description>
+    </item>
+    
+    <item>
+      <title>My 6 Favorite Manjaro Apps</title>
+      <link>http://localhost:1313/favorite-manjaro-apps/</link>
+      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/favorite-manjaro-apps/</guid>
+      <description>After using Linux for quite some time, I&amp;#39;ve created a list of my favorite Manjaro apps. These are apps I use often and make Linux more enjoyable.</description>
+    </item>
+    
+    <item>
+      <title>Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide</title>
+      <link>http://localhost:1313/create-a-linode-linux-vps-part-2/</link>
+      <pubDate>Fri, 16 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/create-a-linode-linux-vps-part-2/</guid>
+      <description>In Part 2 of Creating a Linode Linux VPS, we setup add a new user, setup SSH keys and configure the Ubuntu and Linode firewalls for security.</description>
+    </item>
+    
+    <item>
+      <title>Create a Linode Linux VPS - 2022 Quickstart Guide</title>
+      <link>http://localhost:1313/create-a-linode-linux-vps/</link>
+      <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/create-a-linode-linux-vps/</guid>
+      <description>This guide will take you through the steps of creating a Linode Linux VPS for you to run a website, apps, game servers etc.</description>
+    </item>
+    
+    <item>
+      <title>Easy Setup Yubikey on Manjaro Linux</title>
+      <link>http://localhost:1313/easy-setup-yubikey-on-manjaro-linux/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/easy-setup-yubikey-on-manjaro-linux/</guid>
+      <description>Easy steps to setup Yubikey on Manjaro Linux for sudo, login and other authentication prompts on your Manjaro install.</description>
+    </item>
+    
+    <item>
+      <title>Deploy PowerShell Scripts in Intune - 3 Easy Methods</title>
+      <link>http://localhost:1313/powershell-scripts-in-intune/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/powershell-scripts-in-intune/</guid>
+      <description>3 easy methods to deploy PowerShell scripts in Intune. Single scripts, proactive remediations and Win32 app methods.</description>
+    </item>
+    
+    <item>
+      <title>Quickly Set Up a Windows Domain Controller on Proxmox - 2022 Guide</title>
+      <link>http://localhost:1313/set-up-windows-domain-controller-on-proxmox/</link>
+      <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/set-up-windows-domain-controller-on-proxmox/</guid>
+      <description>This guide explains how to quickly set up a Windows Domain Controller on Proxmox as a virtual server and join a VM to the domain.</description>
+    </item>
+    
+    <item>
+      <title>Easily Install dotNet In Linux - 2023 Guide</title>
+      <link>http://localhost:1313/dotnet-in-linux/</link>
+      <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/dotnet-in-linux/</guid>
+      <description>Get started developing for dotnet in Linux with this simple Guide. Setup dotnet in VSCode for Linux and write your first C# app.</description>
+    </item>
+    
+    <item>
+      <title>chmod Syntax in Linux Explained</title>
+      <link>http://localhost:1313/chmod-syntax-in-linux/</link>
+      <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/chmod-syntax-in-linux/</guid>
+      <description>Quickly learn the proper chmod syntax to use for file permissions on your Linux system. Chmod is a power permission management app for Linux.</description>
+    </item>
+    
+    <item>
+      <title>Using the Tail Command in Linux</title>
+      <link>http://localhost:1313/tail-command-in-linux/</link>
+      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/tail-command-in-linux/</guid>
+      <description>The Tail command in Linux is very useful for quickly getting content from logs files and other text documents.</description>
+    </item>
+    
+    <item>
+      <title>How to Install Node.JS on Linux using NVM- 2023 Guide</title>
+      <link>http://localhost:1313/linux-how-to-install-node-js/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/linux-how-to-install-node-js/</guid>
+      <description>How to install Node JS on Linux
+If you are a Javascript developer and you use Linux, how to install Node.JS is probably a question that you have. Fortunately for you, it is actually easy to install node js on Linux. We already have a guide that explains how to install NodeJS on Manjaro Linux so today we will be explaining how to install Node.JS on Ubuntu and other Debian-based Linux distributions.</description>
+    </item>
+    
+    <item>
+      <title>How to Install Edge on Manjaro</title>
+      <link>http://localhost:1313/how-to-install-edge-on-manjaro/</link>
+      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/how-to-install-edge-on-manjaro/</guid>
+      <description>Quick guide on how to install Edge on Manjaro Linux. Edge is a popular browser based on Chromium and created by Microsoft.</description>
+    </item>
+    
+    <item>
+      <title>Install ExpressVPN on Linux</title>
+      <link>http://localhost:1313/install-expressvpn-on-manjaro-linux/</link>
+      <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-expressvpn-on-manjaro-linux/</guid>
+      <description>Learn how to install ExpressVPN on Linux. This works for Ubuntu, PopOS, Linux Mint, Fedora, Arch, Manjaro and other Linux Distributions.</description>
+    </item>
+    
+    <item>
+      <title>Install Java for VS Code on Manjaro Linux</title>
+      <link>http://localhost:1313/install-java-for-vs-code-on-manjaro-linux/</link>
+      <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-java-for-vs-code-on-manjaro-linux/</guid>
+      <description>This guide walks you through how to install Java for VS code on Manjaro Linux using the pacman package manager.</description>
+    </item>
+    
+    <item>
+      <title>Install VSCode on Manjaro Linux</title>
+      <link>http://localhost:1313/install-vs-code-on-manjaro-linux/</link>
+      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-vs-code-on-manjaro-linux/</guid>
+      <description>This guide walks you through how to quickly install VS code on Manjaro Linux using the Snap package manager.</description>
+    </item>
+    
+    <item>
+      <title>Install VNC on Manjaro for Remote Access</title>
+      <link>http://localhost:1313/install-vnc-on-manjaro-for-remote-access/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-vnc-on-manjaro-for-remote-access/</guid>
+      <description>Quickly install TigerVNC on Manjaro Linux so that you can remotely view and control the desktop from another device, such as Windows using TightVNC.</description>
+    </item>
+    
+    <item>
+      <title>Install NodeJS on Manjaro Linux - 2023 Update</title>
+      <link>http://localhost:1313/how-to-install-nodejs-on-manjaro-linux/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/how-to-install-nodejs-on-manjaro-linux/</guid>
+      <description>How to install NodeJS on Manjaro Linux. This guide walks you through the steps to install NodeJS to get your next code project started.</description>
+    </item>
+    
+    <item>
+      <title>How To Share a Folder From Windows to Arch Linux Guest OS in VirtualBox</title>
+      <link>http://localhost:1313/how-to-share-a-folder-from-windows-to-arch-linux-guest-os-in-virtualbox/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/how-to-share-a-folder-from-windows-to-arch-linux-guest-os-in-virtualbox/</guid>
+      <description>How to share a folder in VirtualBox from a Windows host to a Manjaro or Arch based Linux guest operating system.</description>
+    </item>
+    
+    <item>
+      <title>VMware Horizon VM Already Used Status</title>
+      <link>http://localhost:1313/vmware-horizon-vm-already-used-status/</link>
+      <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/vmware-horizon-vm-already-used-status/</guid>
+      <description>Quickly resolve the error VM Already Used in VMware Horizon with just a few steps.</description>
+    </item>
+    
+    <item>
+      <title>VMware Horizon VC_FAULT_FATAL - Name Already Exists Error</title>
+      <link>http://localhost:1313/vmware-horizon-vc_fault_fatal-name-already-exists-error/</link>
+      <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/vmware-horizon-vc_fault_fatal-name-already-exists-error/</guid>
+      <description>Quickly resolve the error VC_FAULT_FATAL &amp;amp;#x2d; Name Already Exists in VMware Horizon with just a few simple steps.</description>
+    </item>
+    
+    <item>
+      <title>PowerShell Force Compliance Baseline Evaluation</title>
+      <link>http://localhost:1313/powershell-force-compliance-baseline-evaluation/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/powershell-force-compliance-baseline-evaluation/</guid>
+      <description>Forcing a SCCM compliance rule is easy to do but you may not know how. This guide explains how PowerShell can be used to force this.</description>
+    </item>
+    
+    <item>
+      <title>MySQL and Flask Tutorial</title>
+      <link>http://localhost:1313/use-mysql-in-python-flask/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/use-mysql-in-python-flask/</guid>
+      <description>How to use MySQL in Python using Flask. MySQL databases are common on the web and very easy to setup in Python using Flask.</description>
+    </item>
+    
+    <item>
+      <title>3 Easy Steps: Install VirtualEnv on Arch Linux for Python</title>
+      <link>http://localhost:1313/install-virtualenv-on-arch-linux-for-python/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-virtualenv-on-arch-linux-for-python/</guid>
+      <description>How to setup and use VirtualEnv on Arch Linux. Virtual Python environments are useful when working on multiple Python projects.</description>
+    </item>
+    
+    <item>
+      <title>SCVMM Gen2 VM Change Boot Order</title>
+      <link>http://localhost:1313/scvmm-gen2-vm-change-boot-order/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/scvmm-gen2-vm-change-boot-order/</guid>
+      <description>How to change boot order for a Gen2 VM in SCVMM. Allowing you to network boot a Gen2 VM for PXE booting.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/contact/</guid>
+      <description>Send me a message</description>
+    </item>
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>I3wm on credibleDEV</title>
+    <link>http://localhost:1313/tags/i3wm/</link>
+    <description>Recent content in I3wm on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/i3wm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manjaro i3 Window Manager Tips</title>
+      <link>http://localhost:1313/manjaro-i3-window-manager-tips/</link>
+      <pubDate>Wed, 28 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/manjaro-i3-window-manager-tips/</guid>
+      <description>Setting up the Manjaro i3 window manager can be a journey. I&amp;#39;m sharing some tips to help you on your adventure into the i3 tiling window manager.</description>
+    </item>
+    
+  </channel>
+</rss>

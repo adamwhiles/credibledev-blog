@@ -1,0 +1,64 @@
+baseURL = 'https://credibledev.com/'
+languageCode = 'en-us'
+title = 'credibleDEV'
+theme = 'PaperMod'
+sidebar = 'true'
+paginate = 5
+
+googleAnalytics = "G-BCWKMZ21D2"
+
+[permalinks]
+	posts = "/:title"
+
+
+[params]	
+	defaultTheme = "dark"
+	disableThemeToggle = true
+	author = "Adam"
+	ShowToc = true
+	TocOpen = true
+	ShowCodeCopyButtons = true
+	ShowShareButtons = true
+	comments = true
+	DateFormat = "01-02-2006"
+	ShowBreadCrumbs = true
+	sidebar = true
+	env = "production"
+
+[cover]
+	hidden = false
+
+[outputs]
+    home = [ "HTML", "RSS", "JSON" ]
+    
+[[menu.main]]
+identifier = "search"
+name = "search"
+url = "/search/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"
+name = "tags"
+url = "/tags/"
+weight = 20
+
+[[menu.main]]
+identifier = "contact"
+name = "contact"
+url = "/contact/"
+weight = 40
+
+[[menu.main]]
+identifier = "categories"
+name = "categories"
+url = "/categories/"
+weight = 30
+
+[params.analytics.google]
+SiteVerificationTag = "35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU"
+
+
+
+
+

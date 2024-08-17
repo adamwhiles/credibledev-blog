@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Python Flask Dev Environment on Manjaro Linux | credibleDEV</title>
+<meta name="keywords" content="flask, linux, litespeed, python">
+<meta name="description" content="This guide will walk you through setting up Python Flask on Manjaro and then deploy the app to a LiteSpeed production server using WSGI and CyberPanel.">
+<meta name="author" content="Adam">
+<link rel="canonical" href="http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/">
+<meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0ba738fc0cf168c64f26272ec0bf6ddc89c38c7ae5143058acf23526520defcd.css" integrity="sha256-C6c4/AzxaMZPJicuwL9t3InDjHrlFDBYrPI1JlIN780=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BCWKMZ21D2');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="Python Flask Dev Environment on Manjaro Linux" />
+<meta property="og:description" content="This guide will walk you through setting up Python Flask on Manjaro and then deploy the app to a LiteSpeed production server using WSGI and CyberPanel." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/" />
+<meta property="og:image" content="http://localhost:1313/images/set-up-flask-app-in-dev-and-run-on-litespeed-server.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-01-27T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/images/set-up-flask-app-in-dev-and-run-on-litespeed-server.png" />
+<meta name="twitter:title" content="Python Flask Dev Environment on Manjaro Linux"/>
+<meta name="twitter:description" content="This guide will walk you through setting up Python Flask on Manjaro and then deploy the app to a LiteSpeed production server using WSGI and CyberPanel."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Python Flask Dev Environment on Manjaro Linux",
+      "item": "http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python Flask Dev Environment on Manjaro Linux",
+  "name": "Python Flask Dev Environment on Manjaro Linux",
+  "description": "This guide will walk you through setting up Python Flask on Manjaro and then deploy the app to a LiteSpeed production server using WSGI and CyberPanel.",
+  "keywords": [
+    "flask", "linux", "litespeed", "python"
+  ],
+  "articleBody": "Python Flask is a small web development framework written in Python. It allows you to create web applications quickly and easily by providing useful tools and features. You can use it to create a website, a web service, or even a simple web page. It’s easy to learn and use, making it a popular choice for beginners and experienced developers alike. Personally, I love Flask. You can quickly spin up a website using the Jinja2 template engine or create a web API to query a backend database or other web API.\nToday, we will set up a Python Flask development environment on Manjaro Linux and then deploy it to a production server running CyberPanel on Ubuntu 22.04 and the OpenLiteSpeed webserver. Let’s get started.\nNote: While this guide is written specifically for Manjaro, it will work with other Arch based Linux distributions like EndeavourOS as well.\nStep 1 - Install Python on Manjaro Linux Python should already be installed, as it’s typically a default application on Manjaro. Let’s double-check by running the following command in the terminal, which should return the specific version of Python installed on your Manjaro machine.\npython3 -V If Python is installed on your system, you should see something similar to the following output in the terminal. The version number may be different for you but that’s OK.\nPython 3.10.9 If you don’t see Python installed on your Manjaro machine, you can use pacman to get it installed pretty easily. Just run the following command to install the latest available version.\nsudo pacman -S python3 Step 2 - Install Pip for Python 3 The next thing we should do is install “pip”. Pip is a package manager for Python that we will use to install Flask and other packages that our web app may need. Think of this as the pacman or apt for Python. To install “pip” on Manjaro, run the following command.\nsudo pacman -S python-pip Step 3 - Set Up a Virtual Environment Virtual environments are important for Python development because you may be working on many Python projects which all share different dependencies. You could have a scenario where you need one version of a package for this app but another version for a different app. A virtual Python environment allows you to separate those projects and their dependencies so that the packages installed are specific to that environment.\nTo set up a new Python virtual environment we will use “venv” to create an environment called “cdflask” for example.\npython3 -m venv cdflask Next, we need to activate this new virtual environment. Once activated, the “pip install” commands will install packages just to that environment. Just swap out “cdflask” with whatever you named your environment.\nsource cdflask/bin/activate You’ll notice that your terminal prompt has changed a bit. It should show (your_environment_name) [username@hostname foldername] or something similar. The important part is that it should show your chosen virtual environment name in parenthesis, this means your virtual environment is now activated.\nStep 4 - Install Flask in the Python Virtual Environment Now that we have the virtual environment set up and activated, we can install the Flask package using pip.\npip install flask Step 5 - Create a Basic Flask App.py File Flask is now installed, so we are ready to create the “app.py” file which will be our entry point that will display some text as a web page to test everything is working. Open up your favorite editor and create an “app.py” file inside your virtual environment.\nFirst create a new directory to hold the source files for the app, we will call this folder “cdflaskapp” for example.\nmkdir cdflaskapp Now go ahead and create your “app.py” in this new directory with the following Python code as an example and save the file.\napp.py\nfrom flask import Flask app = Flask(__name__) @app.route('/') def index(): return 'credibleDEV Test' if __name__ == '__main__': app.run() Step 6 - Start the Flask Development Server To test the flask application, head back to your terminal and run the following command.\nflask run Assuming everything went OK, you should see the output in the terminal similar to the following.\nGreat, this means your Flask app is running. As the output suggests, you can load up a browser and head to http://127.0.0.1:5000 to test your app. You should see something like this if everything worked as expected.\nLet’s create a little more fancy using a Jinja2 template and the Bootstrap CSS framework, then we will deploy it to our production OpenLiteSpeed server to show you how that works.\nStep 1 - Creating a Simple Website Using a Jinja2 Template To get started using Jinja templates with our Flask app. Let’s create a new directory within our app folder called “templates”. Then, create an “index.html” file in the templates directory. Afterward, our directory structure should look like the following.\nInside of our “index.html” file, let’s add the following code as an example.\nindex.html\n{% extends \"base.html\" %} {% block title %}Home{% endblock %} {% block body %} Welcome to {{ sitename }}! This is a test Flask app. Be sure to check out the credibleDEV blog.\n{% endblock %} Notice that we don’t have the typical open HTML tags or the head tag. We will handle those in separate files so they are uniform across all the pages of our Flask site. This way, each new page we create only needs to have the body or content of the page. The header and footer can be pulled in from the base templates we make for them.\nTo clarify, the content that appears between the {% block body %} and {% endblock %} tags in the index.html file, will be inserted between the {% block body %} and {% endblock %} tags of the base.html file that we are about to create.\nLet’s create a “base.html” file now, so we can put in the standard HTML tags, header, and CSS. This file would include everything that we want to be uniform across the entire site, such as a fancy header for example. We will also have the block body Jinja tag that will pull in the content of other files, like the index.html file for example. Also, the title Jinja variable that is in the index.html file will be inserted into the block title variable of the base.html file.\nThis will all make more sense when you start playing around with it and run a test.\nbase.html\n\u003c!doctype html\u003e {% block title %}{% endblock %} - credibleDEV Toggle navigation credibleDEV Home About Contact {% block body %} {% endblock %} To test this out, we need to make a modification to the app.py file that we created earlier. We need to tell the Flask app to use Jinja with the render_template function and pass it in our index.html file so that it displays when users visit our site. We will also pass a variable to the template that will show up in the Welcome to {{ sitename }}! part of our index page. Additionally, we need to add an import at the top for render_template.\napp.py\nfrom flask import Flask, render_template app = Flask(__name__) @app.route('/') def index(): sitename = \"credibleDEV\" return render_template(\"index.html\", sitename=sitename) if __name__ == '__main__': app.run() Step 2 - Testing our Flask App Now that everything is updated, let’s test it out. If you still have the “flask run” command executing in your terminal, press CTRL+C to shut it down. Then launch it again using “flask run”. You can then refresh the page or open a new tab and go to http://127.0.0.1:5000 once again. You should see that your page looks much nicer now.\nAwesome, what a beautiful start to a site, without much work at all. Now it’s time to deploy this Flask website to our production OpenLiteSpeed server.\nStep 3 - Set Up Our Flask App to Run on the Litespeed Server The production server is running on Linode, with Ubuntu 20.04, the CyberPanel management panel, and OpenLiteSpeed. Your setup may be different, such as Apache for example. So the steps may be slightly different for you in that case. The important thing here is that while you could technically just run the Flask app directly on the production server, that’s not what you want to do. You want OpenLiteSpeed, Apache, or whatever web server software, to handle the HTTP request and deliver your site to the end user.\nInstall Python and Pip on Ubuntu CyberPanel Server The first thing we need to do is get Python3 and Pip installed on our Ubuntu server. So go ahead and SSH into your server to get a terminal, then run the following command.\nYou need to SSH with a root account or one that has sudo privileges.\nsudo apt install python3 python3-pip Install the wsgi-lsapi Package Next, we need to install the wsgi-lsapi package from LiteSpeed. You can find more information on the official LightSpeed API Downloads page, look for “Python Module”. Run the following commands to complete the installation for wsgi-lsapi.\ncurl -O https://www.litespeedtech.com/packages/lsapi/wsgi-lsapi-2.1.tgz tar xf wsgi-lsapi-2.1.tgz sudo mv wsgi-lsapi-2.1 /usr/local/lsws cd /usr/local/lsws/wsgi-lsapi-2.1 python3 ./configure make sudo mv lswsgi /usr/local/lsws/fcgi-bin Setup a Python Virtual Environment on our Server Now you need to SSH as the hosting account user instead of root. You may need to enable and set up SSH access for the account from CyberPanel. To do this, use the menu on the left of CyberPanel, click Websites, List Websites, and click on manage for the website you are setting up. At the top, there is a button to set up SSH access.\nAfter getting everything installed above, it’s time to set up a new virtual environment on our server. If you’re using cyberpanel, your websites are likely listed in the /home directory, so /home/example.com. Use the terminal to CD to that directory.\ncd /home/example.com Now we set up and activate the virtual environment using Python. You can call it whatever you like, I chose cdflask here.\npython3 -m virtualenv venv source venv/bin/activate Install Flask in our Python Virtual Environment We are ready to install the Flask package inside our virtual environment now.\npip3 install flask Create a Directory for our App Files Now we need to create a directory to upload our Flask app.\nmkdir /home/example.com/public_html/cdflask Next, upload the files we created earlier to this directory. You can use the CyberPanel file manager, SFTP, or whatever method you like. Don’t get too excited yet, we need to add a new file and edit our app.py file as well before we are finished. Almost there though.\nSetup our wsgi.py File and Edit app.py Create a new file in the public_html directory called “wsgi.py”. Put the following in that file, swap out the “from cdflask” part to match your directory though if you chose a different name.\n/home/example.com/public_html/wsgi.py\n#!/usr/bin/env python import sys sys.path.insert(0, '/home/example.com/public_html') from cdflask import app as application Next, rename your app.py file to __init__.py and remove the if statement and app.run section that was at the bottom so it looks like this.\n/home/example.com/public_html/cdflask/__init__.py\nfrom flask import Flask, render_template app = Flask(__name__) @app.route('/') def index(): sitename = \"credibleDEV Test Flask Site\" return render_template(\"index.html\", sitename=sitename) Configure LiteSpeed to Run our Python Flask App We have our app files configured so the next step is to configure the LiteSpeed web server to run our Flask app for us and then serve it to users from the http://example.com/cdflask address. You can also serve it from the root of the domain if you wish, that’s up to you. To do that, you will want to change the URI setting in the next section to be just “/” instead of “/cdflask”.\nTo get started, head to your LiteSpeed WebAdmin page, typically accessed on port 7080. Once there, choose “Virtual Hosts” from the left-side menu. In the list of domains, click the magnifying glass next to the domain you want to set up Flask on.\nOn the next page, click the “Context” tab and then click the Add button found on the right.\nOn the following page, you will select “App Server” as the type and then click the poorly designed next button.\nNow we will configure the specifics so that LiteSpeed will run and show our Python Flask app to the end user. Remember, if you want users to see your page by going to http://example.com/ then change the URI here to “/”.\nURI - /cdflask\nLocation - /home/example.com/public_html/cdflask\nBinary Path - /usr/local/lsws/fcgi-bin/lswsgi\nApplication Type - WSGI\nStartup File - wsgi.py\nEnvironment - PYTHONPATH=/home/example.com/venv/lib/python3.8:/home/example.com/public_html/cdflask\nEnvironment - LS_PYTHONBIN=/home/example.com/venv/bin/python3\nOnce you’re finished, click the save button at the top right. You will be instructed to gracefully restart the server. You can do this by clicking on your hostname at the top left of the page and choosing “Graceful Restart” from the popup menu.\nTesting our Python Flask App with LiteSpeed After running the graceful restart, you are ready to test your site.\nTroubleshooting and Changes If you run into issues getting your Python Flask app to run on LiteSpeed and you need to make modifications. Run the following in the terminal to restart the app to test out your changes. You will also do this if you update the website or app.\nsudo killall lswsgi Conclusion Congrats! You now have learned how to set up a Python app to run on LiteSpeed using CyberPanel. If you run into issues or have any questions, let me know in the comments!\n",
+  "wordCount" : "2366",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/images/set-up-flask-app-in-dev-and-run-on-litespeed-server.png","datePublished": "2023-01-27T00:00:00Z",
+  "dateModified": "2023-01-27T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Adam"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "credibleDEV",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="credibleDEV (Alt + H)">credibleDEV</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="contact">
+                    <span>contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Python Flask Dev Environment on Manjaro Linux
+    </h1>
+    <div class="post-description">
+      This guide will walk you through setting up Python Flask on Manjaro and then deploy the app to a LiteSpeed production server using WSGI and CyberPanel.
+    </div>
+    <div class="post-meta"><span title='2023-01-27 00:00:00 +0000 UTC'>01-27-2023</span>&nbsp;·&nbsp;Adam
+
+</div>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on x"
+        href="https://x.com/intent/tweet/?text=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux&amp;url=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f&amp;hashtags=flask%2clinux%2clitespeed%2cpython">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f&amp;title=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux&amp;summary=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux&amp;source=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f&title=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on whatsapp"
+        href="https://api.whatsapp.com/send?text=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux%20-%20http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on telegram"
+        href="https://telegram.me/share/url?text=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux&amp;url=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on ycombinator"
+        href="https://news.ycombinator.com/submitlink?t=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux&u=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f">
+        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+            <path
+                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+        </svg>
+    </a>
+</div>
+
+  </header> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/images/set-up-flask-app-in-dev-and-run-on-litespeed-server_hu2578636439371683123.webp 360w ,http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/images/set-up-flask-app-in-dev-and-run-on-litespeed-server_hu7391618628708030129.webp 480w ,http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/images/set-up-flask-app-in-dev-and-run-on-litespeed-server_hu9070998705448508595.webp 720w ,http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/images/set-up-flask-app-in-dev-and-run-on-litespeed-server_hu14324656734631625939.webp 1080w ,http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/images/set-up-flask-app-in-dev-and-run-on-litespeed-server.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/python-flask-dev-environment-on-manjaro-linux/images/set-up-flask-app-in-dev-and-run-on-litespeed-server.png" alt="" 
+            width="1280" height="720">
+        
+</figure><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#step-1---install-python-on-manjaro-linux" aria-label="Step 1 - Install Python on Manjaro Linux">Step 1 - Install Python on Manjaro Linux</a></li>
+                <li>
+                    <a href="#step-2---install-pip-for-python-3" aria-label="Step 2 - Install Pip for Python 3">Step 2 - Install Pip for Python 3</a></li>
+                <li>
+                    <a href="#step-3---set-up-a-virtual-environment" aria-label="Step 3 - Set Up a Virtual Environment">Step 3 - Set Up a Virtual Environment</a></li>
+                <li>
+                    <a href="#step-4---install-flask-in-the-python-virtual-environment" aria-label="Step 4 - Install Flask in the Python Virtual Environment">Step 4 - Install Flask in the Python Virtual Environment</a></li>
+                <li>
+                    <a href="#step-5---create-a-basic-flask-apppy-file" aria-label="Step 5 - Create a Basic Flask App.py File">Step 5 - Create a Basic Flask App.py File</a></li>
+                <li>
+                    <a href="#step-6---start-the-flask-development-server" aria-label="Step 6 - Start the Flask Development Server">Step 6 - Start the Flask Development Server</a></li>
+                <li>
+                    <a href="#step-1---creating-a-simple-website-using-a-jinja2-template" aria-label="Step 1 - Creating a Simple Website Using a Jinja2 Template">Step 1 - Creating a Simple Website Using a Jinja2 Template</a></li>
+                <li>
+                    <a href="#step-2---testing-our-flask-app" aria-label="Step 2 - Testing our Flask App">Step 2 - Testing our Flask App</a></li>
+                <li>
+                    <a href="#step-3---set-up-our-flask-app-to-run-on-the-litespeed-server" aria-label="Step 3 - Set Up Our Flask App to Run on the Litespeed Server">Step 3 - Set Up Our Flask App to Run on the Litespeed Server</a><ul>
+                        
+                <li>
+                    <a href="#install-python-and-pip-on-ubuntu-cyberpanel-server" aria-label="Install Python and Pip on Ubuntu CyberPanel Server">Install Python and Pip on Ubuntu CyberPanel Server</a></li>
+                <li>
+                    <a href="#install-the-wsgi-lsapi-package" aria-label="Install the wsgi-lsapi Package">Install the wsgi-lsapi Package</a></li>
+                <li>
+                    <a href="#setup-a-python-virtual-environment-on-our-server" aria-label="Setup a Python Virtual Environment on our Server">Setup a Python Virtual Environment on our Server</a></li>
+                <li>
+                    <a href="#install-flask-in-our-python-virtual-environment" aria-label="Install Flask in our Python Virtual Environment">Install Flask in our Python Virtual Environment</a></li>
+                <li>
+                    <a href="#create-a-directory-for-our-app-files" aria-label="Create a Directory for our App Files">Create a Directory for our App Files</a></li>
+                <li>
+                    <a href="#setup-our-wsgipy-file-and-edit-apppy" aria-label="Setup our wsgi.py File and Edit app.py">Setup our wsgi.py File and Edit app.py</a></li>
+                <li>
+                    <a href="#configure-litespeed-to-run-our-python-flask-app" aria-label="Configure LiteSpeed to Run our Python Flask App">Configure LiteSpeed to Run our Python Flask App</a></li>
+                <li>
+                    <a href="#testing-our-python-flask-app-with-litespeed" aria-label="Testing our Python Flask App with LiteSpeed">Testing our Python Flask App with LiteSpeed</a></li>
+                <li>
+                    <a href="#troubleshooting-and-changes" aria-label="Troubleshooting and Changes">Troubleshooting and Changes</a></li></ul>
+                </li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+
+  <div class="custom-sidebar">
+    <h3>Related Posts</h3>
+    <ul class="sidebar-related">
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
+            width="1200" height="628">
+</figure>
+          <a href="/proxmox-vs-hyper-v/">Proxmox VS Hyper-V - Which Hypervisor Should You Choose?</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
+            width="1200" height="628">
+</figure>
+          <a href="/linux-cpu-schedulers-gaming-cpu-scheduler/">Linux CPU Schedulers and Why They Are Important</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
+            width="1200" height="628">
+</figure>
+          <a href="/running-battle.net-games-on-linux-using-bottles/">Running Battle.net Games on Linux using Bottles</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
+            width="1076" height="472">
+</figure>
+          <a href="/fix-obs-studio-black-screen-on-manjaro-gnome-edition/">Fix OBS Studio Black Screen on Manjaro GNOME Edition</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
+            width="1280" height="720">
+</figure>
+          <a href="/9-things-to-do-after-installing-fedora-37/">9 Things to Do After Installing Fedora 37</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+  <div class="post-content"><p>Python Flask is a small web development framework written in Python. It allows you to create web applications quickly and easily by providing useful tools and features. You can use it to create a website, a web service, or even a simple web page. It&rsquo;s easy to learn and use, making it a popular choice for beginners and experienced developers alike. Personally, I love Flask. You can quickly spin up a website using the Jinja2 template engine or create a web API to query a backend database or other web API.</p>
+<p>Today, we will set up a Python Flask development environment on Manjaro Linux and then deploy it to a production server running CyberPanel on Ubuntu 22.04 and the OpenLiteSpeed webserver. Let&rsquo;s get started.</p>
+<p><strong>Note:</strong> While this guide is written specifically for Manjaro, it will work with other Arch based Linux distributions like EndeavourOS as well.</p>
+<h2 id="step-1---install-python-on-manjaro-linux">Step 1 - Install Python on Manjaro Linux<a hidden class="anchor" aria-hidden="true" href="#step-1---install-python-on-manjaro-linux">#</a></h2>
+<p>Python should already be installed, as it&rsquo;s typically a default application on Manjaro. Let&rsquo;s double-check by running the following command in the terminal, which should return the specific version of Python installed on your Manjaro machine.</p>
+<pre tabindex="0"><code>python3 -V
+</code></pre><p>If Python is installed on your system, you should see something similar to the following output in the terminal. The version number may be different for you but that&rsquo;s OK.</p>
+<pre tabindex="0"><code>Python 3.10.9
+</code></pre><p>If you don&rsquo;t see Python installed on your Manjaro machine, you can use <a href="https://credibledev.com/how-to-use-pacman-on-manjaro-linux/" target="_blank">pacman</a> to get it installed pretty easily. Just run the following command to install the latest available version.</p>
+<pre tabindex="0"><code>sudo pacman -S python3
+</code></pre><h2 id="step-2---install-pip-for-python-3">Step 2 - Install Pip for Python 3<a hidden class="anchor" aria-hidden="true" href="#step-2---install-pip-for-python-3">#</a></h2>
+<p>The next thing we should do is install &ldquo;pip&rdquo;. Pip is a package manager for Python that we will use to install Flask and other packages that our web app may need. Think of this as the pacman or apt for Python. To install &ldquo;pip&rdquo; on Manjaro, run the following command.</p>
+<pre tabindex="0"><code>sudo pacman -S python-pip
+</code></pre><h2 id="step-3---set-up-a-virtual-environment">Step 3 - Set Up a Virtual Environment<a hidden class="anchor" aria-hidden="true" href="#step-3---set-up-a-virtual-environment">#</a></h2>
+<p>Virtual environments are important for Python development because you may be working on many Python projects which all share different dependencies. You could have a scenario where you need one version of a package for this app but another version for a different app. A virtual Python environment allows you to separate those projects and their dependencies so that the packages installed are specific to that environment.</p>
+<p>To set up a new Python virtual environment we will use &ldquo;venv&rdquo; to create an environment called &ldquo;cdflask&rdquo; for example.</p>
+<pre tabindex="0"><code>python3 -m venv cdflask
+</code></pre><p>Next, we need to activate this new virtual environment. Once activated, the &ldquo;pip install&rdquo; commands will install packages just to that environment. Just swap out &ldquo;cdflask&rdquo; with whatever you named your environment.</p>
+<pre tabindex="0"><code>source cdflask/bin/activate
+</code></pre><p>You&rsquo;ll notice that your terminal prompt has changed a bit. It should show (your_environment_name) [username@hostname foldername] or something similar. The important part is that it should show your chosen virtual environment name in parenthesis, this means your virtual environment is now activated.</p>
+<h2 id="step-4---install-flask-in-the-python-virtual-environment">Step 4 - Install Flask in the Python Virtual Environment<a hidden class="anchor" aria-hidden="true" href="#step-4---install-flask-in-the-python-virtual-environment">#</a></h2>
+<p>Now that we have the virtual environment set up and activated, we can install the Flask package using pip.</p>
+<pre tabindex="0"><code>pip install flask
+</code></pre><h2 id="step-5---create-a-basic-flask-apppy-file">Step 5 - Create a Basic Flask App.py File<a hidden class="anchor" aria-hidden="true" href="#step-5---create-a-basic-flask-apppy-file">#</a></h2>
+<p>Flask is now installed, so we are ready to create the &ldquo;app.py&rdquo; file which will be our entry point that will display some text as a web page to test everything is working. Open up your favorite editor and create an &ldquo;app.py&rdquo; file inside your virtual environment.</p>
+<p>First create a new directory to hold the source files for the app, we will call this folder &ldquo;cdflaskapp&rdquo; for example.</p>
+<pre tabindex="0"><code>mkdir cdflaskapp
+</code></pre><p>Now go ahead and create your &ldquo;app.py&rdquo; in this new directory with the following Python code as an example and save the file.</p>
+<p>app.py</p>
+<pre tabindex="0"><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route(&#39;/&#39;)
+def index():
+    return &#39;credibleDEV Test&#39;
+
+if __name__ == &#39;__main__&#39;:
+    app.run()
+</code></pre><h2 id="step-6---start-the-flask-development-server">Step 6 - Start the Flask Development Server<a hidden class="anchor" aria-hidden="true" href="#step-6---start-the-flask-development-server">#</a></h2>
+<p>To test the flask application, head back to your terminal and run the following command.</p>
+<pre tabindex="0"><code>flask run
+</code></pre><p>Assuming everything went OK, you should see the output in the terminal similar to the following.</p>
+<p><img loading="lazy" src="images/image-88.png" alt="start python flask on manjaro"  />
+</p>
+<p>Great, this means your Flask app is running. As the output suggests, you can load up a browser and head to http://127.0.0.1:5000 to test your app. You should see something like this if everything worked as expected.</p>
+<p><img loading="lazy" src="images/image-87.png" alt="test python flask app on manjaro linux"  />
+</p>
+<p>Let&rsquo;s create a little more fancy using a Jinja2 template and the Bootstrap CSS framework, then we will deploy it to our production OpenLiteSpeed server to show you how that works.</p>
+<h2 id="step-1---creating-a-simple-website-using-a-jinja2-template">Step 1 - Creating a Simple Website Using a Jinja2 Template<a hidden class="anchor" aria-hidden="true" href="#step-1---creating-a-simple-website-using-a-jinja2-template">#</a></h2>
+<p>To get started using Jinja templates with our Flask app. Let&rsquo;s create a new directory within our app folder called &ldquo;templates&rdquo;. Then, create an &ldquo;index.html&rdquo; file in the templates directory. Afterward, our directory structure should look like the following.</p>
+<p><img loading="lazy" src="images/image-89.png" alt="python flask app folder structure"  />
+</p>
+<p>Inside of our &ldquo;index.html&rdquo; file, let&rsquo;s add the following code as an example.</p>
+<p>index.html</p>
+<pre tabindex="0"><code>&lt;!-- This pulls in the base html file we will create in a moment --&gt;
+{% extends &#34;base.html&#34; %}
+&lt;!-- This sets to title variable in the base.html file --&gt;
+{% block title %}Home{% endblock %}
+&lt;!-- Everything within this block body will have the base.html applied around it --&gt;
+{% block body %}
+    &lt;h1&gt;Welcome to {{ sitename }}!&lt;/h1&gt;
+    &lt;p&gt;This is a test Flask app. Be sure to check out the &lt;a href=&#34;https://credibledev.com&#34;&gt;credibleDEV blog&lt;/a&gt;.&lt;/p&gt;
+{% endblock %}
+&lt;!-- End the block body tag --&gt;
+</code></pre><p>Notice that we don&rsquo;t have the typical open HTML tags or the head tag. We will handle those in separate files so they are uniform across all the pages of our Flask site. This way, each new page we create only needs to have the body or content of the page. The header and footer can be pulled in from the base templates we make for them.</p>
+<p>To clarify, the content that appears between the <strong>{% block body %} and {% endblock %}</strong> tags in the <strong>index.html</strong> file, will be inserted between the <strong>{% block body %} and {% endblock %}</strong> tags of the <strong>base.html</strong> file that we are about to create.</p>
+<p>Let&rsquo;s create a &ldquo;base.html&rdquo; file now, so we can put in the standard HTML tags, header, and CSS. This file would include everything that we want to be uniform across the entire site, such as a fancy header for example. We will also have the block body Jinja tag that will pull in the content of other files, like the index.html file for example. Also, the title Jinja variable that is in the index.html file will be inserted into the block title variable of the base.html file.</p>
+<p>This will all make more sense when you start playing around with it and run a test.</p>
+<p>base.html</p>
+<pre tabindex="0"><code>&lt;!doctype html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+  &lt;title&gt;{% block title %}{% endblock %} - credibleDEV&lt;/title&gt;
+  &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;
+  &lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css&#34;     integrity=&#34;sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu&#34; crossorigin=&#34;anonymous&#34;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- Start NavBar --&gt;
+&lt;nav class=&#34;navbar navbar-inverse&#34;&gt;
+      &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;navbar-header&#34;&gt;
+          &lt;button type=&#34;button&#34; class=&#34;navbar-toggle collapsed&#34; data-toggle=&#34;collapse&#34; data-target=&#34;#navbar&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;navbar&#34;&gt;
+            &lt;span class=&#34;sr-only&#34;&gt;Toggle navigation&lt;/span&gt;
+            &lt;span class=&#34;icon-bar&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;icon-bar&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;icon-bar&#34;&gt;&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;a class=&#34;navbar-brand&#34; href=&#34;#&#34;&gt;credibleDEV&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div id=&#34;navbar&#34; class=&#34;collapse navbar-collapse&#34;&gt;
+          &lt;ul class=&#34;nav navbar-nav&#34;&gt;
+            &lt;li class=&#34;active&#34;&gt;&lt;a href=&#34;#&#34;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#&#34;&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;&lt;!--/.nav-collapse --&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;!-- End NavBar --&gt;
+  &lt;div class=&#34;container&#34;&gt;
+    &lt;div class=&#34;starter-template&#34;&gt;
+    &lt;!-- Page Content Here --&gt;
+    {% block body %}
+    {% endblock %}
+    &lt;!-- End Page Content --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>To test this out, we need to make a modification to the app.py file that we created earlier. We need to tell the Flask app to use Jinja with the render_template function and pass it in our index.html file so that it displays when users visit our site. We will also pass a variable to the template that will show up in the Welcome to {{ sitename }}! part of our index page. Additionally, we need to add an import at the top for render_template.</p>
+<p>app.py</p>
+<pre tabindex="0"><code>from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route(&#39;/&#39;)
+def index():
+    sitename = &#34;credibleDEV&#34;
+    return render_template(&#34;index.html&#34;, sitename=sitename)
+
+if __name__ == &#39;__main__&#39;:
+    app.run()
+</code></pre><h2 id="step-2---testing-our-flask-app">Step 2 - Testing our Flask App<a hidden class="anchor" aria-hidden="true" href="#step-2---testing-our-flask-app">#</a></h2>
+<p>Now that everything is updated, let&rsquo;s test it out. If you still have the &ldquo;flask run&rdquo; command executing in your terminal, press CTRL+C to shut it down. Then launch it again using &ldquo;flask run&rdquo;. You can then refresh the page or open a new tab and go to http://127.0.0.1:5000 once again. You should see that your page looks much nicer now.</p>
+<p><img loading="lazy" src="images/image-90-1024x309.png" alt="python flask app with jinja template and bootstrap css"  />
+</p>
+<p>Awesome, what a beautiful start to a site, without much work at all. Now it&rsquo;s time to deploy this Flask website to our production OpenLiteSpeed server.</p>
+<h2 id="step-3---set-up-our-flask-app-to-run-on-the-litespeed-server">Step 3 - Set Up Our Flask App to Run on the Litespeed Server<a hidden class="anchor" aria-hidden="true" href="#step-3---set-up-our-flask-app-to-run-on-the-litespeed-server">#</a></h2>
+<p>The production server is running on Linode, with Ubuntu 20.04, the CyberPanel management panel, and OpenLiteSpeed. Your setup may be different, such as Apache for example. So the steps may be slightly different for you in that case. The important thing here is that while you could technically just run the Flask app directly on the production server, that&rsquo;s not what you want to do. You want OpenLiteSpeed, Apache, or whatever web server software, to handle the HTTP request and deliver your site to the end user.</p>
+<h3 id="install-python-and-pip-on-ubuntu-cyberpanel-server">Install Python and Pip on Ubuntu CyberPanel Server<a hidden class="anchor" aria-hidden="true" href="#install-python-and-pip-on-ubuntu-cyberpanel-server">#</a></h3>
+<p>The first thing we need to do is get Python3 and Pip installed on our Ubuntu server. So go ahead and SSH into your server to get a terminal, then run the following command.</p>
+<p>You need to SSH with a root account or one that has sudo privileges.</p>
+<pre tabindex="0"><code>sudo apt install python3 python3-pip
+</code></pre><h3 id="install-the-wsgi-lsapi-package">Install the wsgi-lsapi Package<a hidden class="anchor" aria-hidden="true" href="#install-the-wsgi-lsapi-package">#</a></h3>
+<p>Next, we need to install the wsgi-lsapi package from LiteSpeed. You can find more information on the official <a href="https://www.litespeedtech.com/open-source/litespeed-sapi/download" target="_blank">LightSpeed API Downloads</a> page, look for &ldquo;Python Module&rdquo;. Run the following commands to complete the installation for wsgi-lsapi.</p>
+<pre tabindex="0"><code>curl -O https://www.litespeedtech.com/packages/lsapi/wsgi-lsapi-2.1.tgz
+tar xf wsgi-lsapi-2.1.tgz
+sudo mv wsgi-lsapi-2.1 /usr/local/lsws
+cd /usr/local/lsws/wsgi-lsapi-2.1
+python3 ./configure
+make
+sudo mv lswsgi /usr/local/lsws/fcgi-bin
+</code></pre><h3 id="setup-a-python-virtual-environment-on-our-server">Setup a Python Virtual Environment on our Server<a hidden class="anchor" aria-hidden="true" href="#setup-a-python-virtual-environment-on-our-server">#</a></h3>
+<p>Now you need to SSH as the hosting account user instead of root. You may need to enable and set up SSH access for the account from CyberPanel. To do this, use the menu on the left of CyberPanel, click Websites, List Websites, and click on manage for the website you are setting up. At the top, there is a button to set up SSH access.</p>
+<p>After getting everything installed above, it&rsquo;s time to set up a new virtual environment on our server. If you&rsquo;re using cyberpanel, your websites are likely listed in the /home directory, so /home/example.com. Use the terminal to CD to that directory.</p>
+<pre tabindex="0"><code>cd /home/example.com
+</code></pre><p>Now we set up and activate the virtual environment using Python. You can call it whatever you like, I chose cdflask here.</p>
+<pre tabindex="0"><code>python3 -m virtualenv venv
+source venv/bin/activate
+</code></pre><h3 id="install-flask-in-our-python-virtual-environment">Install Flask in our Python Virtual Environment<a hidden class="anchor" aria-hidden="true" href="#install-flask-in-our-python-virtual-environment">#</a></h3>
+<p>We are ready to install the Flask package inside our virtual environment now.</p>
+<pre tabindex="0"><code>pip3 install flask
+</code></pre><h3 id="create-a-directory-for-our-app-files">Create a Directory for our App Files<a hidden class="anchor" aria-hidden="true" href="#create-a-directory-for-our-app-files">#</a></h3>
+<p>Now we need to create a directory to upload our Flask app.</p>
+<pre tabindex="0"><code>mkdir /home/example.com/public_html/cdflask
+</code></pre><p>Next, upload the files we created earlier to this directory. You can use the CyberPanel file manager, SFTP, or whatever method you like. Don&rsquo;t get too excited yet, we need to add a new file and edit our app.py file as well before we are finished. Almost there though.</p>
+<h3 id="setup-our-wsgipy-file-and-edit-apppy">Setup our wsgi.py File and Edit app.py<a hidden class="anchor" aria-hidden="true" href="#setup-our-wsgipy-file-and-edit-apppy">#</a></h3>
+<p>Create a new file in the public_html directory called &ldquo;wsgi.py&rdquo;. Put the following in that file, swap out the &ldquo;from cdflask&rdquo; part to match your directory though if you chose a different name.</p>
+<p>/home/example.com/public_html/wsgi.py</p>
+<pre tabindex="0"><code>#!/usr/bin/env python
+import sys
+
+sys.path.insert(0, &#39;/home/example.com/public_html&#39;)
+
+from cdflask import app as application
+</code></pre><p>Next, rename your <strong>app.py file to __init__.py</strong> and remove the if statement and app.run section that was at the bottom so it looks like this.</p>
+<p>/home/example.com/public_html/cdflask/__init__.py</p>
+<pre tabindex="0"><code>from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route(&#39;/&#39;)
+def index():
+    sitename = &#34;credibleDEV Test Flask Site&#34;
+    return render_template(&#34;index.html&#34;, sitename=sitename)
+</code></pre><h3 id="configure-litespeed-to-run-our-python-flask-app">Configure LiteSpeed to Run our Python Flask App<a hidden class="anchor" aria-hidden="true" href="#configure-litespeed-to-run-our-python-flask-app">#</a></h3>
+<p>We have our app files configured so the next step is to configure the LiteSpeed web server to run our Flask app for us and then serve it to users from the <a href="http://example.com/cdflask" target="_blank">http://example.com/cdflask</a> address. You can also serve it from the root of the domain if you wish, that&rsquo;s up to you. To do that, you will want to change the URI setting in the next section to be just &ldquo;/&rdquo; instead of &ldquo;/cdflask&rdquo;.</p>
+<p>To get started, head to your LiteSpeed WebAdmin page, typically accessed on port 7080. Once there, choose &ldquo;Virtual Hosts&rdquo; from the left-side menu. In the list of domains, click the magnifying glass next to the domain you want to set up Flask on.</p>
+<p><img loading="lazy" src="images/image-91-1024x298.png" alt="configure virtual host for python flask on litespeed"  />
+</p>
+<p>On the next page, click the &ldquo;Context&rdquo; tab and then click the Add button found on the right.</p>
+<p><img loading="lazy" src="images/image-92-1024x175.png" alt="Litespeed Flask Virtual Host Config"  />
+</p>
+<p>On the following page, you will select &ldquo;App Server&rdquo; as the type and then click the poorly designed next button.</p>
+<p><img loading="lazy" src="images/image-93-1024x111.png" alt="LiteSpeed app server setup for flask"  />
+</p>
+<p>Now we will configure the specifics so that LiteSpeed will run and show our Python Flask app to the end user. Remember, if you want users to see your page by going to <a href="http://example.com/" target="_blank">http://example.com/</a> then change the URI here to &ldquo;/&rdquo;.</p>
+<ul>
+<li>
+<p>URI - /cdflask</p>
+</li>
+<li>
+<p>Location - /home/example.com/public_html/cdflask</p>
+</li>
+<li>
+<p>Binary Path - /usr/local/lsws/fcgi-bin/lswsgi</p>
+</li>
+<li>
+<p>Application Type - WSGI</p>
+</li>
+<li>
+<p>Startup File - wsgi.py</p>
+</li>
+<li>
+<p>Environment - PYTHONPATH=/home/example.com/venv/lib/python3.8:/home/example.com/public_html/cdflask</p>
+</li>
+<li>
+<p>Environment - LS_PYTHONBIN=/home/example.com/venv/bin/python3</p>
+</li>
+</ul>
+<p><img loading="lazy" src="images/image-95-1024x379.png" alt="LiteSpeed WSGI Python Flask Configuration"  />
+</p>
+<p>Once you&rsquo;re finished, click the save button at the top right. You will be instructed to gracefully restart the server. You can do this by clicking on your hostname at the top left of the page and choosing &ldquo;Graceful Restart&rdquo; from the popup menu.</p>
+<p><img loading="lazy" src="images/image-97.png" alt="gracefully restart litespeed"  />
+</p>
+<h3 id="testing-our-python-flask-app-with-litespeed">Testing our Python Flask App with LiteSpeed<a hidden class="anchor" aria-hidden="true" href="#testing-our-python-flask-app-with-litespeed">#</a></h3>
+<p>After running the graceful restart, you are ready to test your site.</p>
+<p><img loading="lazy" src="images/image-98-1024x305.png" alt="Python Flask app running on LiteSpeed and CyberPanel"  />
+</p>
+<h3 id="troubleshooting-and-changes">Troubleshooting and Changes<a hidden class="anchor" aria-hidden="true" href="#troubleshooting-and-changes">#</a></h3>
+<p>If you run into issues getting your Python Flask app to run on LiteSpeed and you need to make modifications. Run the following in the terminal to restart the app to test out your changes. You will also do this if you update the website or app.</p>
+<pre tabindex="0"><code>sudo killall lswsgi
+</code></pre><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>Congrats! You now have learned how to set up a Python app to run on LiteSpeed using CyberPanel. If you run into issues or have any questions, let me know in the comments!</p>
+
+
+  </div>
+  <aside class="">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related Posts</p>
+    <ul class="">
+	   
+	     <li  class="mb2">
+          <a href="/use-mysql-in-python-flask/">MySQL and Flask Tutorial</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/what-is-an-immutable-os/">What is an Immutable OS?</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/best-web-hosting-for-wordpress/">Best Web Hosting for WordPress 2023</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/setup-docker-on-manjaro-linux/">Setup Docker on Manjaro Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/install-flatpak-endeavouros-manjaro-arch-linux/">How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/xrdp-and-vnc-which-is-the-better-remote-desktop/">XRDP and VNC: Which is the Better Remote Desktop</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/create-a-linode-linux-vps-part-3/">Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/how-to-use-pacman-on-manjaro-linux/">11 Ways to Use Pacman on Manjaro Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/spectacle-the-best-manjaro-screenshot-utility/">Spectacle: The Best Manjaro Screenshot Utility</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/manjaro-i3-window-manager-tips/">Manjaro i3 Window Manager Tips</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/onedrive-for-linux/">Install OneDrive for Linux - Manjaro Edition</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/favorite-manjaro-apps/">My 6 Favorite Manjaro Apps</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/create-a-linode-linux-vps-part-2/">Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/create-a-linode-linux-vps/">Create a Linode Linux VPS - 2022 Quickstart Guide</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/dotnet-in-linux/">Easily Install dotNet In Linux - 2023 Guide</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/flask/">Flask</a></li>
+      <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
+      <li><a href="http://localhost:1313/tags/litespeed/">Litespeed</a></li>
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+    </ul>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on x"
+        href="https://x.com/intent/tweet/?text=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux&amp;url=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f&amp;hashtags=flask%2clinux%2clitespeed%2cpython">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f&amp;title=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux&amp;summary=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux&amp;source=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f&title=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on whatsapp"
+        href="https://api.whatsapp.com/send?text=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux%20-%20http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on telegram"
+        href="https://telegram.me/share/url?text=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux&amp;url=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Python Flask Dev Environment on Manjaro Linux on ycombinator"
+        href="https://news.ycombinator.com/submitlink?t=Python%20Flask%20Dev%20Environment%20on%20Manjaro%20Linux&u=http%3a%2f%2flocalhost%3a1313%2fpython-flask-dev-environment-on-manjaro-linux%2f">
+        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+            <path
+                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

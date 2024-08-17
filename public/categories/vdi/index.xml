@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vdi on credibleDEV</title>
+    <link>http://localhost:1313/categories/vdi/</link>
+    <description>Recent content in Vdi on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/vdi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proxmox VS Hyper-V - Which Hypervisor Should You Choose?</title>
+      <link>http://localhost:1313/proxmox-vs-hyper-v/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/proxmox-vs-hyper-v/</guid>
+      <description>Trying to decide which Hypervisor is best for you? Find out in this detailed comparison of Proxmox and Hyper-V inlcuding GPU passthrough capabilities.</description>
+    </item>
+    
+    <item>
+      <title>VMware Horizon VM Already Used Status</title>
+      <link>http://localhost:1313/vmware-horizon-vm-already-used-status/</link>
+      <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/vmware-horizon-vm-already-used-status/</guid>
+      <description>Quickly resolve the error VM Already Used in VMware Horizon with just a few steps.</description>
+    </item>
+    
+    <item>
+      <title>VMware Horizon VC_FAULT_FATAL - Name Already Exists Error</title>
+      <link>http://localhost:1313/vmware-horizon-vc_fault_fatal-name-already-exists-error/</link>
+      <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/vmware-horizon-vc_fault_fatal-name-already-exists-error/</guid>
+      <description>Quickly resolve the error VC_FAULT_FATAL &amp;amp;#x2d; Name Already Exists in VMware Horizon with just a few simple steps.</description>
+    </item>
+    
+    <item>
+      <title>SCVMM Gen2 VM Change Boot Order</title>
+      <link>http://localhost:1313/scvmm-gen2-vm-change-boot-order/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/scvmm-gen2-vm-change-boot-order/</guid>
+      <description>How to change boot order for a Gen2 VM in SCVMM. Allowing you to network boot a Gen2 VM for PXE booting.</description>
+    </item>
+    
+  </channel>
+</rss>

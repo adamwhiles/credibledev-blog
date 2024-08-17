@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ubuntu on credibleDEV</title>
+    <link>http://localhost:1313/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install OneDrive GUI on Ubuntu</title>
+      <link>http://localhost:1313/install-onedrive-gui-on-ubuntu/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-onedrive-gui-on-ubuntu/</guid>
+      <description>Learn how to install and setup OneDrive on Ubuntu Linux using a console app and also a OneDrive GUI application.</description>
+    </item>
+    
+    <item>
+      <title>Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide</title>
+      <link>http://localhost:1313/create-a-linode-linux-vps-part-2/</link>
+      <pubDate>Fri, 16 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/create-a-linode-linux-vps-part-2/</guid>
+      <description>In Part 2 of Creating a Linode Linux VPS, we setup add a new user, setup SSH keys and configure the Ubuntu and Linode firewalls for security.</description>
+    </item>
+    
+  </channel>
+</rss>

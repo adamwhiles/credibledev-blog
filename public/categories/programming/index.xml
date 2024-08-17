@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Programming on credibleDEV</title>
+    <link>http://localhost:1313/categories/programming/</link>
+    <description>Recent content in Programming on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install JetBrains Rider for C# on Linux</title>
+      <link>http://localhost:1313/install-jetbrains-rider-for-c-on-linux/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-jetbrains-rider-for-c-on-linux/</guid>
+      <description>JetBrains Rider is an excellent IDE to get started coding C# .NET Applications for all Linux distributions.</description>
+    </item>
+    
+    <item>
+      <title>Linux C# .NET GUI App Using Avalonia UI</title>
+      <link>http://localhost:1313/linux-c-net-gui-app-using-avalonia-ui/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/linux-c-net-gui-app-using-avalonia-ui/</guid>
+      <description>Quickly get up and running building your first Linux GUI app using C#, .NET, Avalonia UI and Rider.</description>
+    </item>
+    
+    <item>
+      <title>Part 4 - Beginner&#39;s Guide to Bash Scripting</title>
+      <link>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</link>
+      <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</guid>
+      <description>This guide is part of a series, be sure to check out the other parts as well.
+Part 1 - Introduction to Bash, Variables, Comments, User Input
+Part 2 - If/Else Statements, Looping
+Part 3 - Functions in Bash
+Part 4 - Creating Menus in Bash (This Page)
+In this part, we will be covering how to create menus in Bash scripting on Linux. We will first cover a basic menu that is really simple to set up and use but also flexible and works for most cases.</description>
+    </item>
+    
+    <item>
+      <title>Part 3 – Beginners Guide to Bash Scripting</title>
+      <link>http://localhost:1313/part-3-beginners-guide-to-bash-scripting/</link>
+      <pubDate>Sat, 04 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/part-3-beginners-guide-to-bash-scripting/</guid>
+      <description>In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python.</description>
+    </item>
+    
+    <item>
+      <title>Install GCC on Ubuntu Linux</title>
+      <link>http://localhost:1313/install-gcc-on-ubuntu-linux/</link>
+      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-gcc-on-ubuntu-linux/</guid>
+      <description>Installing GCC on Ubuntu is an essential task if you plan to compile C or C&#43;&#43; programs. It can be installed using the build&amp;amp;#x2d;essential package or by itself.</description>
+    </item>
+    
+    <item>
+      <title>Part 2 - Beginners Guide to Bash Scripting</title>
+      <link>http://localhost:1313/part-2-beginners-guide-to-bash-scripting/</link>
+      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/part-2-beginners-guide-to-bash-scripting/</guid>
+      <description>Conditional statements and looping are important in bash scripting. This guide has example bash scripts to show the proper use of if, while, until and for loops.</description>
+    </item>
+    
+    <item>
+      <title>Beginners Guide to Bash Scripting</title>
+      <link>http://localhost:1313/beginners-guide-to-bash-scripting/</link>
+      <pubDate>Mon, 30 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/beginners-guide-to-bash-scripting/</guid>
+      <description>In Part 1, this guide teaches readers the basics of bash scripting including variables, getting user input and doing basic math in bash.</description>
+    </item>
+    
+    <item>
+      <title>The Next Y2K: Year 2038 Problem</title>
+      <link>http://localhost:1313/the-next-y2k-year-2038-problem/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/the-next-y2k-year-2038-problem/</guid>
+      <description>The new Y2K is the year 2038 problem, also known as the Y2K38 bug. The Unix Timestamp is to blame but there is a simple fix which is already in the works.</description>
+    </item>
+    
+    <item>
+      <title>Easily Install dotNet In Linux - 2023 Guide</title>
+      <link>http://localhost:1313/dotnet-in-linux/</link>
+      <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/dotnet-in-linux/</guid>
+      <description>Get started developing for dotnet in Linux with this simple Guide. Setup dotnet in VSCode for Linux and write your first C# app.</description>
+    </item>
+    
+    <item>
+      <title>Install Java for VS Code on Manjaro Linux</title>
+      <link>http://localhost:1313/install-java-for-vs-code-on-manjaro-linux/</link>
+      <pubDate>Sat, 08 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-java-for-vs-code-on-manjaro-linux/</guid>
+      <description>This guide walks you through how to install Java for VS code on Manjaro Linux using the pacman package manager.</description>
+    </item>
+    
+    <item>
+      <title>Install VSCode on Manjaro Linux</title>
+      <link>http://localhost:1313/install-vs-code-on-manjaro-linux/</link>
+      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-vs-code-on-manjaro-linux/</guid>
+      <description>This guide walks you through how to quickly install VS code on Manjaro Linux using the Snap package manager.</description>
+    </item>
+    
+    <item>
+      <title>Install NodeJS on Manjaro Linux - 2023 Update</title>
+      <link>http://localhost:1313/how-to-install-nodejs-on-manjaro-linux/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/how-to-install-nodejs-on-manjaro-linux/</guid>
+      <description>How to install NodeJS on Manjaro Linux. This guide walks you through the steps to install NodeJS to get your next code project started.</description>
+    </item>
+    
+  </channel>
+</rss>

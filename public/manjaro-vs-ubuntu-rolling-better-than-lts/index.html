@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Manjaro vs Ubuntu - Rolling Better than LTS? | credibleDEV</title>
+<meta name="keywords" content="">
+<meta name="description" content="Comparing Ubuntu and Manjaro may seem unfair, given how long Ubuntu has been around. Both share things in common but have major differences to">
+<meta name="author" content="Adam">
+<link rel="canonical" href="http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/">
+<meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0ba738fc0cf168c64f26272ec0bf6ddc89c38c7ae5143058acf23526520defcd.css" integrity="sha256-C6c4/AzxaMZPJicuwL9t3InDjHrlFDBYrPI1JlIN780=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BCWKMZ21D2');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="Manjaro vs Ubuntu - Rolling Better than LTS?" />
+<meta property="og:description" content="Comparing Ubuntu and Manjaro may seem unfair, given how long Ubuntu has been around. Both share things in common but have major differences to" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/" />
+<meta property="og:image" content="http://localhost:1313/images/ubuntu-vs-manjaro.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-02-07T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/images/ubuntu-vs-manjaro.png" />
+<meta name="twitter:title" content="Manjaro vs Ubuntu - Rolling Better than LTS?"/>
+<meta name="twitter:description" content="Comparing Ubuntu and Manjaro may seem unfair, given how long Ubuntu has been around. Both share things in common but have major differences to"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Manjaro vs Ubuntu - Rolling Better than LTS?",
+      "item": "http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Manjaro vs Ubuntu - Rolling Better than LTS?",
+  "name": "Manjaro vs Ubuntu - Rolling Better than LTS?",
+  "description": "Comparing Ubuntu and Manjaro may seem unfair, given how long Ubuntu has been around. Both share things in common but have major differences to",
+  "keywords": [
+    
+  ],
+  "articleBody": "If you want to start a fight between Linux users, just ask them what Linux distro is the best, such as Ubuntu and Manjaro. Sure, you will see some commonality in the answers but you’ll also see a lot of arguments over rolling release and LTS. So, in this post, we will compare Manjaro, a rolling release, and Ubuntu, an LTS Linux release. Both of which rank highly on DistroWatch. For this comparison, we will use Ubuntu 22.04 LTS and Manjaro 22.0 GNOME Edition. Why not Ubuntu 22.10? Because it isn’t LTS and it’s also not the version that a typical new Linux user would download.\nManjaro Overview Download Manjaro\nManjaro is based on Arch Linux, which is typically reserved for advanced Linux users. Manjaro has changed that by including a user-friendly installer and multiple choices for desktop environments. Stability typically isn’t an issue based on my own 2-3 year experience with it as well as community feedback on their very active subreddit.\nManjaro is a rolling release, which means that software packages are released to end users with very little delay. Unlike Arch, Manjaro holds back packages for a week or so before releasing them in their repository. If you want a package faster, you can use the AUR or compile from source yourself.\nManjaro is not as scary or difficult to use or learn as some would have you believe. If you’re scared to make the jump, you can always test it out on a Virtual Machine using VirtualBox.\nChecking out DistroWatch, you will find Manjaro ranked at #4 currently on the 3 and the 6 month trend for popular Linux Distros. This is a good sign of is relevance and adoption among Linux users and Distro Hoppers.\nUbuntu Overview Ubuntu Download\nIf you have read anything or considered Linux in the past, you have definitely heard of Ubuntu. Many would say it is one of the best choices for new Linux users. I beg to differ on this though, I believe there are many other options that are just as good if not better, but that’s not the point of this post.\nUbuntu follows a Long Term Support (LTS) release cycle where you get a new release about every 2 years. In between that time, you get security and other important updates but many packages can be quite old. Which means you are missing out on new features but gaining additional stability.\nSimilar to how we checked out DistroWatch for Manjaro’s rank, we find Ubuntu ranked in the #7 spot on the 6 month trend of Linux Distros. On the 3 month trend, Ubuntu is found at number 8.\nManjaro and Ubuntu Comparison This chart offers a quick glimpse into the comparison of both distros. They are similar in a few different ways but there are some major differences here. Specifically, the release cycle which we have already discussed but also application availability, latest software, kernel version and the ability to deeply customize.\nFeature Manjaro Ubuntu Parent Distro Arch Debian Package Manager pacman / pamac apt / Ubuntu Software Package Repository Arch User Repository (AUR) \u0026 Manjaro Repository Ubuntu Repository Distro Agnostic Packages Flatpak, Snap, AppImage Flatpak, Snap, AppImage Rolling release Yes No (LTS release every 2 years) Latest Software Packages Yes No (Exception for Snap and Flatpack) Default Kernel Version (2/2023) 6.1.9-1 5.15.0-58 Gnome Version (2/2023) 43.2 42.5 UEFI Support Yes Yes Secure Boot Support Possible Yes Available Architecture 64-bit, ARM 64-bit, ARM Support for Bleeding Edge Hardware High Medium/Low Multi-Monitor Support Yes Yes User Community Size Medium Larger Default Desktop Environment KDE Plasma, Gnome, i3, Xfce (Others available) Gnome (Others available) Stability Stable Stable Performance Good Good Customization High Medium User-Friendliness Good Excellent Ubuntu vs Manjaro Feature Comparison\nIs Manjaro Good for New Users? If you are a new Linux user, you can still run Manjaro, especially the Gnome, KDE, and XFCE versions. KDE and XFCE will seem the most familiar to a Windows user, while Gnome feels like a tablet OS in my opinion, even in the latest version 43. Personally, I prefer the XFCE and i3 versions.\nInstallation The install process for Ubuntu and Manjaro is very similar. One you have booted into the live environment from a USB, both distros offer an excellent installer that makes installation a breeze. One issue that Manjaro can run into is when secure boot is enabled on the machine. If you are unable to boot into the live environment, this could be the cause. Ubuntu will not have this issue, which may make the installation seem easier to some users.\nKernel Differences As you can see in the chart above, there is a major difference between the defaul kernals offered with these two distros. This is what makes Manjaro more compatible with newer and bleeding edge hardware. At the same time, some may say that this is part of what gives Ubuntu it’s stability. Speaking from personal experience, I haven’t experienced any stability issue using the newer kernel on Manjaro, this could be specific to my hardware though.\nWant Old Software? Just to give you an idea of how outdated Ubuntu’s software repository can be, here are a few examples of application versions available in both Manjaro’s and Ubuntu’s default repositories. To be fair, Ubuntu will suggest the Snap versions which are typically much more recent versions of the software packages. Although, Snap packages are a whole other discussion. Please enable and use Flatpak instead. That goes for both Manjaro and Ubuntu.\nWhile you can get new and hard-to-find software packages from the AUR on Manjaro, you should understand the risks involved. Most of the time, Flatpak’s are a much better choice in addition to the built-in official Manjaro repository.\nSoftware Title Ubuntu Manjaro Gimp 2.10.30 2.10.32 OBS Studio 27.2.3 29.0.0 LibreOffice 7.3.7 7.4.5 (libreoffice-fresh) Ubuntu vs Manjaro Software Versions\nPackage Management Both APT and pacman are simple to use from the command line. Ubuntu and Manjaro offer GUI package managers as well, sadly Ubuntu Software is a slow experience. Pamac is available on Manjaro and it provides a decent experience for managing your applications.\nDocumentation and Support Ubuntu has been around for a really long time and throughout that time the community and documentation have grown. You won’t have any trouble finding information and support for Ubuntu. While Manjaro is not as mature as Ubuntu, it benefits from the Arch Wiki but also has it’s own Wiki as well. You will also find the subreddit and forums to be quite helpful. One benefit to Manjaro is that the user base tends to be more technically inclined, so the help can be superior in that aspect. Not to say that Ubuntu users aren’t technically inclined at all.\nWhich Distro Should You Choose? That is a tough question to answer in a generic one size fits all way. The decision is based more on what you value, is it stability or having a Linux distro that is compatible with all of the latest hardware and has the latest software? There are some trade-offs there for sure, while Ubuntu is known to be stable, Manjaro has been quite stable for me and many others. If the device you are using is mission-critical, you probably don’t want to use Manjaro, but if this is an everyday personal PC or Laptop, I’d say give it a shot. This isn’t to say that I would go installing Manjaro on my grandmothers computer though LOL.\n",
+  "wordCount" : "1243",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/images/ubuntu-vs-manjaro.png","datePublished": "2023-02-07T00:00:00Z",
+  "dateModified": "2023-02-07T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Adam"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "credibleDEV",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="credibleDEV (Alt + H)">credibleDEV</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="contact">
+                    <span>contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Manjaro vs Ubuntu - Rolling Better than LTS?
+    </h1>
+    <div class="post-description">
+      Comparing Ubuntu and Manjaro may seem unfair, given how long Ubuntu has been around. Both share things in common but have major differences to
+    </div>
+    <div class="post-meta"><span title='2023-02-07 00:00:00 +0000 UTC'>02-07-2023</span>&nbsp;·&nbsp;Adam
+
+</div>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on x"
+        href="https://x.com/intent/tweet/?text=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f&amp;url=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f&amp;hashtags=">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f&amp;title=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f&amp;summary=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f&amp;source=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f&title=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on whatsapp"
+        href="https://api.whatsapp.com/send?text=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f%20-%20http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on telegram"
+        href="https://telegram.me/share/url?text=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f&amp;url=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on ycombinator"
+        href="https://news.ycombinator.com/submitlink?t=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f&u=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f">
+        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+            <path
+                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+        </svg>
+    </a>
+</div>
+
+  </header> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/images/ubuntu-vs-manjaro_hu11635016881902035880.webp 360w ,http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/images/ubuntu-vs-manjaro_hu9496695244639001877.webp 480w ,http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/images/ubuntu-vs-manjaro_hu10415575618630133045.webp 720w ,http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/images/ubuntu-vs-manjaro_hu1661694000371267051.webp 1080w ,http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/images/ubuntu-vs-manjaro.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/manjaro-vs-ubuntu-rolling-better-than-lts/images/ubuntu-vs-manjaro.png" alt="" 
+            width="1280" height="720">
+        
+</figure><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#manjaro-overview" aria-label="Manjaro Overview">Manjaro Overview</a></li>
+                <li>
+                    <a href="#ubuntu-overview" aria-label="Ubuntu Overview">Ubuntu Overview</a></li>
+                <li>
+                    <a href="#manjaro-and-ubuntu-comparison" aria-label="Manjaro and Ubuntu Comparison">Manjaro and Ubuntu Comparison</a></li>
+                <li>
+                    <a href="#is-manjaro-good-for-new-users" aria-label="Is Manjaro Good for New Users?">Is Manjaro Good for New Users?</a></li>
+                <li>
+                    <a href="#installation" aria-label="Installation">Installation</a></li>
+                <li>
+                    <a href="#kernel-differences" aria-label="Kernel Differences">Kernel Differences</a></li>
+                <li>
+                    <a href="#want-old-software" aria-label="Want Old Software?">Want Old Software?</a></li>
+                <li>
+                    <a href="#package-management" aria-label="Package Management">Package Management</a></li>
+                <li>
+                    <a href="#documentation-and-support" aria-label="Documentation and Support">Documentation and Support</a></li>
+                <li>
+                    <a href="#which-distro-should-you-choose" aria-label="Which Distro Should You Choose?">Which Distro Should You Choose?</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+
+
+
+  <div class="post-content"><p>If you want to start a fight between Linux users, just ask them what Linux distro is the best, such as Ubuntu and Manjaro. Sure, you will see some commonality in the answers but you&rsquo;ll also see a lot of arguments over rolling release and LTS. So, in this post, we will compare Manjaro, a rolling release, and Ubuntu, an LTS Linux release. Both of which rank highly on DistroWatch. For this comparison, we will use Ubuntu 22.04 LTS and Manjaro 22.0 GNOME Edition. Why not Ubuntu 22.10? Because it isn&rsquo;t LTS and it&rsquo;s also not the version that a typical new Linux user would download.</p>
+<h2 id="manjaro-overview">Manjaro Overview<a hidden class="anchor" aria-hidden="true" href="#manjaro-overview">#</a></h2>
+<p><img loading="lazy" src="images/manjaro-1024x503.png" alt="Manjaro Gnome Desktop"  />
+</p>
+<p><a href="https://manjaro.org/download/" target="_blank">Download Manjaro</a></p>
+<p>Manjaro is based on Arch Linux, which is typically reserved for advanced Linux users. Manjaro has changed that by including a user-friendly installer and multiple choices for desktop environments. Stability typically isn&rsquo;t an issue based on my own 2-3 year experience with it as well as community feedback on their very active subreddit.</p>
+<p>Manjaro is a rolling release, which means that software packages are released to end users with very little delay. Unlike Arch, Manjaro holds back packages for a week or so before releasing them in their repository. If you want a package faster, you can use the AUR or compile from source yourself.</p>
+<p>Manjaro is not as scary or difficult to use or learn as some would have you believe. If you&rsquo;re scared to make the jump, you can always test it out on a Virtual Machine using VirtualBox.</p>
+<p>Checking out <a href="https://distrowatch.com/table.php?distribution=manjaro" target="_blank">DistroWatch</a>, you will find Manjaro ranked at #4 currently on the 3 and the 6 month trend for popular Linux Distros. This is a good sign of is relevance and adoption among Linux users and Distro Hoppers.</p>
+<h2 id="ubuntu-overview">Ubuntu Overview<a hidden class="anchor" aria-hidden="true" href="#ubuntu-overview">#</a></h2>
+<p><img loading="lazy" src="images/ubuntu-1024x503.png" alt="Ubuntu Gnome Desktop"  />
+</p>
+<p><a href="https://ubuntu.com/download" target="_blank">Ubuntu Download</a></p>
+<p>If you have read anything or considered Linux in the past, you have definitely heard of Ubuntu. Many would say it is one of the best choices for new Linux users. I beg to differ on this though, I believe there are many other options that are just as good if not better, but that&rsquo;s not the point of this post.</p>
+<p>Ubuntu follows a Long Term Support (LTS) release cycle where you get a new release about every 2 years. In between that time, you get security and other important updates but many packages can be quite old. Which means you are missing out on new features but gaining additional stability.</p>
+<p>Similar to how we checked out <a href="https://distrowatch.com/table.php?distribution=ubuntu" target="_blank">DistroWatch</a> for Manjaro&rsquo;s rank, we find Ubuntu ranked in the #7 spot on the 6 month trend of Linux Distros. On the 3 month trend, Ubuntu is found at number 8.</p>
+<h2 id="manjaro-and-ubuntu-comparison">Manjaro and Ubuntu Comparison<a hidden class="anchor" aria-hidden="true" href="#manjaro-and-ubuntu-comparison">#</a></h2>
+<p>This chart offers a quick glimpse into the comparison of both distros. They are similar in a few different ways but there are some major differences here. Specifically, the release cycle which we have already discussed but also application availability, latest software, kernel version and the ability to deeply customize.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Manjaro</th>
+<th>Ubuntu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parent Distro</strong></td>
+<td>Arch</td>
+<td>Debian</td>
+</tr>
+<tr>
+<td><strong>Package Manager</strong></td>
+<td><a href="https://credibledev.com/how-to-use-pacman-on-manjaro-linux/" target="_blank">pacman</a> / pamac</td>
+<td>apt / Ubuntu Software</td>
+</tr>
+<tr>
+<td><strong>Package Repository</strong></td>
+<td><a href="https://credibledev.com/how-to-enable-the-aur-on-manjaro-linux/" target="_blank">Arch User Repository</a> (AUR) &amp; Manjaro Repository</td>
+<td>Ubuntu Repository</td>
+</tr>
+<tr>
+<td><strong>Distro Agnostic Packages</strong></td>
+<td><a href="https://credibledev.com/install-flatpak-endeavouros-manjaro-arch-linux/" target="_blank">Flatpak</a>, Snap, AppImage</td>
+<td>Flatpak, Snap, AppImage</td>
+</tr>
+<tr>
+<td><strong>Rolling release</strong></td>
+<td>Yes</td>
+<td>No (LTS release every 2 years)</td>
+</tr>
+<tr>
+<td><strong>Latest Software Packages</strong></td>
+<td>Yes</td>
+<td>No (Exception for Snap and Flatpack)</td>
+</tr>
+<tr>
+<td><strong>Default Kernel Version</strong> (2/2023)</td>
+<td>6.1.9-1</td>
+<td>5.15.0-58</td>
+</tr>
+<tr>
+<td><strong>Gnome Version</strong> (2/2023)</td>
+<td>43.2</td>
+<td>42.5</td>
+</tr>
+<tr>
+<td><strong>UEFI Support</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Secure Boot Support</strong></td>
+<td>Possible</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Available Architecture</strong></td>
+<td>64-bit, ARM</td>
+<td>64-bit, ARM</td>
+</tr>
+<tr>
+<td><strong>Support for Bleeding Edge Hardware</strong></td>
+<td>High</td>
+<td>Medium/Low</td>
+</tr>
+<tr>
+<td><strong>Multi-Monitor Support</strong></td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>User Community Size</strong></td>
+<td>Medium</td>
+<td>Larger</td>
+</tr>
+<tr>
+<td><strong>Default Desktop Environment</strong></td>
+<td>KDE Plasma, Gnome, i3, Xfce (Others available)</td>
+<td>Gnome (Others available)</td>
+</tr>
+<tr>
+<td><strong>Stability</strong></td>
+<td>Stable</td>
+<td>Stable</td>
+</tr>
+<tr>
+<td><strong>Performance</strong></td>
+<td>Good</td>
+<td>Good</td>
+</tr>
+<tr>
+<td><strong>Customization</strong></td>
+<td>High</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td><strong>User-Friendliness</strong></td>
+<td>Good</td>
+<td>Excellent</td>
+</tr>
+</tbody>
+</table>
+<p>Ubuntu vs Manjaro Feature Comparison</p>
+<h2 id="is-manjaro-good-for-new-users">Is Manjaro Good for New Users?<a hidden class="anchor" aria-hidden="true" href="#is-manjaro-good-for-new-users">#</a></h2>
+<p>If you are a new Linux user, you can still run Manjaro, especially the Gnome, KDE, and XFCE versions. KDE and XFCE will seem the most familiar to a Windows user, while Gnome feels like a tablet OS in my opinion, even in the latest version 43. Personally, I prefer the XFCE and i3 versions.</p>
+<h2 id="installation">Installation<a hidden class="anchor" aria-hidden="true" href="#installation">#</a></h2>
+<p>The install process for Ubuntu and Manjaro is very similar. One you have booted into the live environment from a USB, both distros offer an excellent installer that makes installation a breeze. One issue that Manjaro can run into is when secure boot is enabled on the machine. If you are unable to boot into the live environment, this could be the cause. Ubuntu will not have this issue, which may make the installation seem easier to some users.</p>
+<h2 id="kernel-differences">Kernel Differences<a hidden class="anchor" aria-hidden="true" href="#kernel-differences">#</a></h2>
+<p>As you can see in the chart above, there is a major difference between the defaul kernals offered with these two distros. This is what makes Manjaro more compatible with newer and bleeding edge hardware. At the same time, some may say that this is part of what gives Ubuntu it&rsquo;s stability. Speaking from personal experience, I haven&rsquo;t experienced any stability issue using the newer kernel on Manjaro, this could be specific to my hardware though.</p>
+<h2 id="want-old-software">Want Old Software?<a hidden class="anchor" aria-hidden="true" href="#want-old-software">#</a></h2>
+<p>Just to give you an idea of how outdated Ubuntu&rsquo;s software repository can be, here are a few examples of application versions available in both Manjaro&rsquo;s and Ubuntu&rsquo;s default repositories. To be fair, Ubuntu will suggest the Snap versions which are typically much more recent versions of the software packages. Although, Snap packages are a whole other discussion. Please enable and use Flatpak instead. That goes for both Manjaro and Ubuntu.</p>
+<p>While you can get new and hard-to-find software packages from the AUR on Manjaro, you should <a href="https://credibledev.com/how-to-enable-the-aur-on-manjaro-linux/" target="_blank">understand the risks involved</a>. Most of the time, Flatpak&rsquo;s are a much better choice in addition to the built-in official Manjaro repository.</p>
+<table>
+<thead>
+<tr>
+<th>Software Title</th>
+<th>Ubuntu</th>
+<th>Manjaro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gimp</td>
+<td>2.10.30</td>
+<td>2.10.32</td>
+</tr>
+<tr>
+<td>OBS Studio</td>
+<td>27.2.3</td>
+<td>29.0.0</td>
+</tr>
+<tr>
+<td>LibreOffice</td>
+<td>7.3.7</td>
+<td>7.4.5 (libreoffice-fresh)</td>
+</tr>
+</tbody>
+</table>
+<p>Ubuntu vs Manjaro Software Versions</p>
+<h2 id="package-management">Package Management<a hidden class="anchor" aria-hidden="true" href="#package-management">#</a></h2>
+<p>Both APT and pacman are simple to use from the command line. Ubuntu and Manjaro offer GUI package managers as well, sadly Ubuntu Software is a slow experience. Pamac is available on Manjaro and it provides a decent experience for managing your applications.</p>
+<h2 id="documentation-and-support">Documentation and Support<a hidden class="anchor" aria-hidden="true" href="#documentation-and-support">#</a></h2>
+<p>Ubuntu has been around for a really long time and throughout that time the community and documentation have grown. You won&rsquo;t have any trouble finding information and support for Ubuntu. While Manjaro is not as mature as Ubuntu, it benefits from the Arch Wiki but also has it&rsquo;s own Wiki as well. You will also find the subreddit and forums to be quite helpful. One benefit to Manjaro is that the user base tends to be more technically inclined, so the help can be superior in that aspect. Not to say that Ubuntu users aren&rsquo;t technically inclined at all.</p>
+<h2 id="which-distro-should-you-choose">Which Distro Should You Choose?<a hidden class="anchor" aria-hidden="true" href="#which-distro-should-you-choose">#</a></h2>
+<p>That is a tough question to answer in a generic one size fits all way. The decision is based more on what you value, is it stability or having a Linux distro that is compatible with all of the latest hardware and has the latest software? There are some trade-offs there for sure, while Ubuntu is known to be stable, Manjaro has been quite stable for me and many others. If the device you are using is mission-critical, you probably don&rsquo;t want to use Manjaro, but if this is an everyday personal PC or Laptop, I&rsquo;d say give it a shot. This isn&rsquo;t to say that I would go installing Manjaro on my grandmothers computer though LOL.</p>
+
+
+  </div>
+  <aside class="">
+
+
+
+
+</aside>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on x"
+        href="https://x.com/intent/tweet/?text=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f&amp;url=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f&amp;hashtags=">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f&amp;title=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f&amp;summary=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f&amp;source=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f&title=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on whatsapp"
+        href="https://api.whatsapp.com/send?text=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f%20-%20http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on telegram"
+        href="https://telegram.me/share/url?text=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f&amp;url=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Manjaro vs Ubuntu - Rolling Better than LTS? on ycombinator"
+        href="https://news.ycombinator.com/submitlink?t=Manjaro%20vs%20Ubuntu%20-%20Rolling%20Better%20than%20LTS%3f&u=http%3a%2f%2flocalhost%3a1313%2fmanjaro-vs-ubuntu-rolling-better-than-lts%2f">
+        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+            <path
+                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

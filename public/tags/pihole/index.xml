@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pihole on credibleDEV</title>
+    <link>http://localhost:1313/tags/pihole/</link>
+    <description>Recent content in Pihole on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/pihole/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Pi-hole on a Proxmox Ubuntu Container</title>
+      <link>http://localhost:1313/install-pihole-on-a-proxmox-ubuntu-container/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-pihole-on-a-proxmox-ubuntu-container/</guid>
+      <description>This guide will walk you through each step to install Pi-hole on a Promox container and configure your network to use Pi-hole DNS.</description>
+    </item>
+    
+  </channel>
+</rss>

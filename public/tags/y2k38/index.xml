@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Y2k38 on credibleDEV</title>
+    <link>http://localhost:1313/tags/y2k38/</link>
+    <description>Recent content in Y2k38 on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/y2k38/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Next Y2K: Year 2038 Problem</title>
+      <link>http://localhost:1313/the-next-y2k-year-2038-problem/</link>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/the-next-y2k-year-2038-problem/</guid>
+      <description>The new Y2K is the year 2038 problem, also known as the Y2K38 bug. The Unix Timestamp is to blame but there is a simple fix which is already in the works.</description>
+    </item>
+    
+  </channel>
+</rss>

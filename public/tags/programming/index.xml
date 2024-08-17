@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Programming on credibleDEV</title>
+    <link>http://localhost:1313/tags/programming/</link>
+    <description>Recent content in Programming on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install GCC on Ubuntu Linux</title>
+      <link>http://localhost:1313/install-gcc-on-ubuntu-linux/</link>
+      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/install-gcc-on-ubuntu-linux/</guid>
+      <description>Installing GCC on Ubuntu is an essential task if you plan to compile C or C&#43;&#43; programs. It can be installed using the build&amp;amp;#x2d;essential package or by itself.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,15 @@
+{{ $related := first 5 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+{{ with $related }}
+  <div class="custom-sidebar">
+    <h3>Related Posts</h3>
+    <ul class="sidebar-related">
+      {{ range . }}
+        <li>
+            {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
+            {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

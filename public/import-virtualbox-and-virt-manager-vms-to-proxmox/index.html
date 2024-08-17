@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Import VirtualBox and Virt Manager VMs to Proxmox | credibleDEV</title>
+<meta name="keywords" content="proxmox">
+<meta name="description" content="This guide explains how to import existing VirtualBox and Virt Manager VM&#39;s into Proxmox without any data loss.">
+<meta name="author" content="Adam">
+<link rel="canonical" href="http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/">
+<meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0ba738fc0cf168c64f26272ec0bf6ddc89c38c7ae5143058acf23526520defcd.css" integrity="sha256-C6c4/AzxaMZPJicuwL9t3InDjHrlFDBYrPI1JlIN780=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BCWKMZ21D2');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="Import VirtualBox and Virt Manager VMs to Proxmox" />
+<meta property="og:description" content="This guide explains how to import existing VirtualBox and Virt Manager VM&#39;s into Proxmox without any data loss." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/" />
+<meta property="og:image" content="http://localhost:1313/images/import-virtualbox-and-virt-manager-vm-to-proxmox.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-10T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/images/import-virtualbox-and-virt-manager-vm-to-proxmox.png" />
+<meta name="twitter:title" content="Import VirtualBox and Virt Manager VMs to Proxmox"/>
+<meta name="twitter:description" content="This guide explains how to import existing VirtualBox and Virt Manager VM&#39;s into Proxmox without any data loss."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Import VirtualBox and Virt Manager VMs to Proxmox",
+      "item": "http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Import VirtualBox and Virt Manager VMs to Proxmox",
+  "name": "Import VirtualBox and Virt Manager VMs to Proxmox",
+  "description": "This guide explains how to import existing VirtualBox and Virt Manager VM's into Proxmox without any data loss.",
+  "keywords": [
+    "proxmox"
+  ],
+  "articleBody": "If you’re like me, prior to using Proxmox you had virtual machines running in something like VirtualBox or Virt Manager. You may have spent a lot of time configuring these VMs and now that you’re migrating to Proxmox you really don’t want to start from scratch on those existing VMs. Luckily, you can import those into Proxmox and I’ll show you how to do that here, so let’s get started.\nImport VirtualBox VM to Proxmox Step 1: Launch VirtualBox Once you have VirtualBox open, find the VM that you want to migrate to Proxmox and right-click on it. In the menu, choose “Export to OCI”\nOn the following screen, you can keep the defaults. Just make sure the “Format” is set to “Open Virtualization Format”. Take note of the file location, as we will be copying this file over to our Proxmox server. Go ahead and click “Next” and then “Finish”.\nThe export of the VM should now begin and will take a few minutes to complete.\nStep 2: Upload VirtualBox OVA to Proxmox Once the export is finished, you should find the OVA file in the location that you noted above. Now you need to upload this OVA file to your Proxmox server. You can do this using whatever method you want, I typically use SFTP to upload the file.\nStep 3: Prep the OVA File in Proxmox You will need to either SSH to your Proxmox server or use the built-in console/shell for this part.\nNavigate in the shell session to where you uploaded the OVA file and run the following command to extract the OVA. This will give us a vmdk file that represents the hard disk of the VirtualBox VM we are trying to import.\ntar -xvf yourfile.ova After extracting the OVA file, you will have multiple files. The one that we want is the vmdk file which we will use to create the VM in Proxmox.\nStep 4: Create a Base Virtual Machine Now that we have the vmdk file, we need to create a basic VM in Proxmox. Configure the Network, CPU, and RAM however you wish. Once you have created the new VM, we will detach and remove the hard disk that was created with the VM. We will be replacing that hard disk with the one from VirtualBox.\nTo remove the current hard disk of the new VM, go into the hardware for the VM and highlight the Hard Disk. Then in the top menu select detach. After it is detached, it will appear as “Unused”, highlight it again and choose remove.\nStep 5: Import the VMDK to the New Proxmox VM Before we import the disk, take note of the ID for your new VM in Proxmox and the storage you want the hard disk to live on, you will need this for the import. In my case, the VM ID is 104 and the storage I want is vm-storage1. Your storage and ID will be different.\nBack in your shell prompt, make sure you are still in the folder where you extracted the vmdk file. Then run the following command. Replace the vmid, filename.vmdk, and storage_name with your values.\nqm importdisk vmid filename.vmdk storage_name -format qcow2 You should see the import process begin.\nStep 6: Enable the Disk in Proxmox If you head back to the VM in Proxmox, you should now see your disk listed as “Unused”. To enable the disk, highlight it and click edit. Customize any options you may need such as “Discard” and “SSD Emulation” (Only if the underlying disk is an SSD), then click on Add to make the disk active.\nOne last thing we need to do is change the boot order so that our VM boots to this new disk. From the “Options” menu of the VM, go into boot order and check the box next to your new hard disk and move it up in the order. In my example, I moved it just below the CD-ROM drive since I don’t have an ISO attached to it.\nStep 7: Boot Your VM Now you are ready to boot up your VM for the first time on Proxmox. Once you have confirmed it is working, you can delete the OVA you uploaded and extracted files as they are no longer needed.\nImport Virt Manager VM to Proxmox Step 1: Launch Virt Manager To get started with importing a Virt Manager VM to Proxmox, you need to find out where the VMs disk is currently stored. Go ahead and open up Virt Manager, make sure the VM is powered off, then right-click on the VM you want to use and choose open.\nNext, click the info icon to open the hardware details. Find the disk on the left side and view the file location on the right.\nStep 2: (Optional) Disable Preallocation of the Disk This step is optional but by default, Virt Manager creates full disk-size images. To save some time on uploading the VM disk to Proxmox, we can change the current image to have preallocation turned off, which will reduce the size of the disk image file.\nTo start we will copy the VM disk in case something goes wrong. I’m just going to copy it to my home folder. Be sure to replace the image file location below to match the location of your image file.\nNote: You may or may not need to use “sudo” for this command, depending on where you image file is located.\nsudo cp /path/to/image/file.qcow2 ~/ Now we will disable the pre-allocation feature to shrink the disk image. In the code below, you will need to update current_file and new_file with your values.\nNote: Depending on who owns the image file on the Linux filesystem, you can either change the ownership of the file with “chmod” or run the command with “sudo”.\nsudo qemu-img convert -f qcow2 -O qcow2 -o preallocation=off current_file.qcow2 new_file.qcow2 You should now have 2 qcow2 files, the new one should be much smaller than the original depending on how much disk space was actually used in the original image.\nStep 3: Upload QCOW2 file to Proxmox Now we need to upload our qcow2 file to Proxmox. You can do this however you want but I will be uploading it via SFTP.\nStep 4: Create a Base VM Once you have uploaded the qcow2 file, we need to create a basic VM in Proxmox. The options you use for VM creation can be whatever you want, so configure the CPU, RAM, and Network to your requirements or needs. The hard disk created during this process doesn’t matter since we will be deleting it.\nAfter your VM is created, the hard disk should be removed. To remove the current hard disk of the new VM, go into the hardware for the VM and highlight the Hard Disk. Then in the top menu select detach. After it is detached, it will show up as “Unused”, highlight it again and choose remove.\nStep 5: Import QCOW2 Disk to the New VM Before we import the disk, take note of the ID for your new VM in Proxmox and the storage you want the hard disk to live on, you will need this for the import. In my case, the VM ID is 104 and the storage I want is vm-storage1. Your storage and ID will be different.\nBack in your shell prompt, make sure you are still in the folder where you uploaded the qcow2 file. Then run the following command. Replace the vmid, filename.qcow2, and storage_name with your values.\nqm importdisk vmid filename.qcow2 storage_name You should see the import process begin.\nStep 6: Enable the Disk in Proxmox If you head back to the VM in Proxmox, you should now see your disk listed as “Unused”. To enable the disk, highlight it and click edit. Customize any options you may need such as “Discard” and “SSD Emulation” (Only if the underlying disk is an SSD), then click on Add to make the disk active.\nOne last thing we need to do is change the boot order so that our VM boots to this new disk. From the “Options” menu of the VM, go into boot order and check the box next to your new hard disk and move it up in the order. In my example, I moved it just below the CD-ROM drive since I don’t have an ISO attached to it.\nStep 7: Boot Your VM Now you are ready to boot up your VM for the first time on Proxmox. Once you have confirmed it is working, you can delete the qcow2 file you uploaded since it is no longer needed.\nConclusion I hope this guide helps you out on your journey of using Proxmox and virtual machines. If you have any questions let me know below!\n",
+  "wordCount" : "1476",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/images/import-virtualbox-and-virt-manager-vm-to-proxmox.png","datePublished": "2023-03-10T00:00:00Z",
+  "dateModified": "2023-03-10T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Adam"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "credibleDEV",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="credibleDEV (Alt + H)">credibleDEV</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="contact">
+                    <span>contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Import VirtualBox and Virt Manager VMs to Proxmox
+    </h1>
+    <div class="post-description">
+      This guide explains how to import existing VirtualBox and Virt Manager VM&#39;s into Proxmox without any data loss.
+    </div>
+    <div class="post-meta"><span title='2023-03-10 00:00:00 +0000 UTC'>03-10-2023</span>&nbsp;·&nbsp;Adam
+
+</div>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on x"
+        href="https://x.com/intent/tweet/?text=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox&amp;url=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f&amp;hashtags=proxmox">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f&amp;title=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox&amp;summary=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox&amp;source=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f&title=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on whatsapp"
+        href="https://api.whatsapp.com/send?text=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox%20-%20http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on telegram"
+        href="https://telegram.me/share/url?text=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox&amp;url=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on ycombinator"
+        href="https://news.ycombinator.com/submitlink?t=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox&u=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f">
+        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+            <path
+                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+        </svg>
+    </a>
+</div>
+
+  </header> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu15331630545158004616.webp 360w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu2042822305817065560.webp 480w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu11545892273226520829.webp 720w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu3927995123378173047.webp 1080w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox.png" alt="" 
+            width="1280" height="720">
+        
+</figure><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#import-virtualbox-vm-to-proxmox" aria-label="Import VirtualBox VM to Proxmox">Import VirtualBox VM to Proxmox</a><ul>
+                        
+                <li>
+                    <a href="#step-1-launch-virtualbox" aria-label="Step 1: Launch VirtualBox">Step 1: Launch VirtualBox</a></li>
+                <li>
+                    <a href="#step-2-upload-virtualbox-ova-to-proxmox" aria-label="Step 2: Upload VirtualBox OVA to Proxmox">Step 2: Upload VirtualBox OVA to Proxmox</a></li>
+                <li>
+                    <a href="#step-3-prep-the-ova-file-in-proxmox" aria-label="Step 3: Prep the OVA File in Proxmox">Step 3: Prep the OVA File in Proxmox</a></li>
+                <li>
+                    <a href="#step-4-create-a-base-virtual-machine" aria-label="Step 4: Create a Base Virtual Machine">Step 4: Create a Base Virtual Machine</a></li>
+                <li>
+                    <a href="#step-5-import-the-vmdk-to-the-new-proxmox-vm" aria-label="Step 5: Import the VMDK to the New Proxmox VM">Step 5: Import the VMDK to the New Proxmox VM</a></li>
+                <li>
+                    <a href="#step-6-enable-the-disk-in-proxmox" aria-label="Step 6: Enable the Disk in Proxmox">Step 6: Enable the Disk in Proxmox</a></li>
+                <li>
+                    <a href="#step-7-boot-your-vm" aria-label="Step 7: Boot Your VM">Step 7: Boot Your VM</a></li></ul>
+                </li>
+                <li>
+                    <a href="#import-virt-manager-vm-to-proxmox" aria-label="Import Virt Manager VM to Proxmox">Import Virt Manager VM to Proxmox</a><ul>
+                        
+                <li>
+                    <a href="#step-1-launch-virt-manager" aria-label="Step 1: Launch Virt Manager">Step 1: Launch Virt Manager</a></li>
+                <li>
+                    <a href="#step-2-optional-disable-preallocation-of-the-disk" aria-label="Step 2: (Optional) Disable Preallocation of the Disk">Step 2: (Optional) Disable Preallocation of the Disk</a></li>
+                <li>
+                    <a href="#step-3-upload-qcow2-file-to-proxmox" aria-label="Step 3: Upload QCOW2 file to Proxmox">Step 3: Upload QCOW2 file to Proxmox</a></li>
+                <li>
+                    <a href="#step-4-create-a-base-vm" aria-label="Step 4: Create a Base VM">Step 4: Create a Base VM</a></li>
+                <li>
+                    <a href="#step-5-import-qcow2-disk-to-the-new-vm" aria-label="Step 5: Import QCOW2 Disk to the New VM">Step 5: Import QCOW2 Disk to the New VM</a></li>
+                <li>
+                    <a href="#step-6-enable-the-disk-in-proxmox-1" aria-label="Step 6: Enable the Disk in Proxmox">Step 6: Enable the Disk in Proxmox</a></li>
+                <li>
+                    <a href="#step-7-boot-your-vm-1" aria-label="Step 7: Boot Your VM">Step 7: Boot Your VM</a></li></ul>
+                </li>
+                <li>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+
+  <div class="custom-sidebar">
+    <h3>Related Posts</h3>
+    <ul class="sidebar-related">
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu10990280822244925205.webp 360w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu4432680866585838318.webp 480w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu5324801602140743159.webp 720w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu6289426077313773089.webp 1080w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm.png 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm.png" alt="" 
+            width="1200" height="628">
+</figure>
+          <a href="/how-to-install-synology-nas-on-proxmox/">How to Install Synology NAS on Proxmox</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu13160665751646198110.webp 360w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu8095055878673174513.webp 480w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu17278560079837228734.webp 720w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu8803855192971083524.webp 1080w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox.png" alt="" 
+            width="1280" height="720">
+</figure>
+          <a href="/install-docker-and-portainer-on-proxmox/">Install Docker and Portainer on Proxmox</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu3283503807053189108.webp 360w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu14814429370186714055.webp 480w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu3994968028305328188.webp 720w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu16824867807507891628.webp 1080w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm.png" alt="" 
+            width="1280" height="720">
+</figure>
+          <a href="/setup-xrdp-on-a-fedora-vm-for-remote-desktop/">Setup XRDP on a Fedora VM for Remote Desktop</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu7161945035182228331.webp 360w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu18102863518170625027.webp 480w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu12177341003777916517.webp 720w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu3951671007142194125.webp 1080w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox.png" alt="" 
+            width="1280" height="720">
+</figure>
+          <a href="/set-up-windows-domain-controller-on-proxmox/">Quickly Set Up a Windows Domain Controller on Proxmox - 2022 Guide</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+  <div class="post-content"><p>If you&rsquo;re like me, prior to using Proxmox you had virtual machines running in something like VirtualBox or Virt Manager. You may have spent a lot of time configuring these VMs and now that you&rsquo;re migrating to Proxmox you really don&rsquo;t want to start from scratch on those existing VMs. Luckily, you can import those into Proxmox and I&rsquo;ll show you how to do that here, so let&rsquo;s get started.</p>
+<h2 id="import-virtualbox-vm-to-proxmox">Import VirtualBox VM to Proxmox<a hidden class="anchor" aria-hidden="true" href="#import-virtualbox-vm-to-proxmox">#</a></h2>
+<h3 id="step-1-launch-virtualbox">Step 1: Launch VirtualBox<a hidden class="anchor" aria-hidden="true" href="#step-1-launch-virtualbox">#</a></h3>
+<p>Once you have VirtualBox open, find the VM that you want to migrate to Proxmox and right-click on it. In the menu, choose &ldquo;Export to OCI&rdquo;</p>
+<p><img loading="lazy" src="images/image-19.png" alt="export virtualbox vm to proxmox"  />
+</p>
+<p>On the following screen, you can keep the defaults. Just make sure the &ldquo;Format&rdquo; is set to &ldquo;Open Virtualization Format&rdquo;. Take note of the file location, as we will be copying this file over to our Proxmox server. Go ahead and click &ldquo;Next&rdquo; and then &ldquo;Finish&rdquo;.</p>
+<p><img loading="lazy" src="images/image-20.png" alt="exporting vm in virtualbox"  />
+</p>
+<p>The export of the VM should now begin and will take a few minutes to complete.</p>
+<p><img loading="lazy" src="images/image-21.png" alt="virtualbox vm export progress"  />
+</p>
+<h3 id="step-2-upload-virtualbox-ova-to-proxmox">Step 2: Upload VirtualBox OVA to Proxmox<a hidden class="anchor" aria-hidden="true" href="#step-2-upload-virtualbox-ova-to-proxmox">#</a></h3>
+<p>Once the export is finished, you should find the OVA file in the location that you noted above. Now you need to upload this OVA file to your Proxmox server. You can do this using whatever method you want, I typically use SFTP to upload the file.</p>
+<h3 id="step-3-prep-the-ova-file-in-proxmox">Step 3: Prep the OVA File in Proxmox<a hidden class="anchor" aria-hidden="true" href="#step-3-prep-the-ova-file-in-proxmox">#</a></h3>
+<p>You will need to either SSH to your Proxmox server or use the built-in console/shell for this part.</p>
+<p>Navigate in the shell session to where you uploaded the OVA file and run the following command to extract the OVA. This will give us a vmdk file that represents the hard disk of the VirtualBox VM we are trying to import.</p>
+<pre tabindex="0"><code>tar -xvf yourfile.ova
+</code></pre><p>After extracting the OVA file, you will have multiple files. The one that we want is the vmdk file which we will use to create the VM in Proxmox.</p>
+<p><img loading="lazy" src="images/image-22.png" alt="extracted ova file from virtualbox"  />
+</p>
+<h3 id="step-4-create-a-base-virtual-machine">Step 4: Create a Base Virtual Machine<a hidden class="anchor" aria-hidden="true" href="#step-4-create-a-base-virtual-machine">#</a></h3>
+<p>Now that we have the vmdk file, we need to create a basic VM in Proxmox. Configure the Network, CPU, and RAM however you wish. Once you have created the new VM, we will detach and remove the hard disk that was created with the VM. We will be replacing that hard disk with the one from VirtualBox.</p>
+<p>To remove the current hard disk of the new VM, go into the hardware for the VM and highlight the Hard Disk. Then in the top menu select detach. After it is detached, it will appear as &ldquo;Unused&rdquo;, highlight it again and choose remove.</p>
+<p><img loading="lazy" src="images/image-23.png" alt="detach hard disk in proxmox"  />
+</p>
+<p><img loading="lazy" src="images/image-24.png" alt="remove hard disk in proxmox"  />
+</p>
+<h3 id="step-5-import-the-vmdk-to-the-new-proxmox-vm">Step 5: Import the VMDK to the New Proxmox VM<a hidden class="anchor" aria-hidden="true" href="#step-5-import-the-vmdk-to-the-new-proxmox-vm">#</a></h3>
+<p>Before we import the disk, take note of the ID for your new VM in Proxmox and the storage you want the hard disk to live on, you will need this for the import. In my case, the VM ID is 104 and the storage I want is vm-storage1. Your storage and ID will be different.</p>
+<p><img loading="lazy" src="images/image-25.png" alt="VM ID and Storage name in Proxmox"  />
+</p>
+<p>Back in your shell prompt, make sure you are still in the folder where you extracted the vmdk file. Then run the following command. Replace the vmid, filename.vmdk, and storage_name with your values.</p>
+<pre tabindex="0"><code>qm importdisk vmid filename.vmdk storage_name -format qcow2
+</code></pre><p>You should see the import process begin.</p>
+<p><img loading="lazy" src="images/image-26.png" alt="import vmdk disk to proxmox vm"  />
+</p>
+<h3 id="step-6-enable-the-disk-in-proxmox">Step 6: Enable the Disk in Proxmox<a hidden class="anchor" aria-hidden="true" href="#step-6-enable-the-disk-in-proxmox">#</a></h3>
+<p>If you head back to the VM in Proxmox, you should now see your disk listed as &ldquo;Unused&rdquo;. To enable the disk, highlight it and click edit. Customize any options you may need such as &ldquo;Discard&rdquo; and &ldquo;SSD Emulation&rdquo; (Only if the underlying disk is an SSD), then click on Add to make the disk active.</p>
+<p><img loading="lazy" src="images/image-27.png" alt="activating an imported disk in proxmox"  />
+</p>
+<p><img loading="lazy" src="images/image-28.png" alt="disk options in proxmox"  />
+</p>
+<p>One last thing we need to do is change the boot order so that our VM boots to this new disk. From the &ldquo;Options&rdquo; menu of the VM, go into boot order and check the box next to your new hard disk and move it up in the order. In my example, I moved it just below the CD-ROM drive since I don&rsquo;t have an ISO attached to it.</p>
+<p><img loading="lazy" src="images/image-29.png" alt="Proxmox change VM boot order"  />
+</p>
+<h3 id="step-7-boot-your-vm">Step 7: Boot Your VM<a hidden class="anchor" aria-hidden="true" href="#step-7-boot-your-vm">#</a></h3>
+<p>Now you are ready to boot up your VM for the first time on Proxmox. Once you have confirmed it is working, you can delete the OVA you uploaded and extracted files as they are no longer needed.</p>
+<h2 id="import-virt-manager-vm-to-proxmox">Import Virt Manager VM to Proxmox<a hidden class="anchor" aria-hidden="true" href="#import-virt-manager-vm-to-proxmox">#</a></h2>
+<h3 id="step-1-launch-virt-manager">Step 1: Launch Virt Manager<a hidden class="anchor" aria-hidden="true" href="#step-1-launch-virt-manager">#</a></h3>
+<p>To get started with importing a Virt Manager VM to Proxmox, you need to find out where the VMs disk is currently stored. Go ahead and open up Virt Manager, make sure the VM is powered off, then right-click on the VM you want to use and choose open.</p>
+<p>Next, click the info icon to open the hardware details. Find the disk on the left side and view the file location on the right.</p>
+<p><img loading="lazy" src="images/image-30.png" alt="vm disk location virt manager linux"  />
+</p>
+<h3 id="step-2-optional-disable-preallocation-of-the-disk">Step 2: (Optional) Disable Preallocation of the Disk<a hidden class="anchor" aria-hidden="true" href="#step-2-optional-disable-preallocation-of-the-disk">#</a></h3>
+<p>This step is optional but by default, Virt Manager creates full disk-size images. To save some time on uploading the VM disk to Proxmox, we can change the current image to have preallocation turned off, which will reduce the size of the disk image file.</p>
+<p>To start we will copy the VM disk in case something goes wrong. I&rsquo;m just going to copy it to my home folder. Be sure to replace the image file location below to match the location of your image file.</p>
+<p>Note: You may or may not need to use &ldquo;sudo&rdquo; for this command, depending on where you image file is located.</p>
+<pre tabindex="0"><code>sudo cp /path/to/image/file.qcow2 ~/
+</code></pre><p>Now we will disable the pre-allocation feature to shrink the disk image. In the code below, you will need to update current_file and new_file with your values.</p>
+<p>Note: Depending on who owns the image file on the Linux filesystem, you can either change the ownership of the file with &ldquo;chmod&rdquo; or run the command with &ldquo;sudo&rdquo;.</p>
+<pre tabindex="0"><code>sudo qemu-img convert -f qcow2 -O qcow2 -o preallocation=off current_file.qcow2 new_file.qcow2
+</code></pre><p>You should now have 2 qcow2 files, the new one should be much smaller than the original depending on how much disk space was actually used in the original image.</p>
+<h3 id="step-3-upload-qcow2-file-to-proxmox">Step 3: Upload QCOW2 file to Proxmox<a hidden class="anchor" aria-hidden="true" href="#step-3-upload-qcow2-file-to-proxmox">#</a></h3>
+<p>Now we need to upload our qcow2 file to Proxmox. You can do this however you want but I will be uploading it via SFTP.</p>
+<h3 id="step-4-create-a-base-vm">Step 4: Create a Base VM<a hidden class="anchor" aria-hidden="true" href="#step-4-create-a-base-vm">#</a></h3>
+<p>Once you have uploaded the qcow2 file, we need to create a basic VM in Proxmox. The options you use for VM creation can be whatever you want, so configure the CPU, RAM, and Network to your requirements or needs. The hard disk created during this process doesn&rsquo;t matter since we will be deleting it.</p>
+<p>After your VM is created, the hard disk should be removed. To remove the current hard disk of the new VM, go into the hardware for the VM and highlight the Hard Disk. Then in the top menu select detach. After it is detached, it will show up as &ldquo;Unused&rdquo;, highlight it again and choose remove.</p>
+<p><img loading="lazy" src="images/image-23.png" alt="detach hard disk of vm"  />
+</p>
+<p><img loading="lazy" src="images/image-24.png" alt="remove hard disk from vm"  />
+</p>
+<h3 id="step-5-import-qcow2-disk-to-the-new-vm">Step 5: Import QCOW2 Disk to the New VM<a hidden class="anchor" aria-hidden="true" href="#step-5-import-qcow2-disk-to-the-new-vm">#</a></h3>
+<p>Before we import the disk, take note of the ID for your new VM in Proxmox and the storage you want the hard disk to live on, you will need this for the import. In my case, the VM ID is 104 and the storage I want is vm-storage1. Your storage and ID will be different.</p>
+<p><img loading="lazy" src="images/image-25.png" alt="Proxmox VM ID and Storage name"  />
+</p>
+<p>Back in your shell prompt, make sure you are still in the folder where you uploaded the qcow2 file. Then run the following command. Replace the vmid, filename.qcow2, and storage_name with your values.</p>
+<pre tabindex="0"><code>qm importdisk vmid filename.qcow2 storage_name
+</code></pre><p>You should see the import process begin.</p>
+<p><img loading="lazy" src="images/image-31.png" alt="qcow2 import to proxmox vm"  />
+</p>
+<h3 id="step-6-enable-the-disk-in-proxmox-1">Step 6: Enable the Disk in Proxmox<a hidden class="anchor" aria-hidden="true" href="#step-6-enable-the-disk-in-proxmox-1">#</a></h3>
+<p>If you head back to the VM in Proxmox, you should now see your disk listed as &ldquo;Unused&rdquo;. To enable the disk, highlight it and click edit. Customize any options you may need such as &ldquo;Discard&rdquo; and &ldquo;SSD Emulation&rdquo; (Only if the underlying disk is an SSD), then click on Add to make the disk active.</p>
+<p><img loading="lazy" src="images/image-27.png" alt="unused imported disk in proxmox"  />
+</p>
+<p><img loading="lazy" src="images/image-28.png" alt="add unused disk"  />
+</p>
+<p>One last thing we need to do is change the boot order so that our VM boots to this new disk. From the &ldquo;Options&rdquo; menu of the VM, go into boot order and check the box next to your new hard disk and move it up in the order. In my example, I moved it just below the CD-ROM drive since I don&rsquo;t have an ISO attached to it.</p>
+<p><img loading="lazy" src="images/image-29.png" alt="change boot order in proxmox"  />
+</p>
+<h3 id="step-7-boot-your-vm-1">Step 7: Boot Your VM<a hidden class="anchor" aria-hidden="true" href="#step-7-boot-your-vm-1">#</a></h3>
+<p>Now you are ready to boot up your VM for the first time on Proxmox. Once you have confirmed it is working, you can delete the qcow2 file you uploaded since it is no longer needed.</p>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>I hope this guide helps you out on your journey of using Proxmox and virtual machines. If you have any questions let me know below!</p>
+
+
+  </div>
+  <aside class="">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related Posts</p>
+    <ul class="">
+	   
+	     <li  class="mb2">
+          <a href="/install-docker-and-portainer-on-proxmox/">Install Docker and Portainer on Proxmox</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/setup-xrdp-on-a-fedora-vm-for-remote-desktop/">Setup XRDP on a Fedora VM for Remote Desktop</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/set-up-windows-domain-controller-on-proxmox/">Quickly Set Up a Windows Domain Controller on Proxmox - 2022 Guide</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/proxmox/">Proxmox</a></li>
+    </ul>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on x"
+        href="https://x.com/intent/tweet/?text=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox&amp;url=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f&amp;hashtags=proxmox">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f&amp;title=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox&amp;summary=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox&amp;source=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f&title=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on whatsapp"
+        href="https://api.whatsapp.com/send?text=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox%20-%20http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on telegram"
+        href="https://telegram.me/share/url?text=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox&amp;url=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Import VirtualBox and Virt Manager VMs to Proxmox on ycombinator"
+        href="https://news.ycombinator.com/submitlink?t=Import%20VirtualBox%20and%20Virt%20Manager%20VMs%20to%20Proxmox&u=http%3a%2f%2flocalhost%3a1313%2fimport-virtualbox-and-virt-manager-vms-to-proxmox%2f">
+        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+            <path
+                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

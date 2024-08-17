@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Career on credibleDEV</title>
+    <link>http://localhost:1313/categories/career/</link>
+    <description>Recent content in Career on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/career/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 Steps To Succeed In Your First IT Job</title>
+      <link>http://localhost:1313/5-steps-to-succeed-in-your-first-it-job/</link>
+      <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/5-steps-to-succeed-in-your-first-it-job/</guid>
+      <description>This article provides you with strategies and tips on how to succeed and excel in your first IT job that you can start using immediately.</description>
+    </item>
+    
+  </channel>
+</rss>

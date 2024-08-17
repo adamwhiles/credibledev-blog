@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Intune on credibleDEV</title>
+    <link>http://localhost:1313/categories/intune/</link>
+    <description>Recent content in Intune on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/intune/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Find Apps and Policies Assigned to Azure AD Groups</title>
+      <link>http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/</link>
+      <pubDate>Fri, 06 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/</guid>
+      <description>This guide explains how you can use the ADAM Tool to find out what apps, profiles, policies, remediations etc. are assigned to an Azure AD group.</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Azure Intune Groups Based on Installed Software</title>
+      <link>http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/</link>
+      <pubDate>Mon, 20 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/</guid>
+      <description>This guide will show you how to use PowerShell with Azure and Intune to dynamically add devices to Azure Groups based on installed software.</description>
+    </item>
+    
+    <item>
+      <title>Managed Desktop Icons and Shortcuts in Intune</title>
+      <link>http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/</link>
+      <pubDate>Sat, 21 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/</guid>
+      <description>Managing desktop icons and shortcuts in Intune isn&amp;#39;t straightforward but there are PowerShell scripts to help make this easy.</description>
+    </item>
+    
+    <item>
+      <title>Intune Hardware Hash Import During Task Sequence</title>
+      <link>http://localhost:1313/intune-hardware-hash-import-during-task-sequence/</link>
+      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/intune-hardware-hash-import-during-task-sequence/</guid>
+      <description>Easily collect and import the Intune device hardware hash using an SCCM task sequence while deploying Windows 10.</description>
+    </item>
+    
+    <item>
+      <title>Deploy HKCU Registry Keys Using Intune</title>
+      <link>http://localhost:1313/deploy-hkcu-registry-keys-using-intune/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/deploy-hkcu-registry-keys-using-intune/</guid>
+      <description>Deploying registry keys to the HKCU hive in Intune isn&amp;#39;t straightforward. This guide will show you how to deploy keys to the current user hive.</description>
+    </item>
+    
+    <item>
+      <title>How to Deploy a Scheduled Task in Intune</title>
+      <link>http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/</link>
+      <pubDate>Fri, 13 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/</guid>
+      <description>Deploying a scheduled task in Intune isn&amp;#39;t difficult. This post will walk you though all of steps needed to deploy your scheduled task in Intune.</description>
+    </item>
+    
+    <item>
+      <title>Deploy PowerShell Scripts in Intune - 3 Easy Methods</title>
+      <link>http://localhost:1313/powershell-scripts-in-intune/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/powershell-scripts-in-intune/</guid>
+      <description>3 easy methods to deploy PowerShell scripts in Intune. Single scripts, proactive remediations and Win32 app methods.</description>
+    </item>
+    
+  </channel>
+</rss>

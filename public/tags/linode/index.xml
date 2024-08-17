@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linode on credibleDEV</title>
+    <link>http://localhost:1313/tags/linode/</link>
+    <description>Recent content in Linode on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/linode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Best Web Hosting for WordPress 2023</title>
+      <link>http://localhost:1313/best-web-hosting-for-wordpress/</link>
+      <pubDate>Wed, 25 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/best-web-hosting-for-wordpress/</guid>
+      <description>Finding the best web host for a WordPress website can be challenging. I&amp;#39;ve used many hosts and in this guide, I&amp;#39;ll use my experience to help you find the best.</description>
+    </item>
+    
+    <item>
+      <title>Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide</title>
+      <link>http://localhost:1313/create-a-linode-linux-vps-part-3/</link>
+      <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/create-a-linode-linux-vps-part-3/</guid>
+      <description>Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.
+In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks.</description>
+    </item>
+    
+    <item>
+      <title>Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide</title>
+      <link>http://localhost:1313/create-a-linode-linux-vps-part-2/</link>
+      <pubDate>Fri, 16 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/create-a-linode-linux-vps-part-2/</guid>
+      <description>In Part 2 of Creating a Linode Linux VPS, we setup add a new user, setup SSH keys and configure the Ubuntu and Linode firewalls for security.</description>
+    </item>
+    
+    <item>
+      <title>Create a Linode Linux VPS - 2022 Quickstart Guide</title>
+      <link>http://localhost:1313/create-a-linode-linux-vps/</link>
+      <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/create-a-linode-linux-vps/</guid>
+      <description>This guide will take you through the steps of creating a Linode Linux VPS for you to run a website, apps, game servers etc.</description>
+    </item>
+    
+  </channel>
+</rss>

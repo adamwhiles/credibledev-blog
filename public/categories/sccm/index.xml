@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Sccm on credibleDEV</title>
+    <link>http://localhost:1313/categories/sccm/</link>
+    <description>Recent content in Sccm on credibleDEV</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/sccm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intune Hardware Hash Import During Task Sequence</title>
+      <link>http://localhost:1313/intune-hardware-hash-import-during-task-sequence/</link>
+      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/intune-hardware-hash-import-during-task-sequence/</guid>
+      <description>Easily collect and import the Intune device hardware hash using an SCCM task sequence while deploying Windows 10.</description>
+    </item>
+    
+    <item>
+      <title>PowerShell Force Compliance Baseline Evaluation</title>
+      <link>http://localhost:1313/powershell-force-compliance-baseline-evaluation/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/powershell-force-compliance-baseline-evaluation/</guid>
+      <description>Forcing a SCCM compliance rule is easy to do but you may not know how. This guide explains how PowerShell can be used to force this.</description>
+    </item>
+    
+  </channel>
+</rss>

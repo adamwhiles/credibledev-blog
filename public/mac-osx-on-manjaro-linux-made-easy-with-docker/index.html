@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Mac OSX on Manjaro Linux Made Easy With Docker | credibleDEV</title>
+<meta name="keywords" content="docker, linux, macos">
+<meta name="description" content="You can run macOS on Manjaro and other Linux distributions easily with Docker for testing and development work.">
+<meta name="author" content="Adam">
+<link rel="canonical" href="http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/">
+<meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0ba738fc0cf168c64f26272ec0bf6ddc89c38c7ae5143058acf23526520defcd.css" integrity="sha256-C6c4/AzxaMZPJicuwL9t3InDjHrlFDBYrPI1JlIN780=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BCWKMZ21D2');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="Mac OSX on Manjaro Linux Made Easy With Docker" />
+<meta property="og:description" content="You can run macOS on Manjaro and other Linux distributions easily with Docker for testing and development work." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/" />
+<meta property="og:image" content="http://localhost:1313/images/macos-on-linux-docker.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-02-21T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/images/macos-on-linux-docker.png" />
+<meta name="twitter:title" content="Mac OSX on Manjaro Linux Made Easy With Docker"/>
+<meta name="twitter:description" content="You can run macOS on Manjaro and other Linux distributions easily with Docker for testing and development work."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Mac OSX on Manjaro Linux Made Easy With Docker",
+      "item": "http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mac OSX on Manjaro Linux Made Easy With Docker",
+  "name": "Mac OSX on Manjaro Linux Made Easy With Docker",
+  "description": "You can run macOS on Manjaro and other Linux distributions easily with Docker for testing and development work.",
+  "keywords": [
+    "docker", "linux", "macos"
+  ],
+  "articleBody": "There are times, especially if you are a developer when you really need to create or test something on macOS. Luckily, there is a very easy way to do this on Linux, using Docker. There are many methods out there, such as running macOS in Virtual Box or even dual booting if you have the right hardware combination and a lot of time to fiddle with it.\nRunning macOS in Docker on Linux is really easy thanks to an open-source project from sickcodes called Docker-OSX. This will actually run on most distributions of Linux, assuming you can install Docker and the other dependencies. I will be covering the steps for Manjaro specifically since this is what I run. This exact process should also work on Arch and EndeavourOS flavors of Linux as well.\nNote: Before proceeding, make sure you have Virtualization turned on in your BIOS.\nStep 1: Install Dependencies Before we move on, we need to make sure our machine has all of the necessary software to make running macOS on Linux a success.\nsudo pacman -S qemu libvirt dnsmasq virt-manager bridge-utils flex bison iptables-nft edk2-ovmf Next, we should enable libvirt and load the kvm module.\nsudo systemctl enable --now libvirt sudo systemctl enable --now virtlogd echo 1 | sudo tee /sys/module/kvm/parameters/ignore_msrs sudo modprobe kvm We also need to install and enable Docker.\nsudo pacman -S docker sudo systemctl enable docker sudo systemcrl start docker We also should add our user account to a few groups for docker, libvirt, and kvm.\nsudo usermod -aG docker,libvirt,kvm your_username You may need to restart your machine or log out and back in before proceeding if you run into issues trying to start Docker.\nStep 2: Choose Which macOS Version to Run on Linux Sickcodes offers many different Docker containers, each containing a different OSX version. In the examples below, I have configured 8GB of ram and 4 CPU cores, you can update this for your own needs or remove the two additional “-e” options to take the defaults.\nCatalina docker run -it \\ --device /dev/kvm \\ -e RAM=8 \\ -e CORES=4 \\ -p 50922:10022 \\ -v /tmp/.X11-unix:/tmp/.X11-unix \\ -e \"DISPLAY=${DISPLAY:-:0.0}\" \\ sickcodes/docker-osx:latest Big Sur docker run -it \\ --device /dev/kvm \\ -e RAM=8 \\ -e CORES=4 \\ -p 50922:10022 \\ -v /tmp/.X11-unix:/tmp/.X11-unix \\ -e \"DISPLAY=${DISPLAY:-:0.0}\" \\ sickcodes/docker-osx:big-sur Monterey docker run -it \\ --device /dev/kvm \\ -e RAM=8 \\ -e CORES=4 \\ -p 50922:10022 \\ -v /tmp/.X11-unix:/tmp/.X11-unix \\ -e \"DISPLAY=${DISPLAY:-:0.0}\" \\ -e GENERATE_UNIQUE=true \\ -e MASTER_PLIST_URL='https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist' \\ sickcodes/docker-osx:monterey Ventura docker run -it \\ --device /dev/kvm \\ -e RAM=8 \\ -e CORES=4 \\ -p 50922:10022 \\ -v /tmp/.X11-unix:/tmp/.X11-unix \\ -e \"DISPLAY=${DISPLAY:-:0.0}\" \\ -e GENERATE_UNIQUE=true \\ -e MASTER_PLIST_URL='https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist' \\ sickcodes/docker-osx:ventura Step 3: Run the Docker Command Once you pick which version of macOS you want to run, copy the code into your terminal and run it. Depending on your system, this may take a while. It will begin by downloading the required image that you chose, then it will build and launch the Docker container.\nI ran into an error the first time I tried this.\nIf you run into the error gtk initialization failed, you need to install an additional package and run this one additional command, then try launching your container again.\nNote: I would not recommend running “xhost +” on a shared computer, only a single user personal device. Read more about xhost.\nsudo pacman -S xorg-xhost xhost + If you get the error “docker: unknown server OS:”, try running the following command and run it again. If it still fails with this error, restart your computer and try again. If you still have this error message, even after a restart, refer to this documentation page for more info.\nsudo systemctl enable --now docker Step 4: Install macOS If you were able to launch the Docker container without any issues, after a while you should come to a screen similar to the one pictured below. There may be some slight differences depending on which version you chose.\nQEMU will pop up once the image is downloaded, and the Docker container is created and started.\nEventually, you should get to this boot menu. You will choose “macOS Base System” or you can just wait and it will boot this one by default after a few seconds.\nOn the next screen, you will want to open the “Disk Utility” to wipe the partition so we can install macOS on it.\nOnce you are inside the Disk Utility, choose the first disk, which should be the largest, around 270GB. Then choose to erase from the options at the top. Don’t worry, this isn’t your hard drive and you are not losing any data on your actual machine. These are just virtual disks inside the container.\nOnce you click erase, give the partition a name and keep the format and scheme as their defaults.\nWhen you are done erasing the partition, you can close the disk utility and you should be back at the menu. Here you will choose to “Reinstall macOS”.\nOnce you start the installation, it may take a while and there will be a series of reboots. At the disk selection screen, choose the disk that you erased using the disk utility earlier.\nAfter the reboots, make sure to select the macOS installer option.\nAfter multiple reboots, the macOS installer option will disappear from the boot menu. When that happens, you will choose the disk that has the same name you gave it in the Disk Utility earlier in the process.\nEventually, you will end up at the final system and account setup. Once you finish this portion, you will have installed macOS on the Docker container.\nStep 5: Starting Your Docker Container If you shut down your macOS Docker container or reboot your host machine, you will probably want to get back into it at some point in the future.\nIf you were to run the Docker command you used at the start of this process, it will create a whole new Docker container and you will be going through the macOS install all over again. That’s likely not what you want.\nTo get back to your container and boot it you need to get the ID of the container. You can do this with the “docker ps –all” command.\nWe will copy the container ID and use it with the “docker start container_id” command to relaunch our existing macOS container. Just replace my container ID with yours.\ndocker start 6b51a8ef8921 It may take a few moments but after running this command you should see the QEMU window popup and macOS start to load.\nFAQ Can you run macOS on Linux? Yes, there are many ways to do this, all involving some form of virtualization technology such as Docker or VirtualBox. This guide walks you step-by-step through setting up macOS on Linux using a Docker container.\nIs it possible to run macOS on a PC? Yes, you can install macOS on a PC depending on the specific hardware. However, running macOS in a virtual machine or container is far easier to get started with.\nCan you put macOS on a Virtual Machine? Yes, you can install macOS on a Virtual Machine using VirtualBox or other virtualization tools. In this article, we cover using Docker, which is another form of virtualization using containers.\nIs it legal to install macOS on a PC? It is a violation of the software license agreement from Apple to install macOS on anything other than genuine Apple hardware.\n",
+  "wordCount" : "1250",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/images/macos-on-linux-docker.png","datePublished": "2023-02-21T00:00:00Z",
+  "dateModified": "2023-02-21T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Adam"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "credibleDEV",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="credibleDEV (Alt + H)">credibleDEV</a>
+            <div class="logo-switches">
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact/" title="contact">
+                    <span>contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Mac OSX on Manjaro Linux Made Easy With Docker
+    </h1>
+    <div class="post-description">
+      You can run macOS on Manjaro and other Linux distributions easily with Docker for testing and development work.
+    </div>
+    <div class="post-meta"><span title='2023-02-21 00:00:00 +0000 UTC'>02-21-2023</span>&nbsp;·&nbsp;Adam
+
+</div>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on x"
+        href="https://x.com/intent/tweet/?text=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker&amp;url=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f&amp;hashtags=docker%2clinux%2cmacos">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f&amp;title=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker&amp;summary=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker&amp;source=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f&title=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on whatsapp"
+        href="https://api.whatsapp.com/send?text=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker%20-%20http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on telegram"
+        href="https://telegram.me/share/url?text=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker&amp;url=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on ycombinator"
+        href="https://news.ycombinator.com/submitlink?t=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker&u=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f">
+        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+            <path
+                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+        </svg>
+    </a>
+</div>
+
+  </header> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/images/macos-on-linux-docker_hu5666195851636402103.webp 360w ,http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/images/macos-on-linux-docker_hu10787700558718987691.webp 480w ,http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/images/macos-on-linux-docker_hu7000415293320190624.webp 720w ,http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/images/macos-on-linux-docker_hu16349030200717018711.webp 1080w ,http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/images/macos-on-linux-docker.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/mac-osx-on-manjaro-linux-made-easy-with-docker/images/macos-on-linux-docker.png" alt="" 
+            width="1280" height="720">
+        
+</figure><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#step-1-install-dependencies" aria-label="Step 1: Install Dependencies">Step 1: Install Dependencies</a></li>
+                <li>
+                    <a href="#step-2-choose-which-macos-version-to-run-on-linux" aria-label="Step 2: Choose Which macOS Version to Run on Linux">Step 2: Choose Which macOS Version to Run on Linux</a><ul>
+                        
+                <li>
+                    <a href="#catalina" aria-label="Catalina">Catalina</a></li>
+                <li>
+                    <a href="#big-sur" aria-label="Big Sur">Big Sur</a></li>
+                <li>
+                    <a href="#monterey" aria-label="Monterey">Monterey</a></li>
+                <li>
+                    <a href="#ventura" aria-label="Ventura">Ventura</a></li></ul>
+                </li>
+                <li>
+                    <a href="#step-3-run-the-docker-command" aria-label="Step 3: Run the Docker Command">Step 3: Run the Docker Command</a></li>
+                <li>
+                    <a href="#step-4-install-macos" aria-label="Step 4: Install macOS">Step 4: Install macOS</a></li>
+                <li>
+                    <a href="#step-5-starting-your-docker-container" aria-label="Step 5: Starting Your Docker Container">Step 5: Starting Your Docker Container</a></li>
+                <li>
+                    <a href="#faq" aria-label="FAQ">FAQ</a><ul>
+                        
+                <li>
+                    <a href="#can-you-run-macos-on-linux" aria-label="Can you run macOS on Linux?">Can you run macOS on Linux?</a></li>
+                <li>
+                    <a href="#is-it-possible-to-run-macos-on-a-pc" aria-label="Is it possible to run macOS on a PC?">Is it possible to run macOS on a PC?</a></li>
+                <li>
+                    <a href="#can-you-put-macos-on-a-virtual-machine" aria-label="Can you put macOS on a Virtual Machine?">Can you put macOS on a Virtual Machine?</a></li>
+                <li>
+                    <a href="#is-it-legal-to-install-macos-on-a-pc" aria-label="Is it legal to install macOS on a PC?">Is it legal to install macOS on a PC?</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+
+  <div class="custom-sidebar">
+    <h3>Related Posts</h3>
+    <ul class="sidebar-related">
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
+            width="1200" height="628">
+</figure>
+          <a href="/proxmox-vs-hyper-v/">Proxmox VS Hyper-V - Which Hypervisor Should You Choose?</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
+            width="1200" height="628">
+</figure>
+          <a href="/linux-cpu-schedulers-gaming-cpu-scheduler/">Linux CPU Schedulers and Why They Are Important</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
+            width="1200" height="628">
+</figure>
+          <a href="/running-battle.net-games-on-linux-using-bottles/">Running Battle.net Games on Linux using Bottles</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
+            width="1076" height="472">
+</figure>
+          <a href="/fix-obs-studio-black-screen-on-manjaro-gnome-edition/">Fix OBS Studio Black Screen on Manjaro GNOME Edition</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu13160665751646198110.webp 360w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu8095055878673174513.webp 480w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu17278560079837228734.webp 720w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu8803855192971083524.webp 1080w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox.png" alt="" 
+            width="1280" height="720">
+</figure>
+          <a href="/install-docker-and-portainer-on-proxmox/">Install Docker and Portainer on Proxmox</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+  <div class="post-content"><p>There are times, especially if you are a developer when you really need to create or test something on macOS. Luckily, there is a very easy way to do this on Linux, using Docker. There are many methods out there, such as running macOS in Virtual Box or even dual booting if you have the right hardware combination and a lot of time to fiddle with it.</p>
+<p>Running macOS in Docker on Linux is really easy thanks to an open-source project from <a href="https://twitter.com/sickcodes" target="_blank">sickcodes</a> called <a href="https://github.com/sickcodes/Docker-OSX" target="_blank">Docker-OSX</a>. This will actually run on most distributions of Linux, assuming you can install Docker and the other dependencies. I will be covering the steps for Manjaro specifically since this is what I run. This exact process should also work on Arch and EndeavourOS flavors of Linux as well.</p>
+<p>Note: Before proceeding, make sure you have Virtualization turned on in your BIOS.</p>
+<h2 id="step-1-install-dependencies">Step 1: Install Dependencies<a hidden class="anchor" aria-hidden="true" href="#step-1-install-dependencies">#</a></h2>
+<p>Before we move on, we need to make sure our machine has all of the necessary software to make running macOS on Linux a success.</p>
+<pre tabindex="0"><code>sudo pacman -S qemu libvirt dnsmasq virt-manager bridge-utils flex bison iptables-nft edk2-ovmf
+</code></pre><p>Next, we should enable libvirt and load the kvm module.</p>
+<pre tabindex="0"><code>sudo systemctl enable --now libvirt
+sudo systemctl enable --now virtlogd
+echo 1 | sudo tee /sys/module/kvm/parameters/ignore_msrs
+sudo modprobe kvm
+</code></pre><p>We also need to install and enable Docker.</p>
+<pre tabindex="0"><code>sudo pacman -S docker
+sudo systemctl enable docker
+sudo systemcrl start docker
+</code></pre><p>We also should add our user account to a few groups for docker, libvirt, and kvm.</p>
+<pre tabindex="0"><code>sudo usermod -aG docker,libvirt,kvm your_username
+</code></pre><p>You may need to restart your machine or log out and back in before proceeding if you run into issues trying to start Docker.</p>
+<h2 id="step-2-choose-which-macos-version-to-run-on-linux">Step 2: Choose Which macOS Version to Run on Linux<a hidden class="anchor" aria-hidden="true" href="#step-2-choose-which-macos-version-to-run-on-linux">#</a></h2>
+<p>Sickcodes offers many different Docker containers, each containing a different OSX version. In the examples below, I have configured 8GB of ram and 4 CPU cores, you can update this for your own needs or remove the two additional &ldquo;-e&rdquo; options to take the defaults.</p>
+<h3 id="catalina">Catalina<a hidden class="anchor" aria-hidden="true" href="#catalina">#</a></h3>
+<pre tabindex="0"><code>docker run -it \
+    --device /dev/kvm \
+    -e RAM=8 \
+    -e CORES=4 \
+    -p 50922:10022 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e &#34;DISPLAY=${DISPLAY:-:0.0}&#34; \
+    sickcodes/docker-osx:latest
+</code></pre><h3 id="big-sur">Big Sur<a hidden class="anchor" aria-hidden="true" href="#big-sur">#</a></h3>
+<pre tabindex="0"><code>docker run -it \
+    --device /dev/kvm \
+    -e RAM=8 \
+    -e CORES=4 \
+    -p 50922:10022 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e &#34;DISPLAY=${DISPLAY:-:0.0}&#34; \
+    sickcodes/docker-osx:big-sur
+</code></pre><h3 id="monterey">Monterey<a hidden class="anchor" aria-hidden="true" href="#monterey">#</a></h3>
+<pre tabindex="0"><code>docker run -it \
+    --device /dev/kvm \
+    -e RAM=8 \
+    -e CORES=4 \
+    -p 50922:10022 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e &#34;DISPLAY=${DISPLAY:-:0.0}&#34; \
+    -e GENERATE_UNIQUE=true \
+    -e MASTER_PLIST_URL=&#39;https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist&#39; \
+    sickcodes/docker-osx:monterey
+</code></pre><h3 id="ventura">Ventura<a hidden class="anchor" aria-hidden="true" href="#ventura">#</a></h3>
+<pre tabindex="0"><code>docker run -it \
+    --device /dev/kvm \
+    -e RAM=8 \
+    -e CORES=4 \
+    -p 50922:10022 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e &#34;DISPLAY=${DISPLAY:-:0.0}&#34; \
+    -e GENERATE_UNIQUE=true \
+    -e MASTER_PLIST_URL=&#39;https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist&#39; \
+    sickcodes/docker-osx:ventura
+</code></pre><h2 id="step-3-run-the-docker-command">Step 3: Run the Docker Command<a hidden class="anchor" aria-hidden="true" href="#step-3-run-the-docker-command">#</a></h2>
+<p>Once you pick which version of macOS you want to run, copy the code into your terminal and run it. Depending on your system, this may take a while. It will begin by downloading the required image that you chose, then it will build and launch the Docker container.</p>
+<p><img loading="lazy" src="images/image-56.png" alt="macos docker container downloading"  />
+</p>
+<p>I ran into an error the first time I tried this.</p>
+<p><img loading="lazy" src="images/MacOS-Linux-Error-1024x708.png" alt="docker macos gtk initialization error"  />
+</p>
+<p>If you run into the <strong>error gtk initialization failed</strong>, you need to install an additional package and run this one additional command, then try launching your container again.</p>
+<p>Note: I would not recommend running &ldquo;xhost +&rdquo; on a shared computer, only a single user personal device. <a href="https://wiki.archlinux.org/title/Xhost" target="_blank">Read more about xhost</a>.</p>
+<pre tabindex="0"><code>sudo pacman -S xorg-xhost
+xhost +
+</code></pre><p>If you get the error <strong>&ldquo;docker: unknown server OS:&rdquo;</strong>, try running the following command and run it again. If it still fails with this error, restart your computer and try again. If you still have this error message, even after a restart, refer to this <a href="https://github.com/sickcodes/Docker-OSX#docker-unknown-server-os-error" target="_blank">documentation</a> page for more info.</p>
+<pre tabindex="0"><code>sudo systemctl enable --now docker
+</code></pre><h2 id="step-4-install-macos">Step 4: Install macOS<a hidden class="anchor" aria-hidden="true" href="#step-4-install-macos">#</a></h2>
+<p>If you were able to launch the Docker container without any issues, after a while you should come to a screen similar to the one pictured below. There may be some slight differences depending on which version you chose.</p>
+<p>QEMU will pop up once the image is downloaded, and the Docker container is created and started.</p>
+<p><img loading="lazy" src="images/image-57.png" alt="qemu booting macos"  />
+</p>
+<p>Eventually, you should get to this boot menu. You will choose &ldquo;macOS Base System&rdquo; or you can just wait and it will boot this one by default after a few seconds.</p>
+<p><img loading="lazy" src="images/image-58.png" alt="booting macos installer"  />
+</p>
+<p>On the next screen, you will want to open the &ldquo;Disk Utility&rdquo; to wipe the partition so we can install macOS on it.</p>
+<p><img loading="lazy" src="images/image-59.png" alt="macos restore menu"  />
+</p>
+<p>Once you are inside the Disk Utility, choose the first disk, which should be the largest, around 270GB. Then choose to erase from the options at the top. Don&rsquo;t worry, this isn&rsquo;t your hard drive and you are not losing any data on your actual machine. These are just virtual disks inside the container.</p>
+<p>Once you click erase, give the partition a name and keep the format and scheme as their defaults.</p>
+<p><img loading="lazy" src="images/image-60-1024x556.png" alt="qemu macos disk utility"  />
+</p>
+<p>When you are done erasing the partition, you can close the disk utility and you should be back at the menu. Here you will choose to &ldquo;Reinstall macOS&rdquo;.</p>
+<p><img loading="lazy" src="images/image-61.png" alt="reinstall macos"  />
+</p>
+<p>Once you start the installation, it may take a while and there will be a series of reboots. At the disk selection screen, choose the disk that you erased using the disk utility earlier.</p>
+<p>After the reboots, make sure to select the <strong>macOS installer</strong> option.</p>
+<p><img loading="lazy" src="images/image-62.png" alt="macos boot menu"  />
+</p>
+<p>After multiple reboots, the <strong>macOS installer</strong> option will <strong>disappear from the boot menu</strong>. When that happens, you will choose the disk that has the same name you gave it in the Disk Utility earlier in the process.</p>
+<p>Eventually, you will end up at the final system and account setup. Once you finish this portion, you will have installed macOS on the Docker container.</p>
+<p><img loading="lazy" src="images/image-63-1024x821.png" alt="macos final setup"  />
+</p>
+<h2 id="step-5-starting-your-docker-container">Step 5: Starting Your Docker Container<a hidden class="anchor" aria-hidden="true" href="#step-5-starting-your-docker-container">#</a></h2>
+<p>If you shut down your macOS Docker container or reboot your host machine, you will probably want to get back into it at some point in the future.</p>
+<p>If you were to run the Docker command you used at the start of this process, it will create a whole new Docker container and you will be going through the macOS install all over again. That&rsquo;s likely not what you want.</p>
+<p>To get back to your container and boot it you need to get the ID of the container. You can do this with the <strong>&ldquo;docker ps &ndash;all&rdquo;</strong> command.</p>
+<p><img loading="lazy" src="images/image-64-1024x154.png" alt="docker list containers"  />
+</p>
+<p>We will copy the container ID and use it with the <strong>&ldquo;docker start container_id&rdquo;</strong> command to relaunch our existing macOS container. Just replace my container ID with yours.</p>
+<pre tabindex="0"><code>docker start 6b51a8ef8921
+</code></pre><p>It may take a few moments but after running this command you should see the QEMU window popup and macOS start to load.</p>
+<h2 id="faq">FAQ<a hidden class="anchor" aria-hidden="true" href="#faq">#</a></h2>
+<h3 id="can-you-run-macos-on-linux">Can you run macOS on Linux?<a hidden class="anchor" aria-hidden="true" href="#can-you-run-macos-on-linux">#</a></h3>
+<p>Yes, there are many ways to do this, all involving some form of virtualization technology such as Docker or VirtualBox. This guide walks you step-by-step through setting up macOS on Linux using a Docker container.</p>
+<h3 id="is-it-possible-to-run-macos-on-a-pc">Is it possible to run macOS on a PC?<a hidden class="anchor" aria-hidden="true" href="#is-it-possible-to-run-macos-on-a-pc">#</a></h3>
+<p>Yes, you can install macOS on a PC depending on the specific hardware. However, running macOS in a virtual machine or container is far easier to get started with.</p>
+<h3 id="can-you-put-macos-on-a-virtual-machine">Can you put macOS on a Virtual Machine?<a hidden class="anchor" aria-hidden="true" href="#can-you-put-macos-on-a-virtual-machine">#</a></h3>
+<p>Yes, you can install macOS on a Virtual Machine using VirtualBox or other virtualization tools. In this article, we cover using Docker, which is another form of virtualization using containers.</p>
+<h3 id="is-it-legal-to-install-macos-on-a-pc">Is it legal to install macOS on a PC?<a hidden class="anchor" aria-hidden="true" href="#is-it-legal-to-install-macos-on-a-pc">#</a></h3>
+<p>It is a violation of the software license agreement from Apple to install macOS on anything other than genuine Apple hardware.</p>
+
+
+  </div>
+  <aside class="">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related Posts</p>
+    <ul class="">
+	   
+	     <li  class="mb2">
+          <a href="/setup-docker-on-manjaro-linux/">Setup Docker on Manjaro Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/install-jetbrains-rider-for-c-on-linux/">Install JetBrains Rider for C# on Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/linux-c-net-gui-app-using-avalonia-ui/">Linux C# .NET GUI App Using Avalonia UI</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/join-a-linux-device-to-active-directory/">Join a Linux Device to Active Directory</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/install-plex-media-server-on-manjaro-linux/">Install Plex Media Server on Manjaro Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/8-things-to-do-after-installing-manjaro-linux/">8 Things to Do After Installing Manjaro Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/part-4-beginners-guide-to-bash-scripting/">Part 4 - Beginner&#39;s Guide to Bash Scripting</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/part-3-beginners-guide-to-bash-scripting/">Part 3 – Beginners Guide to Bash Scripting</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/install-gcc-on-ubuntu-linux/">Install GCC on Ubuntu Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/part-2-beginners-guide-to-bash-scripting/">Part 2 - Beginners Guide to Bash Scripting</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/install-pamac-on-endeavouros/">Install Pamac on EndeavourOS</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/beginners-guide-to-bash-scripting/">Beginners Guide to Bash Scripting</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/how-to-enable-the-aur-on-manjaro-linux/">How to Enable the AUR on Manjaro Linux</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/install-onedrive-gui-on-ubuntu/">Install OneDrive GUI on Ubuntu</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/python-flask-dev-environment-on-manjaro-linux/">Python Flask Dev Environment on Manjaro Linux</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/docker/">Docker</a></li>
+      <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
+      <li><a href="http://localhost:1313/tags/macos/">Macos</a></li>
+    </ul>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on x"
+        href="https://x.com/intent/tweet/?text=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker&amp;url=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f&amp;hashtags=docker%2clinux%2cmacos">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z"/>
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f&amp;title=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker&amp;summary=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker&amp;source=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on reddit"
+        href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f&title=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on whatsapp"
+        href="https://api.whatsapp.com/send?text=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker%20-%20http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on telegram"
+        href="https://telegram.me/share/url?text=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker&amp;url=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Mac OSX on Manjaro Linux Made Easy With Docker on ycombinator"
+        href="https://news.ycombinator.com/submitlink?t=Mac%20OSX%20on%20Manjaro%20Linux%20Made%20Easy%20With%20Docker&u=http%3a%2f%2flocalhost%3a1313%2fmac-osx-on-manjaro-linux-made-easy-with-docker%2f">
+        <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+            <path
+                d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
