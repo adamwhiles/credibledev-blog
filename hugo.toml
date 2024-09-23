@@ -24,7 +24,9 @@ googleAnalytics = "G-BCWKMZ21D2"
 	ShowBreadCrumbs = true
 	sidebar = true
 	env = "production"
-	keywords=[Adam Whiles, tech, hugo, proxmox, linux, manjaro]
+	keywords=["Adam Whiles", "tech", "hugo", "proxmox", "linux", "manjaro"]
+
+
 [cover]
 	hidden = false
 
