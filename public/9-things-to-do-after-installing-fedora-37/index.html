@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/9-things-to-do-after-installing-fedora-37/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="9 Things to Do After Installing Fedora 37" />
+      </script><meta property="og:title" content="9 Things to Do After Installing Fedora 37" />
 <meta property="og:description" content="Fedora 37 is an excellent Linux operating system that works well for new and experienced users. This list covers 9 things to do after install." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/9-things-to-do-after-installing-fedora-37/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/9-things-to-do-after-installing-fedora-37.png" />
 <meta name="twitter:title" content="9 Things to Do After Installing Fedora 37"/>
 <meta name="twitter:description" content="Fedora 37 is an excellent Linux operating system that works well for new and experienced users. This list covers 9 things to do after install."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "9 Things to Do After Installing Fedora 37",
-      "item": "http://localhost:1313/9-things-to-do-after-installing-fedora-37/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "9 Things to Do After Installing Fedora 37",
+        "item": "http://localhost:1313/9-things-to-do-after-installing-fedora-37/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "9 Things to Do After Installing Fedora 37",
-  "name": "9 Things to Do After Installing Fedora 37",
-  "description": "Fedora 37 is an excellent Linux operating system that works well for new and experienced users. This list covers 9 things to do after install.",
-  "keywords": [
-    "fedora", "linux"
-  ],
-  "articleBody": "Fedora 37 was released in November of 2022, and since then it has gained a lot of attention. Fedora supports Flatpaks by default and is running the latest Gnome desktop environment which is version 43 at this time. While it does run Gnome by default, you can find Fedora Spins with alternative desktop environments such as KDE Plasma and XFCE.\nFedora is an excellent option for new users and seasoned users as well. Many developers with plenty of experience with Linux choose Fedora for the availability of apps, ease of use, and stability.\nGiven how great Fedora 37 is out of the box, there are still some things you might want to do after getting it installed. You might be asking yourself, what should I do after installing Fedora? Below, you will find 9 things to do after installing Fedora.\n1. DNF Configuration DNF is the package manager used by Fedora, which stands for “Dandified YUM”. It works great out of the box but there are some tweaks you can make to improve the experience and get faster downloads. You will need to open up the configuration file using “sudo” to make the necessary edits.\nsudo nano /etc/dnf/dnf.conf At the end of the file, add these lines.\nmax_parallel_downloads=10 fastestmirror=true Max_parallel_downloads will increase the number of file downloads that can be run simultaneously, the default is 3 and the max value is 20. The fastest mirror will set the best mirror based on location.\n2. Update the System One of the first things you should do on any OS after installation is to check for any updates and install those. Packages could have security vulnerabilities that updates have been released for, so it’s important to get them installed right away.\nsudo dnf update \u0026\u0026 sudo dnf upgrade You can also update the system using the graphical Software Manager.\n3. Add Flathub Repo Fedora has decided to only allow a limited number of packages from the growing Flathub repo by default. This will be changing in Fedora 38 but for now, we need to add the full Flathub repo to get access to all of the great packages there.\nflatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 4. Enable RPM Fusion Repo There is some software that RedHat cannot include in Fedora but you can get through the RPM Fusion Repo instead. Software like VirtualBox, VLC, and others. The code below will add both the free and non-free repos.\nsudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 5. Install Gnome Tweaks and Gnome Extensions I think that Gnome is somewhat boring and lacking in useful UI features. Luckily, many others feel the same way so we have Gnome Tweaks and the Gnome Extensions app to help us get the UI we want.\nsudo dnf install gnome-tweaks gnome-extensions-app You can find some cool extensions here: https://extensions.gnome.org/\nOne that I always install is Dash to Dock, give it a shot and see if you like it.\n6. File Manager Tweaks By default, the file manager does not list directories first. I find this annoying so I always change that right away. If you open the file manager and go to preferences, you will find the option “Sort folders before files”, tick that on and you’ll be good to go.\n7. Enable Tap to Click If you are on a laptop and using a trackpad, you may want a tap on the trackpad to be registered as a click. If so, you can enable that in the settings under “Mouse \u0026 Trackpad”. There you will find the tap-to-click option, which you can enable.\n8. Install a Different Desktop Environment Fedora comes with Gnome by default, but that doesn’t mean that you can’t try out different desktop environments like KDE Plasma and XFCE though. Personally, I prefer KDE over XFCE but both are great. If you don’t like how Gnome operates, give one of these a try.\nKDE sudo dnf install @kde-desktop-environment XFCE sudo dnf install @xfce-desktop-environment You can get a full list of desktop environments that Fedora has available by running this command.\ndnf group list --available *desktop 9. Install Some Apps You’re ready to get started enjoying your new Fedora 37 system, so go ahead and install some apps. You can install software using DNF, Flatpak from the command line, or find your favorite app using the Software Manager interface.\nHere are some apps that I almost always install on every system.\nFlatseal - Manage Flatpak app permissions.\nOB Studio - For recording YouTube videos.\nKdenlive - For editing YouTube videos.\nSpotify\nBoxes - Easily run Virtual Machines.\nRemmina - For remote desktop.\nConclusion What are your favorite apps to run on Fedora? Have any tweaks or modifications that I missed? Let me know!\n",
-  "wordCount" : "788",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/9-things-to-do-after-installing-fedora-37.png","datePublished": "2023-03-06T00:00:00Z",
-  "dateModified": "2023-03-06T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/9-things-to-do-after-installing-fedora-37/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "9 Things to Do After Installing Fedora 37",
+    "name": "9 Things to Do After Installing Fedora 37",
+    "description": "Fedora 37 is an excellent Linux operating system that works well for new and experienced users. This list covers 9 things to do after install.",
+    "keywords": [
+      "fedora", "linux"
+    ],
+    "articleBody": "Fedora 37 was released in November of 2022, and since then it has gained a lot of attention. Fedora supports Flatpaks by default and is running the latest Gnome desktop environment which is version 43 at this time. While it does run Gnome by default, you can find Fedora Spins with alternative desktop environments such as KDE Plasma and XFCE.\nFedora is an excellent option for new users and seasoned users as well. Many developers with plenty of experience with Linux choose Fedora for the availability of apps, ease of use, and stability.\nGiven how great Fedora 37 is out of the box, there are still some things you might want to do after getting it installed. You might be asking yourself, what should I do after installing Fedora? Below, you will find 9 things to do after installing Fedora.\n1. DNF Configuration DNF is the package manager used by Fedora, which stands for “Dandified YUM”. It works great out of the box but there are some tweaks you can make to improve the experience and get faster downloads. You will need to open up the configuration file using “sudo” to make the necessary edits.\nsudo nano /etc/dnf/dnf.conf At the end of the file, add these lines.\nmax_parallel_downloads=10 fastestmirror=true Max_parallel_downloads will increase the number of file downloads that can be run simultaneously, the default is 3 and the max value is 20. The fastest mirror will set the best mirror based on location.\n2. Update the System One of the first things you should do on any OS after installation is to check for any updates and install those. Packages could have security vulnerabilities that updates have been released for, so it’s important to get them installed right away.\nsudo dnf update \u0026\u0026 sudo dnf upgrade You can also update the system using the graphical Software Manager.\n3. Add Flathub Repo Fedora has decided to only allow a limited number of packages from the growing Flathub repo by default. This will be changing in Fedora 38 but for now, we need to add the full Flathub repo to get access to all of the great packages there.\nflatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo 4. Enable RPM Fusion Repo There is some software that RedHat cannot include in Fedora but you can get through the RPM Fusion Repo instead. Software like VirtualBox, VLC, and others. The code below will add both the free and non-free repos.\nsudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 5. Install Gnome Tweaks and Gnome Extensions I think that Gnome is somewhat boring and lacking in useful UI features. Luckily, many others feel the same way so we have Gnome Tweaks and the Gnome Extensions app to help us get the UI we want.\nsudo dnf install gnome-tweaks gnome-extensions-app You can find some cool extensions here: https://extensions.gnome.org/\nOne that I always install is Dash to Dock, give it a shot and see if you like it.\n6. File Manager Tweaks By default, the file manager does not list directories first. I find this annoying so I always change that right away. If you open the file manager and go to preferences, you will find the option “Sort folders before files”, tick that on and you’ll be good to go.\n7. Enable Tap to Click If you are on a laptop and using a trackpad, you may want a tap on the trackpad to be registered as a click. If so, you can enable that in the settings under “Mouse \u0026 Trackpad”. There you will find the tap-to-click option, which you can enable.\n8. Install a Different Desktop Environment Fedora comes with Gnome by default, but that doesn’t mean that you can’t try out different desktop environments like KDE Plasma and XFCE though. Personally, I prefer KDE over XFCE but both are great. If you don’t like how Gnome operates, give one of these a try.\nKDE sudo dnf install @kde-desktop-environment XFCE sudo dnf install @xfce-desktop-environment You can get a full list of desktop environments that Fedora has available by running this command.\ndnf group list --available *desktop 9. Install Some Apps You’re ready to get started enjoying your new Fedora 37 system, so go ahead and install some apps. You can install software using DNF, Flatpak from the command line, or find your favorite app using the Software Manager interface.\nHere are some apps that I almost always install on every system.\nFlatseal - Manage Flatpak app permissions.\nOB Studio - For recording YouTube videos.\nKdenlive - For editing YouTube videos.\nSpotify\nBoxes - Easily run Virtual Machines.\nRemmina - For remote desktop.\nConclusion What are your favorite apps to run on Fedora? Have any tweaks or modifications that I missed? Let me know!\n",
+    "wordCount" : "788",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/9-things-to-do-after-installing-fedora-37.png","datePublished": "2023-03-06T00:00:00Z",
+    "dateModified": "2023-03-06T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/9-things-to-do-after-installing-fedora-37/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
         
@@ -284,7 +283,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -293,7 +292,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -302,7 +301,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -311,7 +310,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -320,7 +319,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu3283503807053189108.webp 360w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu14814429370186714055.webp 480w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu3994968028305328188.webp 720w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu16824867807507891628.webp 1080w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm.png 1280w" 
+        <img srcset="http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu_dc4397f7b1debfe6.webp 360w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu_d1bbf19e7dd6f6ba.webp 480w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu_6242a780a3518e6b.webp 720w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu_c3ed6c87ae4f252.webp 1080w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -332,7 +331,11 @@
 
 
 
-  <div class="post-content"><p><a href="https://getfedora.org/" target="_blank">Fedora 37</a> was released in November of 2022, and since then it has gained a lot of attention. Fedora supports Flatpaks by default and is running the latest Gnome desktop environment which is version 43 at this time. While it does run Gnome by default, you can find Fedora Spins with alternative desktop environments such as KDE Plasma and XFCE.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p><a href="https://getfedora.org/" target="_blank">Fedora 37</a> was released in November of 2022, and since then it has gained a lot of attention. Fedora supports Flatpaks by default and is running the latest Gnome desktop environment which is version 43 at this time. While it does run Gnome by default, you can find Fedora Spins with alternative desktop environments such as KDE Plasma and XFCE.</p>
 <p>Fedora is an excellent option for new users and seasoned users as well. Many developers with plenty of experience with Linux choose Fedora for the availability of apps, ease of use, and stability.</p>
 <p>Given how great Fedora 37 is out of the box, there are still some things you might want to do after getting it installed. You might be asking yourself, what should I do after installing Fedora? Below, you will find 9 things to do after installing Fedora.</p>
 <h2 id="1-dnf-configuration">1. DNF Configuration<a hidden class="anchor" aria-hidden="true" href="#1-dnf-configuration">#</a></h2>
@@ -554,7 +557,7 @@ fastestmirror=true
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/fix-virtual-keyboard-in-chromium-apps-in-kde-wayland/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Fix Virtual Keyboard in Chromium Apps in KDE Wayland" />
+      </script><meta property="og:title" content="Fix Virtual Keyboard in Chromium Apps in KDE Wayland" />
 <meta property="og:description" content="KDE Wayland edition may have issues displaying the virtual keyboard in Chromium apps such as Chrome and Microsoft Edge. This is easily fixed with launch flags" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/fix-virtual-keyboard-in-chromium-apps-in-kde-wayland/" /><meta property="article:section" content="posts" />
@@ -58,60 +57,60 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Fix Virtual Keyboard in Chromium Apps in KDE Wayland"/>
 <meta name="twitter:description" content="KDE Wayland edition may have issues displaying the virtual keyboard in Chromium apps such as Chrome and Microsoft Edge. This is easily fixed with launch flags"/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Fix Virtual Keyboard in Chromium Apps in KDE Wayland",
-      "item": "http://localhost:1313/fix-virtual-keyboard-in-chromium-apps-in-kde-wayland/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Fix Virtual Keyboard in Chromium Apps in KDE Wayland",
+        "item": "http://localhost:1313/fix-virtual-keyboard-in-chromium-apps-in-kde-wayland/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Fix Virtual Keyboard in Chromium Apps in KDE Wayland",
-  "name": "Fix Virtual Keyboard in Chromium Apps in KDE Wayland",
-  "description": "KDE Wayland edition may have issues displaying the virtual keyboard in Chromium apps such as Chrome and Microsoft Edge. This is easily fixed with launch flags",
-  "keywords": [
-    
-  ],
-  "articleBody": "I have a 2-1 laptop from Lenovo and recently installed Arch linux from scratch on it, only to find out that the onscreen keyboard didn’t function properly when I launched Microsoft Edge or Chrome. This seems to only be a problem with the Wayland edition of KDE and Chromium based apps. Even if I manually opened the virtual keyboard, the key mappings were not correct. When I pressed the number 1 on the virtual keyboard would output a ! instead.\nThrough a bit a research and many forums posts, I found a solution that worked. In my specific case, I use the Flatpak version of Microsoft Edge which required a bit more research to apply the fix.\nIf you are thinking about using Linode but don’t have an account yet. Take advantage of the free $100 60-day credit using this link. Plus, you’re helping me to keep creating content.\nFix for Virtual Keyboard If you don’t have the Flatpak version of the Chromium based app like Chrome or Edge, you can simply add these additional flags to the command you use to launch the app.\n--enable-wayland-ime --ozone-platform=wayland --enable-features=UseOzonePlatform Whenever you launch the app with these flags, the virtual keyboard will appear and the keys will be mapped properly.\nFix for Virtual Keyboard and Flatpak Apps The fix for Flatpak apps, such as Microsoft Edge in my case, is to edit the edge-flags.conf file with the flags shown below.\nThe edge-flags.conf or chrome-flags.conf (if you’re using Chrome) may not exist by default. If it doesn’t, go ahead and create it with the following file contents.\nThe edge-flags.conf or chrome-flags conf file should be placed in the following directory: ~/.var/app/com.microsoft.edge/config/ or for ~/.var/app/com.google.chrome/config/\n--enable-wayland-ime --ozone-platform=wayland --enable-features=UseOzonePlatform That’s it, next time you launch Chrome or Edge, the virtual keyboard will work properly.\nBONUS: Which Virtual Keyboard to Use on Arch Linux With KDE? Personally I use Maliit as my virtual keyboard and it works fine for my use cases. After the changes I made above, it appears when in tablet mode and works as expected. On arch, you can install it using the following command.\nsudo pacman -S maliit-keyboard After install, you may need to logout and back in.\nIf your screen doesn’t rotate properly in tablet mode, you may also want to install iio-sensor-proxy as well.\nsudo pacman -S iio-sensor-proxy ",
-  "wordCount" : "388",
-  "inLanguage": "en",
-  "datePublished": "2024-08-17T00:00:00Z",
-  "dateModified": "2024-08-17T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/fix-virtual-keyboard-in-chromium-apps-in-kde-wayland/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Fix Virtual Keyboard in Chromium Apps in KDE Wayland",
+    "name": "Fix Virtual Keyboard in Chromium Apps in KDE Wayland",
+    "description": "KDE Wayland edition may have issues displaying the virtual keyboard in Chromium apps such as Chrome and Microsoft Edge. This is easily fixed with launch flags",
+    "keywords": [
+      
+    ],
+    "articleBody": "I have a 2-1 laptop from Lenovo and recently installed Arch linux from scratch on it, only to find out that the onscreen keyboard didn’t function properly when I launched Microsoft Edge or Chrome. This seems to only be a problem with the Wayland edition of KDE and Chromium based apps. Even if I manually opened the virtual keyboard, the key mappings were not correct. When I pressed the number 1 on the virtual keyboard would output a ! instead.\nThrough a bit a research and many forums posts, I found a solution that worked. In my specific case, I use the Flatpak version of Microsoft Edge which required a bit more research to apply the fix.\nIf you are thinking about using Linode but don’t have an account yet. Take advantage of the free $100 60-day credit using this link. Plus, you’re helping me to keep creating content.\nFix for Virtual Keyboard If you don’t have the Flatpak version of the Chromium based app like Chrome or Edge, you can simply add these additional flags to the command you use to launch the app.\n--enable-wayland-ime --ozone-platform=wayland --enable-features=UseOzonePlatform Whenever you launch the app with these flags, the virtual keyboard will appear and the keys will be mapped properly.\nFix for Virtual Keyboard and Flatpak Apps The fix for Flatpak apps, such as Microsoft Edge in my case, is to edit the edge-flags.conf file with the flags shown below.\nThe edge-flags.conf or chrome-flags.conf (if you’re using Chrome) may not exist by default. If it doesn’t, go ahead and create it with the following file contents.\nThe edge-flags.conf or chrome-flags conf file should be placed in the following directory: ~/.var/app/com.microsoft.edge/config/ or for ~/.var/app/com.google.chrome/config/\n--enable-wayland-ime --ozone-platform=wayland --enable-features=UseOzonePlatform That’s it, next time you launch Chrome or Edge, the virtual keyboard will work properly.\nBONUS: Which Virtual Keyboard to Use on Arch Linux With KDE? Personally I use Maliit as my virtual keyboard and it works fine for my use cases. After the changes I made above, it appears when in tablet mode and works as expected. On arch, you can install it using the following command.\nsudo pacman -S maliit-keyboard After install, you may need to logout and back in.\nIf your screen doesn’t rotate properly in tablet mode, you may also want to install iio-sensor-proxy as well.\nsudo pacman -S iio-sensor-proxy ",
+    "wordCount" : "388",
+    "inLanguage": "en",
+    "datePublished": "2024-08-17T00:00:00Z",
+    "dateModified": "2024-08-17T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/fix-virtual-keyboard-in-chromium-apps-in-kde-wayland/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -252,11 +251,14 @@
 
 
 
-  <div class="post-content"><p>I have a 2-1 laptop from Lenovo and recently installed Arch linux from scratch on it, only to find out that the onscreen keyboard didn&rsquo;t function properly when I launched Microsoft Edge or Chrome. This seems to only be a problem with the Wayland edition of KDE and Chromium based apps. Even if I manually opened the virtual keyboard, the key mappings were not correct. When I pressed the number 1 on the virtual keyboard would output a ! instead.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>I have a 2-1 laptop from Lenovo and recently installed Arch linux from scratch on it, only to find out that the onscreen keyboard didn&rsquo;t function properly when I launched Microsoft Edge or Chrome. This seems to only be a problem with the Wayland edition of KDE and Chromium based apps. Even if I manually opened the virtual keyboard, the key mappings were not correct. When I pressed the number 1 on the virtual keyboard would output a ! instead.</p>
 <p>Through a bit a research and many forums posts, I found a solution that worked. In my specific case, I use the Flatpak version of Microsoft Edge which required a bit more research to apply the fix.</p>
 <blockquote>
-<p>If you are thinking about using Linode but don&rsquo;t have an account yet. Take advantage of the <a href="https://www.linode.com/lp/refer/?r=25859d5135efc6f773fd56ab42ec3e7a1cc5e83b" target="_blank">free $100 60-day credit using this link.</a> Plus, you’re helping me to keep creating content.</p>
-</blockquote>
+<p>If you are thinking about using Linode but don&rsquo;t have an account yet. Take advantage of the <a href="https://www.linode.com/lp/refer/?r=25859d5135efc6f773fd56ab42ec3e7a1cc5e83b" target="_blank">free $100 60-day credit using this link.</a> Plus, you’re helping me to keep creating content.</p></blockquote>
 <h2 id="fix-for-virtual-keyboard">Fix for Virtual Keyboard<a hidden class="anchor" aria-hidden="true" href="#fix-for-virtual-keyboard">#</a></h2>
 <p>If you don&rsquo;t have the Flatpak version of the Chromium based app like Chrome or Edge, you can simply add these additional flags to the command you use to launch the app.</p>
 <pre tabindex="0"><code>--enable-wayland-ime --ozone-platform=wayland --enable-features=UseOzonePlatform
@@ -360,7 +362,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

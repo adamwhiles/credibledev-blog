@@ -4,7 +4,7 @@
     <title>Bash-Scripting on credibleDEV</title>
     <link>http://localhost:1313/categories/bash-scripting/</link>
     <description>Recent content in Bash-Scripting on credibleDEV</description>
-    <generator>Hugo -- 0.132.2</generator>
+    <generator>Hugo -- 0.148.1</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/bash-scripting/index.xml" rel="self" type="application/rss+xml" />
@@ -13,12 +13,22 @@
       <link>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</link>
       <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</guid>
-      <description>This guide is part of a series, be sure to check out the other parts as well.
-Part 1 - Introduction to Bash, Variables, Comments, User Input
-Part 2 - If/Else Statements, Looping
-Part 3 - Functions in Bash
-Part 4 - Creating Menus in Bash (This Page)
-In this part, we will be covering how to create menus in Bash scripting on Linux. We will first cover a basic menu that is really simple to set up and use but also flexible and works for most cases.</description>
+      <description>&lt;p&gt;This guide is part of a series, be sure to check out the other parts as well.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://credibledev.com/beginners-guide-to-bash-scripting/&#34; target=&#34;_blank&#34;&gt;Part 1 - Introduction to Bash, Variables, Comments, User Input&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://credibledev.com/part-2-beginners-guide-to-bash-scripting/&#34; target=&#34;_blank&#34;&gt;Part 2 - If/Else Statements, Looping&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://credibledev.com/part-3-beginners-guide-to-bash-scripting/&#34; target=&#34;_blank&#34;&gt;Part 3 - Functions in Bash&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Part 4 - Creating Menus in Bash (This Page)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this part, we will be covering how to create menus in &lt;strong&gt;Bash scripting&lt;/strong&gt; on Linux. We will first cover a basic menu that is really simple to set up and use but also flexible and works for most cases. We will also go over a more advanced menu that offers a very different user experience which is more like a GUI, just in the terminal instead.&lt;/p&gt;</description>
     </item>
     <item>
       <title>3 Bash VS Code Linux Extensions You Should be Using</title>

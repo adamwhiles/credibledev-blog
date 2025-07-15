@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Find Apps and Policies Assigned to Azure AD Groups" />
+      </script><meta property="og:title" content="Find Apps and Policies Assigned to Azure AD Groups" />
 <meta property="og:description" content="This guide explains how you can use the ADAM Tool to find out what apps, profiles, policies, remediations etc. are assigned to an Azure AD group." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/adam-tool-azure-ad.png" />
 <meta name="twitter:title" content="Find Apps and Policies Assigned to Azure AD Groups"/>
 <meta name="twitter:description" content="This guide explains how you can use the ADAM Tool to find out what apps, profiles, policies, remediations etc. are assigned to an Azure AD group."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Find Apps and Policies Assigned to Azure AD Groups",
-      "item": "http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Find Apps and Policies Assigned to Azure AD Groups",
+        "item": "http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Find Apps and Policies Assigned to Azure AD Groups",
-  "name": "Find Apps and Policies Assigned to Azure AD Groups",
-  "description": "This guide explains how you can use the ADAM Tool to find out what apps, profiles, policies, remediations etc. are assigned to an Azure AD group.",
-  "keywords": [
-    "azure", "intune"
-  ],
-  "articleBody": " Download the ADAM Tool Here: https://github.com/adamwhiles/Azure-Device-Group-Assignment-Management-Tool/releases\nIf you have been using Intune for any amount of time, you have probably found a need at some point to find out what Intune applications, configuration profiles, etc. are assigned to a specific Azure AD group. I have found myself in this position many times and unfortunately Microsoft does not offer any built in ability to do this. Really, your only option is to go through ever app, profile etc. and see what groups they are assigned to. This is not user friendly at all.\nI present to you today, a tool that will do just that. The tool is the Azure Device-Group Assignment Management Tool, or ADAM Tool for short. The ADAM Tool allows you to input an Azure AD group and it will return the applications, configuration profiles, remediations, scripts and policies that are assigned to that group. It does this in under 30 seconds as well, saving you a lot of time.\nHow Does the ADAM Tool Work? Using the Graph API and the SDK for .NET, it collects all of the necessary date from Microsoft Intune.\nHow Do I Use the ADAM Tool? Once you have downloaded the ADAM Tool, you will need to install it using the provided MSI. Next, run the application as admin, this is only necessary for the first run configuration of the tenant ID and application ID.\nYou are going to need to create an Azure App Registration in order to get a client app ID. You don’t need to assign any permissions to the app, just create the registration and get the application ID.\nYou will also need your Azure tenant ID.\nOnce you have these and have launch the app as admin, click the settings button and insert your ID’s. After this the app will save those and close. You can now relaunch the app without being admin.\nPut the name of the group you want to search in the box and hit lookup. You will now need to authenticate with your Azure tenant. MFA and FIDO2 keys are supported, or you can use your username/password.\nThe information will being populating as it’s collected. That’s it, simple right?\nAny Plans for Future Improvements? Yes, there are plans for a few improvements.\nCollect information on app dependencies. Implement export function to export all of the data to csv or Excel. If you have ideas for other improvements, reach out and let me know!\n",
-  "wordCount" : "410",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/adam-tool-azure-ad.png","datePublished": "2023-10-06T00:00:00Z",
-  "dateModified": "2023-10-06T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Find Apps and Policies Assigned to Azure AD Groups",
+    "name": "Find Apps and Policies Assigned to Azure AD Groups",
+    "description": "This guide explains how you can use the ADAM Tool to find out what apps, profiles, policies, remediations etc. are assigned to an Azure AD group.",
+    "keywords": [
+      "azure", "intune"
+    ],
+    "articleBody": " Download the ADAM Tool Here: https://github.com/adamwhiles/Azure-Device-Group-Assignment-Management-Tool/releases\nIf you have been using Intune for any amount of time, you have probably found a need at some point to find out what Intune applications, configuration profiles, etc. are assigned to a specific Azure AD group. I have found myself in this position many times and unfortunately Microsoft does not offer any built in ability to do this. Really, your only option is to go through ever app, profile etc. and see what groups they are assigned to. This is not user friendly at all.\nI present to you today, a tool that will do just that. The tool is the Azure Device-Group Assignment Management Tool, or ADAM Tool for short. The ADAM Tool allows you to input an Azure AD group and it will return the applications, configuration profiles, remediations, scripts and policies that are assigned to that group. It does this in under 30 seconds as well, saving you a lot of time.\nHow Does the ADAM Tool Work? Using the Graph API and the SDK for .NET, it collects all of the necessary date from Microsoft Intune.\nHow Do I Use the ADAM Tool? Once you have downloaded the ADAM Tool, you will need to install it using the provided MSI. Next, run the application as admin, this is only necessary for the first run configuration of the tenant ID and application ID.\nYou are going to need to create an Azure App Registration in order to get a client app ID. You don’t need to assign any permissions to the app, just create the registration and get the application ID.\nYou will also need your Azure tenant ID.\nOnce you have these and have launch the app as admin, click the settings button and insert your ID’s. After this the app will save those and close. You can now relaunch the app without being admin.\nPut the name of the group you want to search in the box and hit lookup. You will now need to authenticate with your Azure tenant. MFA and FIDO2 keys are supported, or you can use your username/password.\nThe information will being populating as it’s collected. That’s it, simple right?\nAny Plans for Future Improvements? Yes, there are plans for a few improvements.\nCollect information on app dependencies. Implement export function to export all of the data to csv or Excel. If you have ideas for other improvements, reach out and let me know!\n",
+    "wordCount" : "410",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/adam-tool-azure-ad.png","datePublished": "2023-10-06T00:00:00Z",
+    "dateModified": "2023-10-06T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu3308433473923045744.webp 360w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu1260565180653241431.webp 480w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu3430320244541056058.webp 720w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu8580764315606843869.webp 1080w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png 1200w" 
+        <img srcset="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_e4da24d72e1c0ee7.webp 360w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_62ccca0dc2e9cd21.webp 480w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_70e15d2ebbb92823.webp 720w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_1df7e56410aa862c.webp 1080w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png" alt="" 
             width="1200" height="628">
         
@@ -264,7 +263,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17001477106947415410.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu10300577779374374925.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu2517488187377460131.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17089951570406582786.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
+        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_5eaea70ea9941b1a.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_1d10574afc145dc9.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_86fbed8aa4903122.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_518788d2955b9ea.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -273,7 +272,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu9663632401868894187.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu16238990010262655059.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu4921325777766597961.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu17048565755945529674.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
+        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_539b1c318668c536.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_7c7e3ceea4ae807f.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_2bb62434708b330f.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_bdd20ab8441ae143.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -282,7 +281,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu7356498652369068489.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu3264796535428035628.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16952298017530650839.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16562548497720146018.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
+        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_1c859262ebb7d234.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_c37169e9611e1263.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_db5f03321ce4c635.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_bcf6023a45bbe17c.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -291,7 +290,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu16289485213827736291.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu4112613990801156029.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu9711915856666451654.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu6843908078130384016.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
+        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f52a4e916032402d.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f634f4c8f0216b39.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_a0378706c4747e88.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_5519eae4d247aeef.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -300,7 +299,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu13184193840349155734.webp 360w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu2581116324488376521.webp 480w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu15933509546177920132.webp 720w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu16985435299638000220.webp 1080w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png 1200w" 
+        <img srcset="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_a4bc6e12ff0b94c3.webp 360w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_a495e02b61bd26a0.webp 480w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_1ee4acd015f77c0.webp 720w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_d6e6561b7fd3d035.webp 1080w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -312,9 +311,12 @@
 
 
 
-  <div class="post-content"><blockquote>
-<p>Download the ADAM Tool Here: <a href="https://github.com/adamwhiles/Azure-Device-Group-Assignment-Management-Tool/releases" target="_blank">https://github.com/adamwhiles/Azure-Device-Group-Assignment-Management-Tool/releases</a></p>
-</blockquote>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><blockquote>
+<p>Download the ADAM Tool Here: <a href="https://github.com/adamwhiles/Azure-Device-Group-Assignment-Management-Tool/releases" target="_blank">https://github.com/adamwhiles/Azure-Device-Group-Assignment-Management-Tool/releases</a></p></blockquote>
 <p>If you have been using Intune for any amount of time, you have probably found a need at some point to find out what Intune applications, configuration profiles, etc. are assigned to a specific Azure AD group. I have found myself in this position many times and unfortunately Microsoft does not offer any built in ability to do this. Really, your only option is to go through ever app, profile etc. and see what groups they are assigned to. This is not user friendly at all.</p>
 <p>I present to you today, a tool that will do just that. The tool is the Azure Device-Group Assignment Management Tool, or ADAM Tool for short. The ADAM Tool allows you to input an Azure AD group and it will return the applications, configuration profiles, remediations, scripts and policies that are assigned to that group. It does this in under 30 seconds as well, saving you a lot of time.</p>
 <p><img loading="lazy" src="images/azure-ad-app-assignment-lookup-tool.png" alt="ADAM Tool - Lookup Apps and Configs Assigned to Azure AD Groups"  />
@@ -453,7 +455,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

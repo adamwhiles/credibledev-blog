@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/chmod-syntax-in-linux/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="chmod Syntax in Linux Explained" />
+      </script><meta property="og:title" content="chmod Syntax in Linux Explained" />
 <meta property="og:description" content="Quickly learn the proper chmod syntax to use for file permissions on your Linux system. Chmod is a power permission management app for Linux." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/chmod-syntax-in-linux/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/chmod-syntax.png" />
 <meta name="twitter:title" content="chmod Syntax in Linux Explained"/>
 <meta name="twitter:description" content="Quickly learn the proper chmod syntax to use for file permissions on your Linux system. Chmod is a power permission management app for Linux."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "chmod Syntax in Linux Explained",
-      "item": "http://localhost:1313/chmod-syntax-in-linux/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "chmod Syntax in Linux Explained",
+        "item": "http://localhost:1313/chmod-syntax-in-linux/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "chmod Syntax in Linux Explained",
-  "name": "chmod Syntax in Linux Explained",
-  "description": "Quickly learn the proper chmod syntax to use for file permissions on your Linux system. Chmod is a power permission management app for Linux.",
-  "keywords": [
-    "chmod", "linux"
-  ],
-  "articleBody": " If you are a Linux user, then you have probably heard of chmod. But what is it, and how can you use it? Being a Linux user you also know how important the syntax of commands is, so we will discuss the proper chmod syntax that you should use. In this blog post, we will discuss the basics of chmod and show you how to use it in a few simple steps.\nYou might be interested in learning about other common commands, check out our guide on using the tail command in Linux.\nWhat is chmod? Chmod is a Linux command that stands for “change mode”. This command is used to change the permissions of a file or directory. With chmod, you can give different levels of access to different users. For example, you can give read and write permissions to one user, and read-only permissions to another. You can also apply file and folder permissions to groups using chmod.\nLet’s break down the structure and syntax for chmod in Linux so you can use it effectively as a Linux admin.\nLinux File Permissions Using ls -la We need to understand a bit about Linux file permissions and how to view them. These references below are based on what user and group have rights to the file. You can view this by using the directory listing command, ls, with the -la option. An example output is shown below for reference.\nIn the screenshot above, looking at the area where the root user is shown, root on the left side represents the user who owns the file and the root on the right represents the group. In this case, they are both root, this will not always be the case.\nAlso in the screenshot, you will see the specific read, write and execute permissions for the user, group, and everyone else (also referred to as “others”).\ndrwxr-xr-x In the above permission listing, the first character “d”, represents the file type. The characters following that represent the permission set for the user, group and others. The first set of 3 characters after the file type is for the user/owner of the file or directory. The next set is for the group and the last set is for “others” or everyone else. Each set will have 3 characters, one for read, write and execute permission. If a particular permission is enabled, the respective letter will be shown, if it is disabled or not allowed then a dash, “-”, will be present instead. In the example above, you can see that the write permission is not allowed for the group and “others”, where the owner has all 3 permissions allowed.\nTo recap these options, let’s go over each permission type.\nr\nr represents the read permission. If it’s enabled you will see an “r”, otherwise, it will be a “-” for not enabled. w\nw represents the write permission. If it’s enabled you will see a “w”, otherwise, it will be a “-” for not enabled. x\nx represents the execute permission. If it’s enabled you will see an “x”, otherwise, it will be a “-” for not enabled. Now we can move on to chmod and the chmod syntax to be used in Linux.\nchmod Syntax chmod [options] mode file The syntax for the chmod command can look quite different if you use a symbolic/text (r,w,x) and (u,g,o,a) or the numeric method such as 777 or 755 for example. Both are valid and will work in the same way, it is very much about user preference and which one you can remember. We will cover both here so you can decide which chmod syntax would like to use.\nchmod Symbolic Mode Syntax The first method of using the chmod command is to use the symbolic mode, where we use letters for the user, group etc. and also letters for the permissions such as r, w, and x. In the example below, we are giving read, write and execute permissions to the owner. Read and execute permissions to the group and read permission to everyone else.\nchmod u=rwx,g=rx,o=r /path/to/test/file The above command combined user, group and others into one line. You can set these seperately as well. Another example of how to use the chmod command with symbolic mode is to use the + to add and the - to remove permissions. In the following example, we add write permission to the group and execute permission to everyone else.\nchmod g+w /path/to/test/file chmod o+x /path/to/test/file -u\nThis option stands for “user”. With this option, you can change the permissions for the owner of the file. -g\nThis option stands for “group”. With this option, you can change the permissions -o\nThis option stands for “others”. With this option, you can change the permissions for all other users. -a\nThis option stands for “all”. With this option, you can change the permissions for all users. chmod Numeric Mode Syntax As I mentioned earlier, we can use chmod with numeric values representing user, groups and others. We will also use number to represent the individual permissions instead of the characters r, w, and x.\nLet’s look at an example for better understanding. The following chmod command gives the owner full permission to read, write and execute. The group receives read and execute permissions, while everyone else only receives read permission.\nchmod 754 /path/to/test/file But where do these numbers come from and how does chmod translate them to permissions? Let’s take a look.\nExecute has a value of 1. So one is equivelent to an x in the symbolic mode.\nWrite has a value of 2. Two is equivelent to a w.\nRead has a value of 4. Four is equivelent to an r.\nIn our example, we gave full read, write and execute permission to our user/owner of the file. If we add 1, 2 and 4 together we get 7. In numeric mode we use 3 numbers, the first is for the user/owner, second for the group and last for all others. So in our example, we gave the user a 7, representing full permission. We made the same caclulations for the group and all others in the example.\nSome very common chmod syntax you will see are 777 and 755. Let’s take a look at those.\nchmod 777 Chmod 777 will apply full read, write and execute permissions to everyone. This is a dangerous permission set, as everyone has full control of the file. Be careful with this option.\nchmod 755 Chmod 755 will apply full permission to the user/owner while giving the group and everyone else read and execute permission. This is much safer that 777, since only the owner would be able to modify or delete the file.\nchmod 400 Chmod 400 gives only the user/owner read permission, everyone else is completely restricted. This option is fairly common when protecting an SSH private key. Once the file is created, it can be locked down using chmod 400 for better protection.\nThere is pretty cool chmod calculator that exists to help you decide what to use if you have trouble, be sure to check that out.\nchmod Recursive Use One last thing I would like to mention is using chmod recursively. All of our examples have been used for one file or directory. Chmod is much more powerful, as you can apply file or directory permissions recursively so that it changes for all files or folders within the directory that you provide. We do so using the -R option. Let’s look at an example of using chmod recursively. Imagine we have a folder called test and we want to apply the same permissions to that folder and everying inside of it. We could use the following.\nchmod -R 755 /test Conclusion We have covered the basic chmod syntax here and the many ways you can use it on your Linux machine. Remember, chmod is powerful, especially when used in combination with the sudo command. Be sure you are telling the machine to do what you really want it to do, otherwise you can really do some damage by changing the wrong permissions. I would suggest practicing on a virtual machine before making changes on a real machine if you are unsure.\n",
-  "wordCount" : "1378",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/chmod-syntax.png","datePublished": "2022-10-19T00:00:00Z",
-  "dateModified": "2022-10-19T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/chmod-syntax-in-linux/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "chmod Syntax in Linux Explained",
+    "name": "chmod Syntax in Linux Explained",
+    "description": "Quickly learn the proper chmod syntax to use for file permissions on your Linux system. Chmod is a power permission management app for Linux.",
+    "keywords": [
+      "chmod", "linux"
+    ],
+    "articleBody": " If you are a Linux user, then you have probably heard of chmod. But what is it, and how can you use it? Being a Linux user you also know how important the syntax of commands is, so we will discuss the proper chmod syntax that you should use. In this blog post, we will discuss the basics of chmod and show you how to use it in a few simple steps.\nYou might be interested in learning about other common commands, check out our guide on using the tail command in Linux.\nWhat is chmod? Chmod is a Linux command that stands for “change mode”. This command is used to change the permissions of a file or directory. With chmod, you can give different levels of access to different users. For example, you can give read and write permissions to one user, and read-only permissions to another. You can also apply file and folder permissions to groups using chmod.\nLet’s break down the structure and syntax for chmod in Linux so you can use it effectively as a Linux admin.\nLinux File Permissions Using ls -la We need to understand a bit about Linux file permissions and how to view them. These references below are based on what user and group have rights to the file. You can view this by using the directory listing command, ls, with the -la option. An example output is shown below for reference.\nIn the screenshot above, looking at the area where the root user is shown, root on the left side represents the user who owns the file and the root on the right represents the group. In this case, they are both root, this will not always be the case.\nAlso in the screenshot, you will see the specific read, write and execute permissions for the user, group, and everyone else (also referred to as “others”).\ndrwxr-xr-x In the above permission listing, the first character “d”, represents the file type. The characters following that represent the permission set for the user, group and others. The first set of 3 characters after the file type is for the user/owner of the file or directory. The next set is for the group and the last set is for “others” or everyone else. Each set will have 3 characters, one for read, write and execute permission. If a particular permission is enabled, the respective letter will be shown, if it is disabled or not allowed then a dash, “-”, will be present instead. In the example above, you can see that the write permission is not allowed for the group and “others”, where the owner has all 3 permissions allowed.\nTo recap these options, let’s go over each permission type.\nr\nr represents the read permission. If it’s enabled you will see an “r”, otherwise, it will be a “-” for not enabled. w\nw represents the write permission. If it’s enabled you will see a “w”, otherwise, it will be a “-” for not enabled. x\nx represents the execute permission. If it’s enabled you will see an “x”, otherwise, it will be a “-” for not enabled. Now we can move on to chmod and the chmod syntax to be used in Linux.\nchmod Syntax chmod [options] mode file The syntax for the chmod command can look quite different if you use a symbolic/text (r,w,x) and (u,g,o,a) or the numeric method such as 777 or 755 for example. Both are valid and will work in the same way, it is very much about user preference and which one you can remember. We will cover both here so you can decide which chmod syntax would like to use.\nchmod Symbolic Mode Syntax The first method of using the chmod command is to use the symbolic mode, where we use letters for the user, group etc. and also letters for the permissions such as r, w, and x. In the example below, we are giving read, write and execute permissions to the owner. Read and execute permissions to the group and read permission to everyone else.\nchmod u=rwx,g=rx,o=r /path/to/test/file The above command combined user, group and others into one line. You can set these seperately as well. Another example of how to use the chmod command with symbolic mode is to use the + to add and the - to remove permissions. In the following example, we add write permission to the group and execute permission to everyone else.\nchmod g+w /path/to/test/file chmod o+x /path/to/test/file -u\nThis option stands for “user”. With this option, you can change the permissions for the owner of the file. -g\nThis option stands for “group”. With this option, you can change the permissions -o\nThis option stands for “others”. With this option, you can change the permissions for all other users. -a\nThis option stands for “all”. With this option, you can change the permissions for all users. chmod Numeric Mode Syntax As I mentioned earlier, we can use chmod with numeric values representing user, groups and others. We will also use number to represent the individual permissions instead of the characters r, w, and x.\nLet’s look at an example for better understanding. The following chmod command gives the owner full permission to read, write and execute. The group receives read and execute permissions, while everyone else only receives read permission.\nchmod 754 /path/to/test/file But where do these numbers come from and how does chmod translate them to permissions? Let’s take a look.\nExecute has a value of 1. So one is equivelent to an x in the symbolic mode.\nWrite has a value of 2. Two is equivelent to a w.\nRead has a value of 4. Four is equivelent to an r.\nIn our example, we gave full read, write and execute permission to our user/owner of the file. If we add 1, 2 and 4 together we get 7. In numeric mode we use 3 numbers, the first is for the user/owner, second for the group and last for all others. So in our example, we gave the user a 7, representing full permission. We made the same caclulations for the group and all others in the example.\nSome very common chmod syntax you will see are 777 and 755. Let’s take a look at those.\nchmod 777 Chmod 777 will apply full read, write and execute permissions to everyone. This is a dangerous permission set, as everyone has full control of the file. Be careful with this option.\nchmod 755 Chmod 755 will apply full permission to the user/owner while giving the group and everyone else read and execute permission. This is much safer that 777, since only the owner would be able to modify or delete the file.\nchmod 400 Chmod 400 gives only the user/owner read permission, everyone else is completely restricted. This option is fairly common when protecting an SSH private key. Once the file is created, it can be locked down using chmod 400 for better protection.\nThere is pretty cool chmod calculator that exists to help you decide what to use if you have trouble, be sure to check that out.\nchmod Recursive Use One last thing I would like to mention is using chmod recursively. All of our examples have been used for one file or directory. Chmod is much more powerful, as you can apply file or directory permissions recursively so that it changes for all files or folders within the directory that you provide. We do so using the -R option. Let’s look at an example of using chmod recursively. Imagine we have a folder called test and we want to apply the same permissions to that folder and everying inside of it. We could use the following.\nchmod -R 755 /test Conclusion We have covered the basic chmod syntax here and the many ways you can use it on your Linux machine. Remember, chmod is powerful, especially when used in combination with the sudo command. Be sure you are telling the machine to do what you really want it to do, otherwise you can really do some damage by changing the wrong permissions. I would suggest practicing on a virtual machine before making changes on a real machine if you are unsure.\n",
+    "wordCount" : "1378",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/chmod-syntax.png","datePublished": "2022-10-19T00:00:00Z",
+    "dateModified": "2022-10-19T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/chmod-syntax-in-linux/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax_hu14353361461509496104.webp 360w ,http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax_hu17076714863499231773.webp 480w ,http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax_hu3889914676698483060.webp 720w ,http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax_hu13671124395673009622.webp 1080w ,http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax.png 1200w" 
+        <img srcset="http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax_hu_ced9e828500ec4df.webp 360w ,http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax_hu_c55a3cc5eb3f4da9.webp 480w ,http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax_hu_b907ac44865d0ad1.webp 720w ,http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax_hu_e196eb2667eb3b71.webp 1080w ,http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/chmod-syntax-in-linux/images/chmod-syntax.png" alt="" 
             width="1200" height="628">
         
@@ -280,7 +279,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -289,7 +288,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -298,7 +297,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -307,7 +306,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -316,7 +315,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -328,7 +327,11 @@
 
 
 
-  <div class="post-content"><p><img loading="lazy" src="images/chmod-syntax-in-Linux.png" alt="chmod syntax in Linux terminal output"  />
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p><img loading="lazy" src="images/chmod-syntax-in-Linux.png" alt="chmod syntax in Linux terminal output"  />
 </p>
 <p>If you are a Linux user, then you have probably heard of <a href="https://ss64.com/bash/chmod.html" target="_blank">chmod</a>. But what is it, and how can you use it? Being a Linux user you also know how important the syntax of commands is, so we will discuss the proper chmod syntax that you should use. In this blog post, we will discuss the basics of chmod and show you how to use it in a few simple steps.</p>
 <p>You might be interested in learning about other common commands, check out our guide on <a href="https://credibledev.com/tail-command-in-linux/" target="_blank">using the tail command in Linux.</a></p>
@@ -552,7 +555,7 @@ chmod o+x /path/to/test/file
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

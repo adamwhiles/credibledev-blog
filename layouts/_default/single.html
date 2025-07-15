@@ -34,6 +34,7 @@
   {{- partial "sidebar.html" .}}
 
   <div class="post-content">
+    {{- partial "bmc-button.html" (dict "slug" "credibledev") -}}
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}

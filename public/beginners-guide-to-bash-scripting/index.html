@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/beginners-guide-to-bash-scripting/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Beginners Guide to Bash Scripting" />
+      </script><meta property="og:title" content="Beginners Guide to Bash Scripting" />
 <meta property="og:description" content="In Part 1, this guide teaches readers the basics of bash scripting including variables, getting user input and doing basic math in bash." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/beginners-guide-to-bash-scripting/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/beginners-guide-to-shell-scripting-part-12.png" />
 <meta name="twitter:title" content="Beginners Guide to Bash Scripting"/>
 <meta name="twitter:description" content="In Part 1, this guide teaches readers the basics of bash scripting including variables, getting user input and doing basic math in bash."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Beginners Guide to Bash Scripting",
-      "item": "http://localhost:1313/beginners-guide-to-bash-scripting/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Beginners Guide to Bash Scripting",
+        "item": "http://localhost:1313/beginners-guide-to-bash-scripting/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Beginners Guide to Bash Scripting",
-  "name": "Beginners Guide to Bash Scripting",
-  "description": "In Part 1, this guide teaches readers the basics of bash scripting including variables, getting user input and doing basic math in bash.",
-  "keywords": [
-    "bash", "linux"
-  ],
-  "articleBody": "Are you tired of manually performing repetitive tasks on the command line? Well, have no fear because bash scripting is here! This beginner’s guide to bash scripting will take you from a basic command line user to a bash scripting pro in no time. Say goodbye to manual labor and hello to automation. Whether you’re a seasoned developer or just starting out, this guide will provide you with the fundamentals of bash scripting and how to use it to streamline your workflow. So, grab a cup of coffee, get comfortable, and let’s dive into the exciting world of bash scripting!\nThis guide is part of a series, be sure to check out the other parts as well.\nPart 1 - Introduction to Bash, Variables, Comments, User Input (This Page)\nPart 2 - If/Else Statements, Looping\nPart 3 - Functions in Bash\nPart 4 - Creating Menus in Bash\nWhat is BASH Scripting? Imagine being able to automate all those tedious, repetitive tasks you do on the command line. No more typing the same commands over and over, no more manual labor! Bash scripting allows you to write a series of commands in a script file and run it as many times as you want, with just one command. It’s like having a personal assistant that takes care of the boring stuff for you. With bash scripting, you can turn a 30-minute task into a one-minute task. Trust me, your future self will thank you. It’s not just about saving time, though - bash scripts can also help you streamline complex tasks and make them more reliable. Whether you’re a sysadmin, a developer, or just a power user, bash scripting is a must-have tool in your toolkit.\nGetting Started with Bash Scripting To follow this beginner’s guide to bash scripting, all you need is a Linux computer or virtual machine and a text editor of your choice. Gather your tools and let’s get started.\nAt the start of every bash script, you will find something that looks like this “#! /bin/bash”. This line points to the interpreter that should be used, in this case, bash. This line is commonly referred to as “shebang”, so if you hear this term, this is likely what they are referring to, or at least the “#!” portion of the line. The “/bin/bash” portion is the location on the filesystem where bash is found. This could vary from system to system, you can verify the location by opening a terminal on your machine and running the following command.\nwhich bash This should return the location of bash on your system.\nNow that you know where bash is installed, you can add the first line to your bash script. Your bash script should use the file extension “.sh”. In your editor of choice, add the shebang line as shown below. Be sure to update the path to match where bash is installed on your system. The editor I’m using here is the open-source version of Visual Studio Code, which doesn’t include anything proprietary from Microsoft, it’s referred to as Code-OSS.\nComments in Bash Let’s add a bit more to our first bash script before we try executing it. First, we will add a comment. Comments in bash scripts generally start with the hash symbol, followed by the comment. There are methods for multi-line comments but they are typically avoided as they are difficult to discern from other code. So the single-line comment method is generally preferred by most. Let’s add a couple of comments.\nAs you can see, I’ve added two comments to the script. The first one is on its own line, while the second is on the same line as an echo statement. Both of these comments are legal in bash scripts. The echo command, if you’re not familiar, outputs text to the screen. So in this case, “My first bash script” will be printed to the terminal screen without the quotes.\nMaking a Bash Script Executable Now that we have our first bash script, we need to make it executable before we can use it. You can make a bash script executable by using the chmod command. The “+x” option is what is setting our bash script as executable in the command below. Open up your terminal and run this command, replacing the file name with the name you chose for your bash script.\nchmod +x LearnBash.sh Running a Bash Script Now that we have made our bash script executable, we can run it from the terminal. To do so, run the following in your terminal window, remember to replace the name of the file with your file name.\n./LearnBash.sh As you can see, the comments were not printed on the screen, only the text that was echoed. Congrats, you have created and executed your first bash script.\nFundamentals of Bash Script Syntax Now that we have gotten our feet wet with the first bash script, it’s time to expand the functionality. Maybe you have been programming in other languages such as Python or Javascript, you’ll be happy to know that things such as conditionals, variables, and functions exist in bash scripts as well. So let’s go over how to implement them.\nUsing Variables in Bash If you are unfamiliar with variables, to put it in simple terms, they hold data. A variable is made up of a variable name and a value. This value could be a letter, multiple letters, a sentence, numbers, etc. Variables are a handy way to reference this data by a meaningful name. They also make your code easier to understand when used appropriately. Wherever we use the variable, it will be replaced with the data that we stored in it.\nLet’s create a couple of variables in our bash script. To properly set a variable, on a new line, you will enter a variable name followed by an “=” and then the value. You should not have any space between the variable name, the “=” and the value. If your value has spaces, wrap it in quotes.\n#!/bin/bash # This is a comment echo \"My first bash script\" # This is also a valid comment # Define a variable called user user=thecd age=99 # Print a sentence using the variables. Prefix the variables with a $ to reference them echo \"Hello $user! Wow, you are $age years old!\" In the code shown above, we set two variables, one for user and another for age. We then echo those variables out and use them in a sentence.\nMath in Shell Scripts It’s common to use calculations of all sorts in programming and you can use the various arithmetic operators in bash to do the same thing. Let’s take a look at the available operators and their meanings, then we will look at the usage syntax.\nBash Basic Arithmetic Operators There are a few different ways that you can use these arithmetic operators in a bash script. I find myself using the following method much of the time, mostly because it’s the first way that I learned. If you wanted to store the sum of the numbers 2 and 5 into a variable called sum, you could use the following.\nsum=$((2+5)) Another way of doing the same thing is with “let”.\nlet sum=2+5 We can also use “expr” for this as well.\nsum=`expr 2 + 5` # Must use a space between the numbers and the operator as shown. #!/bin/bash # This is a comment echo \"My first bash script\" # This is also a valid comment # Define a variable called user user=thecd age=99 # Print a sentence using the variables. Prefix the variables with a $ to reference them echo \"Hello $user! Wow, you are $age years old!\" # Exploring Math Operators echo \"Let's do some math\" x=2 y=5 echo \"$x + $y is $(($x+$y)).\" # We can also set the result of a math operation as the value of a variable sum=$(($x+$y)) echo \"The sum of x and y is $sum.\" # Do the same thing using let let sum2=2+5 echo $sum2 # Same calculation using expr instead sum3=`expr 2 + 5` echo $sum3 Get User Input with Bash A really useful feature of any scripting language is to get input from the user. This is really simple to do with bash scripting so let’s add that functionality to our script using the “read” command. In the below example, we will prompt the user to enter a number, and then store the value they enter into a variable named “x”. Here you will see the use of “-p” with the read command which is what tells it to prompt the user.\n# Let's get some user input read -p \"Enter a number: \" x read -p \"Enter Another Number: \" y sum=$(($x+$y)) echo \"The sum of x and y is $sum.\" Check out Part 2 of the Beginners Guide to Bash Scripting, where we discuss if/else statements and loops.\nThat’s it for part 1 of the beginner bash script series. Be sure to check back here soon for part 2, where we will discuss the following topics.\nIf/Else Statements\nLooping\n",
-  "wordCount" : "1523",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/beginners-guide-to-shell-scripting-part-12.png","datePublished": "2023-01-30T00:00:00Z",
-  "dateModified": "2023-01-30T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/beginners-guide-to-bash-scripting/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Beginners Guide to Bash Scripting",
+    "name": "Beginners Guide to Bash Scripting",
+    "description": "In Part 1, this guide teaches readers the basics of bash scripting including variables, getting user input and doing basic math in bash.",
+    "keywords": [
+      "bash", "linux"
+    ],
+    "articleBody": "Are you tired of manually performing repetitive tasks on the command line? Well, have no fear because bash scripting is here! This beginner’s guide to bash scripting will take you from a basic command line user to a bash scripting pro in no time. Say goodbye to manual labor and hello to automation. Whether you’re a seasoned developer or just starting out, this guide will provide you with the fundamentals of bash scripting and how to use it to streamline your workflow. So, grab a cup of coffee, get comfortable, and let’s dive into the exciting world of bash scripting!\nThis guide is part of a series, be sure to check out the other parts as well.\nPart 1 - Introduction to Bash, Variables, Comments, User Input (This Page)\nPart 2 - If/Else Statements, Looping\nPart 3 - Functions in Bash\nPart 4 - Creating Menus in Bash\nWhat is BASH Scripting? Imagine being able to automate all those tedious, repetitive tasks you do on the command line. No more typing the same commands over and over, no more manual labor! Bash scripting allows you to write a series of commands in a script file and run it as many times as you want, with just one command. It’s like having a personal assistant that takes care of the boring stuff for you. With bash scripting, you can turn a 30-minute task into a one-minute task. Trust me, your future self will thank you. It’s not just about saving time, though - bash scripts can also help you streamline complex tasks and make them more reliable. Whether you’re a sysadmin, a developer, or just a power user, bash scripting is a must-have tool in your toolkit.\nGetting Started with Bash Scripting To follow this beginner’s guide to bash scripting, all you need is a Linux computer or virtual machine and a text editor of your choice. Gather your tools and let’s get started.\nAt the start of every bash script, you will find something that looks like this “#! /bin/bash”. This line points to the interpreter that should be used, in this case, bash. This line is commonly referred to as “shebang”, so if you hear this term, this is likely what they are referring to, or at least the “#!” portion of the line. The “/bin/bash” portion is the location on the filesystem where bash is found. This could vary from system to system, you can verify the location by opening a terminal on your machine and running the following command.\nwhich bash This should return the location of bash on your system.\nNow that you know where bash is installed, you can add the first line to your bash script. Your bash script should use the file extension “.sh”. In your editor of choice, add the shebang line as shown below. Be sure to update the path to match where bash is installed on your system. The editor I’m using here is the open-source version of Visual Studio Code, which doesn’t include anything proprietary from Microsoft, it’s referred to as Code-OSS.\nComments in Bash Let’s add a bit more to our first bash script before we try executing it. First, we will add a comment. Comments in bash scripts generally start with the hash symbol, followed by the comment. There are methods for multi-line comments but they are typically avoided as they are difficult to discern from other code. So the single-line comment method is generally preferred by most. Let’s add a couple of comments.\nAs you can see, I’ve added two comments to the script. The first one is on its own line, while the second is on the same line as an echo statement. Both of these comments are legal in bash scripts. The echo command, if you’re not familiar, outputs text to the screen. So in this case, “My first bash script” will be printed to the terminal screen without the quotes.\nMaking a Bash Script Executable Now that we have our first bash script, we need to make it executable before we can use it. You can make a bash script executable by using the chmod command. The “+x” option is what is setting our bash script as executable in the command below. Open up your terminal and run this command, replacing the file name with the name you chose for your bash script.\nchmod +x LearnBash.sh Running a Bash Script Now that we have made our bash script executable, we can run it from the terminal. To do so, run the following in your terminal window, remember to replace the name of the file with your file name.\n./LearnBash.sh As you can see, the comments were not printed on the screen, only the text that was echoed. Congrats, you have created and executed your first bash script.\nFundamentals of Bash Script Syntax Now that we have gotten our feet wet with the first bash script, it’s time to expand the functionality. Maybe you have been programming in other languages such as Python or Javascript, you’ll be happy to know that things such as conditionals, variables, and functions exist in bash scripts as well. So let’s go over how to implement them.\nUsing Variables in Bash If you are unfamiliar with variables, to put it in simple terms, they hold data. A variable is made up of a variable name and a value. This value could be a letter, multiple letters, a sentence, numbers, etc. Variables are a handy way to reference this data by a meaningful name. They also make your code easier to understand when used appropriately. Wherever we use the variable, it will be replaced with the data that we stored in it.\nLet’s create a couple of variables in our bash script. To properly set a variable, on a new line, you will enter a variable name followed by an “=” and then the value. You should not have any space between the variable name, the “=” and the value. If your value has spaces, wrap it in quotes.\n#!/bin/bash # This is a comment echo \"My first bash script\" # This is also a valid comment # Define a variable called user user=thecd age=99 # Print a sentence using the variables. Prefix the variables with a $ to reference them echo \"Hello $user! Wow, you are $age years old!\" In the code shown above, we set two variables, one for user and another for age. We then echo those variables out and use them in a sentence.\nMath in Shell Scripts It’s common to use calculations of all sorts in programming and you can use the various arithmetic operators in bash to do the same thing. Let’s take a look at the available operators and their meanings, then we will look at the usage syntax.\nBash Basic Arithmetic Operators Operator Description + Addition (1+2) - Subtraction (2-1) / Division (10/5) * Multiplication (2*5) ** Exponentiation (10**2) % Modulus (15%4) There are a few different ways that you can use these arithmetic operators in a bash script. I find myself using the following method much of the time, mostly because it’s the first way that I learned. If you wanted to store the sum of the numbers 2 and 5 into a variable called sum, you could use the following.\nsum=$((2+5)) Another way of doing the same thing is with “let”.\nlet sum=2+5 We can also use “expr” for this as well.\nsum=`expr 2 + 5` # Must use a space between the numbers and the operator as shown. #!/bin/bash # This is a comment echo \"My first bash script\" # This is also a valid comment # Define a variable called user user=thecd age=99 # Print a sentence using the variables. Prefix the variables with a $ to reference them echo \"Hello $user! Wow, you are $age years old!\" # Exploring Math Operators echo \"Let's do some math\" x=2 y=5 echo \"$x + $y is $(($x+$y)).\" # We can also set the result of a math operation as the value of a variable sum=$(($x+$y)) echo \"The sum of x and y is $sum.\" # Do the same thing using let let sum2=2+5 echo $sum2 # Same calculation using expr instead sum3=`expr 2 + 5` echo $sum3 Get User Input with Bash A really useful feature of any scripting language is to get input from the user. This is really simple to do with bash scripting so let’s add that functionality to our script using the “read” command. In the below example, we will prompt the user to enter a number, and then store the value they enter into a variable named “x”. Here you will see the use of “-p” with the read command which is what tells it to prompt the user.\n# Let's get some user input read -p \"Enter a number: \" x read -p \"Enter Another Number: \" y sum=$(($x+$y)) echo \"The sum of x and y is $sum.\" Check out Part 2 of the Beginners Guide to Bash Scripting, where we discuss if/else statements and loops.\nThat’s it for part 1 of the beginner bash script series. Be sure to check back here soon for part 2, where we will discuss the following topics.\nIf/Else Statements\nLooping\n",
+    "wordCount" : "1543",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/beginners-guide-to-shell-scripting-part-12.png","datePublished": "2023-01-30T00:00:00Z",
+    "dateModified": "2023-01-30T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/beginners-guide-to-bash-scripting/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12_hu5880183124378478822.webp 360w ,http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12_hu17767292214572841580.webp 480w ,http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12_hu1881431609303574089.webp 720w ,http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12_hu1573212588189614908.webp 1080w ,http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12.png 1280w" 
+        <img srcset="http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12_hu_ad6a10bfc836e7ff.webp 360w ,http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12_hu_23f268e45484f834.webp 480w ,http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12_hu_e6f8bcbca79d3798.webp 720w ,http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12_hu_13c48babde75f9a2.webp 1080w ,http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-12.png" alt="" 
             width="1280" height="720">
         
@@ -287,7 +286,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -296,7 +295,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -305,7 +304,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -314,7 +313,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -323,7 +322,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -335,7 +334,11 @@
 
 
 
-  <div class="post-content"><p>Are you tired of manually performing repetitive tasks on the command line? Well, have no fear because bash scripting is here! This beginner&rsquo;s guide to bash scripting will take you from a basic command line user to a bash scripting pro in no time. Say goodbye to manual labor and hello to automation. Whether you&rsquo;re a seasoned developer or just starting out, this guide will provide you with the fundamentals of bash scripting and how to use it to streamline your workflow. So, grab a cup of coffee, get comfortable, and let&rsquo;s dive into the exciting world of bash scripting!</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Are you tired of manually performing repetitive tasks on the command line? Well, have no fear because bash scripting is here! This beginner&rsquo;s guide to bash scripting will take you from a basic command line user to a bash scripting pro in no time. Say goodbye to manual labor and hello to automation. Whether you&rsquo;re a seasoned developer or just starting out, this guide will provide you with the fundamentals of bash scripting and how to use it to streamline your workflow. So, grab a cup of coffee, get comfortable, and let&rsquo;s dive into the exciting world of bash scripting!</p>
 <p>This guide is part of a series, be sure to check out the other parts as well.</p>
 <ul>
 <li>
@@ -398,7 +401,40 @@ echo &#34;Hello $user! Wow, you are $age years old!&#34;
 <h3 id="math-in-shell-scripts">Math in Shell Scripts<a hidden class="anchor" aria-hidden="true" href="#math-in-shell-scripts">#</a></h3>
 <p>It&rsquo;s common to use calculations of all sorts in programming and you can use the various arithmetic operators in bash to do the same thing. Let&rsquo;s take a look at the available operators and their meanings, then we will look at the usage syntax.</p>
 <h5 id="bash-basic-arithmetic-operators">Bash Basic Arithmetic Operators<a hidden class="anchor" aria-hidden="true" href="#bash-basic-arithmetic-operators">#</a></h5>
-<!-- raw HTML omitted -->
+<table>
+  <thead>
+      <tr>
+          <th>Operator</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>+</td>
+          <td>Addition (1+2)</td>
+      </tr>
+      <tr>
+          <td>-</td>
+          <td>Subtraction (2-1)</td>
+      </tr>
+      <tr>
+          <td>/</td>
+          <td>Division (10/5)</td>
+      </tr>
+      <tr>
+          <td>*</td>
+          <td>Multiplication (2*5)</td>
+      </tr>
+      <tr>
+          <td>**</td>
+          <td>Exponentiation (10**2)</td>
+      </tr>
+      <tr>
+          <td>%</td>
+          <td>Modulus (15%4)</td>
+      </tr>
+  </tbody>
+</table>
 <p>There are a few different ways that you can use these arithmetic operators in a bash script. I find myself using the following method much of the time, mostly because it&rsquo;s the first way that I learned. If you wanted to store the sum of the numbers 2 and 5 into a variable called sum, you could use the following.</p>
 <pre tabindex="0"><code>sum=$((2+5))
 </code></pre><p>Another way of doing the same thing is with &ldquo;let&rdquo;.</p>
@@ -608,7 +644,7 @@ echo &#34;The sum of x and y is $sum.&#34;
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/create-a-linode-linux-vps-part-2/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide" />
+      </script><meta property="og:title" content="Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide" />
 <meta property="og:description" content="In Part 2 of Creating a Linode Linux VPS, we setup add a new user, setup SSH keys and configure the Ubuntu and Linode firewalls for security." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/create-a-linode-linux-vps-part-2/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/create-a-linode-linux-vps-part-2.png" />
 <meta name="twitter:title" content="Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide"/>
 <meta name="twitter:description" content="In Part 2 of Creating a Linode Linux VPS, we setup add a new user, setup SSH keys and configure the Ubuntu and Linode firewalls for security."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide",
-      "item": "http://localhost:1313/create-a-linode-linux-vps-part-2/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide",
+        "item": "http://localhost:1313/create-a-linode-linux-vps-part-2/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide",
-  "name": "Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide",
-  "description": "In Part 2 of Creating a Linode Linux VPS, we setup add a new user, setup SSH keys and configure the Ubuntu and Linode firewalls for security.",
-  "keywords": [
-    "firewall", "linode", "linux", "ssh", "ubuntu"
-  ],
-  "articleBody": "Welcome to part 2 of our guide on Creating a Linode Linux VPS. You can check out part 1 of the guide here. Part 3 is now live as well, going over how to set up Apache, PHP, MySQL, and a domain name.\nLinode Coupon Code – $100 in Free Credit for 60 Days\nA big part of running your own Virtual Private Server (VPS), is securing the server. One of the first steps that you should take is creating a new user and securing SSH. These are very basic steps that go a long way in protecting your VPS. Not long after bringing a VPS online, there will be bots and other automated attacks attempting to connect via SSH. By simply disabling root access via SSH, having a new user and only allowing SSH connections with a private key, your server will be much more secure against the attacks.\nIn this guide we will walk through creating a new user, giving them administrator access through sudo, disabling root SSH access, and setting up private key authentication. Let’s get started.\nAdd a New User to our Linode Linux VPS First, we need to access our VPS via SSH as we did in part 1 of this guide.\nssh@serverip Now that we are connected to our server, let’s create a new user. We will create a new user with the name thecd by running the following command in the terminal. Name your account whatever you’d like.\nadduser thecd You will then be asked to create a password, be sure to choose something secure. You will also be asked for information such as name, phone number, etc. you can leave these blank.\nGive Our User Sudo Privileges Now that we have a new user account created, we need to add this user to the sudo group so that the user can maintain and administer the server with elevated privileges when needed. We add user account thecd to the sudo group by running the following command.\nusermod –aG sudo thecd Now we have a new user and they can do admin tasks through sudo, we can log out of the root again and reconnect with our new account. Simply type logout in the terminal and press enter to disconnect. Now reconnect as your new user and log in with the following command.\nssh thecd@serverip Go ahead and run a command using sudo, then enter your password when prompted to confirm the permissions are correct. You can simply check for updates using APT for example.\nsudo apt update Once you have confirmed that you can connect, we can start configuring the SSH keys so that our server is better protected. This process will be different depending on the OS you are connecting with, such as Linux or Windows. We will go through the process on both.\nConfiguring SSH Keys Once you have confirmed that you can connect, we can start configuring the SSH keys so that our server is better protected. This process will be different depending on the OS you are connecting with, such as Linux or Windows. We will go through the process on both.\nGenerate SSH Keys from a Linux Host To generate the key pair needed for this setup, you will run the following command from your Linux machine, not the server. This will generate a private/public key in your home directory under the .ssh folder. Be careful, if you already have a key there, this will overwrite it.\nssh-keygen –b 4096 You will be asked where to save, it is fine to keep the default. You will also be asked for a passphrase, which is optional. The passphrase is an additional layer of security since an attacker would need both the private key and the passphrase used.\nNow that we have a keypair, we need to put the public key on our VPS, which is very easy to do from a Linux machine. We run the following command to complete this step.\nssh-copy-id thecd@serverip Now that our public key has been copied to the server, we can switch back to the terminal where we are connected to the server with the new user and log out. Simply run the logout command from the server terminal window.\nOnce you are disconnected, reconnect to the server as the new user, this time you won’t be prompted for the password. If you chose to set up a passphrase during the previous step, you will be asked for that instead of the password.\nYour setup for private key authentication is complete. Keep your private key safe and be sure not to lose it.\nGenerate SSH Keys from a Windows Host If you are on a Windows device, you will use a utility that comes with PuTTY to generate your keys. If you followed part 1 of this guide, you already have PuTTY installed. Otherwise, you can download PuTTY here.\nFirst, we want to launch the PuTTYgen, which you can find in your Windows start menu under PuTTY.\nIn PuTTYgen, you will want to change the number of bits to 4096, which is located in the bottom right corner. Also make sure RSA is selected, then click the generate button. You will keep moving your mouse as instructed to randomize the key generation. When complete you will be presented with the public key and the option to configure a passphrase if you wish.\nOnce this is complete, open up notepad, copy and paste the public key into notepad. Keep this notepad open, you’ll need it later. Do not use the save public key button, as this will mess up the formatting. Next, click the save private key to save it, and keep the default format which should be a .ppk file.\nNow that we have generated and saved the keys, we need to include our private key in PuTTY and copy our public key onto the server. Go ahead and fire up PuTTY. If you followed part 1 of this guide, you saved the connection to your server in PuTTY, so you can select it from the list and click on load.\nNext, you will want to expand SSH on the left side and select Auth, then select Credentials. Here you will find a box to input your private key. Go ahead and click on browse and navigate to where you saved the private key file. After you input your key, on the left menu, scroll to the top and click session, then click on save. Otherwise, the key file won’t be saved for future sessions.\nOnce complete, click Open at the bottom to launch the terminal sessions. Input your username and password to log in.\nNow that we are connected to the server, we need to run a few commands to create the directory and file used to store our public key. We also need to protect the folder and file using Linux file permissions with the chmod command. After this is complete, we need to open the file using your favorite editor, such as nano, to input the public key and save it.\nmkdir –p ~/.ssh touch ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys nano ~/.ssh/authorized_keys Once you have the authorized_keys file open, paste in the public key from notepad. It should look something like this. You can press Ctrl+O to save the changes to the file and Ctrl+X to exit the editor.\nYou can now test that your key works. Once you’re back at the terminal run the logout command to disconnect, then reconnect using PuTTY. If everything was successful you should not be prompted for your password. If you set up a passphrase, you will be prompted for that though.\nSSH Security Config So far we have set up and confirmed that we can connect via SSH to our Linode Linux VPS with our keypair, so we are good to start securing SSH a bit more. We will do this by preventing root login via SSH and disabling password authentication for SSH. This means you will not be able to connect to SSH with the root account and you will only be able to connect with a private key for the new user you created previously.\nIn your server terminal session, we want to edit the SSH config file to complete these changes. Run the following command to open the SSH config file.\nsudo nano /etc/ssh/sshd_config In this file, find the line that says PermitRootLogin and change it from yes to no. Next, find the line that says PasswordAuthentication, and change it to no as well. So these lines should look like the following.\nPermitRootLogin no PasswordAuthentication no Make sure you save the changes (Ctrl+O) and then exit nano (Ctrl+x). Now we need to restart the SSH service by running the following command.\nsudo systemctl reload sshd.service After running this command, do not log out of the server, instead, open a new PuTTY window and connect in a new session to ensure you can still connect.\nUbuntu Firewall Configuration Using UFW The next step we need to take in securing our Linode VPS is to enable the firewall on the server. This is an easy task that we will use UFW for. Since we only have one service that we are using, SSH, we only need to allow the SSH port which is 22.\nWe will add a rule to allow SSH using the following command.\nsudo ufw allow OpenSSH We can then run the following command to confirm that SSH is allowed. After running this command you should see OpenSSH listed under available applications.\nOnce confirmed, we will enable the firewall using the following command.\nsudo ufw enable After you have enabled the firewall, open a new terminal and confirm you can still connect to your server via ssh.\nYou can confirm the firewall is active by running the following command, which should show the status is active and list the OpenSSH rule we added.\nsudo ufw status Configure Firewall on Linode As an extra layer of protection, in case of an issue with the UFW firewall, we will set up the firewall directly from Linode as well. Head to your Linode dashboard and choose firewalls from the menu on the left.\nOn the firewalls page, click on create a firewall. You will then name the firewall and select the server to apply the firewall to. Once you’re finished, click on create firewall.\nAfter creating your firewall in Linode, you will see it listed. Go ahead and click on the name of the firewall you just created to open its rules page.\nHere, we want to add an inbound rule that allows SSH connections to our server.\nAfter adding the SSH rule, change the default inbound policy to deny. This will deny all inbound traffic except for SSH traffic. Since we are not currently hosting other services like a website, this is fine. After making all of your changes, click on save changes to apply the firewall to our Linode server.\nGo back to your PC, and launch a new SSH session to make sure you can still connect.\nConclusion In this guide, you have successfully completed the following tasks on your Linode Linux VPS.\nAdd a new user\nAdded your user to the sudo group\nCreated and configured SSH keys from Linux or Windows\nSetup and configured the Ubuntu and Linode Firewall\nCheck out Part 3 of this guide to set up Apache, PHP, MySQL, and point a domain name to your Linode VPS.\n",
-  "wordCount" : "1916",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/create-a-linode-linux-vps-part-2.png","datePublished": "2022-12-16T00:00:00Z",
-  "dateModified": "2022-12-16T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/create-a-linode-linux-vps-part-2/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide",
+    "name": "Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide",
+    "description": "In Part 2 of Creating a Linode Linux VPS, we setup add a new user, setup SSH keys and configure the Ubuntu and Linode firewalls for security.",
+    "keywords": [
+      "firewall", "linode", "linux", "ssh", "ubuntu"
+    ],
+    "articleBody": "Welcome to part 2 of our guide on Creating a Linode Linux VPS. You can check out part 1 of the guide here. Part 3 is now live as well, going over how to set up Apache, PHP, MySQL, and a domain name.\nLinode Coupon Code – $100 in Free Credit for 60 Days\nA big part of running your own Virtual Private Server (VPS), is securing the server. One of the first steps that you should take is creating a new user and securing SSH. These are very basic steps that go a long way in protecting your VPS. Not long after bringing a VPS online, there will be bots and other automated attacks attempting to connect via SSH. By simply disabling root access via SSH, having a new user and only allowing SSH connections with a private key, your server will be much more secure against the attacks.\nIn this guide we will walk through creating a new user, giving them administrator access through sudo, disabling root SSH access, and setting up private key authentication. Let’s get started.\nAdd a New User to our Linode Linux VPS First, we need to access our VPS via SSH as we did in part 1 of this guide.\nssh@serverip Now that we are connected to our server, let’s create a new user. We will create a new user with the name thecd by running the following command in the terminal. Name your account whatever you’d like.\nadduser thecd You will then be asked to create a password, be sure to choose something secure. You will also be asked for information such as name, phone number, etc. you can leave these blank.\nGive Our User Sudo Privileges Now that we have a new user account created, we need to add this user to the sudo group so that the user can maintain and administer the server with elevated privileges when needed. We add user account thecd to the sudo group by running the following command.\nusermod –aG sudo thecd Now we have a new user and they can do admin tasks through sudo, we can log out of the root again and reconnect with our new account. Simply type logout in the terminal and press enter to disconnect. Now reconnect as your new user and log in with the following command.\nssh thecd@serverip Go ahead and run a command using sudo, then enter your password when prompted to confirm the permissions are correct. You can simply check for updates using APT for example.\nsudo apt update Once you have confirmed that you can connect, we can start configuring the SSH keys so that our server is better protected. This process will be different depending on the OS you are connecting with, such as Linux or Windows. We will go through the process on both.\nConfiguring SSH Keys Once you have confirmed that you can connect, we can start configuring the SSH keys so that our server is better protected. This process will be different depending on the OS you are connecting with, such as Linux or Windows. We will go through the process on both.\nGenerate SSH Keys from a Linux Host To generate the key pair needed for this setup, you will run the following command from your Linux machine, not the server. This will generate a private/public key in your home directory under the .ssh folder. Be careful, if you already have a key there, this will overwrite it.\nssh-keygen –b 4096 You will be asked where to save, it is fine to keep the default. You will also be asked for a passphrase, which is optional. The passphrase is an additional layer of security since an attacker would need both the private key and the passphrase used.\nNow that we have a keypair, we need to put the public key on our VPS, which is very easy to do from a Linux machine. We run the following command to complete this step.\nssh-copy-id thecd@serverip Now that our public key has been copied to the server, we can switch back to the terminal where we are connected to the server with the new user and log out. Simply run the logout command from the server terminal window.\nOnce you are disconnected, reconnect to the server as the new user, this time you won’t be prompted for the password. If you chose to set up a passphrase during the previous step, you will be asked for that instead of the password.\nYour setup for private key authentication is complete. Keep your private key safe and be sure not to lose it.\nGenerate SSH Keys from a Windows Host If you are on a Windows device, you will use a utility that comes with PuTTY to generate your keys. If you followed part 1 of this guide, you already have PuTTY installed. Otherwise, you can download PuTTY here.\nFirst, we want to launch the PuTTYgen, which you can find in your Windows start menu under PuTTY.\nIn PuTTYgen, you will want to change the number of bits to 4096, which is located in the bottom right corner. Also make sure RSA is selected, then click the generate button. You will keep moving your mouse as instructed to randomize the key generation. When complete you will be presented with the public key and the option to configure a passphrase if you wish.\nOnce this is complete, open up notepad, copy and paste the public key into notepad. Keep this notepad open, you’ll need it later. Do not use the save public key button, as this will mess up the formatting. Next, click the save private key to save it, and keep the default format which should be a .ppk file.\nNow that we have generated and saved the keys, we need to include our private key in PuTTY and copy our public key onto the server. Go ahead and fire up PuTTY. If you followed part 1 of this guide, you saved the connection to your server in PuTTY, so you can select it from the list and click on load.\nNext, you will want to expand SSH on the left side and select Auth, then select Credentials. Here you will find a box to input your private key. Go ahead and click on browse and navigate to where you saved the private key file. After you input your key, on the left menu, scroll to the top and click session, then click on save. Otherwise, the key file won’t be saved for future sessions.\nOnce complete, click Open at the bottom to launch the terminal sessions. Input your username and password to log in.\nNow that we are connected to the server, we need to run a few commands to create the directory and file used to store our public key. We also need to protect the folder and file using Linux file permissions with the chmod command. After this is complete, we need to open the file using your favorite editor, such as nano, to input the public key and save it.\nmkdir –p ~/.ssh touch ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys nano ~/.ssh/authorized_keys Once you have the authorized_keys file open, paste in the public key from notepad. It should look something like this. You can press Ctrl+O to save the changes to the file and Ctrl+X to exit the editor.\nYou can now test that your key works. Once you’re back at the terminal run the logout command to disconnect, then reconnect using PuTTY. If everything was successful you should not be prompted for your password. If you set up a passphrase, you will be prompted for that though.\nSSH Security Config So far we have set up and confirmed that we can connect via SSH to our Linode Linux VPS with our keypair, so we are good to start securing SSH a bit more. We will do this by preventing root login via SSH and disabling password authentication for SSH. This means you will not be able to connect to SSH with the root account and you will only be able to connect with a private key for the new user you created previously.\nIn your server terminal session, we want to edit the SSH config file to complete these changes. Run the following command to open the SSH config file.\nsudo nano /etc/ssh/sshd_config In this file, find the line that says PermitRootLogin and change it from yes to no. Next, find the line that says PasswordAuthentication, and change it to no as well. So these lines should look like the following.\nPermitRootLogin no PasswordAuthentication no Make sure you save the changes (Ctrl+O) and then exit nano (Ctrl+x). Now we need to restart the SSH service by running the following command.\nsudo systemctl reload sshd.service After running this command, do not log out of the server, instead, open a new PuTTY window and connect in a new session to ensure you can still connect.\nUbuntu Firewall Configuration Using UFW The next step we need to take in securing our Linode VPS is to enable the firewall on the server. This is an easy task that we will use UFW for. Since we only have one service that we are using, SSH, we only need to allow the SSH port which is 22.\nWe will add a rule to allow SSH using the following command.\nsudo ufw allow OpenSSH We can then run the following command to confirm that SSH is allowed. After running this command you should see OpenSSH listed under available applications.\nOnce confirmed, we will enable the firewall using the following command.\nsudo ufw enable After you have enabled the firewall, open a new terminal and confirm you can still connect to your server via ssh.\nYou can confirm the firewall is active by running the following command, which should show the status is active and list the OpenSSH rule we added.\nsudo ufw status Configure Firewall on Linode As an extra layer of protection, in case of an issue with the UFW firewall, we will set up the firewall directly from Linode as well. Head to your Linode dashboard and choose firewalls from the menu on the left.\nOn the firewalls page, click on create a firewall. You will then name the firewall and select the server to apply the firewall to. Once you’re finished, click on create firewall.\nAfter creating your firewall in Linode, you will see it listed. Go ahead and click on the name of the firewall you just created to open its rules page.\nHere, we want to add an inbound rule that allows SSH connections to our server.\nAfter adding the SSH rule, change the default inbound policy to deny. This will deny all inbound traffic except for SSH traffic. Since we are not currently hosting other services like a website, this is fine. After making all of your changes, click on save changes to apply the firewall to our Linode server.\nGo back to your PC, and launch a new SSH session to make sure you can still connect.\nConclusion In this guide, you have successfully completed the following tasks on your Linode Linux VPS.\nAdd a new user\nAdded your user to the sudo group\nCreated and configured SSH keys from Linux or Windows\nSetup and configured the Ubuntu and Linode Firewall\nCheck out Part 3 of this guide to set up Apache, PHP, MySQL, and point a domain name to your Linode VPS.\n",
+    "wordCount" : "1916",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/create-a-linode-linux-vps-part-2.png","datePublished": "2022-12-16T00:00:00Z",
+    "dateModified": "2022-12-16T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/create-a-linode-linux-vps-part-2/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2_hu8055524191812154163.webp 360w ,http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2_hu17745605513915747728.webp 480w ,http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2_hu7676016764303545583.webp 720w ,http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2_hu13765609264326978298.webp 1080w ,http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2.png 1280w" 
+        <img srcset="http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2_hu_4479d5cde640821b.webp 360w ,http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2_hu_d8a8ecb2abe254b5.webp 480w ,http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2_hu_cc6ece02f02ab1a2.webp 720w ,http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2_hu_d1237d2f350e19d0.webp 1080w ,http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/create-a-linode-linux-vps-part-2/images/create-a-linode-linux-vps-part-2.png" alt="" 
             width="1280" height="720">
         
@@ -280,7 +279,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -289,7 +288,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -298,7 +297,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -307,7 +306,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -316,7 +315,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -328,7 +327,11 @@
 
 
 
-  <div class="post-content"><p>Welcome to part 2 of our guide on Creating a <a href="https://www.linode.com/lp/refer/?r=25859d5135efc6f773fd56ab42ec3e7a1cc5e83b" target="_blank">Linode</a> Linux VPS. You can check out part 1 of the <a href="https://credibledev.com/create-a-linode-linux-vps/" target="_blank">guide here</a>. <a href="https://credibledev.com/create-a-linode-linux-vps-part-3/" target="_blank">Part 3</a> is now live as well, going over how to set up Apache, PHP, MySQL, and a domain name.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Welcome to part 2 of our guide on Creating a <a href="https://www.linode.com/lp/refer/?r=25859d5135efc6f773fd56ab42ec3e7a1cc5e83b" target="_blank">Linode</a> Linux VPS. You can check out part 1 of the <a href="https://credibledev.com/create-a-linode-linux-vps/" target="_blank">guide here</a>. <a href="https://credibledev.com/create-a-linode-linux-vps-part-3/" target="_blank">Part 3</a> is now live as well, going over how to set up Apache, PHP, MySQL, and a domain name.</p>
 <p><a href="https://www.linode.com/lp/refer/?r=25859d5135efc6f773fd56ab42ec3e7a1cc5e83b" target="_blank">Linode Coupon Code – $100 in Free Credit for 60 Days</a></p>
 <p>A big part of running your own Virtual Private Server (VPS), is securing the server. One of the first steps that you should take is creating a new user and securing SSH. These are very basic steps that go a long way in protecting your VPS. Not long after bringing a VPS online, there will be bots and other automated attacks attempting to connect via SSH. By simply disabling root access via SSH, having a new user and only allowing SSH connections with a private key, your server will be much more secure against the attacks.</p>
 <p>In this guide we will walk through creating a new user, giving them administrator access through sudo, disabling root SSH access, and setting up private key authentication. Let’s get started.</p>
@@ -590,7 +593,7 @@ PasswordAuthentication no
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

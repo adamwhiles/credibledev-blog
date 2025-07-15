@@ -111,7 +111,14 @@ It's common to use calculations of all sorts in programming and you can use the 
 
 ##### Bash Basic Arithmetic Operators
 
-<table><tbody><tr><td>+</td><td>Addition (1+2)</td></tr><tr><td>-</td><td>Subtraction (2-1)</td></tr><tr><td>/</td><td>Division (10/5)</td></tr><tr><td>*</td><td>Multiplication (2*5)</td></tr><tr><td>**</td><td>Exponentiation (10**2)</td></tr><tr><td>%</td><td>Modulus (15%4)</td></tr></tbody></table>
+| Operator | Description |
+|----------|-------------|
+| + | Addition (1+2) |
+| - | Subtraction (2-1) |
+| / | Division (10/5) |
+| * | Multiplication (2*5) |
+| ** | Exponentiation (10**2) |
+| % | Modulus (15%4) |
 
 There are a few different ways that you can use these arithmetic operators in a bash script. I find myself using the following method much of the time, mostly because it's the first way that I learned. If you wanted to store the sum of the numbers 2 and 5 into a variable called sum, you could use the following.
 

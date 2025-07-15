@@ -8,11 +8,11 @@
 <title>Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide | credibleDEV</title>
 <meta name="keywords" content="linode, linux">
 <meta name="description" content="Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.
-In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks.">
+In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks. We will also be installing Apache, MySQL, and PHP, this will set up our VPS with the LAMP stack. Which stands for Linux, Apache, MySQL, and PHP.">
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/create-a-linode-linux-vps-part-3/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -29,9 +29,12 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -45,13 +48,9 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide" />
+      </script><meta property="og:title" content="Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide" />
 <meta property="og:description" content="Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.
-In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks." />
+In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks. We will also be installing Apache, MySQL, and PHP, this will set up our VPS with the LAMP stack. Which stands for Linux, Apache, MySQL, and PHP." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/create-a-linode-linux-vps-part-3/" />
 <meta property="og:image" content="http://localhost:1313/images/create-a-linode-linux-vps-part-3.png" /><meta property="article:section" content="posts" />
@@ -62,61 +61,61 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
 <meta name="twitter:image" content="http://localhost:1313/images/create-a-linode-linux-vps-part-3.png" />
 <meta name="twitter:title" content="Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide"/>
 <meta name="twitter:description" content="Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.
-In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks."/>
-
-
+In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks. We will also be installing Apache, MySQL, and PHP, this will set up our VPS with the LAMP stack. Which stands for Linux, Apache, MySQL, and PHP."/>
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide",
-      "item": "http://localhost:1313/create-a-linode-linux-vps-part-3/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide",
+        "item": "http://localhost:1313/create-a-linode-linux-vps-part-3/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide",
-  "name": "Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide",
-  "description": "Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.\nIn part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks.",
-  "keywords": [
-    "linode", "linux"
-  ],
-  "articleBody": "Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.\nIn part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks. We will also be installing Apache, MySQL, and PHP, this will set up our VPS with the LAMP stack. Which stands for Linux, Apache, MySQL, and PHP.\nIn the end, we will point a domain name from Namecheap to the Linode server as well.\nOur Linode Linux VPS So Far At this point, you should have your Linux VPS setup, a new Linux user account created, secure SSH access with a private key, and firewalls in place.\nDon’t forget, if you haven’t set up your Linode account yet. Take advantage of the free $100 60-day credit using the link below. Plus, you’re helping me to keep creating content.\nLinode Coupon Code – $100 in Free Credit for 60 Days\nLet’s go ahead and get started with installing fail2ban.\nInstall fail2ban What is fail2ban? Fail3ban is a software package that monitors connection attempts to services like SSH. When continuous failed attempts are made, fail2ban jumps into action to configure our firewall for us to ban the IP addresses making those connections. This will stop a brute force attack in its tracks, which protects our server.\nTo install fail2ban on your Linode Linux server, run the following command in the terminal.\nsudo apt install fail2ban That’s all it takes to get fail2ban installed, but we also need to enable it. Before we do that, let’s check out some of the configurations we can do to fail2ban.\nConfigure fail2ban The default configurations for fail2ban exist in the /etc/fail2ban/jail.conf file. However, we do not want to edit this file directly, we will want to create our own copy and do our modifications there. So let’s create a new “jail.local” file that is a copy of the default configurations.\nsudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local Now we can use our favorite editor like nano, to open this config file and start exploring options.\nsudo nano /etc/fail2ban/jail.local The default configuration may be fine for you but you might also consider changing the number of tries that would trigger a ban and how long the ban is for. For these settings, find the following lines and configure them as you wish.\nbantime = 10m findtime = 10m maxretry = 5 For most setups, the defaults will be fine though, which protects SSH out of the box. Once you are finished with the configuration, you can start and enable the fail2ban service using the following command.\nsudo systemctl enable fail2ban sudo systemctl start fail2ban You can then check the status to ensure that fail2ban is running.\nsudo systemctl status fail2ban That’s it, you now have additional protection on the SSH service of your Linode Linux VPS. Let’s move on with installing Apache, MySQL, and PHP.\nInstalling Apache on a Linode Linux VPS Apache is one of the world’s most popular web servers, it is production ready and dependable with many configurations. As complex as it can be, Apache is really simple to install and start using.\nsudo apt install apache2 No need to start or enable the service, it is done for you automatically. However, you won’t be able to access it due to the UFW firewall and the Linode firewall. We need to allow Apache to communicate on ports 80 and 443 (HTTPS).\nFor UFW, run the following command to allow both HTTP and HTTPS traffic for Apache.\nsudo ufw allow 'Apache Full' You will need to head over to the Linode website and add a rule to allow the preset HTTP and HTTPS traffic to our Linux VPS. If you don’t remember how to do this, check out part 2 of the guide for some guidance.\nOnce you have the firewalls configured, you should be able to open up your browser, put in your Linode server IP, and get the following default Apache page.\nThe default location for this page is /var/www/html - so if you would like to put your own page here, this is the default location to do so. In a future post, we will discuss virtual hosts so you can host multiple domains. Let’s move on to installing PHP and MySQL for now, then we will configure a domain name for Apache and our Linux VPS on Linode.\nInstall PHP on a Linux VPS with Apache Installing PHP is about as simple as installing Apache, we will also install some common modules for MySQL for example. May save you some headaches down the road of installing these later. Feel free to remove the ones you know you won’t need. the only required ones will be “php libapache2-mod-php and php-mysql”.\nsudo apt install php libapache2-mod-php php-mysql php-curl php-json php-cgi php-gd php-mbstring php-xml php-xmlrpc We will also need to restart Apache after installing these packages.\nsudo systemctl restart apache2 Test PHP Installation We can run a simple test of PHP and ensure it’s working properly with Apache. In the /var/www/html directory, we will create a test.php file with the following content in it.\n\u003c?php phpinfo(); ?\u003e You can now open a browser to HTTP://ipaddress/test.php, if the installation of PHP was successful, you should see a page like the one below.\nNote: If you get a blank page, reboot the server and try loading the page again.\nOnce you have confirmed PHP is working, it is highly suggested that you delete the test.php file.\nInstall MySQL Server on Linode VPS Our last piece of software to install is MySQL, which will serve as a database for websites and apps such as WordPress.\nsudo apt install mysql-server After running this command, the MySQL server should automatically be started but you can verify this by checking the status.\nDue to some recent changes to the Ubuntu MySQL package and some of its default settings, we need to modify a few things so the mysql_secure_installation script can run properly.\nsudo mysql You should now be at a MySQL\u003e prompt. Here we will run a command that changes the default authentication method of the root account. This will be set to mysql_native_password and a default password of “password”. This is needed so the script can run, afterwards, we will change the default authentication method back to auth_socket.\nmysql\u003e ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ThisIsN0tAStr0NGP4ssw0rd!'; Next, we will exit the MySQL console.\nmysql\u003e exit Next, we will use the secure MySQL install helper application to finish the setup.\nsudo mysql_secure_installation You will be asked a series of security questions such as password strength, disallowing remote root login to MySQL, removing test databases, etc. I suggest you answer yes to each question for the best security.\nOnce this is finished, you can log back into the MySQL console as root to change the default authentication method to auth_socket.\nmysql -u root -p mysql\u003e ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket; You can also go ahead and create a new MySQL user that isn’t root with the following command. This command will create the user with the authentication method of mysql_native_password. This is for compatibility reasons with some PHP apps, you can try the suggested caching_sha2_password method instead to see if it works for your use.\nmysql\u003e CREATE USER 'thecd'@'localhost' IDENTIFIED WITH mysql_native_password BY 'credibleDEV_2023!'; You will want to grant the new user privileges on tables, otherwise, they can’t really do anything useful. You can check out this blog post for more information on granting privileges.\nPoint a Domain Name to our Linode Linux VPS For your specific use case, accessing the Linux VPS with the IP address may be just fine. For those who have a domain name that they would like to point to their Linode Linux VPS, I will walk you through how to do this. My domain name is registered with Namecheap, you have a different provider but the setup is generally the same.\nBy far, the easiest way to go about doing this is to use Linode to handle your domain’s DNS. You can do this by adding your domain to Linode, then from your registrar like Namecheap, point the domain to Linode’s name servers.\nTo start, log in to Linode, the choose domains from the menu. On the domains page, you will see an option for “Create Domain”. Click that button which will take you to this screen.\nHere, you will fill out the domain name, email address and under the “insert default records” dropdown, you can choose your Linode Linux VPS. This will create necessary A records for you to make this much easier.\nAfter you have added your domain, select it from the list of domains which will take you to the page listing all the DNS records. Here you will find a section titled “NS Record”. These are the name servers you want to add to your domain in the registrar like Namecheap.\nOver on Namecheap, this is what it looks like when the nameservers have been added. This will vary by registrar though.\nOnce you have added the nameservers, it can take some time before they have propagated, sometimes up to 24 hours.\nYou should be able to ping your domain and get the IP for your Linode VPS once this is complete. You should also be able to access the domain in a browser and see the default Ubuntu Apache page.\nI would suggest editing the default index.html file found in /var/www/html to whatever you want to just making it a blank page. No need to expose to the internet that we run Apache on Ubuntu and that we are too lazy to change the default page, lol.\nPart 3 Conclusion Stay tuned for part 4, where we will further configure Apache, set up SSL with Let’s Encrypt, and more.\nTo recap, at this point, you have a secure VPS setup with SSH, firewalls, and fail2ban. We have set up Apache, PHP, and MySQL. Now we have pointed a domain name to our Linode and let Linode manage the DNS for the domain name.\n",
-  "wordCount" : "1715",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/create-a-linode-linux-vps-part-3.png","datePublished": "2023-01-04T00:00:00Z",
-  "dateModified": "2023-01-04T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/create-a-linode-linux-vps-part-3/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide",
+    "name": "Create a Linode Linux VPS Part 3 – 2022 Quickstart Guide",
+    "description": "Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.\nIn part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks. We will also be installing Apache, MySQL, and PHP, this will set up our VPS with the LAMP stack. Which stands for Linux, Apache, MySQL, and PHP.\n",
+    "keywords": [
+      "linode", "linux"
+    ],
+    "articleBody": "Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.\nIn part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks. We will also be installing Apache, MySQL, and PHP, this will set up our VPS with the LAMP stack. Which stands for Linux, Apache, MySQL, and PHP.\nIn the end, we will point a domain name from Namecheap to the Linode server as well.\nOur Linode Linux VPS So Far At this point, you should have your Linux VPS setup, a new Linux user account created, secure SSH access with a private key, and firewalls in place.\nDon’t forget, if you haven’t set up your Linode account yet. Take advantage of the free $100 60-day credit using the link below. Plus, you’re helping me to keep creating content.\nLinode Coupon Code – $100 in Free Credit for 60 Days\nLet’s go ahead and get started with installing fail2ban.\nInstall fail2ban What is fail2ban? Fail3ban is a software package that monitors connection attempts to services like SSH. When continuous failed attempts are made, fail2ban jumps into action to configure our firewall for us to ban the IP addresses making those connections. This will stop a brute force attack in its tracks, which protects our server.\nTo install fail2ban on your Linode Linux server, run the following command in the terminal.\nsudo apt install fail2ban That’s all it takes to get fail2ban installed, but we also need to enable it. Before we do that, let’s check out some of the configurations we can do to fail2ban.\nConfigure fail2ban The default configurations for fail2ban exist in the /etc/fail2ban/jail.conf file. However, we do not want to edit this file directly, we will want to create our own copy and do our modifications there. So let’s create a new “jail.local” file that is a copy of the default configurations.\nsudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local Now we can use our favorite editor like nano, to open this config file and start exploring options.\nsudo nano /etc/fail2ban/jail.local The default configuration may be fine for you but you might also consider changing the number of tries that would trigger a ban and how long the ban is for. For these settings, find the following lines and configure them as you wish.\nbantime = 10m findtime = 10m maxretry = 5 For most setups, the defaults will be fine though, which protects SSH out of the box. Once you are finished with the configuration, you can start and enable the fail2ban service using the following command.\nsudo systemctl enable fail2ban sudo systemctl start fail2ban You can then check the status to ensure that fail2ban is running.\nsudo systemctl status fail2ban That’s it, you now have additional protection on the SSH service of your Linode Linux VPS. Let’s move on with installing Apache, MySQL, and PHP.\nInstalling Apache on a Linode Linux VPS Apache is one of the world’s most popular web servers, it is production ready and dependable with many configurations. As complex as it can be, Apache is really simple to install and start using.\nsudo apt install apache2 No need to start or enable the service, it is done for you automatically. However, you won’t be able to access it due to the UFW firewall and the Linode firewall. We need to allow Apache to communicate on ports 80 and 443 (HTTPS).\nFor UFW, run the following command to allow both HTTP and HTTPS traffic for Apache.\nsudo ufw allow 'Apache Full' You will need to head over to the Linode website and add a rule to allow the preset HTTP and HTTPS traffic to our Linux VPS. If you don’t remember how to do this, check out part 2 of the guide for some guidance.\nOnce you have the firewalls configured, you should be able to open up your browser, put in your Linode server IP, and get the following default Apache page.\nThe default location for this page is /var/www/html - so if you would like to put your own page here, this is the default location to do so. In a future post, we will discuss virtual hosts so you can host multiple domains. Let’s move on to installing PHP and MySQL for now, then we will configure a domain name for Apache and our Linux VPS on Linode.\nInstall PHP on a Linux VPS with Apache Installing PHP is about as simple as installing Apache, we will also install some common modules for MySQL for example. May save you some headaches down the road of installing these later. Feel free to remove the ones you know you won’t need. the only required ones will be “php libapache2-mod-php and php-mysql”.\nsudo apt install php libapache2-mod-php php-mysql php-curl php-json php-cgi php-gd php-mbstring php-xml php-xmlrpc We will also need to restart Apache after installing these packages.\nsudo systemctl restart apache2 Test PHP Installation We can run a simple test of PHP and ensure it’s working properly with Apache. In the /var/www/html directory, we will create a test.php file with the following content in it.\n\u003c?php phpinfo(); ?\u003e You can now open a browser to HTTP://ipaddress/test.php, if the installation of PHP was successful, you should see a page like the one below.\nNote: If you get a blank page, reboot the server and try loading the page again.\nOnce you have confirmed PHP is working, it is highly suggested that you delete the test.php file.\nInstall MySQL Server on Linode VPS Our last piece of software to install is MySQL, which will serve as a database for websites and apps such as WordPress.\nsudo apt install mysql-server After running this command, the MySQL server should automatically be started but you can verify this by checking the status.\nDue to some recent changes to the Ubuntu MySQL package and some of its default settings, we need to modify a few things so the mysql_secure_installation script can run properly.\nsudo mysql You should now be at a MySQL\u003e prompt. Here we will run a command that changes the default authentication method of the root account. This will be set to mysql_native_password and a default password of “password”. This is needed so the script can run, afterwards, we will change the default authentication method back to auth_socket.\nmysql\u003e ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ThisIsN0tAStr0NGP4ssw0rd!'; Next, we will exit the MySQL console.\nmysql\u003e exit Next, we will use the secure MySQL install helper application to finish the setup.\nsudo mysql_secure_installation You will be asked a series of security questions such as password strength, disallowing remote root login to MySQL, removing test databases, etc. I suggest you answer yes to each question for the best security.\nOnce this is finished, you can log back into the MySQL console as root to change the default authentication method to auth_socket.\nmysql -u root -p mysql\u003e ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket; You can also go ahead and create a new MySQL user that isn’t root with the following command. This command will create the user with the authentication method of mysql_native_password. This is for compatibility reasons with some PHP apps, you can try the suggested caching_sha2_password method instead to see if it works for your use.\nmysql\u003e CREATE USER 'thecd'@'localhost' IDENTIFIED WITH mysql_native_password BY 'credibleDEV_2023!'; You will want to grant the new user privileges on tables, otherwise, they can’t really do anything useful. You can check out this blog post for more information on granting privileges.\nPoint a Domain Name to our Linode Linux VPS For your specific use case, accessing the Linux VPS with the IP address may be just fine. For those who have a domain name that they would like to point to their Linode Linux VPS, I will walk you through how to do this. My domain name is registered with Namecheap, you have a different provider but the setup is generally the same.\nBy far, the easiest way to go about doing this is to use Linode to handle your domain’s DNS. You can do this by adding your domain to Linode, then from your registrar like Namecheap, point the domain to Linode’s name servers.\nTo start, log in to Linode, the choose domains from the menu. On the domains page, you will see an option for “Create Domain”. Click that button which will take you to this screen.\nHere, you will fill out the domain name, email address and under the “insert default records” dropdown, you can choose your Linode Linux VPS. This will create necessary A records for you to make this much easier.\nAfter you have added your domain, select it from the list of domains which will take you to the page listing all the DNS records. Here you will find a section titled “NS Record”. These are the name servers you want to add to your domain in the registrar like Namecheap.\nOver on Namecheap, this is what it looks like when the nameservers have been added. This will vary by registrar though.\nOnce you have added the nameservers, it can take some time before they have propagated, sometimes up to 24 hours.\nYou should be able to ping your domain and get the IP for your Linode VPS once this is complete. You should also be able to access the domain in a browser and see the default Ubuntu Apache page.\nI would suggest editing the default index.html file found in /var/www/html to whatever you want to just making it a blank page. No need to expose to the internet that we run Apache on Ubuntu and that we are too lazy to change the default page, lol.\nPart 3 Conclusion Stay tuned for part 4, where we will further configure Apache, set up SSL with Let’s Encrypt, and more.\nTo recap, at this point, you have a secure VPS setup with SSH, firewalls, and fail2ban. We have set up Apache, PHP, and MySQL. Now we have pointed a domain name to our Linode and let Linode manage the DNS for the domain name.\n",
+    "wordCount" : "1715",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/create-a-linode-linux-vps-part-3.png","datePublished": "2023-01-04T00:00:00Z",
+    "dateModified": "2023-01-04T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/create-a-linode-linux-vps-part-3/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3_hu7139173576965841806.webp 360w ,http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3_hu6830888218615909422.webp 480w ,http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3_hu8996302577253461190.webp 720w ,http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3_hu6604180556702083163.webp 1080w ,http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3.png 1280w" 
+        <img srcset="http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3_hu_474e27caca4f35f2.webp 360w ,http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3_hu_966ca8396c1d237b.webp 480w ,http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3_hu_265d22011ace0cb7.webp 720w ,http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3_hu_188023614fceebb3.webp 1080w ,http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/create-a-linode-linux-vps-part-3/images/create-a-linode-linux-vps-part-3.png" alt="" 
             width="1280" height="720">
         
@@ -278,7 +277,7 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -287,7 +286,7 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -296,7 +295,7 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -305,7 +304,7 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -314,7 +313,7 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -326,7 +325,11 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
 
 
 
-  <div class="post-content"><p>Hopefully, you have been following along with <a href="https://credibledev.com/create-a-linode-linux-vps/" target="_blank">Part 1</a> and <a href="https://credibledev.com/create-a-linode-linux-vps-part-2/" target="_blank">Part 2</a> of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Hopefully, you have been following along with <a href="https://credibledev.com/create-a-linode-linux-vps/" target="_blank">Part 1</a> and <a href="https://credibledev.com/create-a-linode-linux-vps-part-2/" target="_blank">Part 2</a> of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.</p>
 <p>In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks. We will also be installing Apache, MySQL, and PHP, this will set up our VPS with the LAMP stack. Which stands for Linux, Apache, MySQL, and PHP.</p>
 <p>In the end, we will point a domain name from Namecheap to the Linode server as well.</p>
 <h2 id="our-linode-linux-vps-so-far">Our Linode Linux VPS So Far<a hidden class="anchor" aria-hidden="true" href="#our-linode-linux-vps-so-far">#</a></h2>
@@ -574,7 +577,7 @@ sudo systemctl start fail2ban
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

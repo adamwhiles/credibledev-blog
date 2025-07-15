@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Deploy HKCU Registry Keys Using Intune" />
+      </script><meta property="og:title" content="Deploy HKCU Registry Keys Using Intune" />
 <meta property="og:description" content="Deploying registry keys to the HKCU hive in Intune isn&#39;t straightforward. This guide will show you how to deploy keys to the current user hive." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/deploy-hkcu-registry-keys-with-intune.png" />
 <meta name="twitter:title" content="Deploy HKCU Registry Keys Using Intune"/>
 <meta name="twitter:description" content="Deploying registry keys to the HKCU hive in Intune isn&#39;t straightforward. This guide will show you how to deploy keys to the current user hive."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Deploy HKCU Registry Keys Using Intune",
-      "item": "http://localhost:1313/deploy-hkcu-registry-keys-using-intune/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Deploy HKCU Registry Keys Using Intune",
+        "item": "http://localhost:1313/deploy-hkcu-registry-keys-using-intune/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Deploy HKCU Registry Keys Using Intune",
-  "name": "Deploy HKCU Registry Keys Using Intune",
-  "description": "Deploying registry keys to the HKCU hive in Intune isn't straightforward. This guide will show you how to deploy keys to the current user hive.",
-  "keywords": [
-    "intune", "powershell"
-  ],
-  "articleBody": "Intune makes a lot of things really easy, but some things are just easier with GPO. Adding or changing registry keys for the current user in the HKEY_CURRENT_USER hive is one of the things that was far easier with GPO than it is in Intune. I’m really going to miss the days of OnPrem AD, OU’s, and GPO’s. Sad times we live in, or maybe I’m just old and frustrated with Microsoft.\nSadly, there are some configurations that we need to do as engineers or admins that require us to dive into the HKCU hive to make modifications.\nNever fear, there is a way to deploy registry keys to HKCU using Intune though. You can package this as a Win32 app or you could use a Proactive Remediation. I’ve covered those methods in this post: Deploy PowerShell Scripts in Intune\nYou will want to create a new PowerShell script similar to the one below. In our example, we are creating a new value in HKCU:\\Software called Test and setting the value equal to 1.\nNew-ItemProperty -LiteralPath 'HKCU:\\Software' -Name \"Test\" -Value 1 -PropertyType \"Dword\" -Force -ea SilentlyContinue Simple enough, right? The important part is during the Win32 app creation or Proactive Remediation, whichever you choose. We want to make sure that this runs in the user context, otherwise, it won’t work properly.\nWin32 App Config For a Win32 app, you must make sure to change the Install Behaviour to “User” instead of system.\nProactive Remediation Config If you choose a Proactive Remediation deployment for this, you want to make sure that the option to Run this script using the logged-on credentials is set to “Yes”.\nOther Options Another option is to make your script load the registry key for all new users who sign in. This will not impact users who already have profiles on the device, only new users.\nTo do this, we use PowerShell again to enable access to the HKEY_USERS hive, and then you can create your key there.\nNew-PSDrive -PSProvider Registry -Name HKU -Root HKEY_USERS New-ItemProperty -LiteralPath 'HKU:\\.DEFAULT\\Software' -Name \"Test\" -Value 1 -PropertyType \"Dword\" -Force -ea SilentlyContinue Conclusion Oh, the good old days of GPO are quickly going away and Microsoft doesn’t seem to want to make our lives easy. No worries, we found a workaround and now you know how to deploy registry keys using Intune to the current user registry hive.\nHave Intune questions? Let me know in the comments.\n",
-  "wordCount" : "405",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/deploy-hkcu-registry-keys-with-intune.png","datePublished": "2023-01-15T00:00:00Z",
-  "dateModified": "2023-01-15T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/deploy-hkcu-registry-keys-using-intune/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Deploy HKCU Registry Keys Using Intune",
+    "name": "Deploy HKCU Registry Keys Using Intune",
+    "description": "Deploying registry keys to the HKCU hive in Intune isn't straightforward. This guide will show you how to deploy keys to the current user hive.",
+    "keywords": [
+      "intune", "powershell"
+    ],
+    "articleBody": "Intune makes a lot of things really easy, but some things are just easier with GPO. Adding or changing registry keys for the current user in the HKEY_CURRENT_USER hive is one of the things that was far easier with GPO than it is in Intune. I’m really going to miss the days of OnPrem AD, OU’s, and GPO’s. Sad times we live in, or maybe I’m just old and frustrated with Microsoft.\nSadly, there are some configurations that we need to do as engineers or admins that require us to dive into the HKCU hive to make modifications.\nNever fear, there is a way to deploy registry keys to HKCU using Intune though. You can package this as a Win32 app or you could use a Proactive Remediation. I’ve covered those methods in this post: Deploy PowerShell Scripts in Intune\nYou will want to create a new PowerShell script similar to the one below. In our example, we are creating a new value in HKCU:\\Software called Test and setting the value equal to 1.\nNew-ItemProperty -LiteralPath 'HKCU:\\Software' -Name \"Test\" -Value 1 -PropertyType \"Dword\" -Force -ea SilentlyContinue Simple enough, right? The important part is during the Win32 app creation or Proactive Remediation, whichever you choose. We want to make sure that this runs in the user context, otherwise, it won’t work properly.\nWin32 App Config For a Win32 app, you must make sure to change the Install Behaviour to “User” instead of system.\nProactive Remediation Config If you choose a Proactive Remediation deployment for this, you want to make sure that the option to Run this script using the logged-on credentials is set to “Yes”.\nOther Options Another option is to make your script load the registry key for all new users who sign in. This will not impact users who already have profiles on the device, only new users.\nTo do this, we use PowerShell again to enable access to the HKEY_USERS hive, and then you can create your key there.\nNew-PSDrive -PSProvider Registry -Name HKU -Root HKEY_USERS New-ItemProperty -LiteralPath 'HKU:\\.DEFAULT\\Software' -Name \"Test\" -Value 1 -PropertyType \"Dword\" -Force -ea SilentlyContinue Conclusion Oh, the good old days of GPO are quickly going away and Microsoft doesn’t seem to want to make our lives easy. No worries, we found a workaround and now you know how to deploy registry keys using Intune to the current user registry hive.\nHave Intune questions? Let me know in the comments.\n",
+    "wordCount" : "405",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/deploy-hkcu-registry-keys-with-intune.png","datePublished": "2023-01-15T00:00:00Z",
+    "dateModified": "2023-01-15T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/deploy-hkcu-registry-keys-using-intune/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu16289485213827736291.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu4112613990801156029.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu9711915856666451654.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu6843908078130384016.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
+        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f52a4e916032402d.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f634f4c8f0216b39.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_a0378706c4747e88.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_5519eae4d247aeef.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png" alt="" 
             width="1280" height="720">
         
@@ -266,7 +265,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu3308433473923045744.webp 360w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu1260565180653241431.webp 480w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu3430320244541056058.webp 720w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu8580764315606843869.webp 1080w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png 1200w" 
+        <img srcset="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_e4da24d72e1c0ee7.webp 360w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_62ccca0dc2e9cd21.webp 480w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_70e15d2ebbb92823.webp 720w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_1df7e56410aa862c.webp 1080w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -275,7 +274,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17001477106947415410.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu10300577779374374925.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu2517488187377460131.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17089951570406582786.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
+        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_5eaea70ea9941b1a.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_1d10574afc145dc9.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_86fbed8aa4903122.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_518788d2955b9ea.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -284,7 +283,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu9663632401868894187.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu16238990010262655059.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu4921325777766597961.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu17048565755945529674.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
+        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_539b1c318668c536.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_7c7e3ceea4ae807f.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_2bb62434708b330f.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_bdd20ab8441ae143.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -293,7 +292,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu7356498652369068489.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu3264796535428035628.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16952298017530650839.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16562548497720146018.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
+        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_1c859262ebb7d234.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_c37169e9611e1263.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_db5f03321ce4c635.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_bcf6023a45bbe17c.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -302,7 +301,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu13184193840349155734.webp 360w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu2581116324488376521.webp 480w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu15933509546177920132.webp 720w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu16985435299638000220.webp 1080w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png 1200w" 
+        <img srcset="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_a4bc6e12ff0b94c3.webp 360w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_a495e02b61bd26a0.webp 480w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_1ee4acd015f77c0.webp 720w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_d6e6561b7fd3d035.webp 1080w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -314,7 +313,11 @@
 
 
 
-  <div class="post-content"><p>Intune makes a lot of things really easy, but some things are just easier with GPO. Adding or changing registry keys for the current user in the HKEY_CURRENT_USER hive is one of the things that was far easier with GPO than it is in Intune. I&rsquo;m really going to miss the days of OnPrem AD, OU&rsquo;s, and GPO&rsquo;s. Sad times we live in, or maybe I&rsquo;m just old and frustrated with Microsoft.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Intune makes a lot of things really easy, but some things are just easier with GPO. Adding or changing registry keys for the current user in the HKEY_CURRENT_USER hive is one of the things that was far easier with GPO than it is in Intune. I&rsquo;m really going to miss the days of OnPrem AD, OU&rsquo;s, and GPO&rsquo;s. Sad times we live in, or maybe I&rsquo;m just old and frustrated with Microsoft.</p>
 <p>Sadly, there are some configurations that we need to do as engineers or admins that require us to dive into the HKCU hive to make modifications.</p>
 <p>Never fear, there is a way to deploy registry keys to HKCU using Intune though. You can package this as a Win32 app or you could use a Proactive Remediation. I&rsquo;ve covered those methods in this post: <a href="https://credibledev.com/powershell-scripts-in-intune/" target="_blank">Deploy PowerShell Scripts in Intune</a></p>
 <p>You will want to create a new PowerShell script similar to the one below. In our example, we are creating a new value in HKCU:\Software called Test and setting the value equal to 1.</p>
@@ -443,7 +446,7 @@ New-ItemProperty -LiteralPath &#39;HKU:\.DEFAULT\Software&#39; -Name &#34;Test&#
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

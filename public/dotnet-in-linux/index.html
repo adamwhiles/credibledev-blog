@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/dotnet-in-linux/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Easily Install dotNet In Linux - 2023 Guide" />
+      </script><meta property="og:title" content="Easily Install dotNet In Linux - 2023 Guide" />
 <meta property="og:description" content="Get started developing for dotnet in Linux with this simple Guide. Setup dotnet in VSCode for Linux and write your first C# app." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/dotnet-in-linux/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/dotnet-in-linux-2.png" />
 <meta name="twitter:title" content="Easily Install dotNet In Linux - 2023 Guide"/>
 <meta name="twitter:description" content="Get started developing for dotnet in Linux with this simple Guide. Setup dotnet in VSCode for Linux and write your first C# app."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Easily Install dotNet In Linux - 2023 Guide",
-      "item": "http://localhost:1313/dotnet-in-linux/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Easily Install dotNet In Linux - 2023 Guide",
+        "item": "http://localhost:1313/dotnet-in-linux/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Easily Install dotNet In Linux - 2023 Guide",
-  "name": "Easily Install dotNet In Linux - 2023 Guide",
-  "description": "Get started developing for dotnet in Linux with this simple Guide. Setup dotnet in VSCode for Linux and write your first C# app.",
-  "keywords": [
-    "dotnet", "linux", "manjaro"
-  ],
-  "articleBody": "If you are a C# developer like me and you also use or would like to use Linux as your OS, this guide is for you. Today we will be walking through setting up dotnet in Linux and VSCode. I am using Manjaro Linux as my distribution, you may be able to take away information from this post and apply it to other distributions as well.\nIf you haven’t installed VSCode on Manjaro yet, check out our guide for that as well. We also just added a guide on installing JetBrains Rider for Linux as well, if you prefer a fully featured .NET IDE.\nGuide: Build Your 1st .NET C# GUI Linux App\nhttps://www.youtube.com/watch?v=QppKSrsuPZ8\nInstalling the dotnet sdk in Manjaro The first thing we need to get started with dotnet in Linux is to install the dotnet-sdk package. In Manjaro, this package is available in the community repository and the AUR repository as well. Go ahead and launch Add/Remove Software in Manjaro, then do a search for dotnet-sdk and install it.\nVerify dotnet Is Installed on Linux After the installation completes, we can open a terminal to verify the installation is good. We do this by typing the following command.\ndotnet --list-dsks If the installation was good, we should see a dotnet-sdk version and its location listed in the terminal output. Here we see that I have installed version 6.0.109 of the dotnet-sdk in Linux.\nInstall Multiple Versions of dotnet SDK If you find yourself needing to install multiple versions of the sdk on the same machine. The easiest way is to use the script referenced in this Microsoft document. This dotnet-install script will install the version you tell it and you can pass an install path by using the “–install-dir” flag to pass in the directory that is shown when running “dotnet –list-sdks”. In my example above, that would be /usr/share/dotnet/sdk. You can run the below command to install the current LTS version in addition to what you installed above. For more options refer to the Microsoft document.\nsudo ./dotnet-install.sh -Channel LTS --install-dir /usr/share/dotnet/sdk Now you can open a new terminal, then run “dotnet –list-sdks” again to see that the additional dotnet sdk has been installed.\nTest dotnet with VSCode Let’s go ahead and fire up Visual Studio Code or JetBrains Rider. If you don’t already have it installed, I’ll link to a guide on installing VSCode on Linux below. JetBrains Rider will give you an experience similar to the fully featured Visual Studio IDE on Windows. Use the link above for a guide on installing Rider for Linux.\nInstalling VSCode in Manjaro\nOnce you have VSCode open, create a new folder for your C# Hello World program then open a new terminal in VScode, run the command dotnet new console. In the terminal, make sure you are inside the new folder that you created when running the command. Once you’ve done this, VSCode may recommend installing extensions, if so, go ahead a do that.\nRunning dotnet new console initializes a new dotnet console app. This will generate the appropriate project files in your directory. The command dotnet is the heart of the dotnet CLI, you can read more about it and it’s options on Microsofts dotnet site.\ndotnet new console If you are running dotnet-sdk 6 or higher, the program.cs file that is generated by dotnet console new, will be simplified with only a call to Console.WriteLine function in it. If you are running an older dotnet-sdk, you may need to use the code snippet below for testing.\nGo ahead and type the following code into your program.cs file for the C# Hello World Program if you are using an older dotnet-sdk version.\nnamespace HelloWorld { class program { static void Main(string[] args) { Console.WriteLine(\"Hello World From Linux!\"); } } } You are supposed to get a prompt to install the debugger and other tools that will allow you to run the application from the VSCode interface but in my experience, I didn’t get this. So to add it manually, go to Run in the top menu and choose Add Configuration.\nIn the popup, choose .NET 5+ and .NET Core from the options. This will add a launch.json file and .vscode folder to your project directory.\nRunning a dotnet Application on Linux in VSCode You are now ready to test run your first dotnet in Linux application. In the terminal of VSCode, make sure you are in your projects folder, then execute the dotnet run command. This should print Hello World! to the terminal window.\nConclusion Congrats, you have now installed dotnet in Linux and you are now ready to further explore writing dotnet and C# applications on Linux in VSCode. If you are wanting to develop cross-platform GUI apps that run on Linux. I highly suggest that you check out Avalonia UI. Soon we will have a guide on Avalonia UI to help get you start creating GUI apps for Linux.\n",
-  "wordCount" : "824",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/dotnet-in-linux-2.png","datePublished": "2022-10-21T00:00:00Z",
-  "dateModified": "2022-10-21T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/dotnet-in-linux/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Easily Install dotNet In Linux - 2023 Guide",
+    "name": "Easily Install dotNet In Linux - 2023 Guide",
+    "description": "Get started developing for dotnet in Linux with this simple Guide. Setup dotnet in VSCode for Linux and write your first C# app.",
+    "keywords": [
+      "dotnet", "linux", "manjaro"
+    ],
+    "articleBody": "If you are a C# developer like me and you also use or would like to use Linux as your OS, this guide is for you. Today we will be walking through setting up dotnet in Linux and VSCode. I am using Manjaro Linux as my distribution, you may be able to take away information from this post and apply it to other distributions as well.\nIf you haven’t installed VSCode on Manjaro yet, check out our guide for that as well. We also just added a guide on installing JetBrains Rider for Linux as well, if you prefer a fully featured .NET IDE.\nGuide: Build Your 1st .NET C# GUI Linux App\nhttps://www.youtube.com/watch?v=QppKSrsuPZ8\nInstalling the dotnet sdk in Manjaro The first thing we need to get started with dotnet in Linux is to install the dotnet-sdk package. In Manjaro, this package is available in the community repository and the AUR repository as well. Go ahead and launch Add/Remove Software in Manjaro, then do a search for dotnet-sdk and install it.\nVerify dotnet Is Installed on Linux After the installation completes, we can open a terminal to verify the installation is good. We do this by typing the following command.\ndotnet --list-dsks If the installation was good, we should see a dotnet-sdk version and its location listed in the terminal output. Here we see that I have installed version 6.0.109 of the dotnet-sdk in Linux.\nInstall Multiple Versions of dotnet SDK If you find yourself needing to install multiple versions of the sdk on the same machine. The easiest way is to use the script referenced in this Microsoft document. This dotnet-install script will install the version you tell it and you can pass an install path by using the “–install-dir” flag to pass in the directory that is shown when running “dotnet –list-sdks”. In my example above, that would be /usr/share/dotnet/sdk. You can run the below command to install the current LTS version in addition to what you installed above. For more options refer to the Microsoft document.\nsudo ./dotnet-install.sh -Channel LTS --install-dir /usr/share/dotnet/sdk Now you can open a new terminal, then run “dotnet –list-sdks” again to see that the additional dotnet sdk has been installed.\nTest dotnet with VSCode Let’s go ahead and fire up Visual Studio Code or JetBrains Rider. If you don’t already have it installed, I’ll link to a guide on installing VSCode on Linux below. JetBrains Rider will give you an experience similar to the fully featured Visual Studio IDE on Windows. Use the link above for a guide on installing Rider for Linux.\nInstalling VSCode in Manjaro\nOnce you have VSCode open, create a new folder for your C# Hello World program then open a new terminal in VScode, run the command dotnet new console. In the terminal, make sure you are inside the new folder that you created when running the command. Once you’ve done this, VSCode may recommend installing extensions, if so, go ahead a do that.\nRunning dotnet new console initializes a new dotnet console app. This will generate the appropriate project files in your directory. The command dotnet is the heart of the dotnet CLI, you can read more about it and it’s options on Microsofts dotnet site.\ndotnet new console If you are running dotnet-sdk 6 or higher, the program.cs file that is generated by dotnet console new, will be simplified with only a call to Console.WriteLine function in it. If you are running an older dotnet-sdk, you may need to use the code snippet below for testing.\nGo ahead and type the following code into your program.cs file for the C# Hello World Program if you are using an older dotnet-sdk version.\nnamespace HelloWorld { class program { static void Main(string[] args) { Console.WriteLine(\"Hello World From Linux!\"); } } } You are supposed to get a prompt to install the debugger and other tools that will allow you to run the application from the VSCode interface but in my experience, I didn’t get this. So to add it manually, go to Run in the top menu and choose Add Configuration.\nIn the popup, choose .NET 5+ and .NET Core from the options. This will add a launch.json file and .vscode folder to your project directory.\nRunning a dotnet Application on Linux in VSCode You are now ready to test run your first dotnet in Linux application. In the terminal of VSCode, make sure you are in your projects folder, then execute the dotnet run command. This should print Hello World! to the terminal window.\nConclusion Congrats, you have now installed dotnet in Linux and you are now ready to further explore writing dotnet and C# applications on Linux in VSCode. If you are wanting to develop cross-platform GUI apps that run on Linux. I highly suggest that you check out Avalonia UI. Soon we will have a guide on Avalonia UI to help get you start creating GUI apps for Linux.\n",
+    "wordCount" : "824",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/dotnet-in-linux-2.png","datePublished": "2022-10-21T00:00:00Z",
+    "dateModified": "2022-10-21T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/dotnet-in-linux/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2_hu8732086381696563685.webp 360w ,http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2_hu8840771352482980415.webp 480w ,http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2_hu1787868988951348534.webp 720w ,http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2_hu9666265868593483218.webp 1080w ,http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2.png 1200w" 
+        <img srcset="http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2_hu_972b538227816609.webp 360w ,http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2_hu_71a8b0cd2ca435d1.webp 480w ,http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2_hu_5370c4faff2593c2.webp 720w ,http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2_hu_511d2b53dab947b7.webp 1080w ,http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/dotnet-in-linux/images/dotnet-in-linux-2.png" alt="" 
             width="1200" height="628">
         
@@ -270,7 +269,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -279,7 +278,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -288,7 +287,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -297,7 +296,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -306,7 +305,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -318,7 +317,11 @@
 
 
 
-  <div class="post-content"><p>If you are a C# developer like me and you also use or would like to use Linux as your OS, this guide is for you. Today we will be walking through setting up dotnet in Linux and VSCode. I am using Manjaro Linux as my distribution, you may be able to take away information from this post and apply it to other distributions as well.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>If you are a C# developer like me and you also use or would like to use Linux as your OS, this guide is for you. Today we will be walking through setting up dotnet in Linux and VSCode. I am using Manjaro Linux as my distribution, you may be able to take away information from this post and apply it to other distributions as well.</p>
 <p>If you haven&rsquo;t installed <a href="https://credibledev.com/install-vs-code-on-manjaro-linux/" target="_blank">VSCode on Manjaro</a> yet, check out our guide for that as well. We also just added a guide on <a href="https://credibledev.com/install-jetbrains-rider-for-c-on-linux/" target="_blank">installing JetBrains Rider for Linux</a> as well, if you prefer a fully featured .NET IDE.</p>
 <p>Guide: <a href="https://credibledev.com/linux-c-net-gui-app-using-avalonia-ui/" target="_blank">Build Your 1st .NET C# GUI Linux App</a></p>
 <p><a href="https://www.youtube.com/watch?v=QppKSrsuPZ8" target="_blank">https://www.youtube.com/watch?v=QppKSrsuPZ8</a></p>
@@ -497,7 +500,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

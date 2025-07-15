@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="3 Easy Steps to Downgrade a Linode Server" />
+      </script><meta property="og:title" content="3 Easy Steps to Downgrade a Linode Server" />
 <meta property="og:description" content="Need to downgrade a Linode server or plan? It&#39;s really easy to do and we will walk you through the process from start to finish." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/downgrade-a-linode-server.png" />
 <meta name="twitter:title" content="3 Easy Steps to Downgrade a Linode Server"/>
 <meta name="twitter:description" content="Need to downgrade a Linode server or plan? It&#39;s really easy to do and we will walk you through the process from start to finish."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "3 Easy Steps to Downgrade a Linode Server",
-      "item": "http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "3 Easy Steps to Downgrade a Linode Server",
+        "item": "http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "3 Easy Steps to Downgrade a Linode Server",
-  "name": "3 Easy Steps to Downgrade a Linode Server",
-  "description": "Need to downgrade a Linode server or plan? It's really easy to do and we will walk you through the process from start to finish.",
-  "keywords": [
-    
-  ],
-  "articleBody": "Need to downgrade a Linode server? No longer need a large Linode plan? Not using all of that storage, RAM, or CPU like you thought you would? Maybe the workload of your Linode server has changed. In any case, you can easily downgrade the plan that you use on Linode.\nIf you are thinking about using Linode but don’t have an account yet. Take advantage of the free $100 60-day credit using this link. Plus, you’re helping me to keep creating content.\nUpgrading on Linode is even easier since Linode handles resizing the disk for you. However, when downgrading, there is just a small amount of manual work required.\nCheck how much storage you currently use.\nAre you using less storage than the plan you want to downgrade to allows?\nIf you are, resize the disk.\nNow you can downgrade the Linode plan you are on.\nIt’s not too bad and I’ll walk you through resizing your Linode step by step and then how to downgrade a Linode plan. Let’s get started.\nCheck Linode Storage Usage We first need to check that we are not using more space than the small Linode we want to downgrade to allows. In this case, we are downgrading from the 2GB Linode, which offers 50GB of storage space, to the smaller 1GB Linode which offers 25GB of storage.\nWe can check the current amount of storage that we are using by connecting to the Linode server via SSH and running the following command.\ndf -h The “-h” option will print the drive space in gigabytes so it’s easier to read. After running this command, a disk usage summary will be printed out. We are interested in this one: “/dev/sda”.\nWe can see that in our case, we are only using 7.6 gigabytes of space. So we are under the 25GB limit of the Linode plan we want to downgrade to. This means we can proceed with downgrading. If you are over the limit of the smaller plan, you will want to delete data that may no longer be needed or consider that a downgrade is not an option.\nResize Linode Storage The next step in the process is to resize the disk to match the plan we are downgrading to. In our case, this will be 25GB. Head over to the Linode dashboard for your server.\nYou will have to power off your server in order to resize the current disk. So go ahead and power it down.\nOnce your server is powered down, click the Storage link in the Linode dashboard. You should then see your disk listed along with a resize button.\nGo ahead and click on resize, then type in the new disk size, for our example this will be 25GB.\nOnce this is done, you will see a bar that will update you with the progress of the resize. Once this is finished, you can proceed with the downgrade in the Linode Dashboard.\nDowngrade a Linode Plan Now you are finally ready to downgrade or change the Linode plan that your server uses. From the Linode dashboard, click the 3 dots at the top right to drop down the menu. Make sure you are on the Linode instance that you want to change the plan for. Choose to resize from the menu.\nYou will get a popup that lists the available Linode plans, choose the one you wish to downgrade to.\nAfter starting the resize of your Linode, it may take a minute or two before you see anything happen, but soon you will see the status change to resizing.\nOnce the resizing is finished, your Linode server will be returned to the last state it was in, so it may be powered off. Go ahead and power the server on and confirm everything is working as expected, such as SSH and whatever services you were running.\nConclusion That wasn’t too bad, right? You have successfully downgraded and resized your Linode server. Upgrading is much easier, as Linode will dynamically resize the disk to be larger for you.\nHave questions about Linode? Let me know in the comments. Don’t forget to check out the Linode series if you’re interested in setting up your own Linode Linux VPS.\n",
-  "wordCount" : "707",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/downgrade-a-linode-server.png","datePublished": "2023-01-08T00:00:00Z",
-  "dateModified": "2023-01-08T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "3 Easy Steps to Downgrade a Linode Server",
+    "name": "3 Easy Steps to Downgrade a Linode Server",
+    "description": "Need to downgrade a Linode server or plan? It's really easy to do and we will walk you through the process from start to finish.",
+    "keywords": [
+      
+    ],
+    "articleBody": "Need to downgrade a Linode server? No longer need a large Linode plan? Not using all of that storage, RAM, or CPU like you thought you would? Maybe the workload of your Linode server has changed. In any case, you can easily downgrade the plan that you use on Linode.\nIf you are thinking about using Linode but don’t have an account yet. Take advantage of the free $100 60-day credit using this link. Plus, you’re helping me to keep creating content.\nUpgrading on Linode is even easier since Linode handles resizing the disk for you. However, when downgrading, there is just a small amount of manual work required.\nCheck how much storage you currently use.\nAre you using less storage than the plan you want to downgrade to allows?\nIf you are, resize the disk.\nNow you can downgrade the Linode plan you are on.\nIt’s not too bad and I’ll walk you through resizing your Linode step by step and then how to downgrade a Linode plan. Let’s get started.\nCheck Linode Storage Usage We first need to check that we are not using more space than the small Linode we want to downgrade to allows. In this case, we are downgrading from the 2GB Linode, which offers 50GB of storage space, to the smaller 1GB Linode which offers 25GB of storage.\nWe can check the current amount of storage that we are using by connecting to the Linode server via SSH and running the following command.\ndf -h The “-h” option will print the drive space in gigabytes so it’s easier to read. After running this command, a disk usage summary will be printed out. We are interested in this one: “/dev/sda”.\nWe can see that in our case, we are only using 7.6 gigabytes of space. So we are under the 25GB limit of the Linode plan we want to downgrade to. This means we can proceed with downgrading. If you are over the limit of the smaller plan, you will want to delete data that may no longer be needed or consider that a downgrade is not an option.\nResize Linode Storage The next step in the process is to resize the disk to match the plan we are downgrading to. In our case, this will be 25GB. Head over to the Linode dashboard for your server.\nYou will have to power off your server in order to resize the current disk. So go ahead and power it down.\nOnce your server is powered down, click the Storage link in the Linode dashboard. You should then see your disk listed along with a resize button.\nGo ahead and click on resize, then type in the new disk size, for our example this will be 25GB.\nOnce this is done, you will see a bar that will update you with the progress of the resize. Once this is finished, you can proceed with the downgrade in the Linode Dashboard.\nDowngrade a Linode Plan Now you are finally ready to downgrade or change the Linode plan that your server uses. From the Linode dashboard, click the 3 dots at the top right to drop down the menu. Make sure you are on the Linode instance that you want to change the plan for. Choose to resize from the menu.\nYou will get a popup that lists the available Linode plans, choose the one you wish to downgrade to.\nAfter starting the resize of your Linode, it may take a minute or two before you see anything happen, but soon you will see the status change to resizing.\nOnce the resizing is finished, your Linode server will be returned to the last state it was in, so it may be powered off. Go ahead and power the server on and confirm everything is working as expected, such as SSH and whatever services you were running.\nConclusion That wasn’t too bad, right? You have successfully downgraded and resized your Linode server. Upgrading is much easier, as Linode will dynamically resize the disk to be larger for you.\nHave questions about Linode? Let me know in the comments. Don’t forget to check out the Linode series if you’re interested in setting up your own Linode Linux VPS.\n",
+    "wordCount" : "707",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/downgrade-a-linode-server.png","datePublished": "2023-01-08T00:00:00Z",
+    "dateModified": "2023-01-08T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server_hu10919048972451334635.webp 360w ,http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server_hu10977434703094883658.webp 480w ,http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server_hu16931217982822658549.webp 720w ,http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server_hu5221979331849015590.webp 1080w ,http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server.png 1200w" 
+        <img srcset="http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server_hu_efbececcdc79c29d.webp 360w ,http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server_hu_5fc6383018b2e15d.webp 480w ,http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server_hu_240b0e66117b9713.webp 720w ,http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server_hu_73126963f67adf8f.webp 1080w ,http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/3-easy-steps-to-downgrade-a-linode-server/images/downgrade-a-linode-server.png" alt="" 
             width="1200" height="628">
         
@@ -262,7 +261,11 @@
 
 
 
-  <div class="post-content"><p>Need to downgrade a Linode server? No longer need a large Linode plan? Not using all of that storage, RAM, or CPU like you thought you would? Maybe the workload of your Linode server has changed. In any case, you can easily downgrade the plan that you use on Linode.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Need to downgrade a Linode server? No longer need a large Linode plan? Not using all of that storage, RAM, or CPU like you thought you would? Maybe the workload of your Linode server has changed. In any case, you can easily downgrade the plan that you use on Linode.</p>
 <p>If you are thinking about using Linode but don&rsquo;t have an account yet. Take advantage of the <a href="https://www.linode.com/lp/refer/?r=25859d5135efc6f773fd56ab42ec3e7a1cc5e83b" target="_blank">free $100 60-day credit using this link.</a> Plus, you’re helping me to keep creating content.</p>
 <p>Upgrading on Linode is even easier since Linode handles resizing the disk for you. However, when downgrading, there is just a small amount of manual work required.</p>
 <ul>
@@ -399,7 +402,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

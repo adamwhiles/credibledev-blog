@@ -4,7 +4,7 @@
     <title>Vps-Setup on credibleDEV</title>
     <link>http://localhost:1313/categories/vps-setup/</link>
     <description>Recent content in Vps-Setup on credibleDEV</description>
-    <generator>Hugo -- 0.132.2</generator>
+    <generator>Hugo -- 0.148.1</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Jan 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/vps-setup/index.xml" rel="self" type="application/rss+xml" />
@@ -27,8 +27,8 @@
       <link>http://localhost:1313/create-a-linode-linux-vps-part-3/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/create-a-linode-linux-vps-part-3/</guid>
-      <description>Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.
-In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks.</description>
+      <description>&lt;p&gt;Hopefully, you have been following along with &lt;a href=&#34;https://credibledev.com/create-a-linode-linux-vps/&#34; target=&#34;_blank&#34;&gt;Part 1&lt;/a&gt; and &lt;a href=&#34;https://credibledev.com/create-a-linode-linux-vps-part-2/&#34; target=&#34;_blank&#34;&gt;Part 2&lt;/a&gt; of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.&lt;/p&gt;
+&lt;p&gt;In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks. We will also be installing Apache, MySQL, and PHP, this will set up our VPS with the LAMP stack. Which stands for Linux, Apache, MySQL, and PHP.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Create a Linode Linux VPS Part 2 – 2022 Quickstart Guide</title>
