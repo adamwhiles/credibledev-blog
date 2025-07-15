@@ -3,7 +3,7 @@ languageCode = 'en-us'
 title = 'credibleDEV'
 theme = 'PaperMod'
 sidebar = 'true'
-paginate = 5
+paginattion.pagerSize = 5
 
 googleAnalytics = "G-BCWKMZ21D2"
 
@@ -56,6 +56,10 @@ identifier = "categories"
 name = "categories"
 url = "/categories/"
 weight = 30
+
+[params.social]
+twitter = "thecredibledev"
+
 
 [params.analytics.google]
 SiteVerificationTag = "35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU"
