@@ -1,17 +1,17 @@
 ---
 title: "Install Docker and Portainer on Proxmox"
 created: 2023-03-08
-date: 2023-03-08
-categories: 
+date: 2025-07-15
+categories:
   - home-lab
-tags: 
+tags:
   - docker
   - proxmox
-authors: 
+authors:
   - thecd
 description: "Learn how to install Docker on Proxmox and use Portainer to easily manager your Docker instance and containers."
 cover:
-    image: images/install-docker-and-portainer-on-proxmox.png
+  image: images/install-docker-and-portainer-on-proxmox.png
 ---
 
 Everyone has heard of Docker by now, it's one of the most popular ways to create and run containerized apps and services. Docker isn't difficult to use and understand but there are tools that exist that make managing, creating, and modifying docker containers even easier and user-friendly. This is exactly what Portainer does, it provides you with a simple-to-use and nice-looking web interface to manage your Docker instances and clusters.
@@ -28,9 +28,9 @@ For a production environment, it is highly advisable to run Docker in a full VM 
 
 For this guide, we will be setting up Docker and Portainer on a full Ubuntu Server 22.04 VM in Proxmox.
 
-## Step 1: Create a Ubuntu Server 22.04 VM
+## Step 1: Create a Ubuntu Server 24.04.2 VM
 
-We are using the 22.04 version of Ubuntu Server for this guide. You could use a different Linux distribution if you want, you may need to alter parts of this guide to do so.
+We are using the 24.04.2 LTS version of Ubuntu Server for this guide. You could use a different Linux distribution if you want, you may need to alter parts of this guide to do so. If you want to use a different version of Ubuntu specifically, 24.10 and 22.04 are also officially supported. Refer to the official [docker documentation](https://docs.docker.com/engine/install/) for more information.
 
 First, we need to obtain the Ubuntu Server ISO, which you can download from [here](https://ubuntu.com/download/server). You will then want to upload this ISO to your Proxmox server.
 
@@ -92,7 +92,7 @@ Here you will find many options like Apache, MySQL, Drupal, WordPress, and more.
 
 You can change the "template.json" file that provides Portainer with the App Templates via the settings. If you search around the web for Portainer App Templates, you will find there are many to choose from.
 
-Here is a popular choice (not updated often): [https://qballjos.github.io/portainer\_templates/](https://qballjos.github.io/portainer_templates/)
+Here is a popular choice (not updated often): [https://qballjos.github.io/portainer_templates/](https://qballjos.github.io/portainer_templates/)
 
 This Portainer app template list is updated more regularly and is the current one that I'm using: [https://github.com/Lissy93/portainer-templates/tree/main](https://github.com/Lissy93/portainer-templates/tree/main)
 
