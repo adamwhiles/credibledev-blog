@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/scvmm-gen2-vm-change-boot-order/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="SCVMM Gen2 VM Change Boot Order" />
+      </script><meta property="og:title" content="SCVMM Gen2 VM Change Boot Order" />
 <meta property="og:description" content="How to change boot order for a Gen2 VM in SCVMM. Allowing you to network boot a Gen2 VM for PXE booting." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/scvmm-gen2-vm-change-boot-order/" /><meta property="article:section" content="posts" />
@@ -58,60 +57,60 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SCVMM Gen2 VM Change Boot Order"/>
 <meta name="twitter:description" content="How to change boot order for a Gen2 VM in SCVMM. Allowing you to network boot a Gen2 VM for PXE booting."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "SCVMM Gen2 VM Change Boot Order",
-      "item": "http://localhost:1313/scvmm-gen2-vm-change-boot-order/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "SCVMM Gen2 VM Change Boot Order",
+        "item": "http://localhost:1313/scvmm-gen2-vm-change-boot-order/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "SCVMM Gen2 VM Change Boot Order",
-  "name": "SCVMM Gen2 VM Change Boot Order",
-  "description": "How to change boot order for a Gen2 VM in SCVMM. Allowing you to network boot a Gen2 VM for PXE booting.",
-  "keywords": [
-    "citrix", "pxe", "scvmm", "virtual-machine", "vm"
-  ],
-  "articleBody": "Recently, I found myself needing to change the boot order of a VM in System Center Virtual Machine Manager. However, I couldn’t find an option to alter the boot order within the GUI properties of SCVMM.\nIt seems that the preferred method for changing the boot order for SCVMM’s is to use PowerShell.\nFor my use case, I needed to make the NIC the first boot device, as it turns out it’s pretty simple to do this. By doing the following, I made my NIC default, allowing me to PXE boot to SCCM for task sequencing.\nOpen up a PowerShell terminal\nFirst, we need to set a variable for the exact VM we want to modify.\n$VM = GetSCVirtualMachine -Name \"name of your vm with the quotes\" Next, we tell SCVMM to change the first boot device for this VM.\nSet-SCVirtualMachine -VM $VM -FirstBootDevice \"NIC,0\" That’s it, now the VM will boot to the network device first until it’s changed again. If you need to boot to the hard disk first, you could use SCSI,0,0 instead of NIC,0. Also note, you may need to change the numbers to match your specific VM.\n",
-  "wordCount" : "192",
-  "inLanguage": "en",
-  "datePublished": "2021-02-22T00:00:00Z",
-  "dateModified": "2021-02-22T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/scvmm-gen2-vm-change-boot-order/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "SCVMM Gen2 VM Change Boot Order",
+    "name": "SCVMM Gen2 VM Change Boot Order",
+    "description": "How to change boot order for a Gen2 VM in SCVMM. Allowing you to network boot a Gen2 VM for PXE booting.",
+    "keywords": [
+      "citrix", "pxe", "scvmm", "virtual-machine", "vm"
+    ],
+    "articleBody": "Recently, I found myself needing to change the boot order of a VM in System Center Virtual Machine Manager. However, I couldn’t find an option to alter the boot order within the GUI properties of SCVMM.\nIt seems that the preferred method for changing the boot order for SCVMM’s is to use PowerShell.\nFor my use case, I needed to make the NIC the first boot device, as it turns out it’s pretty simple to do this. By doing the following, I made my NIC default, allowing me to PXE boot to SCCM for task sequencing.\nOpen up a PowerShell terminal\nFirst, we need to set a variable for the exact VM we want to modify.\n$VM = GetSCVirtualMachine -Name \"name of your vm with the quotes\" Next, we tell SCVMM to change the first boot device for this VM.\nSet-SCVirtualMachine -VM $VM -FirstBootDevice \"NIC,0\" That’s it, now the VM will boot to the network device first until it’s changed again. If you need to boot to the hard disk first, you could use SCSI,0,0 instead of NIC,0. Also note, you may need to change the numbers to match your specific VM.\n",
+    "wordCount" : "192",
+    "inLanguage": "en",
+    "datePublished": "2021-02-22T00:00:00Z",
+    "dateModified": "2021-02-22T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/scvmm-gen2-vm-change-boot-order/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -239,7 +238,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -251,7 +250,11 @@
 
 
 
-  <div class="post-content"><p>Recently, I found myself needing to change the boot order of a VM in System Center Virtual Machine Manager. However, I couldn&rsquo;t find an option to alter the boot order within the GUI properties of SCVMM.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Recently, I found myself needing to change the boot order of a VM in System Center Virtual Machine Manager. However, I couldn&rsquo;t find an option to alter the boot order within the GUI properties of SCVMM.</p>
 <p>It seems that the preferred method for changing the boot order for SCVMM&rsquo;s is to use PowerShell.</p>
 <p>For my use case, I needed to make the NIC the first boot device, as it turns out it&rsquo;s pretty simple to do this. By doing the following, I made my NIC default, allowing me to PXE boot to SCCM for task sequencing.</p>
 <p>Open up a PowerShell terminal</p>
@@ -350,7 +353,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

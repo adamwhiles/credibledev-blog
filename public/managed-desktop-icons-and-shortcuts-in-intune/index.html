@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Managed Desktop Icons and Shortcuts in Intune" />
+      </script><meta property="og:title" content="Managed Desktop Icons and Shortcuts in Intune" />
 <meta property="og:description" content="Managing desktop icons and shortcuts in Intune isn&#39;t straightforward but there are PowerShell scripts to help make this easy." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png" />
 <meta name="twitter:title" content="Managed Desktop Icons and Shortcuts in Intune"/>
 <meta name="twitter:description" content="Managing desktop icons and shortcuts in Intune isn&#39;t straightforward but there are PowerShell scripts to help make this easy."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Managed Desktop Icons and Shortcuts in Intune",
-      "item": "http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Managed Desktop Icons and Shortcuts in Intune",
+        "item": "http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Managed Desktop Icons and Shortcuts in Intune",
-  "name": "Managed Desktop Icons and Shortcuts in Intune",
-  "description": "Managing desktop icons and shortcuts in Intune isn't straightforward but there are PowerShell scripts to help make this easy.",
-  "keywords": [
-    "intune", "powershell", "windows"
-  ],
-  "articleBody": " If you have been using redirected desktops or some form of mandatory profile in your on-prem Active Directory environment using GPO, you may ask yourself how you will manage desktop icons and shortcuts in Intune? This was a question I faced myself, how can we easily control what icons and shortcuts a user see’s on their desktop of fully Intune managed devices? It’s actually not that hard thanks to the work of Florian, who runs the scloud blog. Let’s go over the implementation and how you can use this to manage the desktops of your Intune devices.\nDownload the Desktop Icon Script Package To start, we need to download the script package that we will use to deploy desktop shortcuts to our Intune devices. Head over the the scloud GitHub page to download this.\nThe important parts of this package are broken down here.\ninstall.ps1 - This script is what does the heavy lifting of copying the icons, cleaning up old icons etc. When you package this as a Win32 app in Intune, you will use this file as your setup and install file.\ncheck.ps1 - This is the detection script that will be used by the Win32 app to verify that the device has the latest desktop icon package.\nLink-list.csv - In this file you can put website links and also a custom .ico file that will go in the Icons Folder. Web links put in this CSV file will be added to the users desktop. You don’t need to add these to the Desktop folder. This file has one already added as an example.\nuninstall.ps1 - Removes the icon package and icons, obviously.\nDesktop Folder - You will drop the shortcuts you want the user to see into this folder.\nIcons Folder - Here you can drop custom .ico files to assign to web links, in case you want them to look different than the default browser icon. There is an example icon file in this directory that is used for the example web link in the link-list.csv file.\nUsing the Script to Configure the Intune Desktop Icons Now that you have the script package, let’s go ahead and use it to create a set of managed desktop icons for Intune.\nExtract the downloaded package somewhere on your system\nLocate the application shortcuts that you want to appear on the users desktop and copy them to the Desktop folder of the package. You can also copy website shortcuts here if you are good with the icon being the default browser icon.\nConsider an web links you may want to customize the icon for. If you have some, you will want to edit the link-list.csv file to include them and also put the .ico file into the icons folder.\nOpen up the install.ps1 file for editing.\nEdit the $packagename variable to be something unique.\nEdit the version number if needed.\nOpen up the check.ps1 file for editing.\nEdit the $packagename variable to match what you put in the install.ps1 file.\nEdit the version number to match what you put in the install.ps1 file as well.\nOpen up the uninstall.ps1 file for editing.\nEdit the $packagename variable to match what you put in the install.ps1 file. Package Desktop Icons In a Win32 Intune App Now that you have your shortcuts configured and ready, we need to package it all up into a Win32 Intune app for deployment. You are likely already familiar with this process, in case you’re not, check out our post on deploying PowerShell scripts for Intune. Specifically the section about packaging them into Win32 apps. You will want to use the “install.ps1” file as the setup file when using the Win32 Content Prep Tool. You will use the “check.ps1” file as your detection method when creating the app in the Intune console.\nImportant Notes How do you update these shortcuts if you need to make changes once you have deployed them in Intune? You just need to update the shortcuts in the desktop folder, the version number found in the “install.ps1” and “check.ps1” scripts, while making sure the package name stays the same. Then repackage the Win32 app and deploy along with the updated “check.ps1” file as the detection method.\nConclusion That’s it, you have migrated from the old on-prem Active Directory method of using redirected desktop to the fully Intune managed way of deploying shortcuts to your end users. You also have a path forward for keeping the shortcuts updated when you need to make future changes.\nIf you have any questions about this method or other Intune topics, let me know in the comments.\n",
-  "wordCount" : "769",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png","datePublished": "2023-01-21T00:00:00Z",
-  "dateModified": "2023-01-21T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Managed Desktop Icons and Shortcuts in Intune",
+    "name": "Managed Desktop Icons and Shortcuts in Intune",
+    "description": "Managing desktop icons and shortcuts in Intune isn't straightforward but there are PowerShell scripts to help make this easy.",
+    "keywords": [
+      "intune", "powershell", "windows"
+    ],
+    "articleBody": " If you have been using redirected desktops or some form of mandatory profile in your on-prem Active Directory environment using GPO, you may ask yourself how you will manage desktop icons and shortcuts in Intune? This was a question I faced myself, how can we easily control what icons and shortcuts a user see’s on their desktop of fully Intune managed devices? It’s actually not that hard thanks to the work of Florian, who runs the scloud blog. Let’s go over the implementation and how you can use this to manage the desktops of your Intune devices.\nDownload the Desktop Icon Script Package To start, we need to download the script package that we will use to deploy desktop shortcuts to our Intune devices. Head over the the scloud GitHub page to download this.\nThe important parts of this package are broken down here.\ninstall.ps1 - This script is what does the heavy lifting of copying the icons, cleaning up old icons etc. When you package this as a Win32 app in Intune, you will use this file as your setup and install file.\ncheck.ps1 - This is the detection script that will be used by the Win32 app to verify that the device has the latest desktop icon package.\nLink-list.csv - In this file you can put website links and also a custom .ico file that will go in the Icons Folder. Web links put in this CSV file will be added to the users desktop. You don’t need to add these to the Desktop folder. This file has one already added as an example.\nuninstall.ps1 - Removes the icon package and icons, obviously.\nDesktop Folder - You will drop the shortcuts you want the user to see into this folder.\nIcons Folder - Here you can drop custom .ico files to assign to web links, in case you want them to look different than the default browser icon. There is an example icon file in this directory that is used for the example web link in the link-list.csv file.\nUsing the Script to Configure the Intune Desktop Icons Now that you have the script package, let’s go ahead and use it to create a set of managed desktop icons for Intune.\nExtract the downloaded package somewhere on your system\nLocate the application shortcuts that you want to appear on the users desktop and copy them to the Desktop folder of the package. You can also copy website shortcuts here if you are good with the icon being the default browser icon.\nConsider an web links you may want to customize the icon for. If you have some, you will want to edit the link-list.csv file to include them and also put the .ico file into the icons folder.\nOpen up the install.ps1 file for editing.\nEdit the $packagename variable to be something unique.\nEdit the version number if needed.\nOpen up the check.ps1 file for editing.\nEdit the $packagename variable to match what you put in the install.ps1 file.\nEdit the version number to match what you put in the install.ps1 file as well.\nOpen up the uninstall.ps1 file for editing.\nEdit the $packagename variable to match what you put in the install.ps1 file. Package Desktop Icons In a Win32 Intune App Now that you have your shortcuts configured and ready, we need to package it all up into a Win32 Intune app for deployment. You are likely already familiar with this process, in case you’re not, check out our post on deploying PowerShell scripts for Intune. Specifically the section about packaging them into Win32 apps. You will want to use the “install.ps1” file as the setup file when using the Win32 Content Prep Tool. You will use the “check.ps1” file as your detection method when creating the app in the Intune console.\nImportant Notes How do you update these shortcuts if you need to make changes once you have deployed them in Intune? You just need to update the shortcuts in the desktop folder, the version number found in the “install.ps1” and “check.ps1” scripts, while making sure the package name stays the same. Then repackage the Win32 app and deploy along with the updated “check.ps1” file as the detection method.\nConclusion That’s it, you have migrated from the old on-prem Active Directory method of using redirected desktop to the fully Intune managed way of deploying shortcuts to your end users. You also have a path forward for keeping the shortcuts updated when you need to make future changes.\nIf you have any questions about this method or other Intune topics, let me know in the comments.\n",
+    "wordCount" : "769",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png","datePublished": "2023-01-21T00:00:00Z",
+    "dateModified": "2023-01-21T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu9663632401868894187.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu16238990010262655059.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu4921325777766597961.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu17048565755945529674.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
+        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_539b1c318668c536.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_7c7e3ceea4ae807f.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_2bb62434708b330f.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_bdd20ab8441ae143.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png" alt="" 
             width="1280" height="720">
         
@@ -268,7 +267,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -277,7 +276,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu3308433473923045744.webp 360w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu1260565180653241431.webp 480w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu3430320244541056058.webp 720w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu8580764315606843869.webp 1080w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png 1200w" 
+        <img srcset="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_e4da24d72e1c0ee7.webp 360w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_62ccca0dc2e9cd21.webp 480w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_70e15d2ebbb92823.webp 720w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_1df7e56410aa862c.webp 1080w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -286,7 +285,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17001477106947415410.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu10300577779374374925.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu2517488187377460131.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17089951570406582786.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
+        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_5eaea70ea9941b1a.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_1d10574afc145dc9.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_86fbed8aa4903122.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_518788d2955b9ea.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -295,7 +294,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu7356498652369068489.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu3264796535428035628.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16952298017530650839.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16562548497720146018.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
+        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_1c859262ebb7d234.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_c37169e9611e1263.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_db5f03321ce4c635.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_bcf6023a45bbe17c.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -304,7 +303,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu16289485213827736291.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu4112613990801156029.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu9711915856666451654.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu6843908078130384016.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
+        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f52a4e916032402d.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f634f4c8f0216b39.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_a0378706c4747e88.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_5519eae4d247aeef.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -316,7 +315,11 @@
 
 
 
-  <div class="post-content"><p><img loading="lazy" src="images/image-73-300x165.png" alt=""  />
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p><img loading="lazy" src="images/image-73-300x165.png" alt=""  />
 </p>
 <p>If you have been using redirected desktops or some form of mandatory profile in your on-prem Active Directory environment using GPO, you may ask yourself how you will manage desktop icons and shortcuts in Intune? This was a question I faced myself, how can we easily control what icons and shortcuts a user see&rsquo;s on their desktop of fully Intune managed devices? It&rsquo;s actually not that hard thanks to the work of Florian, who runs the <a href="https://scloud.work/en/" target="_blank">scloud blog</a>. Let&rsquo;s go over the implementation and how you can use this to manage the desktops of your Intune devices.</p>
 <h2 id="download-the-desktop-icon-script-package">Download the Desktop Icon Script Package<a hidden class="anchor" aria-hidden="true" href="#download-the-desktop-icon-script-package">#</a></h2>
@@ -505,7 +508,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

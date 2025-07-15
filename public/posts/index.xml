@@ -4,10 +4,17 @@
     <title>Posts on credibleDEV</title>
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on credibleDEV</description>
-    <generator>Hugo -- 0.132.2</generator>
+    <generator>Hugo -- 0.148.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Docker and Portainer on Proxmox</title>
+      <link>http://localhost:1313/install-docker-and-portainer-on-proxmox/</link>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/install-docker-and-portainer-on-proxmox/</guid>
+      <description>Learn how to install Docker on Proxmox and use Portainer to easily manager your Docker instance and containers.</description>
+    </item>
     <item>
       <title>Fix Virtual Keyboard in Chromium Apps in KDE Wayland</title>
       <link>http://localhost:1313/fix-virtual-keyboard-in-chromium-apps-in-kde-wayland/</link>
@@ -86,13 +93,6 @@
       <description>This guide explains how to import existing VirtualBox and Virt Manager VM&amp;#39;s into Proxmox without any data loss.</description>
     </item>
     <item>
-      <title>Install Docker and Portainer on Proxmox</title>
-      <link>http://localhost:1313/install-docker-and-portainer-on-proxmox/</link>
-      <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/install-docker-and-portainer-on-proxmox/</guid>
-      <description>Learn how to install Docker on Proxmox and use Portainer to easily manager your Docker instance and containers.</description>
-    </item>
-    <item>
       <title>9 Things to Do After Installing Fedora 37</title>
       <link>http://localhost:1313/9-things-to-do-after-installing-fedora-37/</link>
       <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
@@ -160,12 +160,22 @@
       <link>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</link>
       <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/part-4-beginners-guide-to-bash-scripting/</guid>
-      <description>This guide is part of a series, be sure to check out the other parts as well.
-Part 1 - Introduction to Bash, Variables, Comments, User Input
-Part 2 - If/Else Statements, Looping
-Part 3 - Functions in Bash
-Part 4 - Creating Menus in Bash (This Page)
-In this part, we will be covering how to create menus in Bash scripting on Linux. We will first cover a basic menu that is really simple to set up and use but also flexible and works for most cases.</description>
+      <description>&lt;p&gt;This guide is part of a series, be sure to check out the other parts as well.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://credibledev.com/beginners-guide-to-bash-scripting/&#34; target=&#34;_blank&#34;&gt;Part 1 - Introduction to Bash, Variables, Comments, User Input&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://credibledev.com/part-2-beginners-guide-to-bash-scripting/&#34; target=&#34;_blank&#34;&gt;Part 2 - If/Else Statements, Looping&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://credibledev.com/part-3-beginners-guide-to-bash-scripting/&#34; target=&#34;_blank&#34;&gt;Part 3 - Functions in Bash&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Part 4 - Creating Menus in Bash (This Page)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this part, we will be covering how to create menus in &lt;strong&gt;Bash scripting&lt;/strong&gt; on Linux. We will first cover a basic menu that is really simple to set up and use but also flexible and works for most cases. We will also go over a more advanced menu that offers a very different user experience which is more like a GUI, just in the terminal instead.&lt;/p&gt;</description>
     </item>
     <item>
       <title>3 Bash VS Code Linux Extensions You Should be Using</title>
@@ -326,8 +336,8 @@ In this part, we will be covering how to create menus in Bash scripting on Linux
       <link>http://localhost:1313/create-a-linode-linux-vps-part-3/</link>
       <pubDate>Wed, 04 Jan 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/create-a-linode-linux-vps-part-3/</guid>
-      <description>Hopefully, you have been following along with Part 1 and Part 2 of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.
-In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks.</description>
+      <description>&lt;p&gt;Hopefully, you have been following along with &lt;a href=&#34;https://credibledev.com/create-a-linode-linux-vps/&#34; target=&#34;_blank&#34;&gt;Part 1&lt;/a&gt; and &lt;a href=&#34;https://credibledev.com/create-a-linode-linux-vps-part-2/&#34; target=&#34;_blank&#34;&gt;Part 2&lt;/a&gt; of the Creating a Linode Linux VPS series. If not, be sure to go back and check out the previous 2 parts of the guide to get up to speed.&lt;/p&gt;
+&lt;p&gt;In part 3 we will be installing a package called fail2ban on our Linode Linux VPS, which will help to protect our VPS from unauthorized access attempts. Particularly brute force attacks. We will also be installing Apache, MySQL, and PHP, this will set up our VPS with the LAMP stack. Which stands for Linux, Apache, MySQL, and PHP.&lt;/p&gt;</description>
     </item>
     <item>
       <title>11 Ways to Use Pacman on Manjaro Linux</title>
@@ -425,8 +435,10 @@ In part 3 we will be installing a package called fail2ban on our Linode Linux VP
       <link>http://localhost:1313/linux-how-to-install-node-js/</link>
       <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linux-how-to-install-node-js/</guid>
-      <description>How to install Node JS on Linux
-If you are a Javascript developer and you use Linux, how to install Node.JS is probably a question that you have. Fortunately for you, it is actually easy to install node js on Linux. We already have a guide that explains how to install NodeJS on Manjaro Linux so today we will be explaining how to install Node.JS on Ubuntu and other Debian-based Linux distributions.</description>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;images/linux-how-to-install-node-js-1024x536.png&#34; alt=&#34;linux how to install node js&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;How to install Node JS on Linux&lt;/p&gt;
+&lt;p&gt;If you are a Javascript developer and you use Linux, how to install &lt;a href=&#34;https://nodejs.org/en/&#34; target=&#34;_blank&#34;&gt;Node.JS&lt;/a&gt; is probably a question that you have. Fortunately for you, it is actually easy to install node js on Linux. We already have a guide that explains &lt;a href=&#34;https://credibledev.com/how-to-install-nodejs-on-manjaro-linux/&#34; target=&#34;_blank&#34;&gt;how to install NodeJS on Manjaro Linux&lt;/a&gt; so today we will be explaining how to install Node.JS on Ubuntu and other Debian-based Linux distributions.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to Install Edge on Manjaro</title>

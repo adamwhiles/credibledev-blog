@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/tail-command-in-linux/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Using the Tail Command in Linux" />
+      </script><meta property="og:title" content="Using the Tail Command in Linux" />
 <meta property="og:description" content="The Tail command in Linux is very useful for quickly getting content from logs files and other text documents." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/tail-command-in-linux/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/tail-command-in-linux.png" />
 <meta name="twitter:title" content="Using the Tail Command in Linux"/>
 <meta name="twitter:description" content="The Tail command in Linux is very useful for quickly getting content from logs files and other text documents."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Using the Tail Command in Linux",
-      "item": "http://localhost:1313/tail-command-in-linux/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Using the Tail Command in Linux",
+        "item": "http://localhost:1313/tail-command-in-linux/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Using the Tail Command in Linux",
-  "name": "Using the Tail Command in Linux",
-  "description": "The Tail command in Linux is very useful for quickly getting content from logs files and other text documents.",
-  "keywords": [
-    "linux", "tail"
-  ],
-  "articleBody": " What is the Tail Command? Linux has a built-in command called tail that can be used to view the last few lines of any file. Tail stands for “tail’ or “finalize” and it is used to show the last few lines of a file or stream. There are several situations when you might want to use tail. For example, you might use it while reading logs from another system, as an archive viewer - which shows the latest part of files - or even as a way of keeping track of changes made in your code by using commit logs. In this article, we will explain everything you need to know about tail command in Linux.\nCommon Tail Command Options Tail - Default Action Simply running to tail command with a filename and no other options will display the last 10 lines of the file in the terminal window. The test file has 15 lines in it, as you can see, only the last 10 lines are printed on the screen.\ntail filename Tail -n Displaying a Specific Number of Lines Maybe you want to run the tail command to get something other than the default 10 lines. This is exactly what the -n option is for. You can specify the exact number of lines that you want tail to output in the terminal. In the example below, we request 15 lines which is the entire document in this case.\ntail -n 15 filename Tail -f Track or Watch for Changes to a File This is probably one of the most useful functions of the tail command in Linux. Using the -f option allows us to monitor a file for any new lines added. This is sometimes referred to as the “follow” command. Imagine you want to monitor a log file, using the -f option with tail can serve this purpose. In the first screenshot below, we see that we are monitoring the tailTest.txt file. We also have the file open in nano, prepared to add a new line as an example.\ntail -f filename Now we will add “Line 16” to the file. The tail window that is running the -f option should automatically update the output to show the new line added. This happens because using tail -f creates a live monitor on the file.\nAs we can see, tail picked up the change of us adding Line 16 to the file. You can continue monitoring for changes to the file. To end the monitoring in tails, you can press Ctrl+C in the terminal window.\nNext Step With the Tail Command The tail command in Linux can be combined with other commands using the pipe |. Piping commands together can combine functionality and make tasks easier and more efficient for a Linux administrator. You can use the ls command for directory listings and pipe the output into the tail command. This will show a limited number of lines from the ls command output for instance.\nls -ltr | tail -n 3 Get creative with the tail command. What other commands would be useful to pipe with tail?\nWrapup Tail is a useful command in Linux that can be used to see the last few lines of a file before the file itself is finished. You can use the tail command in several situations, such as reading logs from another system, watching an archive, or even writing commit logs for your code. We hope you enjoyed reading about tail command in Linux. If you want to learn more about Linux, check out our other articles on various topics. From tips and tricks to command line tricks and everything in between, we will make sure to cover them all.\n",
-  "wordCount" : "619",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/tail-command-in-linux.png","datePublished": "2022-10-14T00:00:00Z",
-  "dateModified": "2022-10-14T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/tail-command-in-linux/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Using the Tail Command in Linux",
+    "name": "Using the Tail Command in Linux",
+    "description": "The Tail command in Linux is very useful for quickly getting content from logs files and other text documents.",
+    "keywords": [
+      "linux", "tail"
+    ],
+    "articleBody": " What is the Tail Command? Linux has a built-in command called tail that can be used to view the last few lines of any file. Tail stands for “tail’ or “finalize” and it is used to show the last few lines of a file or stream. There are several situations when you might want to use tail. For example, you might use it while reading logs from another system, as an archive viewer - which shows the latest part of files - or even as a way of keeping track of changes made in your code by using commit logs. In this article, we will explain everything you need to know about tail command in Linux.\nCommon Tail Command Options Tail - Default Action Simply running to tail command with a filename and no other options will display the last 10 lines of the file in the terminal window. The test file has 15 lines in it, as you can see, only the last 10 lines are printed on the screen.\ntail filename Tail -n Displaying a Specific Number of Lines Maybe you want to run the tail command to get something other than the default 10 lines. This is exactly what the -n option is for. You can specify the exact number of lines that you want tail to output in the terminal. In the example below, we request 15 lines which is the entire document in this case.\ntail -n 15 filename Tail -f Track or Watch for Changes to a File This is probably one of the most useful functions of the tail command in Linux. Using the -f option allows us to monitor a file for any new lines added. This is sometimes referred to as the “follow” command. Imagine you want to monitor a log file, using the -f option with tail can serve this purpose. In the first screenshot below, we see that we are monitoring the tailTest.txt file. We also have the file open in nano, prepared to add a new line as an example.\ntail -f filename Now we will add “Line 16” to the file. The tail window that is running the -f option should automatically update the output to show the new line added. This happens because using tail -f creates a live monitor on the file.\nAs we can see, tail picked up the change of us adding Line 16 to the file. You can continue monitoring for changes to the file. To end the monitoring in tails, you can press Ctrl+C in the terminal window.\nNext Step With the Tail Command The tail command in Linux can be combined with other commands using the pipe |. Piping commands together can combine functionality and make tasks easier and more efficient for a Linux administrator. You can use the ls command for directory listings and pipe the output into the tail command. This will show a limited number of lines from the ls command output for instance.\nls -ltr | tail -n 3 Get creative with the tail command. What other commands would be useful to pipe with tail?\nWrapup Tail is a useful command in Linux that can be used to see the last few lines of a file before the file itself is finished. You can use the tail command in several situations, such as reading logs from another system, watching an archive, or even writing commit logs for your code. We hope you enjoyed reading about tail command in Linux. If you want to learn more about Linux, check out our other articles on various topics. From tips and tricks to command line tricks and everything in between, we will make sure to cover them all.\n",
+    "wordCount" : "619",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/tail-command-in-linux.png","datePublished": "2022-10-14T00:00:00Z",
+    "dateModified": "2022-10-14T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/tail-command-in-linux/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux_hu4955646824881403252.webp 360w ,http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux_hu9035222784222273216.webp 480w ,http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux_hu15058605063877182324.webp 720w ,http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux_hu8686153066317015567.webp 1080w ,http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux.png 1200w" 
+        <img srcset="http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux_hu_c5ef0e5567ec9883.webp 360w ,http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux_hu_e282dc6c4dad8d09.webp 480w ,http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux_hu_4889850b066efc5c.webp 720w ,http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux_hu_7b064a0546da0a36.webp 1080w ,http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/tail-command-in-linux/images/tail-command-in-linux.png" alt="" 
             width="1200" height="628">
         
@@ -276,7 +275,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -285,7 +284,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -294,7 +293,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -303,7 +302,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -312,7 +311,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -324,7 +323,11 @@
 
 
 
-  <div class="post-content"><p><img loading="lazy" src="images/tail-command-in-linux-terminal.png" alt="tail command in linux terminal window"  />
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p><img loading="lazy" src="images/tail-command-in-linux-terminal.png" alt="tail command in linux terminal window"  />
 </p>
 <h2 id="what-is-the-tail-command">What is the Tail Command?<a hidden class="anchor" aria-hidden="true" href="#what-is-the-tail-command">#</a></h2>
 <p>Linux has a built-in command called <a href="https://man7.org/linux/man-pages/man1/tail.1.html" target="_blank">tail</a> that can be used to view the last few lines of any file. Tail stands for “tail’ or “finalize” and it is used to show the last few lines of a file or stream. There are several situations when you might want to use tail. For example, you might use it while reading logs from another system, as an archive viewer - which shows the latest part of files - or even as a way of keeping track of changes made in your code by using commit logs. In this article, we will explain everything you need to know about tail command in Linux.</p>
@@ -472,7 +475,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

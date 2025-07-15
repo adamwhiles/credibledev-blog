@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/powershell-force-compliance-baseline-evaluation/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="PowerShell Force Compliance Baseline Evaluation" />
+      </script><meta property="og:title" content="PowerShell Force Compliance Baseline Evaluation" />
 <meta property="og:description" content="Forcing a SCCM compliance rule is easy to do but you may not know how. This guide explains how PowerShell can be used to force this." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/powershell-force-compliance-baseline-evaluation/" /><meta property="article:section" content="posts" />
@@ -58,60 +57,60 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PowerShell Force Compliance Baseline Evaluation"/>
 <meta name="twitter:description" content="Forcing a SCCM compliance rule is easy to do but you may not know how. This guide explains how PowerShell can be used to force this."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "PowerShell Force Compliance Baseline Evaluation",
-      "item": "http://localhost:1313/powershell-force-compliance-baseline-evaluation/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "PowerShell Force Compliance Baseline Evaluation",
+        "item": "http://localhost:1313/powershell-force-compliance-baseline-evaluation/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "PowerShell Force Compliance Baseline Evaluation",
-  "name": "PowerShell Force Compliance Baseline Evaluation",
-  "description": "Forcing a SCCM compliance rule is easy to do but you may not know how. This guide explains how PowerShell can be used to force this.",
-  "keywords": [
-    "baseline", "command-line", "compliance", "powershell", "sccm"
-  ],
-  "articleBody": "SCCM Compliance rule evaluation for a new rule can sometimes be slow or maybe you just need to manually evaluate compliance baselines or rules on a machine or group of machines.\nRegardless of your reasoning, the PowerShell script below can help you achieve the goal of manually and remotely kicking off SCCM compliance rule evaluations.\nTo make this reusable in the future, we will create a simple function that we can call along with a hostname to do the dirty work for us.\nfunction Invoke-ForceEvaluation { param ( [Parameter(Mandatory=$true, HelpMessage=\"Computer Name\",ValueFromPipeline=$true)] $ComputerName ) $Baselines = Get-WmiObject -ComputerName $ComputerName -Namespace root\\ccm\\dcm -Class SMS_DesiredConfiguration $Baselines | % { ([wmiclass]\"\\\\$ComputerName\\root\\ccm\\dcm:SMS_DesiredConfiguration\").TriggerEvaluation($_.Name, $_.Version) } } foreach($hostname in (Get-Content C:\\path to our txt file with hostnames)) { Invoke-ForceEvaluation $hostname } If you need to call it on a single machine, you can take out the foreach loop and call the function by itself passing a single hostname.\nTo clarify, this script will evaluate every baseline that is assigned to the target machine. Ensure that you know what baselines are going to run prior to running this to avoid unexpected results.\nIf you’d like to know more about SCCM or how to do something that I haven’t covered, please let me know in the comments.\n",
-  "wordCount" : "208",
-  "inLanguage": "en",
-  "datePublished": "2021-03-03T00:00:00Z",
-  "dateModified": "2021-03-03T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/powershell-force-compliance-baseline-evaluation/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "PowerShell Force Compliance Baseline Evaluation",
+    "name": "PowerShell Force Compliance Baseline Evaluation",
+    "description": "Forcing a SCCM compliance rule is easy to do but you may not know how. This guide explains how PowerShell can be used to force this.",
+    "keywords": [
+      "baseline", "command-line", "compliance", "powershell", "sccm"
+    ],
+    "articleBody": "SCCM Compliance rule evaluation for a new rule can sometimes be slow or maybe you just need to manually evaluate compliance baselines or rules on a machine or group of machines.\nRegardless of your reasoning, the PowerShell script below can help you achieve the goal of manually and remotely kicking off SCCM compliance rule evaluations.\nTo make this reusable in the future, we will create a simple function that we can call along with a hostname to do the dirty work for us.\nfunction Invoke-ForceEvaluation { param ( [Parameter(Mandatory=$true, HelpMessage=\"Computer Name\",ValueFromPipeline=$true)] $ComputerName ) $Baselines = Get-WmiObject -ComputerName $ComputerName -Namespace root\\ccm\\dcm -Class SMS_DesiredConfiguration $Baselines | % { ([wmiclass]\"\\\\$ComputerName\\root\\ccm\\dcm:SMS_DesiredConfiguration\").TriggerEvaluation($_.Name, $_.Version) } } foreach($hostname in (Get-Content C:\\path to our txt file with hostnames)) { Invoke-ForceEvaluation $hostname } If you need to call it on a single machine, you can take out the foreach loop and call the function by itself passing a single hostname.\nTo clarify, this script will evaluate every baseline that is assigned to the target machine. Ensure that you know what baselines are going to run prior to running this to avoid unexpected results.\nIf you’d like to know more about SCCM or how to do something that I haven’t covered, please let me know in the comments.\n",
+    "wordCount" : "208",
+    "inLanguage": "en",
+    "datePublished": "2021-03-03T00:00:00Z",
+    "dateModified": "2021-03-03T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/powershell-force-compliance-baseline-evaluation/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -239,7 +238,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17001477106947415410.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu10300577779374374925.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu2517488187377460131.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17089951570406582786.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
+        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_5eaea70ea9941b1a.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_1d10574afc145dc9.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_86fbed8aa4903122.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_518788d2955b9ea.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -248,7 +247,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu9663632401868894187.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu16238990010262655059.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu4921325777766597961.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu17048565755945529674.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
+        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_539b1c318668c536.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_7c7e3ceea4ae807f.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_2bb62434708b330f.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_bdd20ab8441ae143.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -257,7 +256,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu7356498652369068489.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu3264796535428035628.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16952298017530650839.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16562548497720146018.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
+        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_1c859262ebb7d234.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_c37169e9611e1263.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_db5f03321ce4c635.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_bcf6023a45bbe17c.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -266,7 +265,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu16289485213827736291.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu4112613990801156029.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu9711915856666451654.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu6843908078130384016.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
+        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f52a4e916032402d.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f634f4c8f0216b39.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_a0378706c4747e88.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_5519eae4d247aeef.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -275,7 +274,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune_hu11895309029410075363.webp 360w ,http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune_hu17663807372670111124.webp 480w ,http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune_hu2441024549949193376.webp 720w ,http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune_hu5435737511135836108.webp 1080w ,http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune.png 1280w" 
+        <img srcset="http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune_hu_4138a2d000ca0a95.webp 360w ,http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune_hu_299263c58176c39e.webp 480w ,http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune_hu_f191c8f75fb9204b.webp 720w ,http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune_hu_d26d14c25a9d8bcb.webp 1080w ,http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/powershell-scripts-in-intune/images/powershell-scripts-in-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -287,7 +286,11 @@
 
 
 
-  <div class="post-content"><p>SCCM Compliance rule evaluation for a new rule can sometimes be slow or maybe you just need to manually evaluate compliance baselines or rules on a machine or group of machines.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>SCCM Compliance rule evaluation for a new rule can sometimes be slow or maybe you just need to manually evaluate compliance baselines or rules on a machine or group of machines.</p>
 <p>Regardless of your reasoning, the PowerShell script below can help you achieve the goal of manually and remotely kicking off SCCM compliance rule evaluations.</p>
 <p>To make this reusable in the future, we will create a simple function that we can call along with a hostname to do the dirty work for us.</p>
 <pre tabindex="0"><code>function Invoke-ForceEvaluation
@@ -394,7 +397,7 @@ foreach($hostname in (Get-Content C:\path to our txt file with hostnames)) {
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

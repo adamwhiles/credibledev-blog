@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/onedrive-for-linux/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Install OneDrive for Linux - Manjaro Edition" />
+      </script><meta property="og:title" content="Install OneDrive for Linux - Manjaro Edition" />
 <meta property="og:description" content="OneDrive is a great backup and cloud storage service. In this post we show you how to install OneDrive on Manjaro Linux." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/onedrive-for-linux/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/Install-OneDrive-for-Linux.png" />
 <meta name="twitter:title" content="Install OneDrive for Linux - Manjaro Edition"/>
 <meta name="twitter:description" content="OneDrive is a great backup and cloud storage service. In this post we show you how to install OneDrive on Manjaro Linux."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Install OneDrive for Linux - Manjaro Edition",
-      "item": "http://localhost:1313/onedrive-for-linux/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Install OneDrive for Linux - Manjaro Edition",
+        "item": "http://localhost:1313/onedrive-for-linux/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Install OneDrive for Linux - Manjaro Edition",
-  "name": "Install OneDrive for Linux - Manjaro Edition",
-  "description": "OneDrive is a great backup and cloud storage service. In this post we show you how to install OneDrive on Manjaro Linux.",
-  "keywords": [
-    "linux", "manjaro", "onedrive"
-  ],
-  "articleBody": "Using Ubuntu? Check our Guide to Install OneDrive on Ubuntu\nOneDrive for Linux is a thing? Yes, yes… I know. Why would you want to install a Microsoft product on Linux? Well, if you’re like me, work and school are both heavily in the Microsoft ecosystem. So, I don’t mind and it makes my life easier if I can have access to OneDrive on my Linux machine.\nIf you really want to make other Linux users’ blood boil, check out our guide on installing Microsoft Edge on Manjaro Linux.\nIf you fit into this box too, I will show you how to install and set up OneDrive on Manjaro Linux. We will explore both the command line tool and an optional GUI tool for managing OneDrive as well. Both of these projects are open source, so if you want to help make them better, you can!\nLet’s go ahead and get started.\nInstall OneDrive on Manjaro Linux The first thing we need is the core OneDrive for Linux component, which is provided by a user called abraunegg. This tool is really all you need to set up and run OneDrive on your Linux machine. It can be installed from the AUR repository in the GUI software manager or from the command line. Make sure you have AUR repository enabled in the preferences of the software manager before proceeding.\nIt’s important that you install version 2.4.15 or higher if you plan to use the optional GUI component. Current version as of this writing is 2.4.22\nCommand Line Install To install the core component of OneDrive for Linux, open up your terminal and run the following command. If you don’t already have it installed, you will need an AUR helper like yay installed.\nyay -S onedrive-abraunegg Software Manager Install In order to install the OneDrive for Linux core component using the graphical software manager, search for onedrive and make sure you have the AUR repository enabled in the preferences.\nConfiguring OneDrive from the Command Line If you plan on installing the OneDrive GUI, skip ahead to the next section, as the rest of the setup is simpler via the GUI.\nTo get started, open up a terminal and run the following command below. This will give you a URL that you need to open in your browser. When you open the link, you may be prompted to log in to your OneDrive account. Log in if prompted, then you will be redirected to a blank page. Here, you want to copy the URL in the address bar, then paste it back into the terminal where it’s asking for a response URI.\nIf everything is good, you should receive a message in the terminal saying that the OneDrive for Linux application is now authorized. We can now proceed with syncing. First, we can do a test sync, which is called a dry run, by running the following command.\nonedrive --synchronize --verbose --dry-run If no errors were observed and everything looks ok, we can proceed with a real sync of OneDrive on Linux. By running the following command, everything in your OneDrive will be downloaded to your local machine in a OneDrive folder within your home directory.\nIf you only want to sync a single directory, check out the other command listed in the section below.\nonedrive --synchronize Other Command Line Options If you would like to only sync one directory you can run the following command.\nonedrive --synchronize --single-directory 'directoryname' There are many configurations that you can do to customize how OneDrive syncs on Linux, these are outside of the scope of this simple introduction. I would suggest you head over to this documentation page on the official GitHub repo for the project.\nInstall OneDrive for Linux GUI App This part is optional, the GUI app is nice to have and if you wish to install it you can grab the AppImage from the official GitHub repo.\nOnce you have the AppImage downloaded, you will need to make it executable by running the following command in the terminal where you downloaded the file.\nchmod +x OneDriveGUI-1.0.1_fix59-x86_64.AppImage Now you can simply run the GUI app by double-clicking the file or running the following command. Once you run it, you will be taken through a setup wizard that will get you started.\nThis wizard will walk you through initial profile creation, then you will have a chance to configure any sync options for OneDrive prior to the first sync. The GUI application offers many advanced options such as select file/directory sync, rate limit, file permissions, download only, upload only, and many more.\nWhen you’re ready, you can begin a sync through the GUI interface by clicking the play icon.\nAfter starting the first sync, you will be prompted to link your OneDrive account. This is done by opening the link provided in the app, logging into your OneDrive account, and then you are taken to a blank page where you will need to copy the URL in the address bar and paste it into the app.\nAfter you complete this step, your OneDrive account is now linked to the app and the sync can begin. You will be shown a status of the number of files being downloaded and a list of those files. This provides a familiar look and feel to the Windows version of the OneDrive GUI client.\nConclusion That’s it, you broke the Linux code of ethics and installed a Microsoft product on your Linux machine. Some of us just like to live by our own rules and that’s ok. If you have questions about installing or using OneDrive on Linux, let me know in the comments!\n",
-  "wordCount" : "945",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/Install-OneDrive-for-Linux.png","datePublished": "2022-12-20T00:00:00Z",
-  "dateModified": "2022-12-20T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/onedrive-for-linux/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Install OneDrive for Linux - Manjaro Edition",
+    "name": "Install OneDrive for Linux - Manjaro Edition",
+    "description": "OneDrive is a great backup and cloud storage service. In this post we show you how to install OneDrive on Manjaro Linux.",
+    "keywords": [
+      "linux", "manjaro", "onedrive"
+    ],
+    "articleBody": "Using Ubuntu? Check our Guide to Install OneDrive on Ubuntu\nOneDrive for Linux is a thing? Yes, yes… I know. Why would you want to install a Microsoft product on Linux? Well, if you’re like me, work and school are both heavily in the Microsoft ecosystem. So, I don’t mind and it makes my life easier if I can have access to OneDrive on my Linux machine.\nIf you really want to make other Linux users’ blood boil, check out our guide on installing Microsoft Edge on Manjaro Linux.\nIf you fit into this box too, I will show you how to install and set up OneDrive on Manjaro Linux. We will explore both the command line tool and an optional GUI tool for managing OneDrive as well. Both of these projects are open source, so if you want to help make them better, you can!\nLet’s go ahead and get started.\nInstall OneDrive on Manjaro Linux The first thing we need is the core OneDrive for Linux component, which is provided by a user called abraunegg. This tool is really all you need to set up and run OneDrive on your Linux machine. It can be installed from the AUR repository in the GUI software manager or from the command line. Make sure you have AUR repository enabled in the preferences of the software manager before proceeding.\nIt’s important that you install version 2.4.15 or higher if you plan to use the optional GUI component. Current version as of this writing is 2.4.22\nCommand Line Install To install the core component of OneDrive for Linux, open up your terminal and run the following command. If you don’t already have it installed, you will need an AUR helper like yay installed.\nyay -S onedrive-abraunegg Software Manager Install In order to install the OneDrive for Linux core component using the graphical software manager, search for onedrive and make sure you have the AUR repository enabled in the preferences.\nConfiguring OneDrive from the Command Line If you plan on installing the OneDrive GUI, skip ahead to the next section, as the rest of the setup is simpler via the GUI.\nTo get started, open up a terminal and run the following command below. This will give you a URL that you need to open in your browser. When you open the link, you may be prompted to log in to your OneDrive account. Log in if prompted, then you will be redirected to a blank page. Here, you want to copy the URL in the address bar, then paste it back into the terminal where it’s asking for a response URI.\nIf everything is good, you should receive a message in the terminal saying that the OneDrive for Linux application is now authorized. We can now proceed with syncing. First, we can do a test sync, which is called a dry run, by running the following command.\nonedrive --synchronize --verbose --dry-run If no errors were observed and everything looks ok, we can proceed with a real sync of OneDrive on Linux. By running the following command, everything in your OneDrive will be downloaded to your local machine in a OneDrive folder within your home directory.\nIf you only want to sync a single directory, check out the other command listed in the section below.\nonedrive --synchronize Other Command Line Options If you would like to only sync one directory you can run the following command.\nonedrive --synchronize --single-directory 'directoryname' There are many configurations that you can do to customize how OneDrive syncs on Linux, these are outside of the scope of this simple introduction. I would suggest you head over to this documentation page on the official GitHub repo for the project.\nInstall OneDrive for Linux GUI App This part is optional, the GUI app is nice to have and if you wish to install it you can grab the AppImage from the official GitHub repo.\nOnce you have the AppImage downloaded, you will need to make it executable by running the following command in the terminal where you downloaded the file.\nchmod +x OneDriveGUI-1.0.1_fix59-x86_64.AppImage Now you can simply run the GUI app by double-clicking the file or running the following command. Once you run it, you will be taken through a setup wizard that will get you started.\nThis wizard will walk you through initial profile creation, then you will have a chance to configure any sync options for OneDrive prior to the first sync. The GUI application offers many advanced options such as select file/directory sync, rate limit, file permissions, download only, upload only, and many more.\nWhen you’re ready, you can begin a sync through the GUI interface by clicking the play icon.\nAfter starting the first sync, you will be prompted to link your OneDrive account. This is done by opening the link provided in the app, logging into your OneDrive account, and then you are taken to a blank page where you will need to copy the URL in the address bar and paste it into the app.\nAfter you complete this step, your OneDrive account is now linked to the app and the sync can begin. You will be shown a status of the number of files being downloaded and a list of those files. This provides a familiar look and feel to the Windows version of the OneDrive GUI client.\nConclusion That’s it, you broke the Linux code of ethics and installed a Microsoft product on your Linux machine. Some of us just like to live by our own rules and that’s ok. If you have questions about installing or using OneDrive on Linux, let me know in the comments!\n",
+    "wordCount" : "945",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/Install-OneDrive-for-Linux.png","datePublished": "2022-12-20T00:00:00Z",
+    "dateModified": "2022-12-20T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/onedrive-for-linux/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux_hu14642308253643656061.webp 360w ,http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux_hu9039344918030903048.webp 480w ,http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux_hu10205044917096578784.webp 720w ,http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux_hu13326139253907197027.webp 1080w ,http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux.png 1280w" 
+        <img srcset="http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux_hu_44ea1ba5fca42d54.webp 360w ,http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux_hu_6b50a8c67009103b.webp 480w ,http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux_hu_263974e394a84ba0.webp 720w ,http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux_hu_f9be21d84f2d24ec.webp 1080w ,http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/onedrive-for-linux/images/Install-OneDrive-for-Linux.png" alt="" 
             width="1280" height="720">
         
@@ -276,7 +275,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -285,7 +284,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -294,7 +293,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -303,7 +302,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -312,7 +311,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -324,7 +323,11 @@
 
 
 
-  <div class="post-content"><p>Using Ubuntu? Check our <a href="https://credibledev.com/install-onedrive-gui-on-ubuntu/" target="_blank">Guide to Install OneDrive on Ubuntu</a></p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Using Ubuntu? Check our <a href="https://credibledev.com/install-onedrive-gui-on-ubuntu/" target="_blank">Guide to Install OneDrive on Ubuntu</a></p>
 <p>OneDrive for Linux is a thing? Yes, yes&hellip; I know. Why would you want to install a Microsoft product on Linux? Well, if you’re like me, work and school are both heavily in the Microsoft ecosystem. So, I don’t mind and it makes my life easier if I can have access to OneDrive on my Linux machine.</p>
 <p>If you really want to make other Linux users&rsquo; blood boil, check out our guide on installing <a href="https://credibledev.com/how-to-install-edge-on-manjaro/" target="_blank">Microsoft Edge on Manjaro Linux</a>.</p>
 <p>If you fit into this box too, I will show you how to install and set up OneDrive on Manjaro Linux. We will explore both the command line tool and an optional GUI tool for managing OneDrive as well. Both of these projects are open source, so if you want to help make them better, you can!</p>
@@ -525,7 +528,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

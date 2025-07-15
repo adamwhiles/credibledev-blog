@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/manjaro-i3-window-manager-tips/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Manjaro i3 Window Manager Tips" />
+      </script><meta property="og:title" content="Manjaro i3 Window Manager Tips" />
 <meta property="og:description" content="Setting up the Manjaro i3 window manager can be a journey. I&#39;m sharing some tips to help you on your adventure into the i3 tiling window manager." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/manjaro-i3-window-manager-tips/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/i3-Manjaro-Tips.png" />
 <meta name="twitter:title" content="Manjaro i3 Window Manager Tips"/>
 <meta name="twitter:description" content="Setting up the Manjaro i3 window manager can be a journey. I&#39;m sharing some tips to help you on your adventure into the i3 tiling window manager."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Manjaro i3 Window Manager Tips",
-      "item": "http://localhost:1313/manjaro-i3-window-manager-tips/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Manjaro i3 Window Manager Tips",
+        "item": "http://localhost:1313/manjaro-i3-window-manager-tips/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Manjaro i3 Window Manager Tips",
-  "name": "Manjaro i3 Window Manager Tips",
-  "description": "Setting up the Manjaro i3 window manager can be a journey. I'm sharing some tips to help you on your adventure into the i3 tiling window manager.",
-  "keywords": [
-    "i3", "i3wm", "linux", "manjaro"
-  ],
-  "articleBody": "I’ve heard the Linux elite talk about tiling window managers, like Manjaro i3 edition, for some time. So I decided to dive into the i3 tiling window manager on my Manjaro desktop, and these are some things I learned.\nThis isn’t really my first dive into a tiling window manager, I’ve run across some before, likely by accident as I recall. I believe it was an early adventure into Arch that led me to an unpleasant experience with a tiling window manager that I don’t remember the name of. Being brought to a desktop where there wasn’t really anything to click on and no menu to be found, or so I thought.\nI didn’t really give this window manager a fair shake, in frustration of not knowing what to do, I installed something more familiar like KDE or Gnome. Ah, finally, a menu and a clickable interface.\nFast forward to last week, I decided to dive straight into the Manjaro i3 version of the window manager by installing the i3 community install of Manjaro. At this point, I had watched a few YouTube videos about i3, which explained how to navigate, use dmenu and show off their fancy customized bars, backgrounds, and transparency. I love how many of the Linux YouTube folks show htop, even when system performance is not even being discussed, it makes me giggle.\nAnyways, let’s jump into a few things I’ve learned so far during my time with the i3 window manager on Manjaro.\nMultiple Display Setup on i3 One of the first things I wanted to tackle before I customized anything was my display setup. I use a laptop, which is connected to an external display. So, sometimes I’m using just the laptop screen, and others I’m using a dual display setup with the external monitor above the laptop.\nAfter searching around online, I found that I could run commands to adjust the display using xrandr. This wasn’t too difficult, and plugging the commands in my i3 config file in Manjaro was pretty simple. The issue was switching from one monitor to two monitors, then back to one monitor.\nSo I continued searching and found some information about the applications arandr and autorandr. Wow, after setting this up, it did exactly what I wanted. In i3, when 2 monitors were connected, the displays were extended and my external display was recognized as being above my laptop’s built-in display. When I disconnected my external monitor, it recognized this and adjusted it appropriately for one monitor.\nEasy Setup for Multiple Displays on i3 To get started the easy way and save yourself some frustration, install the arandr and autorandr packages.\nsudo pacman -S arandr autorandr Once you have these packages installed, use dmenu (mod+d) or whatever menu you may have installed, to launch arandr.\nIn arandr, you can drag your displays around, change their resolution, etc. Go ahead and play around with the settings, once you have things the way you want, click apply and confirm the displays work the way you expect.\nNow that you have your displays the way you want them, we will head back to the command line and use autorandr to save this config so it can be automatically restored later.\nautorandr --save dualdisplay If you’re like me, you want another config for when the external display is disconnected, so only the laptop screen is in use. To do this, run arandr again, this time only configure one screen. My external display still showed up in arandr even though it was disconnected. If this happens to you, right-click on the external display in arandr and uncheck the active box to disable it. Then click apply to confirm everything works as expected.\nOnce you are satisfied with the second config, we will use the autorandr application in the command line again to save the single monitor config.\nautorandr --save singledisplay Add autorandr to i3 Config If you haven’t already made your own i3 config in Manjaro, you will want to create a copy of the default config, found here: /etc/skel/.i3/conifg\nCopy that default config to this file ~/.config/i3/config\nNow that we have our display profiles set up, we can add an autorandr line to our i3 config file. By adding this line, each time we log in, depending on the displays connected, autorandr will adjust accordingly.\nexec autorandr -c After adding this line and saving the config, you should be all set. Upon reboot, if you have 2 monitors connected, i3 should adjust to extend and position the screens the way that you saved them in arandr. If you have 2 monitors connected, then disconnect one of them, i3 should adjust again.\nAdjust i3 Wallpaper on Screen Change Something else annoying happened when I set my dual displays. I change the resolution of one of my monitors and when autorandr runs to change it, the wallpaper isn’t sized properly.\nManjaro i3 uses nitrogen for wallpaper selection and configuration, which is a nice tool. We just need to make a minor change to our i3 config to fix this issue though. First, you want to configure your wallpaper, which you can do by running nitrogen from the command line or from your chosen menu such as dmenu.\nOnce you have the wallpaper set up how you like, adjust the autorandr line we added to the i3 config to look like this.\nexec autorandr -c \u0026\u0026 exec nitrogen --restore Now, when you reboot the wallpaper will be refreshed after autorandr makes adjustments to your displays.\nAutorandr Display Change Trigger If you have an issue with the wallpaper whenever a display is connected or disconnected, autorandr has the ability to trigger actions based on this change. This can be done by creating a postswitch script in the ~/.config/autorandr directory.\nCreate a new file in that directory called postswitch. An example of how I used this to trigger nitrogen to restore the wallpaper is shown below. I added a 3-second sleep because I had issues without it. Feel free to remove this and test it on your own machine.\n#! /bin/sh sleep 3 nitrogen --restore After you have created the script, you need to make it executable. This can be done using chmod in the following way.\nchmod +x ~/.config/autorandr/postswitch Now, whenever you connect to disconnect a display, nitrogen –restore will be launched.\nBluetooth in Manjaro i3 I have a bluetooth mouse and I use Apple Airpods on my Manjaro laptop, so making bluetooth available in the i3 status bar was necessary for me and I didn’t want to manually launch a bluetooth manager every time I started my system.\nManjaro i3 comes with blueman installed, so I only needed to add a call to the applet in my i3 config file. This provided me with the bluetooth status bar icon where I could easily manage my bluetooth devices.\nAdd this line to the i3 config file.\nexec blueman-applet Now, on each reboot, the status bar icon for bluetooth is there and my mouse automatically connects after login.\nConclusion For those interested, my current i3 config can be found here (warning: it’s nothing fancy): i3 config Github repo.\nMy adventure with Manjaro i3 edition has been short so far but I plan to continue using it, so stay tuned for future tips, configs, etc. as I continue this journey. If you have any questions or suggestions, please drop a comment below and let me know! In the meantime, check our recent guide on Setting up a Yubikey for Manjaro Linux.\n",
-  "wordCount" : "1253",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/i3-Manjaro-Tips.png","datePublished": "2022-12-28T00:00:00Z",
-  "dateModified": "2022-12-28T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/manjaro-i3-window-manager-tips/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Manjaro i3 Window Manager Tips",
+    "name": "Manjaro i3 Window Manager Tips",
+    "description": "Setting up the Manjaro i3 window manager can be a journey. I'm sharing some tips to help you on your adventure into the i3 tiling window manager.",
+    "keywords": [
+      "i3", "i3wm", "linux", "manjaro"
+    ],
+    "articleBody": "I’ve heard the Linux elite talk about tiling window managers, like Manjaro i3 edition, for some time. So I decided to dive into the i3 tiling window manager on my Manjaro desktop, and these are some things I learned.\nThis isn’t really my first dive into a tiling window manager, I’ve run across some before, likely by accident as I recall. I believe it was an early adventure into Arch that led me to an unpleasant experience with a tiling window manager that I don’t remember the name of. Being brought to a desktop where there wasn’t really anything to click on and no menu to be found, or so I thought.\nI didn’t really give this window manager a fair shake, in frustration of not knowing what to do, I installed something more familiar like KDE or Gnome. Ah, finally, a menu and a clickable interface.\nFast forward to last week, I decided to dive straight into the Manjaro i3 version of the window manager by installing the i3 community install of Manjaro. At this point, I had watched a few YouTube videos about i3, which explained how to navigate, use dmenu and show off their fancy customized bars, backgrounds, and transparency. I love how many of the Linux YouTube folks show htop, even when system performance is not even being discussed, it makes me giggle.\nAnyways, let’s jump into a few things I’ve learned so far during my time with the i3 window manager on Manjaro.\nMultiple Display Setup on i3 One of the first things I wanted to tackle before I customized anything was my display setup. I use a laptop, which is connected to an external display. So, sometimes I’m using just the laptop screen, and others I’m using a dual display setup with the external monitor above the laptop.\nAfter searching around online, I found that I could run commands to adjust the display using xrandr. This wasn’t too difficult, and plugging the commands in my i3 config file in Manjaro was pretty simple. The issue was switching from one monitor to two monitors, then back to one monitor.\nSo I continued searching and found some information about the applications arandr and autorandr. Wow, after setting this up, it did exactly what I wanted. In i3, when 2 monitors were connected, the displays were extended and my external display was recognized as being above my laptop’s built-in display. When I disconnected my external monitor, it recognized this and adjusted it appropriately for one monitor.\nEasy Setup for Multiple Displays on i3 To get started the easy way and save yourself some frustration, install the arandr and autorandr packages.\nsudo pacman -S arandr autorandr Once you have these packages installed, use dmenu (mod+d) or whatever menu you may have installed, to launch arandr.\nIn arandr, you can drag your displays around, change their resolution, etc. Go ahead and play around with the settings, once you have things the way you want, click apply and confirm the displays work the way you expect.\nNow that you have your displays the way you want them, we will head back to the command line and use autorandr to save this config so it can be automatically restored later.\nautorandr --save dualdisplay If you’re like me, you want another config for when the external display is disconnected, so only the laptop screen is in use. To do this, run arandr again, this time only configure one screen. My external display still showed up in arandr even though it was disconnected. If this happens to you, right-click on the external display in arandr and uncheck the active box to disable it. Then click apply to confirm everything works as expected.\nOnce you are satisfied with the second config, we will use the autorandr application in the command line again to save the single monitor config.\nautorandr --save singledisplay Add autorandr to i3 Config If you haven’t already made your own i3 config in Manjaro, you will want to create a copy of the default config, found here: /etc/skel/.i3/conifg\nCopy that default config to this file ~/.config/i3/config\nNow that we have our display profiles set up, we can add an autorandr line to our i3 config file. By adding this line, each time we log in, depending on the displays connected, autorandr will adjust accordingly.\nexec autorandr -c After adding this line and saving the config, you should be all set. Upon reboot, if you have 2 monitors connected, i3 should adjust to extend and position the screens the way that you saved them in arandr. If you have 2 monitors connected, then disconnect one of them, i3 should adjust again.\nAdjust i3 Wallpaper on Screen Change Something else annoying happened when I set my dual displays. I change the resolution of one of my monitors and when autorandr runs to change it, the wallpaper isn’t sized properly.\nManjaro i3 uses nitrogen for wallpaper selection and configuration, which is a nice tool. We just need to make a minor change to our i3 config to fix this issue though. First, you want to configure your wallpaper, which you can do by running nitrogen from the command line or from your chosen menu such as dmenu.\nOnce you have the wallpaper set up how you like, adjust the autorandr line we added to the i3 config to look like this.\nexec autorandr -c \u0026\u0026 exec nitrogen --restore Now, when you reboot the wallpaper will be refreshed after autorandr makes adjustments to your displays.\nAutorandr Display Change Trigger If you have an issue with the wallpaper whenever a display is connected or disconnected, autorandr has the ability to trigger actions based on this change. This can be done by creating a postswitch script in the ~/.config/autorandr directory.\nCreate a new file in that directory called postswitch. An example of how I used this to trigger nitrogen to restore the wallpaper is shown below. I added a 3-second sleep because I had issues without it. Feel free to remove this and test it on your own machine.\n#! /bin/sh sleep 3 nitrogen --restore After you have created the script, you need to make it executable. This can be done using chmod in the following way.\nchmod +x ~/.config/autorandr/postswitch Now, whenever you connect to disconnect a display, nitrogen –restore will be launched.\nBluetooth in Manjaro i3 I have a bluetooth mouse and I use Apple Airpods on my Manjaro laptop, so making bluetooth available in the i3 status bar was necessary for me and I didn’t want to manually launch a bluetooth manager every time I started my system.\nManjaro i3 comes with blueman installed, so I only needed to add a call to the applet in my i3 config file. This provided me with the bluetooth status bar icon where I could easily manage my bluetooth devices.\nAdd this line to the i3 config file.\nexec blueman-applet Now, on each reboot, the status bar icon for bluetooth is there and my mouse automatically connects after login.\nConclusion For those interested, my current i3 config can be found here (warning: it’s nothing fancy): i3 config Github repo.\nMy adventure with Manjaro i3 edition has been short so far but I plan to continue using it, so stay tuned for future tips, configs, etc. as I continue this journey. If you have any questions or suggestions, please drop a comment below and let me know! In the meantime, check our recent guide on Setting up a Yubikey for Manjaro Linux.\n",
+    "wordCount" : "1253",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/i3-Manjaro-Tips.png","datePublished": "2022-12-28T00:00:00Z",
+    "dateModified": "2022-12-28T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/manjaro-i3-window-manager-tips/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips_hu13422153846817933431.webp 360w ,http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips_hu10725216527100135937.webp 480w ,http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips_hu12336588924482482344.webp 720w ,http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips_hu13146483556087208215.webp 1080w ,http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips.png 1280w" 
+        <img srcset="http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips_hu_23c6552924f7c7b7.webp 360w ,http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips_hu_d0c9c50d66df6e75.webp 480w ,http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips_hu_5b31d15ed7d80800.webp 720w ,http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips_hu_20698b81a8498434.webp 1080w ,http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/manjaro-i3-window-manager-tips/images/i3-Manjaro-Tips.png" alt="" 
             width="1280" height="720">
         
@@ -274,7 +273,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -283,7 +282,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -292,7 +291,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -301,7 +300,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -310,7 +309,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -322,7 +321,11 @@
 
 
 
-  <div class="post-content"><p>I&rsquo;ve heard the Linux elite talk about tiling window managers, like <a href="https://manjaro.org/download/" target="_blank">Manjaro i3 edition</a>, for some time. So I decided to dive into the <a href="https://i3wm.org/" target="_blank">i3 tiling window manager</a> on my Manjaro desktop, and these are some things I learned.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>I&rsquo;ve heard the Linux elite talk about tiling window managers, like <a href="https://manjaro.org/download/" target="_blank">Manjaro i3 edition</a>, for some time. So I decided to dive into the <a href="https://i3wm.org/" target="_blank">i3 tiling window manager</a> on my Manjaro desktop, and these are some things I learned.</p>
 <p>This isn&rsquo;t really my first dive into a tiling window manager, I&rsquo;ve run across some before, likely by accident as I recall. I believe it was an early adventure into Arch that led me to an unpleasant experience with a tiling window manager that I don&rsquo;t remember the name of. Being brought to a desktop where there wasn&rsquo;t really anything to click on and no menu to be found, or so I thought.</p>
 <p>I didn&rsquo;t really give this window manager a fair shake, in frustration of not knowing what to do, I installed something more familiar like KDE or Gnome. Ah, finally, a menu and a clickable interface.</p>
 <p>Fast forward to last week, I decided to dive straight into the Manjaro i3 version of the window manager by installing the i3 community install of Manjaro. At this point, I had watched a few YouTube videos about i3, which explained how to navigate, use <a href="https://tools.suckless.org/dmenu/" target="_blank">dmenu</a> and show off their fancy customized bars, backgrounds, and transparency. I love how many of the Linux YouTube folks show htop, even when system performance is not even being discussed, it makes me giggle.</p>
@@ -534,7 +537,7 @@ nitrogen --restore
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

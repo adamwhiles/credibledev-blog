@@ -4,7 +4,7 @@
     <title>Nodejs on credibleDEV</title>
     <link>http://localhost:1313/tags/nodejs/</link>
     <description>Recent content in Nodejs on credibleDEV</description>
-    <generator>Hugo -- 0.132.2</generator>
+    <generator>Hugo -- 0.148.1</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
@@ -20,8 +20,10 @@
       <link>http://localhost:1313/linux-how-to-install-node-js/</link>
       <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/linux-how-to-install-node-js/</guid>
-      <description>How to install Node JS on Linux
-If you are a Javascript developer and you use Linux, how to install Node.JS is probably a question that you have. Fortunately for you, it is actually easy to install node js on Linux. We already have a guide that explains how to install NodeJS on Manjaro Linux so today we will be explaining how to install Node.JS on Ubuntu and other Debian-based Linux distributions.</description>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;images/linux-how-to-install-node-js-1024x536.png&#34; alt=&#34;linux how to install node js&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;How to install Node JS on Linux&lt;/p&gt;
+&lt;p&gt;If you are a Javascript developer and you use Linux, how to install &lt;a href=&#34;https://nodejs.org/en/&#34; target=&#34;_blank&#34;&gt;Node.JS&lt;/a&gt; is probably a question that you have. Fortunately for you, it is actually easy to install node js on Linux. We already have a guide that explains &lt;a href=&#34;https://credibledev.com/how-to-install-nodejs-on-manjaro-linux/&#34; target=&#34;_blank&#34;&gt;how to install NodeJS on Manjaro Linux&lt;/a&gt; so today we will be explaining how to install Node.JS on Ubuntu and other Debian-based Linux distributions.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Install NodeJS on Manjaro Linux - 2023 Update</title>

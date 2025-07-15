@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/part-2-beginners-guide-to-bash-scripting/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Part 2 - Beginners Guide to Bash Scripting" />
+      </script><meta property="og:title" content="Part 2 - Beginners Guide to Bash Scripting" />
 <meta property="og:description" content="Conditional statements and looping are important in bash scripting. This guide has example bash scripts to show the proper use of if, while, until and for loops." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/part-2-beginners-guide-to-bash-scripting/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/beginners-guide-to-shell-scripting-part-2.png" />
 <meta name="twitter:title" content="Part 2 - Beginners Guide to Bash Scripting"/>
 <meta name="twitter:description" content="Conditional statements and looping are important in bash scripting. This guide has example bash scripts to show the proper use of if, while, until and for loops."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Part 2 - Beginners Guide to Bash Scripting",
-      "item": "http://localhost:1313/part-2-beginners-guide-to-bash-scripting/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Part 2 - Beginners Guide to Bash Scripting",
+        "item": "http://localhost:1313/part-2-beginners-guide-to-bash-scripting/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Part 2 - Beginners Guide to Bash Scripting",
-  "name": "Part 2 - Beginners Guide to Bash Scripting",
-  "description": "Conditional statements and looping are important in bash scripting. This guide has example bash scripts to show the proper use of if, while, until and for loops.",
-  "keywords": [
-    "bash", "linux"
-  ],
-  "articleBody": "This guide is part of a series, be sure to check out the other parts as well.\nPart 1 - Introduction to Bash, Variables, Comments, User Input\nPart 2 - If/Else Statements, Looping (This Page)\nPart 3 - Functions in Bash\nPart 4 - Creating Menus in Bash\nIn this part, we will be covering the following topics related to Bash scripting on Linux.\nIf/Else Statement\nLoops\nBeing able to control the flow, do comparisons, make decisions and loop are all core parts of any programming or scripting language. Bash offers all of these and if you’re already familiar with other programming and scripting languages, you will pick up the syntax pretty easily. Let’s jump in with if/else statements, you will find many example bash scripts below to help you.\nIf/Else Statements in Bash An if/else statement is exactly what it sounds like. If this, do that, else do this. It’s a way to run some sort of check, like a comparison, and take a certain action based on the result of the comparison. Imagine having the user input and number, then we check if the number entered is higher or lower than our number. That’s what we will do here as an example. Crack open your text editor and put in the following code.\nmynum=10 read -p \"Enter a number: \" usernum if [[ $usernum -lt $mynum ]] then echo \"Your number is lower than my number.\" else echo \"Your number is higher than my number.\" fi Syntax for IF Statement You’ll notice that we start the if statement with “if” followed by our comparison. Our comparison is wrapped in double brackets and we use “-lt” as less than. Out action when this is true comes after the “then” keyword and our false action comes after the “else” keyword. We end the if statement block with “fi”, clever huh?\nBasic IF Statement if SOME CONDITION then DO THIS else DO THIS fi So if we run the example code we had above, this is the output we will see.\nUsing Elif (Else If) in Bash We can take this a bit further, just like in many other languages, using “elif”. This is an else if condition so we can chain another condition into our if statement. Using our previous example, implementing “elif” may look something like this. The “-eq” comparison operator shown here means equal.\nmynum=10 read -p \"Enter a number: \" usernum if [[ $usernum -eq $mynum ]] then echo \"You guessed my number, great job!\" elif [[ $usernum -lt $mynum ]] then echo \"Your number is lower than my number.\" else echo \"Your number is higher than my number.\" fi Get creative, you are not limited to just comparing numbers, you can do much more.\nBash Comparison Operators In addition to what you have already seen, there are other comparison operators that you can use in your scripts. Note that the operator is different if you are working with strings. This list is not all inclusive, there are many other operators available in bash, such as “-d” to check if a directory exists or “-e” to check if a file exists.\nOperator Example Operator Description 1 -eq 1 Equal (numbers) 1 -ne 2 Not Equal (numbers) 1 -lt 2 Less Than (Numbers) 2 -gt 1 Greater Than (Numbers) 1 -le 1 Less Than or Equal To (Numbers) 2 -ge 2 Greater Than or Equal To (Numbers) “abc” = “abc” or == (depends on syntax) Equal (strings) “abc” != “def” Not Equal (strings) “a” \u003c “b” Less Than (strings) “b” \u003e “a” Greater Than (strings) -n “abc” String is not empty -z \"\" String is empty Bash Comparison Operators\nUsing AND and OR in Bash Like many other languages, you can chain conditional together with AND (\u0026\u0026) and OR (||) for more complex checks. Below is an example of multiple conditionals using AND (\u0026\u0026).\nlower=10 upper=20 read -p \"Enter a number: \" usernum if [[ $usernum -gt $lower ]] \u0026\u0026 [[ $usernum -lt $upper ]] then echo \"Your number is between 10 and 20\" else echo \"Your number is not between 10 and 20\" fi For Loop in Bash Scripting Looping is an important function and there are multiple types of loops available. The first one we will look at is the for loop. For loops in bash can be slightly confusing at first if you have experience with another language. The good thing is that there are multiple variations of the for loop, so you can choose the one that best suits you.\nStandard For Loop for n in 1 2 3 4 5 6; do echo $n done The code above is a basic for loop in bash. This code will loop over the numbers 1 through 6, assigning them one at a time to the variable n, which will be printed 1 time on each iteration. The result is the numbers 1 through 6 being printed as shown below.\nFor Loop Over a Range The next type of for loop in bash is to loop over a range. Similar to the last example, we can loop over 1 through 6 again, but in a different way. We put our range between curly braces such as {1..10} to run our loop 10 times. A catch with this method is that you cannot use variables in the defined range. So you can’t say something like {$start..$finish} for example. If this is something you need to do, take a look at the more familiar for loop version in the next section.\nfor n in {1..6}; do echo $n done If you run this code, the output will look exactly the same as the last example.\nWe can also define the increment value which is set to 1 as default. So if we want to count by 2’s, we can use a range like this, {1..6..2}. Let’s look at an example.\nfor n in {1..6..2} do echo $n done As you can see in the output below, we start with 1 and then skip a number before printing the next.\nC Style For Loop in Bash This is my favorite type of for loop in bash, mainly because it’s the one that looks the most familiar and readable to me. So if you come from a programming background, it’s likely that this format will appeal to you.\nBasic Syntax n=10 for ((i=0; i\u003c$n; i++)); do echo $i done To me, this looks more like a for loop than any other variation in bash scripting. When you read it out loud, it just makes more sense to me as well. For i is equal to 0, and i is less than n(10), do this and then increment by 1.\nContinue Statement Being able to have more control from within the for loop is important and the “continue” statement is one way we can achieve this. The continue statement is used in other programming languages so you may be familiar with it already. When you use “continue”, you are not breaking out of the loop completely, you are just jumping to the next iteration of the loop. If you need to break out of the loop altogether, you can use the “break” statement, which is discussed in the next section.\nn=10 mynum=6 for ((i=0; i\u003c$n; i++)); do if [[ $i -eq $mynum ]] then echo \"You found my number, it is $mynum\" continue fi echo $i done When you run this script, you will notice that we print each value until we get to the number 6, when our comparison is true. At this point, we don’t print the number by itself as we did for the other numbers. This is because the continue statement runs, which jumps to the next iteration, skipping the “echo $1” statement.\nBreak Statement The break statement is useful when we need to end the loop completely. In our last example, we looped over the numbers 0 through 9 and wrote a special statement when we found the target number, 6. What if we want to just end the loop when we find the number? That’s where the break statement comes in, let’s do that now. Swap out continue for break instead, then run the script again.\nn=10 mynum=6 for ((i=0; i\u003c$n; i++)); do if [[ $i -eq $mynum ]] then echo \"You found my number, it is $mynum\" break fi echo $i done Notice how now, the loop completely stops when we reach the number 6. Exactly what we wanted.\nOther Loops in Bash Scripting A for loop is not the only type of loop you can use in bash scripting. Like many other langauges we have the “while” loop and also the “until” loop. Let’s take a quick look at those.\nBash While Loop The while loop is useful, as it allows us to loop until some condition is no longer true. Careful not to create an infinite loop, you need to make sure that your condition becomes false at some point.\nSyntax for the While Loop n=0 while [[ $n -ne 5 ]]; do echo $n ((n++)) done Our while loop will loop and print the value of n, starting at 0 until the condition is false. The condition becomes false when the variable n is equal to 5 and on each iteration we increment n by 1, at which point the loop stops.\nBash Until Loop Another type of loop is the until loop, which is similar to the while loop. The until loop will run until the condition is true, unlike the while loop which ran until the condition became false. If we use the same example as before, we swap out “while” with “until” and flip our conditional check to be equal instead of not equal.\nSyntax for Until Loop n=0 until [[ $n -eq 5 ]]; do echo $n ((n++)) done Conclusion Check out Part 3 of the Beginner’s Guide to Bash Scripting where we discuss how to use functions.\nLooping and conditionals are important tools that help us control how our script runs and allow it to make decisions. Explore mixing loops with if statements and see what you can create.\n",
-  "wordCount" : "1693",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/beginners-guide-to-shell-scripting-part-2.png","datePublished": "2023-02-01T00:00:00Z",
-  "dateModified": "2023-02-01T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/part-2-beginners-guide-to-bash-scripting/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Part 2 - Beginners Guide to Bash Scripting",
+    "name": "Part 2 - Beginners Guide to Bash Scripting",
+    "description": "Conditional statements and looping are important in bash scripting. This guide has example bash scripts to show the proper use of if, while, until and for loops.",
+    "keywords": [
+      "bash", "linux"
+    ],
+    "articleBody": "This guide is part of a series, be sure to check out the other parts as well.\nPart 1 - Introduction to Bash, Variables, Comments, User Input\nPart 2 - If/Else Statements, Looping (This Page)\nPart 3 - Functions in Bash\nPart 4 - Creating Menus in Bash\nIn this part, we will be covering the following topics related to Bash scripting on Linux.\nIf/Else Statement\nLoops\nBeing able to control the flow, do comparisons, make decisions and loop are all core parts of any programming or scripting language. Bash offers all of these and if you’re already familiar with other programming and scripting languages, you will pick up the syntax pretty easily. Let’s jump in with if/else statements, you will find many example bash scripts below to help you.\nIf/Else Statements in Bash An if/else statement is exactly what it sounds like. If this, do that, else do this. It’s a way to run some sort of check, like a comparison, and take a certain action based on the result of the comparison. Imagine having the user input and number, then we check if the number entered is higher or lower than our number. That’s what we will do here as an example. Crack open your text editor and put in the following code.\nmynum=10 read -p \"Enter a number: \" usernum if [[ $usernum -lt $mynum ]] then echo \"Your number is lower than my number.\" else echo \"Your number is higher than my number.\" fi Syntax for IF Statement You’ll notice that we start the if statement with “if” followed by our comparison. Our comparison is wrapped in double brackets and we use “-lt” as less than. Out action when this is true comes after the “then” keyword and our false action comes after the “else” keyword. We end the if statement block with “fi”, clever huh?\nBasic IF Statement if SOME CONDITION then DO THIS else DO THIS fi So if we run the example code we had above, this is the output we will see.\nUsing Elif (Else If) in Bash We can take this a bit further, just like in many other languages, using “elif”. This is an else if condition so we can chain another condition into our if statement. Using our previous example, implementing “elif” may look something like this. The “-eq” comparison operator shown here means equal.\nmynum=10 read -p \"Enter a number: \" usernum if [[ $usernum -eq $mynum ]] then echo \"You guessed my number, great job!\" elif [[ $usernum -lt $mynum ]] then echo \"Your number is lower than my number.\" else echo \"Your number is higher than my number.\" fi Get creative, you are not limited to just comparing numbers, you can do much more.\nBash Comparison Operators In addition to what you have already seen, there are other comparison operators that you can use in your scripts. Note that the operator is different if you are working with strings. This list is not all inclusive, there are many other operators available in bash, such as “-d” to check if a directory exists or “-e” to check if a file exists.\nOperator Example Operator Description 1 -eq 1 Equal (numbers) 1 -ne 2 Not Equal (numbers) 1 -lt 2 Less Than (Numbers) 2 -gt 1 Greater Than (Numbers) 1 -le 1 Less Than or Equal To (Numbers) 2 -ge 2 Greater Than or Equal To (Numbers) “abc” = “abc” or == (depends on syntax) Equal (strings) “abc” != “def” Not Equal (strings) “a” \u003c “b” Less Than (strings) “b” \u003e “a” Greater Than (strings) -n “abc” String is not empty -z \"\" String is empty Bash Comparison Operators\nUsing AND and OR in Bash Like many other languages, you can chain conditional together with AND (\u0026\u0026) and OR (||) for more complex checks. Below is an example of multiple conditionals using AND (\u0026\u0026).\nlower=10 upper=20 read -p \"Enter a number: \" usernum if [[ $usernum -gt $lower ]] \u0026\u0026 [[ $usernum -lt $upper ]] then echo \"Your number is between 10 and 20\" else echo \"Your number is not between 10 and 20\" fi For Loop in Bash Scripting Looping is an important function and there are multiple types of loops available. The first one we will look at is the for loop. For loops in bash can be slightly confusing at first if you have experience with another language. The good thing is that there are multiple variations of the for loop, so you can choose the one that best suits you.\nStandard For Loop for n in 1 2 3 4 5 6; do echo $n done The code above is a basic for loop in bash. This code will loop over the numbers 1 through 6, assigning them one at a time to the variable n, which will be printed 1 time on each iteration. The result is the numbers 1 through 6 being printed as shown below.\nFor Loop Over a Range The next type of for loop in bash is to loop over a range. Similar to the last example, we can loop over 1 through 6 again, but in a different way. We put our range between curly braces such as {1..10} to run our loop 10 times. A catch with this method is that you cannot use variables in the defined range. So you can’t say something like {$start..$finish} for example. If this is something you need to do, take a look at the more familiar for loop version in the next section.\nfor n in {1..6}; do echo $n done If you run this code, the output will look exactly the same as the last example.\nWe can also define the increment value which is set to 1 as default. So if we want to count by 2’s, we can use a range like this, {1..6..2}. Let’s look at an example.\nfor n in {1..6..2} do echo $n done As you can see in the output below, we start with 1 and then skip a number before printing the next.\nC Style For Loop in Bash This is my favorite type of for loop in bash, mainly because it’s the one that looks the most familiar and readable to me. So if you come from a programming background, it’s likely that this format will appeal to you.\nBasic Syntax n=10 for ((i=0; i\u003c$n; i++)); do echo $i done To me, this looks more like a for loop than any other variation in bash scripting. When you read it out loud, it just makes more sense to me as well. For i is equal to 0, and i is less than n(10), do this and then increment by 1.\nContinue Statement Being able to have more control from within the for loop is important and the “continue” statement is one way we can achieve this. The continue statement is used in other programming languages so you may be familiar with it already. When you use “continue”, you are not breaking out of the loop completely, you are just jumping to the next iteration of the loop. If you need to break out of the loop altogether, you can use the “break” statement, which is discussed in the next section.\nn=10 mynum=6 for ((i=0; i\u003c$n; i++)); do if [[ $i -eq $mynum ]] then echo \"You found my number, it is $mynum\" continue fi echo $i done When you run this script, you will notice that we print each value until we get to the number 6, when our comparison is true. At this point, we don’t print the number by itself as we did for the other numbers. This is because the continue statement runs, which jumps to the next iteration, skipping the “echo $1” statement.\nBreak Statement The break statement is useful when we need to end the loop completely. In our last example, we looped over the numbers 0 through 9 and wrote a special statement when we found the target number, 6. What if we want to just end the loop when we find the number? That’s where the break statement comes in, let’s do that now. Swap out continue for break instead, then run the script again.\nn=10 mynum=6 for ((i=0; i\u003c$n; i++)); do if [[ $i -eq $mynum ]] then echo \"You found my number, it is $mynum\" break fi echo $i done Notice how now, the loop completely stops when we reach the number 6. Exactly what we wanted.\nOther Loops in Bash Scripting A for loop is not the only type of loop you can use in bash scripting. Like many other langauges we have the “while” loop and also the “until” loop. Let’s take a quick look at those.\nBash While Loop The while loop is useful, as it allows us to loop until some condition is no longer true. Careful not to create an infinite loop, you need to make sure that your condition becomes false at some point.\nSyntax for the While Loop n=0 while [[ $n -ne 5 ]]; do echo $n ((n++)) done Our while loop will loop and print the value of n, starting at 0 until the condition is false. The condition becomes false when the variable n is equal to 5 and on each iteration we increment n by 1, at which point the loop stops.\nBash Until Loop Another type of loop is the until loop, which is similar to the while loop. The until loop will run until the condition is true, unlike the while loop which ran until the condition became false. If we use the same example as before, we swap out “while” with “until” and flip our conditional check to be equal instead of not equal.\nSyntax for Until Loop n=0 until [[ $n -eq 5 ]]; do echo $n ((n++)) done Conclusion Check out Part 3 of the Beginner’s Guide to Bash Scripting where we discuss how to use functions.\nLooping and conditionals are important tools that help us control how our script runs and allow it to make decisions. Explore mixing loops with if statements and see what you can create.\n",
+    "wordCount" : "1693",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/beginners-guide-to-shell-scripting-part-2.png","datePublished": "2023-02-01T00:00:00Z",
+    "dateModified": "2023-02-01T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/part-2-beginners-guide-to-bash-scripting/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2_hu11381703206482692355.webp 360w ,http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2_hu6865402484434299526.webp 480w ,http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2_hu10040601405536831723.webp 720w ,http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2_hu18197909108490502843.webp 1080w ,http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2.png 1280w" 
+        <img srcset="http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2_hu_90460f57093f31bd.webp 360w ,http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2_hu_3e0591413483525f.webp 480w ,http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2_hu_cfaeb7cd7e09fff9.webp 720w ,http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2_hu_6134c8e245c432b3.webp 1080w ,http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/part-2-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-2.png" alt="" 
             width="1280" height="720">
         
@@ -308,7 +307,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -317,7 +316,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -326,7 +325,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -335,7 +334,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -344,7 +343,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -356,7 +355,11 @@
 
 
 
-  <div class="post-content"><p>This guide is part of a series, be sure to check out the other parts as well.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>This guide is part of a series, be sure to check out the other parts as well.</p>
 <ul>
 <li>
 <p><a href="https://credibledev.com/beginners-guide-to-bash-scripting/" target="_blank">Part 1 - Introduction to Bash, Variables, Comments, User Input</a></p>
@@ -424,62 +427,62 @@ fi
 <h3 id="bash-comparison-operators">Bash Comparison Operators<a hidden class="anchor" aria-hidden="true" href="#bash-comparison-operators">#</a></h3>
 <p>In addition to what you have already seen, there are other comparison operators that you can use in your scripts. Note that the operator is different if you are working with strings. This list is not all inclusive, there are many other operators available in bash, such as &ldquo;-d&rdquo; to check if a directory exists or &ldquo;-e&rdquo; to check if a file exists.</p>
 <table>
-<thead>
-<tr>
-<th>Operator Example</th>
-<th>Operator Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1 -eq 1</td>
-<td>Equal (numbers)</td>
-</tr>
-<tr>
-<td>1 -ne 2</td>
-<td>Not Equal (numbers)</td>
-</tr>
-<tr>
-<td>1 -lt 2</td>
-<td>Less Than (Numbers)</td>
-</tr>
-<tr>
-<td>2 -gt 1</td>
-<td>Greater Than (Numbers)</td>
-</tr>
-<tr>
-<td>1 -le 1</td>
-<td>Less Than or Equal To (Numbers)</td>
-</tr>
-<tr>
-<td>2 -ge 2</td>
-<td>Greater Than or Equal To (Numbers)</td>
-</tr>
-<tr>
-<td>&ldquo;abc&rdquo; = &ldquo;abc&rdquo; or == (depends on syntax)</td>
-<td>Equal (strings)</td>
-</tr>
-<tr>
-<td>&ldquo;abc&rdquo; != &ldquo;def&rdquo;</td>
-<td>Not Equal (strings)</td>
-</tr>
-<tr>
-<td>&ldquo;a&rdquo; &lt; &ldquo;b&rdquo;</td>
-<td>Less Than (strings)</td>
-</tr>
-<tr>
-<td>&ldquo;b&rdquo; &gt; &ldquo;a&rdquo;</td>
-<td>Greater Than (strings)</td>
-</tr>
-<tr>
-<td>-n &ldquo;abc&rdquo;</td>
-<td>String is not empty</td>
-</tr>
-<tr>
-<td>-z &quot;&quot;</td>
-<td>String is empty</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Operator Example</th>
+          <th>Operator Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1 -eq 1</td>
+          <td>Equal (numbers)</td>
+      </tr>
+      <tr>
+          <td>1 -ne 2</td>
+          <td>Not Equal (numbers)</td>
+      </tr>
+      <tr>
+          <td>1 -lt 2</td>
+          <td>Less Than (Numbers)</td>
+      </tr>
+      <tr>
+          <td>2 -gt 1</td>
+          <td>Greater Than (Numbers)</td>
+      </tr>
+      <tr>
+          <td>1 -le 1</td>
+          <td>Less Than or Equal To (Numbers)</td>
+      </tr>
+      <tr>
+          <td>2 -ge 2</td>
+          <td>Greater Than or Equal To (Numbers)</td>
+      </tr>
+      <tr>
+          <td>&ldquo;abc&rdquo; = &ldquo;abc&rdquo; or == (depends on syntax)</td>
+          <td>Equal (strings)</td>
+      </tr>
+      <tr>
+          <td>&ldquo;abc&rdquo; != &ldquo;def&rdquo;</td>
+          <td>Not Equal (strings)</td>
+      </tr>
+      <tr>
+          <td>&ldquo;a&rdquo; &lt; &ldquo;b&rdquo;</td>
+          <td>Less Than (strings)</td>
+      </tr>
+      <tr>
+          <td>&ldquo;b&rdquo; &gt; &ldquo;a&rdquo;</td>
+          <td>Greater Than (strings)</td>
+      </tr>
+      <tr>
+          <td>-n &ldquo;abc&rdquo;</td>
+          <td>String is not empty</td>
+      </tr>
+      <tr>
+          <td>-z &quot;&quot;</td>
+          <td>String is empty</td>
+      </tr>
+  </tbody>
 </table>
 <p>Bash Comparison Operators</p>
 <h3 id="using-and-and-or-in-bash">Using AND and OR in Bash<a hidden class="anchor" aria-hidden="true" href="#using-and-and-or-in-bash">#</a></h3>
@@ -734,7 +737,7 @@ done
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/part-3-beginners-guide-to-bash-scripting/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Part 3 – Beginners Guide to Bash Scripting" />
+      </script><meta property="og:title" content="Part 3 – Beginners Guide to Bash Scripting" />
 <meta property="og:description" content="In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/part-3-beginners-guide-to-bash-scripting/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/beginners-guide-to-shell-scripting-part-3.png" />
 <meta name="twitter:title" content="Part 3 – Beginners Guide to Bash Scripting"/>
 <meta name="twitter:description" content="In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Part 3 – Beginners Guide to Bash Scripting",
-      "item": "http://localhost:1313/part-3-beginners-guide-to-bash-scripting/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Part 3 – Beginners Guide to Bash Scripting",
+        "item": "http://localhost:1313/part-3-beginners-guide-to-bash-scripting/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Part 3 – Beginners Guide to Bash Scripting",
-  "name": "Part 3 – Beginners Guide to Bash Scripting",
-  "description": "In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python.",
-  "keywords": [
-    "bash", "linux"
-  ],
-  "articleBody": "This guide is part of a series, be sure to check out the other parts as well.\nPart 1 - Introduction to Bash, Variables, Comments, User Input\nPart 2 - If/Else Statements, Looping\nPart 3 - Functions in Bash (This Page)\nPart 4 - Creating Menus in Bash\nWelcome back to Part 3 of our Beginners Guide to Bash Scripting. In this guide, we’ll be talking about functions in bash scripting.\nFunctions are a very important part of any programming or scripting language. A function can be thought of as a block of code that you give a name to and it can be run multiple times without having to rewrite the code. This allows you to reuse the same code in a clean and efficient manner. So whenever you have repeated code, you should consider using a function instead.\nFunctions can also take parameters or arguments, these parameters are data that you pass into the function. The function can manipulate this data or really whatever you want. Consider a calculator function, you pass in two numbers and what math operation you want it to do, then the function returns the result of the calculation.\nLet’s take a closer look at functions in bash scripting.\nSyntax for a Bash Script Function If you have used other programming or scripting languages, then functions in bash scripting will look familiar and work in a similar way. Here is the basic syntax for a bash function.\nWith the Function Keyword # Declare a function using the \"function\" keyword, then give the function a name function function_name() { # This is the body of the function where we put the code we want to execute some_command } Without the Function Keyword # This example omits the function keyword and just has the function name function_name() { # This is the body of the function where we put the code we want to execute some_command } Single Line Bash Functions You may prefer to declare a short function in bash on a single line, this is valid in bash scripting. When using the single-line function syntax, be sure to include a semi-colon after your function body as shown in the example below.\nfunction_name() { some_command; } How to Call or Execute a Bash Function In order to call or use the bash function shown above, we simply use its name in our script.\nfunction_name # No () or anything are needed, just the name of the function Bash Script Function Example Let’s take a look at a real example of a bash script function. This function is the calculator that I referenced earlier in this post.\ncalculator() { case $3 in \"+\") result=$(($1 + $2)) ;; \"-\") result=$(($1 - $2)) ;; \"*\") result=$(($1 * $2)) ;; \"/\") result=$(($1 / $2)) ;; *) echo \"Invalid operator.\" return 1 ;; esac echo \"Result: $result\" return 0 } This calculator example will take three parameters or arguments. The first argument is the first number, then another number, and the third is the mathematical operator you want to use. There is limited error checking done here, just checking for an invalid operator, we do not verify the first two arguments are actual numbers. How would you call this bash function with arguments?\nUsing Arguments in a Bash Function Bash works a bit differently when it comes to arguments in a function as you can tell from the above example. Typically, when you declare a function you would also include the possible parameters, such as “function_name(int x, int y, string z)” for example. In bash, you don’t declare the arguments in the function definition at all. We simply refer to parameters within the body of the function using a “$” followed by the number of the argument in order starting with 1.\nIn the example above, you can see that we use arguments $1, $2, and $3. The “case” statement and usage may be unfamiliar to you and that’s ok, we will cover it in a future lesson. For now, just understand that for the case we are looking at the 3rd argument which is our mathematical operator. We compare the 3rd argument with the available options +, -, *, or /.\nCalling a Bash Function with Arguments So, how do we call this function with three arguments? Calling a bash function with arguments is also different than other languages. In other languages, you would call a function like this “function_name(1, 2, “+”)” for example. In bash, we don’t use parenthesis or commas. To add “2+2”, this is how the function call would look.\ncalculator 2 2 + # We make sure to put spaces between each argument. If you add that line to the bottom of the script we used above you should see “Result: 4” output in the terminal. It’s important to note that in bash scripts you must declare the function before you use it. If you call a bash function before declaring it, you will get a “command not found” error message.\nHow to Return Values in Bash Functions Using return values in bash functions is a bit different than in other programming languages too. One of the simplest methods to return something from a function is to set a global variable. By default in bash, all variables declared inside of a function are global. This is another difference when comparing bash with other languages. If you want the variable to be local to the function, you must use the “local” keyword before the name of the variable.\nReturn Using a Global Variable In the example below, we simply set a global variable and a local variable inside the function body, then reference both variables outside of the function itself. Notice that we fail to get the value of the local variable since it is only valid from within the function body. In order to reference the global variable, we must first call the function.\nreturn_test() { name=thecd # this is a global variable local age=100 # this is a local variable } return_test # here we call the function echo $name # here we echo the global variable echo $age # here we attempt to call the local variable which fails Using the Return Keyword In most programming languages, you can use the “return” keyword to return some type of data. In bash, you can only return a numeric value such as an exit code. You also must access this return value immediately after running the function. In the example below, you’ll see that we return 100 and it shows up in the output the first time. The next time we try to access it, we get 0 instead of 100. This is because we access the return value using the special variable “#?”. This variable gives us the exit code of the last thing that bash ran. The second time we call “#?”, the function was no longer the last thing that ran, which is why we don’t get 100 as you might expect.\nAssign the Output of a Function to a Variable One last example of getting a return value from a function is to assign the result to a variable. In this bash function example, we echo “credibleDEV” in the body of the function, then we assign the function to a variable rather than calling it as we have been.\nreturn_test() { echo \"credibleDEV\" } result=$(return_test) echo $result Conclusion That’s it for part 3 of the beginner’s guide to bash scripting. Stay tuned for part 4 as we continue learning! Give us a follow on Twitter so you don’t miss out and check out our YouTube channel as well for more content!\n",
-  "wordCount" : "1280",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/beginners-guide-to-shell-scripting-part-3.png","datePublished": "2023-02-04T00:00:00Z",
-  "dateModified": "2023-02-04T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/part-3-beginners-guide-to-bash-scripting/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Part 3 – Beginners Guide to Bash Scripting",
+    "name": "Part 3 – Beginners Guide to Bash Scripting",
+    "description": "In Part 3 we discover how functions work in bash scripting, which is quite different when compared to other languages such as Javascript or Python.",
+    "keywords": [
+      "bash", "linux"
+    ],
+    "articleBody": "This guide is part of a series, be sure to check out the other parts as well.\nPart 1 - Introduction to Bash, Variables, Comments, User Input\nPart 2 - If/Else Statements, Looping\nPart 3 - Functions in Bash (This Page)\nPart 4 - Creating Menus in Bash\nWelcome back to Part 3 of our Beginners Guide to Bash Scripting. In this guide, we’ll be talking about functions in bash scripting.\nFunctions are a very important part of any programming or scripting language. A function can be thought of as a block of code that you give a name to and it can be run multiple times without having to rewrite the code. This allows you to reuse the same code in a clean and efficient manner. So whenever you have repeated code, you should consider using a function instead.\nFunctions can also take parameters or arguments, these parameters are data that you pass into the function. The function can manipulate this data or really whatever you want. Consider a calculator function, you pass in two numbers and what math operation you want it to do, then the function returns the result of the calculation.\nLet’s take a closer look at functions in bash scripting.\nSyntax for a Bash Script Function If you have used other programming or scripting languages, then functions in bash scripting will look familiar and work in a similar way. Here is the basic syntax for a bash function.\nWith the Function Keyword # Declare a function using the \"function\" keyword, then give the function a name function function_name() { # This is the body of the function where we put the code we want to execute some_command } Without the Function Keyword # This example omits the function keyword and just has the function name function_name() { # This is the body of the function where we put the code we want to execute some_command } Single Line Bash Functions You may prefer to declare a short function in bash on a single line, this is valid in bash scripting. When using the single-line function syntax, be sure to include a semi-colon after your function body as shown in the example below.\nfunction_name() { some_command; } How to Call or Execute a Bash Function In order to call or use the bash function shown above, we simply use its name in our script.\nfunction_name # No () or anything are needed, just the name of the function Bash Script Function Example Let’s take a look at a real example of a bash script function. This function is the calculator that I referenced earlier in this post.\ncalculator() { case $3 in \"+\") result=$(($1 + $2)) ;; \"-\") result=$(($1 - $2)) ;; \"*\") result=$(($1 * $2)) ;; \"/\") result=$(($1 / $2)) ;; *) echo \"Invalid operator.\" return 1 ;; esac echo \"Result: $result\" return 0 } This calculator example will take three parameters or arguments. The first argument is the first number, then another number, and the third is the mathematical operator you want to use. There is limited error checking done here, just checking for an invalid operator, we do not verify the first two arguments are actual numbers. How would you call this bash function with arguments?\nUsing Arguments in a Bash Function Bash works a bit differently when it comes to arguments in a function as you can tell from the above example. Typically, when you declare a function you would also include the possible parameters, such as “function_name(int x, int y, string z)” for example. In bash, you don’t declare the arguments in the function definition at all. We simply refer to parameters within the body of the function using a “$” followed by the number of the argument in order starting with 1.\nIn the example above, you can see that we use arguments $1, $2, and $3. The “case” statement and usage may be unfamiliar to you and that’s ok, we will cover it in a future lesson. For now, just understand that for the case we are looking at the 3rd argument which is our mathematical operator. We compare the 3rd argument with the available options +, -, *, or /.\nCalling a Bash Function with Arguments So, how do we call this function with three arguments? Calling a bash function with arguments is also different than other languages. In other languages, you would call a function like this “function_name(1, 2, “+”)” for example. In bash, we don’t use parenthesis or commas. To add “2+2”, this is how the function call would look.\ncalculator 2 2 + # We make sure to put spaces between each argument. If you add that line to the bottom of the script we used above you should see “Result: 4” output in the terminal. It’s important to note that in bash scripts you must declare the function before you use it. If you call a bash function before declaring it, you will get a “command not found” error message.\nHow to Return Values in Bash Functions Using return values in bash functions is a bit different than in other programming languages too. One of the simplest methods to return something from a function is to set a global variable. By default in bash, all variables declared inside of a function are global. This is another difference when comparing bash with other languages. If you want the variable to be local to the function, you must use the “local” keyword before the name of the variable.\nReturn Using a Global Variable In the example below, we simply set a global variable and a local variable inside the function body, then reference both variables outside of the function itself. Notice that we fail to get the value of the local variable since it is only valid from within the function body. In order to reference the global variable, we must first call the function.\nreturn_test() { name=thecd # this is a global variable local age=100 # this is a local variable } return_test # here we call the function echo $name # here we echo the global variable echo $age # here we attempt to call the local variable which fails Using the Return Keyword In most programming languages, you can use the “return” keyword to return some type of data. In bash, you can only return a numeric value such as an exit code. You also must access this return value immediately after running the function. In the example below, you’ll see that we return 100 and it shows up in the output the first time. The next time we try to access it, we get 0 instead of 100. This is because we access the return value using the special variable “#?”. This variable gives us the exit code of the last thing that bash ran. The second time we call “#?”, the function was no longer the last thing that ran, which is why we don’t get 100 as you might expect.\nAssign the Output of a Function to a Variable One last example of getting a return value from a function is to assign the result to a variable. In this bash function example, we echo “credibleDEV” in the body of the function, then we assign the function to a variable rather than calling it as we have been.\nreturn_test() { echo \"credibleDEV\" } result=$(return_test) echo $result Conclusion That’s it for part 3 of the beginner’s guide to bash scripting. Stay tuned for part 4 as we continue learning! Give us a follow on Twitter so you don’t miss out and check out our YouTube channel as well for more content!\n",
+    "wordCount" : "1280",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/beginners-guide-to-shell-scripting-part-3.png","datePublished": "2023-02-04T00:00:00Z",
+    "dateModified": "2023-02-04T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/part-3-beginners-guide-to-bash-scripting/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu1142732138797366043.webp 360w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu13997637363724904849.webp 480w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu681835313554893085.webp 720w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu16558274781485130839.webp 1080w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3.png 1280w" 
+        <img srcset="http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu_85efad830d9dd5e1.webp 360w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu_3e7e06af933bb9fa.webp 480w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu_47da825e4c361062.webp 720w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3_hu_d00d8bf947c5c4e9.webp 1080w ,http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/part-3-beginners-guide-to-bash-scripting/images/beginners-guide-to-shell-scripting-part-3.png" alt="" 
             width="1280" height="720">
         
@@ -288,7 +287,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -297,7 +296,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -306,7 +305,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -315,7 +314,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -324,7 +323,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -336,7 +335,11 @@
 
 
 
-  <div class="post-content"><p>This guide is part of a series, be sure to check out the other parts as well.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>This guide is part of a series, be sure to check out the other parts as well.</p>
 <ul>
 <li>
 <p><a href="https://credibledev.com/beginners-guide-to-bash-scripting/" target="_blank">Part 1 - Introduction to Bash, Variables, Comments, User Input</a></p>
@@ -586,7 +589,7 @@ echo $result
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by
