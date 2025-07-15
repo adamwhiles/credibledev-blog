@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/install-pamac-on-endeavouros/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Install Pamac on EndeavourOS" />
+      </script><meta property="og:title" content="Install Pamac on EndeavourOS" />
 <meta property="og:description" content="EndeavourOS doesn&#39;t come with a GUI package manager so this guide will show you how to install pamac on EndeavourOS with just one command." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/install-pamac-on-endeavouros/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/install-pamac-on-endeavouros.png" />
 <meta name="twitter:title" content="Install Pamac on EndeavourOS"/>
 <meta name="twitter:description" content="EndeavourOS doesn&#39;t come with a GUI package manager so this guide will show you how to install pamac on EndeavourOS with just one command."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Install Pamac on EndeavourOS",
-      "item": "http://localhost:1313/install-pamac-on-endeavouros/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Install Pamac on EndeavourOS",
+        "item": "http://localhost:1313/install-pamac-on-endeavouros/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Install Pamac on EndeavourOS",
-  "name": "Install Pamac on EndeavourOS",
-  "description": "EndeavourOS doesn't come with a GUI package manager so this guide will show you how to install pamac on EndeavourOS with just one command.",
-  "keywords": [
-    "endeavouros", "linux", "pacman", "pamac"
-  ],
-  "articleBody": "Maybe you came to EndeavourOS from another Linux distro like Ubuntu or Manjaro and you are used to having a graphical software package manager. On Manjaro you have pamac which is a really nice counterpart to pacman and AUR command line package managers like yay. When you install EndeavourOS, you may quickly realize that you don’t have a graphical package manager by default. In this post, we will explain step by step, how to install pamac on EndeavourOS.\nFor those interested, you can read some background info on why EndeavourOS doesn’t already include a GUI package manager.\nWhat is Pamac? Pamac is a graphical package manager for Arch Linux and its derivatives, like Manjaro and EndeavourOS. It provides a user-friendly interface for installing, updating, and managing packages.\nPamac was created as a graphical package manager for Arch Linux and its derivatives, such as Manjaro. The development of Pamac began in early 2013, with the goal of providing a user-friendly graphical interface for managing packages on Arch Linux. Since then, Pamac has been regularly updated and improved, with new features added and bugs fixed.\nToday, Pamac is one of the most popular graphical package managers for Arch Linux and its derivatives, and is widely used by users who prefer a graphical interface for managing their packages. Pamac has become a key component of the Manjaro Linux distribution and continues to be actively developed and maintained by the Manjaro team.\nPamac Install Steps for EndeavourOS Since EndeavourOS comes with yay pre-installed, the installation of pamac is pretty simple. Run the following command in the terminal to install pamac.\nyay -S pamac-aur Resolving the libpamac-git Conflict Error If you see an error in the terminal output when trying to install pamac that mentions libpamac-git, try removing that package manually. When testing this, it seemed that auto-removing libpamac-git during the installation of pamac-aur was causing problems. Removing the package manually resolved the issue.\nyay -R libpamac-git Running Pamac on EndeavourOS To run pamac on EndeavourOS, you can find it in the app menu, typically found under “System” or “Settings” as “Add/Remove Software”. You can also run pamac from the command line.\npamac-manager Are There Alternatives to Pamac? Sure, one popular alternative to pamac on EndeavourOS and other Arch Linux distros is Octopi. Octopi is similar to pamac but Octopi also features a system upgrade function and the ability to view detailed information about packages, including dependencies and files. You can install Octopi on EndeavourOS with the following command.\nyay -S octopi After installing Octopi, you will find it in the application menu under “System” or “Settings” as Octopi.\nConclusion You now have a graphical frontend to your package management on EndeavourOS whenever you need it. You can still use the powerful pacman and yay as well, this is simply just another option for those who love the GUI. If you have any questions or run into issues, let me know in the comments.\n",
-  "wordCount" : "489",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/install-pamac-on-endeavouros.png","datePublished": "2023-01-31T00:00:00Z",
-  "dateModified": "2023-01-31T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/install-pamac-on-endeavouros/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Install Pamac on EndeavourOS",
+    "name": "Install Pamac on EndeavourOS",
+    "description": "EndeavourOS doesn't come with a GUI package manager so this guide will show you how to install pamac on EndeavourOS with just one command.",
+    "keywords": [
+      "endeavouros", "linux", "pacman", "pamac"
+    ],
+    "articleBody": "Maybe you came to EndeavourOS from another Linux distro like Ubuntu or Manjaro and you are used to having a graphical software package manager. On Manjaro you have pamac which is a really nice counterpart to pacman and AUR command line package managers like yay. When you install EndeavourOS, you may quickly realize that you don’t have a graphical package manager by default. In this post, we will explain step by step, how to install pamac on EndeavourOS.\nFor those interested, you can read some background info on why EndeavourOS doesn’t already include a GUI package manager.\nWhat is Pamac? Pamac is a graphical package manager for Arch Linux and its derivatives, like Manjaro and EndeavourOS. It provides a user-friendly interface for installing, updating, and managing packages.\nPamac was created as a graphical package manager for Arch Linux and its derivatives, such as Manjaro. The development of Pamac began in early 2013, with the goal of providing a user-friendly graphical interface for managing packages on Arch Linux. Since then, Pamac has been regularly updated and improved, with new features added and bugs fixed.\nToday, Pamac is one of the most popular graphical package managers for Arch Linux and its derivatives, and is widely used by users who prefer a graphical interface for managing their packages. Pamac has become a key component of the Manjaro Linux distribution and continues to be actively developed and maintained by the Manjaro team.\nPamac Install Steps for EndeavourOS Since EndeavourOS comes with yay pre-installed, the installation of pamac is pretty simple. Run the following command in the terminal to install pamac.\nyay -S pamac-aur Resolving the libpamac-git Conflict Error If you see an error in the terminal output when trying to install pamac that mentions libpamac-git, try removing that package manually. When testing this, it seemed that auto-removing libpamac-git during the installation of pamac-aur was causing problems. Removing the package manually resolved the issue.\nyay -R libpamac-git Running Pamac on EndeavourOS To run pamac on EndeavourOS, you can find it in the app menu, typically found under “System” or “Settings” as “Add/Remove Software”. You can also run pamac from the command line.\npamac-manager Are There Alternatives to Pamac? Sure, one popular alternative to pamac on EndeavourOS and other Arch Linux distros is Octopi. Octopi is similar to pamac but Octopi also features a system upgrade function and the ability to view detailed information about packages, including dependencies and files. You can install Octopi on EndeavourOS with the following command.\nyay -S octopi After installing Octopi, you will find it in the application menu under “System” or “Settings” as Octopi.\nConclusion You now have a graphical frontend to your package management on EndeavourOS whenever you need it. You can still use the powerful pacman and yay as well, this is simply just another option for those who love the GUI. If you have any questions or run into issues, let me know in the comments.\n",
+    "wordCount" : "489",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/install-pamac-on-endeavouros.png","datePublished": "2023-01-31T00:00:00Z",
+    "dateModified": "2023-01-31T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/install-pamac-on-endeavouros/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros_hu10840558464379689023.webp 360w ,http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros_hu3082629672517564759.webp 480w ,http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros_hu17658254383262025457.webp 720w ,http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros_hu17246643472074515550.webp 1080w ,http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros.png 1280w" 
+        <img srcset="http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros_hu_1613d995e4fbc0b1.webp 360w ,http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros_hu_f51fbf7faa391136.webp 480w ,http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros_hu_8c7efb1c6981854f.webp 720w ,http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros_hu_5c927bb0b92500b9.webp 1080w ,http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/install-pamac-on-endeavouros/images/install-pamac-on-endeavouros.png" alt="" 
             width="1280" height="720">
         
@@ -272,7 +271,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -281,7 +280,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -290,7 +289,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -299,7 +298,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -308,7 +307,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -320,7 +319,11 @@
 
 
 
-  <div class="post-content"><p>Maybe you came to EndeavourOS from another Linux distro like Ubuntu or Manjaro and you are used to having a graphical software package manager. On Manjaro you have pamac which is a really nice counterpart to <a href="https://credibledev.com/how-to-use-pacman-on-manjaro-linux/" target="_blank">pacman</a> and AUR command line package managers like yay. When you install EndeavourOS, you may quickly realize that you don&rsquo;t have a graphical package manager by default. In this post, we will explain step by step, how to install pamac on EndeavourOS.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Maybe you came to EndeavourOS from another Linux distro like Ubuntu or Manjaro and you are used to having a graphical software package manager. On Manjaro you have pamac which is a really nice counterpart to <a href="https://credibledev.com/how-to-use-pacman-on-manjaro-linux/" target="_blank">pacman</a> and AUR command line package managers like yay. When you install EndeavourOS, you may quickly realize that you don&rsquo;t have a graphical package manager by default. In this post, we will explain step by step, how to install pamac on EndeavourOS.</p>
 <p>For those interested, you can read some <a href="https://forum.endeavouros.com/t/does-endeavouros-allow-gui-package-installers/23110" target="_blank">background info</a> on why EndeavourOS doesn&rsquo;t already include a GUI package manager.</p>
 <h2 id="what-is-pamac">What is Pamac?<a hidden class="anchor" aria-hidden="true" href="#what-is-pamac">#</a></h2>
 <p>Pamac is a graphical package manager for Arch Linux and its derivatives, like Manjaro and EndeavourOS. It provides a user-friendly interface for installing, updating, and managing packages.</p>
@@ -503,7 +506,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

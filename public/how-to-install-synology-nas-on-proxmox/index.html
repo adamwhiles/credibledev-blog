@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/how-to-install-synology-nas-on-proxmox/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="How to Install Synology NAS on Proxmox" />
+      </script><meta property="og:title" content="How to Install Synology NAS on Proxmox" />
 <meta property="og:description" content="This guide will walk you through setting up a Synology NAS on your Proxmox server at home." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/how-to-install-synology-nas-on-proxmox/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/install-synology-nas-on-proxmox-vm.png" />
 <meta name="twitter:title" content="How to Install Synology NAS on Proxmox"/>
 <meta name="twitter:description" content="This guide will walk you through setting up a Synology NAS on your Proxmox server at home."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "How to Install Synology NAS on Proxmox",
-      "item": "http://localhost:1313/how-to-install-synology-nas-on-proxmox/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "How to Install Synology NAS on Proxmox",
+        "item": "http://localhost:1313/how-to-install-synology-nas-on-proxmox/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "How to Install Synology NAS on Proxmox",
-  "name": "How to Install Synology NAS on Proxmox",
-  "description": "This guide will walk you through setting up a Synology NAS on your Proxmox server at home.",
-  "keywords": [
-    "proxmox", "synology", "nas", "homelab"
-  ],
-  "articleBody": "In this article, I will guide you through the process of setting up a Synology NAS (Network Attached Storage) on Proxmox in a virtual machine (VM). This setup is often referred to as a “Poor Man’s Synology” because it allows you to create your own NAS using affordable hardware and open-source software.\nVideo Guide If you would prefer a video guide, I have one availble on YouTube. Downloading the Bootloader You have a few options for bootloaders such as the Arc Bootloader and the ARPL Bootloader. I used the Arc Bootloader, you will need to download the .img.zip file from the releases page on the Github site.\nOnce you have this downloaded, you will need to extract the zip file and upload the .img file to Promox just like you do an ISO file. If you’re not familiar with uploading an ISO, you can see that process in a previous post about setting up a Ubuntu VM on Proxmox.\nArc Bootloader\nARPL Bootloader\nCreate the Proxmox VM for Synology Next, we need to create a VM on Promox that will run our Synology NAS. We will create the base VM and then make modifications to the disks to get this working.\nVM Setup Configuration\nOS: Choose “Do not use any media” and leave the guest OS on Linux. System: Keep all of the defaults. Disks: Remove the default device so the VM has no drives. CPU: Up to you but I would suggest 2 cores minimum. Memory: 4GB Minimum Network: Keep defaults or configure as needed Importing the Bootloader Image The first step is to import the bootloader image into the VM that we just created. To do this, you need to open the Proxmox shell and locate the image file you uploaded earlier.\nTo get to the shell, click on your Promox host node on the left, then choose Shell.\nIn my case, the .img file I uploaded is located in /mnt/pve/ISO_Storage/template/iso/arc.IMG. However, it may be in a different location for you, such as CD /var/lib/vz/template/iso. Once you have located the image file, in the shell and run the following command:\nqm disk import Replace with the ID of your VM (in this case, 107), with the path to the arc.IMG file, and with the storage location where you want to create the hard disk. The storage location can be found in the left menu, in my case I chose ds1 which you can see in the screenshot.\nIf you go back to the VM you created and click on the hardware tab, you should now see an unused disk, which is the one you just created from the .img file.\nYou need to select this disk and choose edit from the menu at the top. Change the BusDevice to be SATA and the Cache to Write Back.\nConfiguring the Hard Disks After importing the bootloader image, we need to configure the hard disks for the Synology NAS. In my case, I have two disks that I want to add to the NAS, each are 2TB and are connected to my Proxmox server as SATA devices. To find the IDs of these disks, run the following command in the shell:\nls /dev/disk/by-id This will display a list of all the disks available in your system. Look for the disks you want to add (e.g., sde and sdf) and copy their IDs.\nNext, we need to attach the disks to the VM. Run the following command in the shell:\nqm set -sata1 /dev/disk/by-id/ Replace with the ID of your VM and with the ID of the first disk. Repeat this command for each disk you want to add, changing the SATA number (-sata1, -sata2, etc.) and disk ID accordingly. Sata0 is already used by the .img file you imported earlier as a disk.\nSetting the Boot Order To ensure that the Synology NAS boots from the correct disk, we need to set the boot order in the VM settings. Go to the “Options” tab of your VM, then “Boot Order”. Uncheck the existing boot options and check the SATA0 option. Move it to the top of the list and click “OK”.\nAssigning a Static IP Address This isn’t necessarily required but it is highly suggested so the IP of your Synology doesn’t change.\nTo assign a static IP address to the Synology NAS, we need to copy the MAC address of the VM. Go to the “Hardware” tab, select the network device, and click “Edit”. Copy the MAC address.\nNext, go to your pfSense server (if you have one) and navigate to Services \u003e DHCP Server. Scroll down to the bottom and click “Add”. Paste the MAC address and assign an IP address and hostname for the NAS. This will ensure that the VM is assigned the same IP address every time it boots up.\nIf you don’t have pfSense, you should be able to configure this on your router, refer to it’s documentation or search online for specific instructions.\nStarting the Synology NAS Now that we have configured the VM and attached the hard disks, we can start the Synology NAS. Go to the “Console” tab and click “Start”. Wait for the VM to boot up and obtain the static IP address that you assigned.\nYou should come to the Synology bootloader options screen.\nFrom there, choose option 1 and choose the model of Synology that you want to emulate. I chose DS423+, you can choose whichever you want.\nYou will then be asked to choose a version, this is referring the the DSM (Disk Station Manager) software version. Choose 7.2 or the highest version number available.\nNext it will assess the system and let you know the number of disks that it detected, in my case it was 3. One disks is the bootloader, the other 2 are the 2TB disks I added to the VM.\nOn the next screen of the bootloader config you will have the option to select DSM extensions. These are optional.\nNext, you will be asked if you want to build the bootloader. Choose option 1 for yes and press enter.\nNow you will be asked if you want to boot into the DSM bootloader, choose yes and press enter. The VM will reboot, which take a moment. You should eventually get to a screen like the one shown below.\nAccessing the Synology NAS Interface To access the Synology NAS interface, open a web browser and enter the IP address of the NAS followed by port 5000 (e.g., http://:5000). This will take you to the Synology DSM setup page.\nOn the setup page, click “Install” and follow the prompts to set up the NAS. You will see a progress screen and the device will reboot. When it comes back up, click “Setup” and follow the prompts. You will need to provide a name for the device, create an administrator account, and set a secure password. Choose to notify you of updates and do not use automatic updates. You can skip setting up a Synology account, it typically won’t work for this setup anyways.\nOnce the setup is complete, you will be able to access the Synology DSM interface and start exploring its features. You can configure network settings, create shared folders, and more.\nConclusion Setting up a Synology NAS on Proxmox is a cost-effective way to create your own NAS using affordable hardware and open-source software. By following the steps outlined in this article, you can import the bootloader image, configure the hard disks, set the boot order, assign a static IP address, start the Synology NAS, and access its interface.\nIf you have any experiences or information about Synology NAS that you would like to share, please leave a comment below. Thank you for reading, and I hope you found this article helpful.\n",
-  "wordCount" : "1309",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/install-synology-nas-on-proxmox-vm.png","datePublished": "2023-10-10T00:00:00Z",
-  "dateModified": "2023-10-10T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/how-to-install-synology-nas-on-proxmox/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Install Synology NAS on Proxmox",
+    "name": "How to Install Synology NAS on Proxmox",
+    "description": "This guide will walk you through setting up a Synology NAS on your Proxmox server at home.",
+    "keywords": [
+      "proxmox", "synology", "nas", "homelab"
+    ],
+    "articleBody": "In this article, I will guide you through the process of setting up a Synology NAS (Network Attached Storage) on Proxmox in a virtual machine (VM). This setup is often referred to as a “Poor Man’s Synology” because it allows you to create your own NAS using affordable hardware and open-source software.\nVideo Guide If you would prefer a video guide, I have one availble on YouTube. Downloading the Bootloader You have a few options for bootloaders such as the Arc Bootloader and the ARPL Bootloader. I used the Arc Bootloader, you will need to download the .img.zip file from the releases page on the Github site.\nOnce you have this downloaded, you will need to extract the zip file and upload the .img file to Promox just like you do an ISO file. If you’re not familiar with uploading an ISO, you can see that process in a previous post about setting up a Ubuntu VM on Proxmox.\nArc Bootloader\nARPL Bootloader\nCreate the Proxmox VM for Synology Next, we need to create a VM on Promox that will run our Synology NAS. We will create the base VM and then make modifications to the disks to get this working.\nVM Setup Configuration\nOS: Choose “Do not use any media” and leave the guest OS on Linux. System: Keep all of the defaults. Disks: Remove the default device so the VM has no drives. CPU: Up to you but I would suggest 2 cores minimum. Memory: 4GB Minimum Network: Keep defaults or configure as needed Importing the Bootloader Image The first step is to import the bootloader image into the VM that we just created. To do this, you need to open the Proxmox shell and locate the image file you uploaded earlier.\nTo get to the shell, click on your Promox host node on the left, then choose Shell.\nIn my case, the .img file I uploaded is located in /mnt/pve/ISO_Storage/template/iso/arc.IMG. However, it may be in a different location for you, such as CD /var/lib/vz/template/iso. Once you have located the image file, in the shell and run the following command:\nqm disk import Replace with the ID of your VM (in this case, 107), with the path to the arc.IMG file, and with the storage location where you want to create the hard disk. The storage location can be found in the left menu, in my case I chose ds1 which you can see in the screenshot.\nIf you go back to the VM you created and click on the hardware tab, you should now see an unused disk, which is the one you just created from the .img file.\nYou need to select this disk and choose edit from the menu at the top. Change the BusDevice to be SATA and the Cache to Write Back.\nConfiguring the Hard Disks After importing the bootloader image, we need to configure the hard disks for the Synology NAS. In my case, I have two disks that I want to add to the NAS, each are 2TB and are connected to my Proxmox server as SATA devices. To find the IDs of these disks, run the following command in the shell:\nls /dev/disk/by-id This will display a list of all the disks available in your system. Look for the disks you want to add (e.g., sde and sdf) and copy their IDs.\nNext, we need to attach the disks to the VM. Run the following command in the shell:\nqm set -sata1 /dev/disk/by-id/ Replace with the ID of your VM and with the ID of the first disk. Repeat this command for each disk you want to add, changing the SATA number (-sata1, -sata2, etc.) and disk ID accordingly. Sata0 is already used by the .img file you imported earlier as a disk.\nSetting the Boot Order To ensure that the Synology NAS boots from the correct disk, we need to set the boot order in the VM settings. Go to the “Options” tab of your VM, then “Boot Order”. Uncheck the existing boot options and check the SATA0 option. Move it to the top of the list and click “OK”.\nAssigning a Static IP Address This isn’t necessarily required but it is highly suggested so the IP of your Synology doesn’t change.\nTo assign a static IP address to the Synology NAS, we need to copy the MAC address of the VM. Go to the “Hardware” tab, select the network device, and click “Edit”. Copy the MAC address.\nNext, go to your pfSense server (if you have one) and navigate to Services \u003e DHCP Server. Scroll down to the bottom and click “Add”. Paste the MAC address and assign an IP address and hostname for the NAS. This will ensure that the VM is assigned the same IP address every time it boots up.\nIf you don’t have pfSense, you should be able to configure this on your router, refer to it’s documentation or search online for specific instructions.\nStarting the Synology NAS Now that we have configured the VM and attached the hard disks, we can start the Synology NAS. Go to the “Console” tab and click “Start”. Wait for the VM to boot up and obtain the static IP address that you assigned.\nYou should come to the Synology bootloader options screen.\nFrom there, choose option 1 and choose the model of Synology that you want to emulate. I chose DS423+, you can choose whichever you want.\nYou will then be asked to choose a version, this is referring the the DSM (Disk Station Manager) software version. Choose 7.2 or the highest version number available.\nNext it will assess the system and let you know the number of disks that it detected, in my case it was 3. One disks is the bootloader, the other 2 are the 2TB disks I added to the VM.\nOn the next screen of the bootloader config you will have the option to select DSM extensions. These are optional.\nNext, you will be asked if you want to build the bootloader. Choose option 1 for yes and press enter.\nNow you will be asked if you want to boot into the DSM bootloader, choose yes and press enter. The VM will reboot, which take a moment. You should eventually get to a screen like the one shown below.\nAccessing the Synology NAS Interface To access the Synology NAS interface, open a web browser and enter the IP address of the NAS followed by port 5000 (e.g., http://:5000). This will take you to the Synology DSM setup page.\nOn the setup page, click “Install” and follow the prompts to set up the NAS. You will see a progress screen and the device will reboot. When it comes back up, click “Setup” and follow the prompts. You will need to provide a name for the device, create an administrator account, and set a secure password. Choose to notify you of updates and do not use automatic updates. You can skip setting up a Synology account, it typically won’t work for this setup anyways.\nOnce the setup is complete, you will be able to access the Synology DSM interface and start exploring its features. You can configure network settings, create shared folders, and more.\nConclusion Setting up a Synology NAS on Proxmox is a cost-effective way to create your own NAS using affordable hardware and open-source software. By following the steps outlined in this article, you can import the bootloader image, configure the hard disks, set the boot order, assign a static IP address, start the Synology NAS, and access its interface.\nIf you have any experiences or information about Synology NAS that you would like to share, please leave a comment below. Thank you for reading, and I hope you found this article helpful.\n",
+    "wordCount" : "1309",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/install-synology-nas-on-proxmox-vm.png","datePublished": "2023-10-10T00:00:00Z",
+    "dateModified": "2023-10-10T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/how-to-install-synology-nas-on-proxmox/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu10990280822244925205.webp 360w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu4432680866585838318.webp 480w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu5324801602140743159.webp 720w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu6289426077313773089.webp 1080w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm.png 1200w" 
+        <img srcset="http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu_2f02d8131e5950d7.webp 360w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu_ddb7f4aa793c342d.webp 480w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu_4a3860edd0467d9e.webp 720w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm_hu_dc6dfb7e3b5c4c35.webp 1080w ,http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/how-to-install-synology-nas-on-proxmox/images/install-synology-nas-on-proxmox-vm.png" alt="" 
             width="1200" height="628">
         
@@ -278,16 +277,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu15331630545158004616.webp 360w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu2042822305817065560.webp 480w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu11545892273226520829.webp 720w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu3927995123378173047.webp 1080w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox.png 1280w" 
-            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox.png" alt="" 
-            width="1280" height="720">
-</figure>
-          <a href="/import-virtualbox-and-virt-manager-vms-to-proxmox/">Import VirtualBox and Virt Manager VMs to Proxmox</a>
-        </li>
-      
-        <li> 
-<figure class="entry-cover">
-        <img srcset="http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu13160665751646198110.webp 360w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu8095055878673174513.webp 480w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu17278560079837228734.webp 720w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu8803855192971083524.webp 1080w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox.png 1280w" 
+        <img srcset="http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu_6e0d4e7c1bf28bbb.webp 360w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu_7ad31cdbd9b040f3.webp 480w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu_a0ea0b164949d986.webp 720w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox_hu_61589db2b2c36e78.webp 1080w ,http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/install-docker-and-portainer-on-proxmox/images/install-docker-and-portainer-on-proxmox.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -296,7 +286,16 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu3283503807053189108.webp 360w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu14814429370186714055.webp 480w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu3994968028305328188.webp 720w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu16824867807507891628.webp 1080w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm.png 1280w" 
+        <img srcset="http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu_8a6ffbaa8bf29b7a.webp 360w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu_86d81ba4b2280ece.webp 480w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu_794d797974c72cd7.webp 720w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox_hu_3d61680a75924d00.webp 1080w ,http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox.png 1280w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/import-virtualbox-and-virt-manager-vms-to-proxmox/images/import-virtualbox-and-virt-manager-vm-to-proxmox.png" alt="" 
+            width="1280" height="720">
+</figure>
+          <a href="/import-virtualbox-and-virt-manager-vms-to-proxmox/">Import VirtualBox and Virt Manager VMs to Proxmox</a>
+        </li>
+      
+        <li> 
+<figure class="entry-cover">
+        <img srcset="http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu_dc4397f7b1debfe6.webp 360w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu_d1bbf19e7dd6f6ba.webp 480w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu_6242a780a3518e6b.webp 720w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm_hu_c3ed6c87ae4f252.webp 1080w ,http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/setup-xrdp-on-a-fedora-vm-for-remote-desktop/images/xrdp-on-proxmox-fedora-vm.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -305,7 +304,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu7161945035182228331.webp 360w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu18102863518170625027.webp 480w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu12177341003777916517.webp 720w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu3951671007142194125.webp 1080w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox.png 1280w" 
+        <img srcset="http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu_bff4cb84ad90a6bd.webp 360w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu_e81dc4e30e14755d.webp 480w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu_90168ad6bdd1e8f9.webp 720w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox_hu_f44632d230729061.webp 1080w ,http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/set-up-windows-domain-controller-on-proxmox/images/domain-controller-proxmox.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -317,15 +316,15 @@
 
 
 
-  <div class="post-content"><p>In this article, I will guide you through the process of setting up a Synology NAS (Network Attached Storage) on Proxmox in a virtual machine (VM). This setup is often referred to as a &ldquo;Poor Man&rsquo;s Synology&rdquo; because it allows you to create your own NAS using affordable hardware and open-source software.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>In this article, I will guide you through the process of setting up a Synology NAS (Network Attached Storage) on Proxmox in a virtual machine (VM). This setup is often referred to as a &ldquo;Poor Man&rsquo;s Synology&rdquo; because it allows you to create your own NAS using affordable hardware and open-source software.</p>
 <h2 id="video-guide">Video Guide<a hidden class="anchor" aria-hidden="true" href="#video-guide">#</a></h2>
 <p>If you would prefer a video guide, I have one availble on YouTube.
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/vuj-Mu828-I?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/vuj-Mu828-I?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 </p>
 <h2 id="downloading-the-bootloader">Downloading the Bootloader<a hidden class="anchor" aria-hidden="true" href="#downloading-the-bootloader">#</a></h2>
@@ -406,10 +405,6 @@
 	   
 	     <li  class="mb2">
           <a href="/import-virtualbox-and-virt-manager-vms-to-proxmox/">Import VirtualBox and Virt Manager VMs to Proxmox</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/install-docker-and-portainer-on-proxmox/">Install Docker and Portainer on Proxmox</a>
         </li>
 	    
 	     <li  class="mb2">
@@ -504,7 +499,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

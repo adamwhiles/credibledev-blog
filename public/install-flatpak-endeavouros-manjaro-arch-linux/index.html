@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux" />
+      </script><meta property="og:title" content="How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux" />
 <meta property="og:description" content="Flatpak&#39;s make installing software on Linux a breeze. Today, we discuss how to get started with Flatpak on EndeavourOS, Manjaro and Arch Linux." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/install-flatpak-on-endeavouros-manjaro-arch-linux.png" />
 <meta name="twitter:title" content="How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux"/>
 <meta name="twitter:description" content="Flatpak&#39;s make installing software on Linux a breeze. Today, we discuss how to get started with Flatpak on EndeavourOS, Manjaro and Arch Linux."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux",
-      "item": "http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux",
+        "item": "http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux",
-  "name": "How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux",
-  "description": "Flatpak's make installing software on Linux a breeze. Today, we discuss how to get started with Flatpak on EndeavourOS, Manjaro and Arch Linux.",
-  "keywords": [
-    "endeavouros", "flatpak", "linux", "manjaro"
-  ],
-  "articleBody": "Flatpak’s are great, they make installation of applications and their dependencies on Linux easy. Flatpak is already a part of some Linux distributions but EndeavourOS, Manjaro, and Arch do not have them enabled by default, so today we will walk through how to get up and running with Flatpak on these distros.\nWhy are Flatpak’s Great? I will keep it simple here and give a better explanation in the next section. Simply put, Flatpak’s are great because of compatibility, ease of use and security. They also make a developer’s life easier too.\nWhat is Flatpak? A Flatpak is a software package that is bundled with the required dependencies such as frameworks, libraries, and other software to make the application work as intended by the developer. All are included in a Linux distro agnostic installer.\nBundled Dependencies Packaging applications in this way makes it so that everyone who uses a given app is on the same page in terms of installed dependency versions, which makes it much easier for the developer and the user. The user doesn’t have to worry about making sure all dependencies are installed and that they are the right version. This isn’t just a Linux problem, this issue exists for some Windows applications as well.\nDistro Agnostic If you’ve been using Linux for some time, you are familiar with DEB and RPM packages for example. The days of Linux distro specific packages such as these are no more with Flatpak. The same Flatpak package will install on over 30 different Linux distros!\nSecurity Another important feature is sandboxing. Not only do you not need root privileges to install a Flatpak, but they also run in a sandbox that protects the OS. The sandbox that a Flatpak application runs in, is an environment that is isolated from the rest of the OS. This means the application has no access by default to your user files, devices, or the OS itself. This is huge for system security and another big selling point for Flatpak.\nPortals and Flatseal Obviously, applications will need access to files and other parts of the system. This functionality is provided through what they call portals. These portals are what make it possible for the sandboxed Flatpak software to touch parts of the OS, filesystem and devices.\nFlatseal is a separate application install that is almost a must for those running Flatpak’s. Flatseal exposes the permissions on a per app basis so you can easily give a Flatpak access to specific parts of your system.\nEnough background, let’s get started using Flatpak’s on EndeavourOS, Manjaro and Arch Linux.\nInstall Flatpak on EndeavourOS, Manjaro and Arch Linux To get started with Flatpak on EndeavourOS, it’s quite simple. We will use either pacman or yay (insert favorite AUR helper here) to install Flatpak. Pop open your terminal and use one of the following commands to install from the Arch or AUR repository.\nStep 1 - Install Install Flatpak from the Arch Repository\nsudo pacman -S flatpak Install Flatpak from the AUR Repository\nyay -S flatpak Step 2 - Add Flathub Repo You may need to add the Flathub repository as well, you can do this by running the following command in the terminal.\nflatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo You now have Flatpak installed and you can begin installing Flatpak software packages on EndeavourOS.\nGUI Flatpak Install Using Pamac in Manjaro The pamac GUI software installer that is provided by default in Manjaro Linux comes with support for Flatpak’s, it just needs to be enabled. You will find the option to enable Flatpak under the preferences of Pamac.\nOnce you have Flatpak support enabled, you will be able to search for Flatpak applications from within pamac, rather than using the terminal. You can use the terminal as well though.\nInstalling Flatpak Packages on EndeavourOS, Manjaro and Arch You may already know the name of the package you want to install, in case you don’t, you can check our the Flathub page to find packages and their install commands. For example, if you wanted to install Spotify, you can run the following command in the terminal.\nflatpak install flathub com.spotify.Client Once the command finishes, you should find Spotify in your application menu. If you prefer to run the application from the terminal, you can run the following command to launch Spotify.\nflatpak run com.spotify.Client Install Flatseal for Flatpak Permission Management I would highly suggest that you install Flatseal, so that you can easily manage the permissions of your Flatpak installs. Flatseal gives you granular control over each apps individual permissions. So you can give file system and device access to whatever apps you wish.\nflatpak install flathub com.github.tchx84.Flatseal To run Flatseal, find it in your application menu or run the following command in the terminal.\nflatpak run com.github.tchx84.Flatseal Upon launching Flatseal, you should see all of your Flatpak applications listed on the left. When selecting one of the applications, you will see a list of permissions on the right side. Here you can make changes to the individual app to give it access to various parts of your file system, user files and devices.\nConclusion You now have Flatpak installed and set up on EndeavourOS, Manjaro and Arch. You also have learned how to install Flatpak packages and manage them using Flatseal.\nIf you have any questions about Flatpak, let me know in the comments.\n",
-  "wordCount" : "895",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/install-flatpak-on-endeavouros-manjaro-arch-linux.png","datePublished": "2023-01-12T00:00:00Z",
-  "dateModified": "2023-01-12T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux",
+    "name": "How to Install Flatpak on EndeavourOS, Manjaro and Arch Linux",
+    "description": "Flatpak's make installing software on Linux a breeze. Today, we discuss how to get started with Flatpak on EndeavourOS, Manjaro and Arch Linux.",
+    "keywords": [
+      "endeavouros", "flatpak", "linux", "manjaro"
+    ],
+    "articleBody": "Flatpak’s are great, they make installation of applications and their dependencies on Linux easy. Flatpak is already a part of some Linux distributions but EndeavourOS, Manjaro, and Arch do not have them enabled by default, so today we will walk through how to get up and running with Flatpak on these distros.\nWhy are Flatpak’s Great? I will keep it simple here and give a better explanation in the next section. Simply put, Flatpak’s are great because of compatibility, ease of use and security. They also make a developer’s life easier too.\nWhat is Flatpak? A Flatpak is a software package that is bundled with the required dependencies such as frameworks, libraries, and other software to make the application work as intended by the developer. All are included in a Linux distro agnostic installer.\nBundled Dependencies Packaging applications in this way makes it so that everyone who uses a given app is on the same page in terms of installed dependency versions, which makes it much easier for the developer and the user. The user doesn’t have to worry about making sure all dependencies are installed and that they are the right version. This isn’t just a Linux problem, this issue exists for some Windows applications as well.\nDistro Agnostic If you’ve been using Linux for some time, you are familiar with DEB and RPM packages for example. The days of Linux distro specific packages such as these are no more with Flatpak. The same Flatpak package will install on over 30 different Linux distros!\nSecurity Another important feature is sandboxing. Not only do you not need root privileges to install a Flatpak, but they also run in a sandbox that protects the OS. The sandbox that a Flatpak application runs in, is an environment that is isolated from the rest of the OS. This means the application has no access by default to your user files, devices, or the OS itself. This is huge for system security and another big selling point for Flatpak.\nPortals and Flatseal Obviously, applications will need access to files and other parts of the system. This functionality is provided through what they call portals. These portals are what make it possible for the sandboxed Flatpak software to touch parts of the OS, filesystem and devices.\nFlatseal is a separate application install that is almost a must for those running Flatpak’s. Flatseal exposes the permissions on a per app basis so you can easily give a Flatpak access to specific parts of your system.\nEnough background, let’s get started using Flatpak’s on EndeavourOS, Manjaro and Arch Linux.\nInstall Flatpak on EndeavourOS, Manjaro and Arch Linux To get started with Flatpak on EndeavourOS, it’s quite simple. We will use either pacman or yay (insert favorite AUR helper here) to install Flatpak. Pop open your terminal and use one of the following commands to install from the Arch or AUR repository.\nStep 1 - Install Install Flatpak from the Arch Repository\nsudo pacman -S flatpak Install Flatpak from the AUR Repository\nyay -S flatpak Step 2 - Add Flathub Repo You may need to add the Flathub repository as well, you can do this by running the following command in the terminal.\nflatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo You now have Flatpak installed and you can begin installing Flatpak software packages on EndeavourOS.\nGUI Flatpak Install Using Pamac in Manjaro The pamac GUI software installer that is provided by default in Manjaro Linux comes with support for Flatpak’s, it just needs to be enabled. You will find the option to enable Flatpak under the preferences of Pamac.\nOnce you have Flatpak support enabled, you will be able to search for Flatpak applications from within pamac, rather than using the terminal. You can use the terminal as well though.\nInstalling Flatpak Packages on EndeavourOS, Manjaro and Arch You may already know the name of the package you want to install, in case you don’t, you can check our the Flathub page to find packages and their install commands. For example, if you wanted to install Spotify, you can run the following command in the terminal.\nflatpak install flathub com.spotify.Client Once the command finishes, you should find Spotify in your application menu. If you prefer to run the application from the terminal, you can run the following command to launch Spotify.\nflatpak run com.spotify.Client Install Flatseal for Flatpak Permission Management I would highly suggest that you install Flatseal, so that you can easily manage the permissions of your Flatpak installs. Flatseal gives you granular control over each apps individual permissions. So you can give file system and device access to whatever apps you wish.\nflatpak install flathub com.github.tchx84.Flatseal To run Flatseal, find it in your application menu or run the following command in the terminal.\nflatpak run com.github.tchx84.Flatseal Upon launching Flatseal, you should see all of your Flatpak applications listed on the left. When selecting one of the applications, you will see a list of permissions on the right side. Here you can make changes to the individual app to give it access to various parts of your file system, user files and devices.\nConclusion You now have Flatpak installed and set up on EndeavourOS, Manjaro and Arch. You also have learned how to install Flatpak packages and manage them using Flatseal.\nIf you have any questions about Flatpak, let me know in the comments.\n",
+    "wordCount" : "895",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/install-flatpak-on-endeavouros-manjaro-arch-linux.png","datePublished": "2023-01-12T00:00:00Z",
+    "dateModified": "2023-01-12T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux_hu16339110900723672603.webp 360w ,http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux_hu11274583450780958160.webp 480w ,http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux_hu13514187764976075284.webp 720w ,http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux_hu17298462228911974000.webp 1080w ,http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux.png 1200w" 
+        <img srcset="http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux_hu_e93c43793188c9c9.webp 360w ,http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux_hu_d3826a7c776fe28b.webp 480w ,http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux_hu_8159179764deea3e.webp 720w ,http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux_hu_8ca4b82625ed5143.webp 1080w ,http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/install-flatpak-endeavouros-manjaro-arch-linux/images/install-flatpak-on-endeavouros-manjaro-arch-linux.png" alt="" 
             width="1200" height="628">
         
@@ -288,7 +287,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -297,7 +296,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -306,7 +305,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -315,7 +314,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -324,7 +323,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -336,7 +335,11 @@
 
 
 
-  <div class="post-content"><p>Flatpak&rsquo;s are great, they make installation of applications and their dependencies on Linux easy. Flatpak is already a part of some Linux distributions but EndeavourOS, Manjaro, and Arch do not have them enabled by default, so today we will walk through how to get up and running with Flatpak on these distros.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Flatpak&rsquo;s are great, they make installation of applications and their dependencies on Linux easy. Flatpak is already a part of some Linux distributions but EndeavourOS, Manjaro, and Arch do not have them enabled by default, so today we will walk through how to get up and running with Flatpak on these distros.</p>
 <h2 id="why-are-flatpaks-great">Why are Flatpak&rsquo;s Great?<a hidden class="anchor" aria-hidden="true" href="#why-are-flatpaks-great">#</a></h2>
 <p>I will keep it simple here and give a better explanation in the next section. Simply put, Flatpak&rsquo;s are great because of compatibility, ease of use and security. They also make a developer&rsquo;s life easier too.</p>
 <h2 id="what-is-flatpak">What is Flatpak?<a hidden class="anchor" aria-hidden="true" href="#what-is-flatpak">#</a></h2>
@@ -543,7 +546,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

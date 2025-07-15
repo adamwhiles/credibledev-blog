@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/install-vs-code-on-manjaro-linux/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Install VSCode on Manjaro Linux" />
+      </script><meta property="og:title" content="Install VSCode on Manjaro Linux" />
 <meta property="og:description" content="This guide walks you through how to quickly install VS code on Manjaro Linux using the Snap package manager." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/install-vs-code-on-manjaro-linux/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/install-vscode-on-manjaro.png" />
 <meta name="twitter:title" content="Install VSCode on Manjaro Linux"/>
 <meta name="twitter:description" content="This guide walks you through how to quickly install VS code on Manjaro Linux using the Snap package manager."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Install VSCode on Manjaro Linux",
-      "item": "http://localhost:1313/install-vs-code-on-manjaro-linux/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Install VSCode on Manjaro Linux",
+        "item": "http://localhost:1313/install-vs-code-on-manjaro-linux/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Install VSCode on Manjaro Linux",
-  "name": "Install VSCode on Manjaro Linux",
-  "description": "This guide walks you through how to quickly install VS code on Manjaro Linux using the Snap package manager.",
-  "keywords": [
-    "linux", "manjaro", "visual-studio-code", "vs-code", "vscode"
-  ],
-  "articleBody": "Many developers today choose Microsoft Visual Studio Code as their preferred text editor and IDE. VSCode is a multi-platform tool that is powerful in terms of editing and extended editing capabilities. On top of the already feature rich client, there are many official and community based extensions that expand it’s capabilities. This guide will explain how to install VSCode on Manjaro Linux.\nhttps://www.youtube.com/watch?v=QppKSrsuPZ8\nInstall VSCode Flatpak Installing VSCode as a Flatpak is an excellent option for Manjaro Linux users. It’s just as easy as the Snap method and the performance and manageability is even better. This is the method I’ve used to install VSCode on my Manjaro PC, so I recommend you try it out. You will need to enable Flatpak support on Manjaro first, if you haven’t already. If you need help, we already have a guide on setting up Flatpak on Manjaro.\nOnce you have Flatpak support setup, open up your terminal and run the following command to install VSCode.\nflatpak install flathub com.visualstudio.code Running the VSCode Flatpak In order to run VSCode, you can either find it in your app launcher or run the following command in the terminal.\nflatpak run com.visualstudio.code Install VSCode Through Snap I don’t like snap! Ok, you can install VSCode from the AUR as well.\nBy far the easiest way to install VS Code on Manjaro Linux is to use the Snap version. Snap versions of apps are bundled with everything they need, including dependencies, that an application needs to run on essentially any distribution of Linux. These apps also run in a sandbox to be more secure. For VS Code, in order to avoid file access issues, we must install with the –classic flag to allow access to files across the filesystem and not just in the sandbox environment.\nFirst we need to check that you have snap installed, at a shell prompt, run the command “snap version” without the quotes. If you get a response with the snap version, you’re good to move on. If snap isn’t installed, run the following commands to complete that installation before proceeding.\nInstall Snap sudo pacman -S snapd sudo systemctl enable snapd sudo systemctl start snap Now you should have Snap installed and you can confirm with the “snap version” version command. You may need to log out and back in if it’s still not working.\nOnce everything is good with your Snap install, we need to create a symbolic link from /snap to /var/lib/snapd/snap. This is required since we are using the –classic flag during the install of VS Code. Run the following command to setup the symbolic link.\nsudo ln -s /var/lib/snapd/snap /snap Now everything is setup and we can finally install VS Code on our Manjaro Linux machine. Run the following command to complete that install.\nInstalling VS Code from Snap sudo snap install code --classic Install VSCode from AUR Before installing apps from the AUR, you should understand the risks involved as well as why sometimes the alternatives like Flatpak are better. Read through our article that discusses the concerns with the AUR.\nInstalling VS Code from the AUR is pretty simple, go ahead and launch the package manager. Enable the AUR if you haven’t already, this can be done through the preference menu of the package manager. Choose Third-Party at the top and then enable AUR support.\nNow that you have the AUR enabled. Go back and use the search function in the package manager to search for “visual-studio-code-bin”, which should return a result for you.\nGo ahead and select this option to install VS Code using the AUR on Manjaro. Once the installation is completed, you’re ready to go.\nHow to Run VSCode on Manjaro Once the installation is finished, depending on your exact environment, you may see Visual Studio Code in your applications menu. Also, you can launch VS Code from a shell prompt by running the command “code”, without the quotes. You can also run the command “code .”, to launch VS Code using the current directory as the working directory which can be useful.\nThat’s it, now you have VS Code installed in Manjaro Linux and the app will get updates through the snapd service so you always have the latest version available.\n",
-  "wordCount" : "708",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/install-vscode-on-manjaro.png","datePublished": "2022-10-07T00:00:00Z",
-  "dateModified": "2022-10-07T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/install-vs-code-on-manjaro-linux/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Install VSCode on Manjaro Linux",
+    "name": "Install VSCode on Manjaro Linux",
+    "description": "This guide walks you through how to quickly install VS code on Manjaro Linux using the Snap package manager.",
+    "keywords": [
+      "linux", "manjaro", "visual-studio-code", "vs-code", "vscode"
+    ],
+    "articleBody": "Many developers today choose Microsoft Visual Studio Code as their preferred text editor and IDE. VSCode is a multi-platform tool that is powerful in terms of editing and extended editing capabilities. On top of the already feature rich client, there are many official and community based extensions that expand it’s capabilities. This guide will explain how to install VSCode on Manjaro Linux.\nhttps://www.youtube.com/watch?v=QppKSrsuPZ8\nInstall VSCode Flatpak Installing VSCode as a Flatpak is an excellent option for Manjaro Linux users. It’s just as easy as the Snap method and the performance and manageability is even better. This is the method I’ve used to install VSCode on my Manjaro PC, so I recommend you try it out. You will need to enable Flatpak support on Manjaro first, if you haven’t already. If you need help, we already have a guide on setting up Flatpak on Manjaro.\nOnce you have Flatpak support setup, open up your terminal and run the following command to install VSCode.\nflatpak install flathub com.visualstudio.code Running the VSCode Flatpak In order to run VSCode, you can either find it in your app launcher or run the following command in the terminal.\nflatpak run com.visualstudio.code Install VSCode Through Snap I don’t like snap! Ok, you can install VSCode from the AUR as well.\nBy far the easiest way to install VS Code on Manjaro Linux is to use the Snap version. Snap versions of apps are bundled with everything they need, including dependencies, that an application needs to run on essentially any distribution of Linux. These apps also run in a sandbox to be more secure. For VS Code, in order to avoid file access issues, we must install with the –classic flag to allow access to files across the filesystem and not just in the sandbox environment.\nFirst we need to check that you have snap installed, at a shell prompt, run the command “snap version” without the quotes. If you get a response with the snap version, you’re good to move on. If snap isn’t installed, run the following commands to complete that installation before proceeding.\nInstall Snap sudo pacman -S snapd sudo systemctl enable snapd sudo systemctl start snap Now you should have Snap installed and you can confirm with the “snap version” version command. You may need to log out and back in if it’s still not working.\nOnce everything is good with your Snap install, we need to create a symbolic link from /snap to /var/lib/snapd/snap. This is required since we are using the –classic flag during the install of VS Code. Run the following command to setup the symbolic link.\nsudo ln -s /var/lib/snapd/snap /snap Now everything is setup and we can finally install VS Code on our Manjaro Linux machine. Run the following command to complete that install.\nInstalling VS Code from Snap sudo snap install code --classic Install VSCode from AUR Before installing apps from the AUR, you should understand the risks involved as well as why sometimes the alternatives like Flatpak are better. Read through our article that discusses the concerns with the AUR.\nInstalling VS Code from the AUR is pretty simple, go ahead and launch the package manager. Enable the AUR if you haven’t already, this can be done through the preference menu of the package manager. Choose Third-Party at the top and then enable AUR support.\nNow that you have the AUR enabled. Go back and use the search function in the package manager to search for “visual-studio-code-bin”, which should return a result for you.\nGo ahead and select this option to install VS Code using the AUR on Manjaro. Once the installation is completed, you’re ready to go.\nHow to Run VSCode on Manjaro Once the installation is finished, depending on your exact environment, you may see Visual Studio Code in your applications menu. Also, you can launch VS Code from a shell prompt by running the command “code”, without the quotes. You can also run the command “code .”, to launch VS Code using the current directory as the working directory which can be useful.\nThat’s it, now you have VS Code installed in Manjaro Linux and the app will get updates through the snapd service so you always have the latest version available.\n",
+    "wordCount" : "708",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/install-vscode-on-manjaro.png","datePublished": "2022-10-07T00:00:00Z",
+    "dateModified": "2022-10-07T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/install-vs-code-on-manjaro-linux/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro_hu11725175615992216947.webp 360w ,http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro_hu18020935188907905028.webp 480w ,http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro_hu5862594410358923114.webp 720w ,http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro_hu6304129602475554669.webp 1080w ,http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro.png 1280w" 
+        <img srcset="http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro_hu_5c65304f36bb015f.webp 360w ,http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro_hu_ff68e35f8c6eb120.webp 480w ,http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro_hu_7e7516963af12fc.webp 720w ,http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro_hu_7aaef813227fade5.webp 1080w ,http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/install-vs-code-on-manjaro-linux/images/install-vscode-on-manjaro.png" alt="" 
             width="1280" height="720">
         
@@ -279,7 +278,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -288,7 +287,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -297,7 +296,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -306,7 +305,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -315,7 +314,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -327,7 +326,11 @@
 
 
 
-  <div class="post-content"><p>Many developers today choose <a href="https://code.visualstudio.com/" target="_blank">Microsoft Visual Studio Code</a> as their preferred text editor and IDE. VSCode is a multi-platform tool that is powerful in terms of editing and extended editing capabilities. On top of the already feature rich client, there are many official and community based extensions that expand it&rsquo;s capabilities. This guide will explain how to install <strong>VSCode on <a href="https://manjaro.org/" target="_blank">Manjaro Linux</a></strong>.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Many developers today choose <a href="https://code.visualstudio.com/" target="_blank">Microsoft Visual Studio Code</a> as their preferred text editor and IDE. VSCode is a multi-platform tool that is powerful in terms of editing and extended editing capabilities. On top of the already feature rich client, there are many official and community based extensions that expand it&rsquo;s capabilities. This guide will explain how to install <strong>VSCode on <a href="https://manjaro.org/" target="_blank">Manjaro Linux</a></strong>.</p>
 <p><a href="https://www.youtube.com/watch?v=QppKSrsuPZ8" target="_blank">https://www.youtube.com/watch?v=QppKSrsuPZ8</a></p>
 <h2 id="install-vscode-flatpak">Install VSCode Flatpak<a hidden class="anchor" aria-hidden="true" href="#install-vscode-flatpak">#</a></h2>
 <p>Installing VSCode as a Flatpak is an excellent option for Manjaro Linux users. It&rsquo;s just as easy as the Snap method and the performance and manageability is even better. This is the method I&rsquo;ve used to install VSCode on my Manjaro PC, so I recommend you try it out. You will need to enable Flatpak support on Manjaro first, if you haven&rsquo;t already. If you need help, we already have a <a href="https://credibledev.com/install-flatpak-endeavouros-manjaro-arch-linux/" target="_blank">guide on setting up Flatpak on Manjaro</a>.</p>
@@ -467,7 +470,7 @@ sudo systemctl start snap&lt;/code&gt;
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

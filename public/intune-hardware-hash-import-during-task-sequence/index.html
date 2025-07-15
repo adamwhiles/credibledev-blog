@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Intune Hardware Hash Import During Task Sequence" />
+      </script><meta property="og:title" content="Intune Hardware Hash Import During Task Sequence" />
 <meta property="og:description" content="Easily collect and import the Intune device hardware hash using an SCCM task sequence while deploying Windows 10." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png" />
 <meta name="twitter:title" content="Intune Hardware Hash Import During Task Sequence"/>
 <meta name="twitter:description" content="Easily collect and import the Intune device hardware hash using an SCCM task sequence while deploying Windows 10."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Intune Hardware Hash Import During Task Sequence",
-      "item": "http://localhost:1313/intune-hardware-hash-import-during-task-sequence/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Intune Hardware Hash Import During Task Sequence",
+        "item": "http://localhost:1313/intune-hardware-hash-import-during-task-sequence/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Intune Hardware Hash Import During Task Sequence",
-  "name": "Intune Hardware Hash Import During Task Sequence",
-  "description": "Easily collect and import the Intune device hardware hash using an SCCM task sequence while deploying Windows 10.",
-  "keywords": [
-    "azure", "intune", "powershell", "sccm"
-  ],
-  "articleBody": "https://youtu.be/-F1IF9kybbU\nMany organizations could import the hardware hash of their existing endpoints using SCCM or other automated means because the endpoints were already running Windows. However, in some cases, this wasn’t possible because the devices were not running Windows at the time, which was the case for my organization. We wanted to use Autopilot when converting from the old Linux solution to the new Windows Azure AD/Intune solution. To do this, we needed an automated solution for collecting the hardware hash and importing it into Intune. So this was the start of a journey to find a good solution.\nWe already have SCCM in our environment, which was used heavily pre-pandemic. So we started looking at ways we could use SCCM to our advantage to complete the following steps.\nConvert Linux or Other OS Devices to Windows\nCollect the Hardware Hash and Import it into Intune\nEnd Goal Being a Fully Intune Managed Windows 10 PC\nResearching online, it wasn’t easy to find solid information for this scenario. I guess what we were trying to do just wasn’t that common. Luckily, we stumbled upon the Intune Training YouTube channel, which had a video on the topic of collecting the hardware hash and uploading it to Intune via an SCCM task sequence.\nAfter some trial and error and a couple of changes to their provided solution using a few PowerShell scripts at the end of the task sequence, we had a working product. Windows 10 would be deployed using SCCM, after this, the task sequence would collect the hardware hash and import it to Intune. The device then reboots and starts the Autopilot process. Sweet! So let’s dive into how this is set up.\nTask Sequence PowerShell Scripts to Collect and Upload the Hardware Hash First, we need to obtain the PowerShell scripts we will use during the task sequence to obtain and import the hardware hash to Intune. The original files are available from the Windows Admins Github Repo. As I’ve mentioned, we made some slight modifications that you may want to consider as well, so we’ve forked the repo and made the modified version available on the credibleDEV Github repo. If you download the files from our repo you will have these modifications already.\nThe two modifications made are as follows.\nChange the grouptag variable to be a parameter instead of hardcoded. This allows us to customize the group tag without editing the script. We can now use the same package for all of the task sequences and just change the parameter used for the grouptag.\nAdd the -Assign flag to the call of Get-WindowsAutoPilotInfo. This will cause the script to wait for the assignment of the autopilot profile in Intune to complete before continuing to the OOBE. We ran into issue where the assignment took a while on the Intune side which caused issue when the device kicked out to the OOBE.\nThe scripts being used in this package will perform the following functions.\nScript1 - Sets up the directory and copies the needed files to the target machine\nScript2 - Sets variables for your tenant, app registration, grouptag, and optional Teams integration. This script also calls GetWindowsAutoPilotInfo to do the work of uploading the hardware hash and grouptag to Intune.\nScript3 - Cleanup, remove the config manager client from the machine and kick it out to the OOBE.\nRequired App Registration We need to allow these scripts to talk to the tenant and upload the hardware hash from the task sequence. For this to work, you will need to create an app registration from your Azure tenant. Let’s do that now.\nFrom Azure AD, choose App Registrations from the left sidebar menu.\nOn the next screen, you will click on “New Registration” at the top. You will then be taken to page to name your new app registration. Give it an appropriate name and configure any other options you may need to customize. When finished, click on “Register” at the bottom.\nOnce your app registration is created, click on “API Permissions” from the left sidebar menu. Then click on “Add a Permission”.\nOn the Add Permission popout window, do the following.\nSelect Microsoft Graph\nSelect Application Permissions\nIn the search box, type “device” to narrow down the list.\nFind and expand “DeviceManagementServiceConfig”\nSelect the checkbox next to “DeviceManagementServiceConfig.ReadWrite.All”\nClick Add Permissions at the bottom\nBefore leaving the API page, we need to give admin consent as well. You do this by clicking on the link that says “Grant Admin Consent”.\nNext, you click on “Certificates \u0026 Secrets” from the left sidebar menu, then choose “New Client Secret”. Give it a name, then select the expiration time you would like.\nAfter creating your new client secret, you will want to take note of the value highlighted in the image below. You will be adding this to Script2 in the next step.\nLink the Task Sequence Script to Azure AD In this step, we will be linking variables in Script2 from the repo to our Azure AD tenant and the app registration we just created. Open up Script2.ps1 and edit the following variables accordingly.\n$tenant = “whatever.onmicrosoft.com”\n$clientid = “Application ID from your app registration”\n$clientSecret = “The value you copied from the client secret you created in the previous step”\nCreate an SCCM Package Once you have downloaded the files from the Github repo. You want to create an SCCM package for them and push it out to your distribution points. I assume you already know how to do this process and won’t go into detail here.\nCreate an SCCM Task Sequence to Get the Hardware Hash and Upload to Intune Now that we have an SCCM package created with the PowerShell scripts, we will create a task sequence. Again, I won’t go into the basics of creating a task sequence, as I assume you already know how.\nAt the end of the task sequence, you will want to add three steps, one for each of the PowerShell scripts that need to run from the package we just created. When creating the task sequence steps, choose the step type of “Run PowerShell Script”, then select the package you created.\nFor the first one, you will put “Script1.ps1” as the script name and set the execution policy to bypass.\nFor the second step, you will set the script name as “Script2.ps1”. In the parameters field, you will put your chosen grouptag, and then set the execution policy to bypass as well.\nThe third script will be set up like the first, except for using “Script3.ps1” as the script name.\nConclusion You’re now ready to assign the task sequence to a collection and test. If set up properly, and your devices have a physical TPM 2.0 chip, you should not have any issues getting this to work.\n",
-  "wordCount" : "1137",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png","datePublished": "2023-01-19T00:00:00Z",
-  "dateModified": "2023-01-19T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/intune-hardware-hash-import-during-task-sequence/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Intune Hardware Hash Import During Task Sequence",
+    "name": "Intune Hardware Hash Import During Task Sequence",
+    "description": "Easily collect and import the Intune device hardware hash using an SCCM task sequence while deploying Windows 10.",
+    "keywords": [
+      "azure", "intune", "powershell", "sccm"
+    ],
+    "articleBody": "https://youtu.be/-F1IF9kybbU\nMany organizations could import the hardware hash of their existing endpoints using SCCM or other automated means because the endpoints were already running Windows. However, in some cases, this wasn’t possible because the devices were not running Windows at the time, which was the case for my organization. We wanted to use Autopilot when converting from the old Linux solution to the new Windows Azure AD/Intune solution. To do this, we needed an automated solution for collecting the hardware hash and importing it into Intune. So this was the start of a journey to find a good solution.\nWe already have SCCM in our environment, which was used heavily pre-pandemic. So we started looking at ways we could use SCCM to our advantage to complete the following steps.\nConvert Linux or Other OS Devices to Windows\nCollect the Hardware Hash and Import it into Intune\nEnd Goal Being a Fully Intune Managed Windows 10 PC\nResearching online, it wasn’t easy to find solid information for this scenario. I guess what we were trying to do just wasn’t that common. Luckily, we stumbled upon the Intune Training YouTube channel, which had a video on the topic of collecting the hardware hash and uploading it to Intune via an SCCM task sequence.\nAfter some trial and error and a couple of changes to their provided solution using a few PowerShell scripts at the end of the task sequence, we had a working product. Windows 10 would be deployed using SCCM, after this, the task sequence would collect the hardware hash and import it to Intune. The device then reboots and starts the Autopilot process. Sweet! So let’s dive into how this is set up.\nTask Sequence PowerShell Scripts to Collect and Upload the Hardware Hash First, we need to obtain the PowerShell scripts we will use during the task sequence to obtain and import the hardware hash to Intune. The original files are available from the Windows Admins Github Repo. As I’ve mentioned, we made some slight modifications that you may want to consider as well, so we’ve forked the repo and made the modified version available on the credibleDEV Github repo. If you download the files from our repo you will have these modifications already.\nThe two modifications made are as follows.\nChange the grouptag variable to be a parameter instead of hardcoded. This allows us to customize the group tag without editing the script. We can now use the same package for all of the task sequences and just change the parameter used for the grouptag.\nAdd the -Assign flag to the call of Get-WindowsAutoPilotInfo. This will cause the script to wait for the assignment of the autopilot profile in Intune to complete before continuing to the OOBE. We ran into issue where the assignment took a while on the Intune side which caused issue when the device kicked out to the OOBE.\nThe scripts being used in this package will perform the following functions.\nScript1 - Sets up the directory and copies the needed files to the target machine\nScript2 - Sets variables for your tenant, app registration, grouptag, and optional Teams integration. This script also calls GetWindowsAutoPilotInfo to do the work of uploading the hardware hash and grouptag to Intune.\nScript3 - Cleanup, remove the config manager client from the machine and kick it out to the OOBE.\nRequired App Registration We need to allow these scripts to talk to the tenant and upload the hardware hash from the task sequence. For this to work, you will need to create an app registration from your Azure tenant. Let’s do that now.\nFrom Azure AD, choose App Registrations from the left sidebar menu.\nOn the next screen, you will click on “New Registration” at the top. You will then be taken to page to name your new app registration. Give it an appropriate name and configure any other options you may need to customize. When finished, click on “Register” at the bottom.\nOnce your app registration is created, click on “API Permissions” from the left sidebar menu. Then click on “Add a Permission”.\nOn the Add Permission popout window, do the following.\nSelect Microsoft Graph\nSelect Application Permissions\nIn the search box, type “device” to narrow down the list.\nFind and expand “DeviceManagementServiceConfig”\nSelect the checkbox next to “DeviceManagementServiceConfig.ReadWrite.All”\nClick Add Permissions at the bottom\nBefore leaving the API page, we need to give admin consent as well. You do this by clicking on the link that says “Grant Admin Consent”.\nNext, you click on “Certificates \u0026 Secrets” from the left sidebar menu, then choose “New Client Secret”. Give it a name, then select the expiration time you would like.\nAfter creating your new client secret, you will want to take note of the value highlighted in the image below. You will be adding this to Script2 in the next step.\nLink the Task Sequence Script to Azure AD In this step, we will be linking variables in Script2 from the repo to our Azure AD tenant and the app registration we just created. Open up Script2.ps1 and edit the following variables accordingly.\n$tenant = “whatever.onmicrosoft.com”\n$clientid = “Application ID from your app registration”\n$clientSecret = “The value you copied from the client secret you created in the previous step”\nCreate an SCCM Package Once you have downloaded the files from the Github repo. You want to create an SCCM package for them and push it out to your distribution points. I assume you already know how to do this process and won’t go into detail here.\nCreate an SCCM Task Sequence to Get the Hardware Hash and Upload to Intune Now that we have an SCCM package created with the PowerShell scripts, we will create a task sequence. Again, I won’t go into the basics of creating a task sequence, as I assume you already know how.\nAt the end of the task sequence, you will want to add three steps, one for each of the PowerShell scripts that need to run from the package we just created. When creating the task sequence steps, choose the step type of “Run PowerShell Script”, then select the package you created.\nFor the first one, you will put “Script1.ps1” as the script name and set the execution policy to bypass.\nFor the second step, you will set the script name as “Script2.ps1”. In the parameters field, you will put your chosen grouptag, and then set the execution policy to bypass as well.\nThe third script will be set up like the first, except for using “Script3.ps1” as the script name.\nConclusion You’re now ready to assign the task sequence to a collection and test. If set up properly, and your devices have a physical TPM 2.0 chip, you should not have any issues getting this to work.\n",
+    "wordCount" : "1137",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png","datePublished": "2023-01-19T00:00:00Z",
+    "dateModified": "2023-01-19T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/intune-hardware-hash-import-during-task-sequence/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu7356498652369068489.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu3264796535428035628.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16952298017530650839.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16562548497720146018.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
+        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_1c859262ebb7d234.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_c37169e9611e1263.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_db5f03321ce4c635.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_bcf6023a45bbe17c.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png" alt="" 
             width="1280" height="720">
         
@@ -270,7 +269,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu3308433473923045744.webp 360w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu1260565180653241431.webp 480w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu3430320244541056058.webp 720w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu8580764315606843869.webp 1080w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png 1200w" 
+        <img srcset="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_e4da24d72e1c0ee7.webp 360w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_62ccca0dc2e9cd21.webp 480w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_70e15d2ebbb92823.webp 720w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_1df7e56410aa862c.webp 1080w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -279,7 +278,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17001477106947415410.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu10300577779374374925.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu2517488187377460131.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17089951570406582786.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
+        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_5eaea70ea9941b1a.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_1d10574afc145dc9.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_86fbed8aa4903122.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_518788d2955b9ea.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -288,7 +287,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu9663632401868894187.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu16238990010262655059.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu4921325777766597961.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu17048565755945529674.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
+        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_539b1c318668c536.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_7c7e3ceea4ae807f.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_2bb62434708b330f.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_bdd20ab8441ae143.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -297,7 +296,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu16289485213827736291.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu4112613990801156029.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu9711915856666451654.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu6843908078130384016.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
+        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f52a4e916032402d.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f634f4c8f0216b39.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_a0378706c4747e88.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_5519eae4d247aeef.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -306,7 +305,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu13184193840349155734.webp 360w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu2581116324488376521.webp 480w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu15933509546177920132.webp 720w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu16985435299638000220.webp 1080w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png 1200w" 
+        <img srcset="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_a4bc6e12ff0b94c3.webp 360w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_a495e02b61bd26a0.webp 480w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_1ee4acd015f77c0.webp 720w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_d6e6561b7fd3d035.webp 1080w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -318,7 +317,11 @@
 
 
 
-  <div class="post-content"><p><a href="https://youtu.be/-F1IF9kybbU" target="_blank">https://youtu.be/-F1IF9kybbU</a></p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p><a href="https://youtu.be/-F1IF9kybbU" target="_blank">https://youtu.be/-F1IF9kybbU</a></p>
 <p>Many organizations could import the hardware hash of their existing endpoints using SCCM or other automated means because the endpoints were already running Windows. However, in some cases, this wasn&rsquo;t possible because the devices were not running Windows at the time, which was the case for my organization. We wanted to use Autopilot when converting from the old Linux solution to the new Windows Azure AD/Intune solution. To do this, we needed an automated solution for collecting the hardware hash and importing it into Intune. So this was the start of a journey to find a good solution.</p>
 <p>We already have SCCM in our environment, which was used heavily pre-pandemic. So we started looking at ways we could use SCCM to our advantage to complete the following steps.</p>
 <ul>
@@ -545,7 +548,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

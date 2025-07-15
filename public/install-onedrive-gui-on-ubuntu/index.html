@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/install-onedrive-gui-on-ubuntu/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="Install OneDrive GUI on Ubuntu" />
+      </script><meta property="og:title" content="Install OneDrive GUI on Ubuntu" />
 <meta property="og:description" content="Learn how to install and setup OneDrive on Ubuntu Linux using a console app and also a OneDrive GUI application." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/install-onedrive-gui-on-ubuntu/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/install-onedrive-on-ubuntu.png" />
 <meta name="twitter:title" content="Install OneDrive GUI on Ubuntu"/>
 <meta name="twitter:description" content="Learn how to install and setup OneDrive on Ubuntu Linux using a console app and also a OneDrive GUI application."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Install OneDrive GUI on Ubuntu",
-      "item": "http://localhost:1313/install-onedrive-gui-on-ubuntu/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "Install OneDrive GUI on Ubuntu",
+        "item": "http://localhost:1313/install-onedrive-gui-on-ubuntu/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Install OneDrive GUI on Ubuntu",
-  "name": "Install OneDrive GUI on Ubuntu",
-  "description": "Learn how to install and setup OneDrive on Ubuntu Linux using a console app and also a OneDrive GUI application.",
-  "keywords": [
-    "linux", "onedrive", "ubuntu"
-  ],
-  "articleBody": "Maybe your school, work, or a client requires you to use OneDrive. What are you to do on Linux, except use the web version of OneDrive? I never realized so many people used OneDrive on Linux but apparently, it’s quite common. So today, we will be installing OneDrive on Ubuntu 22.04. We will install both a console version and a GUI version of OneDrive. If you’re tired of using the web version or just curious about setting it up, this guide is for you.\nThis guide is made possible by open-source work from two repos, one for the console application and another for the GUI companion app.\nLinux OneDrive Github Repo\nLinux OneDrive GUI Github Repo\nCan I Use OneDrive on Linux? Yes, OneDrive works on Linux through various methods. The method we discuss here will allow you to install the base OneDrive client for Linux but also enables you access to a GUI desktop application as well. There are alternatives, such as using it in the browser but that doesn’t let you easily sync files like you can on windows.\nIs OneDrive Supported on Ubuntu? Yes, Microsoft OneDrive is supported on Ubuntu through the use of opensource software.\nIs There a OneDrive Linux GUI? Yes, there is an opensource project called OneDrive-GUI that provides a desktop application. This guide will show you how to install it on Ubuntu.\nInstalling OneDrive on Ubuntu Step 1 - Configure Additional Repo Required for OneDrive The first thing that we need to do is set up the OpenSuSE repo that we will be installing from. According to the documentation for installing OneDrive on Ubuntu, we should NOT use the official Ubuntu repo. Pop open a terminal window and run the following commands to get started.\nThe first command gets the key needed for the repo and the second command adds the repo.\nwget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_11/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/obs-onedrive.gpg \u003e /dev/null echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_11/ ./\" | sudo tee /etc/apt/sources.list.d/onedrive.list Next, you need to do an apt update to sync the new repo that you just added.\nsudo apt update Step 2 - Install OneDrive on Ubuntu To install OneDrive on Ubuntu, we will use APT by running the following command.\nsudo apt install --no-install-recommends --no-install-suggests onedrive Step 3 - Connect OneDrive to our Account Now that we have OneDrive installed, we need to connect the application to our OneDrive account. If you plan to install the GUI application, skip ahead to installing it because it will walk you through this process.\nTo link your OneDrive account, run the following command in the terminal.\nonedrive After you run this command, a link will show up in the terminal. You can hold CTRL and click the link or copy and paste it into your browser. In the browser, you will log in to your OneDrive account and then be sent to a blank page. Once you reach the blank page, you will copy the URL from the address bar and paste it into the terminal.\nYou should then see confirmation that your OneDrive account has been authorized with the OneDrive Linux client.\nStep 4 - Sync OneDrive on Ubuntu We have OneDrive installed and linked to our account, we are ready to sync it now. We can do a test sync first by running the following command.\nonedrive --synchronize --verbose --dry-run When you are ready to do a live sync, you can run the following command.\nonedrive --synchronize When the sync is finished, you will see in the output that the files have been synced to a OneDrive folder inside your Linux home directory.\nStep 5 - Setup Automatic OneDrive Sync Now that you have everything set up and synced, you can continue manually syncing files by running the synchronize command. You can also set up OneDrive as a service on Ubuntu so you don’t need to worry about manually syncing. To do this, run the following commands to use systemctl and register OneDrive as a service.\nsystemctl --user enable onedrive systemctl --user start onedrive OneDrive Linux GUI Client Install A separate open-source project offers a GUI front-end for OneDrive on Linux and Ubuntu. It’s very easy to get started with because it is a AppImage, which means the install is basically just downloading the AppImage file and making it executable. If you are running Ubuntu 22.04 or higher, there is one package we need to install first.\nsudo apt install libfuse2 Once libfuse2 is installed, we can proceed with downloading the AppImage file. Head over to the projects Github page and download the latest release, currently, that is October 2022.\nAfter the download is complete, navigate to where you downloaded the file in the terminal, then run the following command. You may need to modify the file name if the version has changed since this post was published. This chmod command makes the AppImage file executable so that it will launch properly.\nchmod +x ./OneDriveGUI-1.0.1_fix59-x86_64.AppImage You can now either double-click the file from your file manager to launch it or run it from the command line, “./OneDriveGUI-1.0.1_fix59-x86_64.AppImage”.\nOnce you launch the application, you will be greeted with a setup wizard. Follow through the wizard and check the option for “Create a new OneDrive profile”. Fill out the required fields and continue through the process. Once it’s complete, click the play button on the main interface which should give you a box explaining how you should click the link, log in to OneDrive and paste the resulting URL back into the program to set up your account.\nOnce the OneDrive client is linked to your OneDrive account, you can once again click the play button on the main interface to start the sync process.\nConclusion That’s it, you now have OneDrive installed and set up on an Ubuntu Linux machine. Be sure to check out their official documentation for more options for customized syncing. The GUI app has a lot of advanced sync settings built into its interface as well. If you have any requests or questions, be sure to leave a comment below.\n",
-  "wordCount" : "1016",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/install-onedrive-on-ubuntu.png","datePublished": "2023-01-28T00:00:00Z",
-  "dateModified": "2023-01-28T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/install-onedrive-gui-on-ubuntu/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Install OneDrive GUI on Ubuntu",
+    "name": "Install OneDrive GUI on Ubuntu",
+    "description": "Learn how to install and setup OneDrive on Ubuntu Linux using a console app and also a OneDrive GUI application.",
+    "keywords": [
+      "linux", "onedrive", "ubuntu"
+    ],
+    "articleBody": "Maybe your school, work, or a client requires you to use OneDrive. What are you to do on Linux, except use the web version of OneDrive? I never realized so many people used OneDrive on Linux but apparently, it’s quite common. So today, we will be installing OneDrive on Ubuntu 22.04. We will install both a console version and a GUI version of OneDrive. If you’re tired of using the web version or just curious about setting it up, this guide is for you.\nThis guide is made possible by open-source work from two repos, one for the console application and another for the GUI companion app.\nLinux OneDrive Github Repo\nLinux OneDrive GUI Github Repo\nCan I Use OneDrive on Linux? Yes, OneDrive works on Linux through various methods. The method we discuss here will allow you to install the base OneDrive client for Linux but also enables you access to a GUI desktop application as well. There are alternatives, such as using it in the browser but that doesn’t let you easily sync files like you can on windows.\nIs OneDrive Supported on Ubuntu? Yes, Microsoft OneDrive is supported on Ubuntu through the use of opensource software.\nIs There a OneDrive Linux GUI? Yes, there is an opensource project called OneDrive-GUI that provides a desktop application. This guide will show you how to install it on Ubuntu.\nInstalling OneDrive on Ubuntu Step 1 - Configure Additional Repo Required for OneDrive The first thing that we need to do is set up the OpenSuSE repo that we will be installing from. According to the documentation for installing OneDrive on Ubuntu, we should NOT use the official Ubuntu repo. Pop open a terminal window and run the following commands to get started.\nThe first command gets the key needed for the repo and the second command adds the repo.\nwget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_11/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/obs-onedrive.gpg \u003e /dev/null echo \"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/Debian_11/ ./\" | sudo tee /etc/apt/sources.list.d/onedrive.list Next, you need to do an apt update to sync the new repo that you just added.\nsudo apt update Step 2 - Install OneDrive on Ubuntu To install OneDrive on Ubuntu, we will use APT by running the following command.\nsudo apt install --no-install-recommends --no-install-suggests onedrive Step 3 - Connect OneDrive to our Account Now that we have OneDrive installed, we need to connect the application to our OneDrive account. If you plan to install the GUI application, skip ahead to installing it because it will walk you through this process.\nTo link your OneDrive account, run the following command in the terminal.\nonedrive After you run this command, a link will show up in the terminal. You can hold CTRL and click the link or copy and paste it into your browser. In the browser, you will log in to your OneDrive account and then be sent to a blank page. Once you reach the blank page, you will copy the URL from the address bar and paste it into the terminal.\nYou should then see confirmation that your OneDrive account has been authorized with the OneDrive Linux client.\nStep 4 - Sync OneDrive on Ubuntu We have OneDrive installed and linked to our account, we are ready to sync it now. We can do a test sync first by running the following command.\nonedrive --synchronize --verbose --dry-run When you are ready to do a live sync, you can run the following command.\nonedrive --synchronize When the sync is finished, you will see in the output that the files have been synced to a OneDrive folder inside your Linux home directory.\nStep 5 - Setup Automatic OneDrive Sync Now that you have everything set up and synced, you can continue manually syncing files by running the synchronize command. You can also set up OneDrive as a service on Ubuntu so you don’t need to worry about manually syncing. To do this, run the following commands to use systemctl and register OneDrive as a service.\nsystemctl --user enable onedrive systemctl --user start onedrive OneDrive Linux GUI Client Install A separate open-source project offers a GUI front-end for OneDrive on Linux and Ubuntu. It’s very easy to get started with because it is a AppImage, which means the install is basically just downloading the AppImage file and making it executable. If you are running Ubuntu 22.04 or higher, there is one package we need to install first.\nsudo apt install libfuse2 Once libfuse2 is installed, we can proceed with downloading the AppImage file. Head over to the projects Github page and download the latest release, currently, that is October 2022.\nAfter the download is complete, navigate to where you downloaded the file in the terminal, then run the following command. You may need to modify the file name if the version has changed since this post was published. This chmod command makes the AppImage file executable so that it will launch properly.\nchmod +x ./OneDriveGUI-1.0.1_fix59-x86_64.AppImage You can now either double-click the file from your file manager to launch it or run it from the command line, “./OneDriveGUI-1.0.1_fix59-x86_64.AppImage”.\nOnce you launch the application, you will be greeted with a setup wizard. Follow through the wizard and check the option for “Create a new OneDrive profile”. Fill out the required fields and continue through the process. Once it’s complete, click the play button on the main interface which should give you a box explaining how you should click the link, log in to OneDrive and paste the resulting URL back into the program to set up your account.\nOnce the OneDrive client is linked to your OneDrive account, you can once again click the play button on the main interface to start the sync process.\nConclusion That’s it, you now have OneDrive installed and set up on an Ubuntu Linux machine. Be sure to check out their official documentation for more options for customized syncing. The GUI app has a lot of advanced sync settings built into its interface as well. If you have any requests or questions, be sure to leave a comment below.\n",
+    "wordCount" : "1016",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/install-onedrive-on-ubuntu.png","datePublished": "2023-01-28T00:00:00Z",
+    "dateModified": "2023-01-28T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/install-onedrive-gui-on-ubuntu/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu_hu15986742756448390447.webp 360w ,http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu_hu11110912240175798496.webp 480w ,http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu_hu5094324367526139244.webp 720w ,http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu_hu14846983697116514590.webp 1080w ,http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu.png 1280w" 
+        <img srcset="http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu_hu_d73e9f3b9c0948de.webp 360w ,http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu_hu_56f914bc0280dc53.webp 480w ,http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu_hu_78b134d473abf470.webp 720w ,http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu_hu_e891034646edb8c4.webp 1080w ,http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/install-onedrive-gui-on-ubuntu/images/install-onedrive-on-ubuntu.png" alt="" 
             width="1280" height="720">
         
@@ -282,7 +281,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -291,7 +290,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -300,7 +299,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -309,7 +308,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -318,7 +317,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -330,7 +329,11 @@
 
 
 
-  <div class="post-content"><p>Maybe your school, work, or a client requires you to use OneDrive. What are you to do on Linux, except use the web version of OneDrive? I never realized so many people used OneDrive on Linux but apparently, it&rsquo;s quite common. So today, we will be installing OneDrive on Ubuntu 22.04. We will install both a console version and a GUI version of OneDrive. If you&rsquo;re tired of using the web version or just curious about setting it up, this guide is for you.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Maybe your school, work, or a client requires you to use OneDrive. What are you to do on Linux, except use the web version of OneDrive? I never realized so many people used OneDrive on Linux but apparently, it&rsquo;s quite common. So today, we will be installing OneDrive on Ubuntu 22.04. We will install both a console version and a GUI version of OneDrive. If you&rsquo;re tired of using the web version or just curious about setting it up, this guide is for you.</p>
 <p>This guide is made possible by open-source work from two repos, one for the console application and another for the GUI companion app.</p>
 <p><a href="https://github.com/abraunegg/onedrive" target="_blank">Linux OneDrive Github Repo</a></p>
 <p><a href="https://github.com/bpozdena/OneDriveGUI" target="_blank">Linux OneDrive GUI Github Repo</a></p>
@@ -539,7 +542,7 @@ systemctl --user start onedrive
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

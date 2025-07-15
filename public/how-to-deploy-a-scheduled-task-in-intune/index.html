@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="How to Deploy a Scheduled Task in Intune" />
+      </script><meta property="og:title" content="How to Deploy a Scheduled Task in Intune" />
 <meta property="og:description" content="Deploying a scheduled task in Intune isn&#39;t difficult. This post will walk you though all of steps needed to deploy your scheduled task in Intune." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/deploy-a-scheduled-task-in-intune.png" />
 <meta name="twitter:title" content="How to Deploy a Scheduled Task in Intune"/>
 <meta name="twitter:description" content="Deploying a scheduled task in Intune isn&#39;t difficult. This post will walk you though all of steps needed to deploy your scheduled task in Intune."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "How to Deploy a Scheduled Task in Intune",
-      "item": "http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "How to Deploy a Scheduled Task in Intune",
+        "item": "http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "How to Deploy a Scheduled Task in Intune",
-  "name": "How to Deploy a Scheduled Task in Intune",
-  "description": "Deploying a scheduled task in Intune isn't difficult. This post will walk you though all of steps needed to deploy your scheduled task in Intune.",
-  "keywords": [
-    "intune"
-  ],
-  "articleBody": "There comes a time in every Window’s engineers life when they need to deploy a scheduled task to hundreds or even thousands of endpoints. Unfortunately, if your company has moved to Intune for endpoint management, this deployment isn’t as obvious and straightforward as it could be.\nLuckily, it isn’t terribly hard to do and it certainly isn’t impossible. So today, we will break down the steps to deploy a scheduled task with Microsoft Intune. I have used this same method on multiple occasions and it has worked every time.\nStep 1 - Creating a Schedule Task in Windows The first step in the process is to mock up the scheduled task that you want to create from within the Windows task scheduler. You want to create all aspects of the task the way you want them, be sure to include the event and action. Consider if you want this running in the user or system context as well.\nOnce you have the scheduled task created, you will want to export it. You can do this by right-clicking on your scheduled task and choosing export.\nThis will export an XML file that has the details of your scheduled task. This is what we will use to deploy via a Win32 Intune app, along with a little bit of PowerShell.\nStep 2 - Create an Install Script in PowerShell Now that we have our scheduled task exported as an XML file. We will create a PowerShell script that will install the task via Intune on the target endpoint device.\nThis PowerShell script will copy the XML file to the machine, then generate the scheduled task using the Register-ScheduledTask command.\nThe part at the end “-User system” will be the user account the task will run in. In our example, the scheduled task that we deploy will run in the system context.\ninstall.ps1\n# Copy the XML file Copy-Item \".\\test.xml\" \"C:\\\" # Register a new Scheduled Task using the XML Register-ScheduledTask -xml (Get-Content C:\\test.xml | Out-String) -TaskName \"test\" -TaskPath \"\\\" -User system If you need your task to run in the user context for all users. Be sure your task is set up to run as BUILTIN\\Users in the task you created. Also, in the PowerShell script above, remove the “-User system”.\nStep 3 - Create a Detection Script Now that we have the install script created, we need to also create a detection script. This script will be run on endpoints to detect if the scheduled task exists on the machine or not. If it doesn’t, then the install script we just created will be executed on the endpoint.\ndetection.ps1\n$taskExists = Get-ScheduledTask | Where-Object {$_.TaskName -like \"test\"} if($taskExists) { Write-Host \"Success\" Exit 0 } else { Exit 1 } Step 4 - Create an Uninstall Script Our Win32 app package for Intune wouldn’t be complete with a proper way to uninstall the scheduled task in case the need arises. This script will simply remove the scheduled task and ignore the confirmation prompt. Since this will run silently, we don’t need a confirmation prompt preventing it from running properly.\nuninstall.ps1\nUnregister-ScheduledTask -TaskName \"test\" -Confirm:$false Step 5 - Create a Win32 App Package for Intune Now we have our XML, install, detection, and uninstall scripts for our scheduled task, we are now ready to package them as a Win32 app that we can upload it into Intune.\nPut all four files in their own directory, for our example, we’ll use C:\\scripts\\ST as the directory.\nNow we need to run Microsoft Win32 Content Prep Tool, to package these files into a Win32 app. This tool will generate an “intunewin” file, which we will upload to Intune. Visit the GitHub page linked above and download the repo as a zip. Extract the zip file to your system so you can use the tool. Either double-click the “IntuneWinAppUtil.exe” file or run it from the terminal.\nThe source folder is where you have the 4 files we created. The next prompt will be for the setup file, this will be “install.ps1”. The next prompt will be the output directory, this can be the same as the source folder. You will then be asked about creating a catalog folder, you can put “n” for no. Then your package will be generated.\nWhen it is finished, you should now have an “intunewin” file in your directory.\nStep 6 - Upload the Win32 App Package to Intune Login to Intune and start creating a new Win32 app. I assume that you know how to start this process so I will only cover the relevant parts here that make it unique. Proceed with choosing Win32 as the app type and when prompted, navigate to the location of the “intunewin” file to upload it.\nFor the install and uninstall command of the Win32 app use the following as shown in the screenshot above.\nPowershell.exe -ExecutionPolicy ByPass -File .\\install.ps1 Powershell.exe -ExecutionPolicy ByPass -File .\\uninstall.ps1 For the detection rule, you will choose to use a custom detection script. Then browse to the script that we created earlier.\nConclusion You have now successfully created a Win32 app in Intune that will deploy a custom scheduled task to your Windows endpoints.\nWant to know how to do other things in Intune? Leave a comment below. Also, be sure to check out my other post on the different ways you can Deploy PowerShell Scripts in Intune.\n",
-  "wordCount" : "899",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/deploy-a-scheduled-task-in-intune.png","datePublished": "2023-01-13T00:00:00Z",
-  "dateModified": "2023-01-13T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Deploy a Scheduled Task in Intune",
+    "name": "How to Deploy a Scheduled Task in Intune",
+    "description": "Deploying a scheduled task in Intune isn't difficult. This post will walk you though all of steps needed to deploy your scheduled task in Intune.",
+    "keywords": [
+      "intune"
+    ],
+    "articleBody": "There comes a time in every Window’s engineers life when they need to deploy a scheduled task to hundreds or even thousands of endpoints. Unfortunately, if your company has moved to Intune for endpoint management, this deployment isn’t as obvious and straightforward as it could be.\nLuckily, it isn’t terribly hard to do and it certainly isn’t impossible. So today, we will break down the steps to deploy a scheduled task with Microsoft Intune. I have used this same method on multiple occasions and it has worked every time.\nStep 1 - Creating a Schedule Task in Windows The first step in the process is to mock up the scheduled task that you want to create from within the Windows task scheduler. You want to create all aspects of the task the way you want them, be sure to include the event and action. Consider if you want this running in the user or system context as well.\nOnce you have the scheduled task created, you will want to export it. You can do this by right-clicking on your scheduled task and choosing export.\nThis will export an XML file that has the details of your scheduled task. This is what we will use to deploy via a Win32 Intune app, along with a little bit of PowerShell.\nStep 2 - Create an Install Script in PowerShell Now that we have our scheduled task exported as an XML file. We will create a PowerShell script that will install the task via Intune on the target endpoint device.\nThis PowerShell script will copy the XML file to the machine, then generate the scheduled task using the Register-ScheduledTask command.\nThe part at the end “-User system” will be the user account the task will run in. In our example, the scheduled task that we deploy will run in the system context.\ninstall.ps1\n# Copy the XML file Copy-Item \".\\test.xml\" \"C:\\\" # Register a new Scheduled Task using the XML Register-ScheduledTask -xml (Get-Content C:\\test.xml | Out-String) -TaskName \"test\" -TaskPath \"\\\" -User system If you need your task to run in the user context for all users. Be sure your task is set up to run as BUILTIN\\Users in the task you created. Also, in the PowerShell script above, remove the “-User system”.\nStep 3 - Create a Detection Script Now that we have the install script created, we need to also create a detection script. This script will be run on endpoints to detect if the scheduled task exists on the machine or not. If it doesn’t, then the install script we just created will be executed on the endpoint.\ndetection.ps1\n$taskExists = Get-ScheduledTask | Where-Object {$_.TaskName -like \"test\"} if($taskExists) { Write-Host \"Success\" Exit 0 } else { Exit 1 } Step 4 - Create an Uninstall Script Our Win32 app package for Intune wouldn’t be complete with a proper way to uninstall the scheduled task in case the need arises. This script will simply remove the scheduled task and ignore the confirmation prompt. Since this will run silently, we don’t need a confirmation prompt preventing it from running properly.\nuninstall.ps1\nUnregister-ScheduledTask -TaskName \"test\" -Confirm:$false Step 5 - Create a Win32 App Package for Intune Now we have our XML, install, detection, and uninstall scripts for our scheduled task, we are now ready to package them as a Win32 app that we can upload it into Intune.\nPut all four files in their own directory, for our example, we’ll use C:\\scripts\\ST as the directory.\nNow we need to run Microsoft Win32 Content Prep Tool, to package these files into a Win32 app. This tool will generate an “intunewin” file, which we will upload to Intune. Visit the GitHub page linked above and download the repo as a zip. Extract the zip file to your system so you can use the tool. Either double-click the “IntuneWinAppUtil.exe” file or run it from the terminal.\nThe source folder is where you have the 4 files we created. The next prompt will be for the setup file, this will be “install.ps1”. The next prompt will be the output directory, this can be the same as the source folder. You will then be asked about creating a catalog folder, you can put “n” for no. Then your package will be generated.\nWhen it is finished, you should now have an “intunewin” file in your directory.\nStep 6 - Upload the Win32 App Package to Intune Login to Intune and start creating a new Win32 app. I assume that you know how to start this process so I will only cover the relevant parts here that make it unique. Proceed with choosing Win32 as the app type and when prompted, navigate to the location of the “intunewin” file to upload it.\nFor the install and uninstall command of the Win32 app use the following as shown in the screenshot above.\nPowershell.exe -ExecutionPolicy ByPass -File .\\install.ps1 Powershell.exe -ExecutionPolicy ByPass -File .\\uninstall.ps1 For the detection rule, you will choose to use a custom detection script. Then browse to the script that we created earlier.\nConclusion You have now successfully created a Win32 app in Intune that will deploy a custom scheduled task to your Windows endpoints.\nWant to know how to do other things in Intune? Leave a comment below. Also, be sure to check out my other post on the different ways you can Deploy PowerShell Scripts in Intune.\n",
+    "wordCount" : "899",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/deploy-a-scheduled-task-in-intune.png","datePublished": "2023-01-13T00:00:00Z",
+    "dateModified": "2023-01-13T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu13184193840349155734.webp 360w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu2581116324488376521.webp 480w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu15933509546177920132.webp 720w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu16985435299638000220.webp 1080w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png 1200w" 
+        <img srcset="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_a4bc6e12ff0b94c3.webp 360w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_a495e02b61bd26a0.webp 480w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_1ee4acd015f77c0.webp 720w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune_hu_d6e6561b7fd3d035.webp 1080w ,http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/how-to-deploy-a-scheduled-task-in-intune/images/deploy-a-scheduled-task-in-intune.png" alt="" 
             width="1200" height="628">
         
@@ -272,7 +271,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu3308433473923045744.webp 360w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu1260565180653241431.webp 480w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu3430320244541056058.webp 720w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu8580764315606843869.webp 1080w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png 1200w" 
+        <img srcset="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_e4da24d72e1c0ee7.webp 360w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_62ccca0dc2e9cd21.webp 480w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_70e15d2ebbb92823.webp 720w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad_hu_1df7e56410aa862c.webp 1080w ,http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/find-apps-and-policies-assigned-to-azure-ad-groups/images/adam-tool-azure-ad.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -281,7 +280,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17001477106947415410.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu10300577779374374925.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu2517488187377460131.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu17089951570406582786.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
+        <img srcset="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_5eaea70ea9941b1a.webp 360w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_1d10574afc145dc9.webp 480w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_86fbed8aa4903122.webp 720w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software_hu_518788d2955b9ea.webp 1080w ,http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/dynamic-azure-intune-groups-based-on-installed-software/images/azure-ad-groups-intune-installed-software.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -290,7 +289,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu9663632401868894187.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu16238990010262655059.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu4921325777766597961.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu17048565755945529674.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
+        <img srcset="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_539b1c318668c536.webp 360w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_7c7e3ceea4ae807f.webp 480w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_2bb62434708b330f.webp 720w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune_hu_bdd20ab8441ae143.webp 1080w ,http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/managed-desktop-icons-and-shortcuts-in-intune/images/deploy-managed-desktop-icons-and-shortcuts-in-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -299,7 +298,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu7356498652369068489.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu3264796535428035628.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16952298017530650839.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu16562548497720146018.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
+        <img srcset="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_1c859262ebb7d234.webp 360w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_c37169e9611e1263.webp 480w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_db5f03321ce4c635.webp 720w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence_hu_bcf6023a45bbe17c.webp 1080w ,http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/intune-hardware-hash-import-during-task-sequence/images/collect-and-upload-hardware-hash-to-intune-using-a-task-sequence.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -308,7 +307,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu16289485213827736291.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu4112613990801156029.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu9711915856666451654.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu6843908078130384016.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
+        <img srcset="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f52a4e916032402d.webp 360w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_f634f4c8f0216b39.webp 480w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_a0378706c4747e88.webp 720w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune_hu_5519eae4d247aeef.webp 1080w ,http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/deploy-hkcu-registry-keys-using-intune/images/deploy-hkcu-registry-keys-with-intune.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -320,7 +319,11 @@
 
 
 
-  <div class="post-content"><p>There comes a time in every Window&rsquo;s engineers life when they need to deploy a scheduled task to hundreds or even thousands of endpoints. Unfortunately, if your company has moved to Intune for endpoint management, this deployment isn&rsquo;t as obvious and straightforward as it could be.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>There comes a time in every Window&rsquo;s engineers life when they need to deploy a scheduled task to hundreds or even thousands of endpoints. Unfortunately, if your company has moved to Intune for endpoint management, this deployment isn&rsquo;t as obvious and straightforward as it could be.</p>
 <p>Luckily, it isn&rsquo;t terribly hard to do and it certainly isn&rsquo;t impossible. So today, we will break down the steps to deploy a scheduled task with Microsoft Intune. I have used this same method on multiple occasions and it has worked every time.</p>
 <h2 id="step-1---creating-a-schedule-task-in-windows">Step 1 - Creating a Schedule Task in Windows<a hidden class="anchor" aria-hidden="true" href="#step-1---creating-a-schedule-task-in-windows">#</a></h2>
 <p>The first step in the process is to mock up the scheduled task that you want to create from within the Windows task scheduler. You want to create all aspects of the task the way you want them, be sure to include the event and action. Consider if you want this running in the user or system context as well.</p>
@@ -478,7 +481,7 @@ Powershell.exe -ExecutionPolicy ByPass -File .\uninstall.ps1
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by

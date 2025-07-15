@@ -11,7 +11,7 @@
 <meta name="author" content="Adam">
 <link rel="canonical" href="http://localhost:1313/how-to-use-pacman-on-manjaro-linux/">
 <meta name="google-site-verification" content="35o7lngs_P_Gj2s6KPXA9rGeBhwYSvyAbeIhmaQGFrU">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3a8ba82b348841019c474a70d305c134e016f51db03cb876326450706ec5301b.css" integrity="sha256-OouoKzSIQQGcR0pw0wXBNOAW9R2wPLh2MmRQcG7FMBs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.71baf14ff708d50324d1ea9e151b5e832dfb2e3e5eeca69d72baed2d2cabde3e.css" integrity="sha256-cbrxT/cI1QMk0eqeFRtegy37Lj5e7KadcrrtLSyr3j4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -28,9 +28,12 @@
         }
 
     </style>
-</noscript>
-  
-    
+</noscript><script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1724789470420134"
+  crossorigin="anonymous"
+></script>
+
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCWKMZ21D2"></script>
       <script>
         var doNotTrack = false;
@@ -44,11 +47,7 @@
           gtag('js', new Date());
           gtag('config', 'G-BCWKMZ21D2');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="11 Ways to Use Pacman on Manjaro Linux" />
+      </script><meta property="og:title" content="11 Ways to Use Pacman on Manjaro Linux" />
 <meta property="og:description" content="Pacman is the core package manager for arch based Linux distros like Manjaro. Learn how to use pacman to manage software on your Linux pc." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/how-to-use-pacman-on-manjaro-linux/" />
@@ -60,60 +59,60 @@
 <meta name="twitter:image" content="http://localhost:1313/images/how-to-use-pacman.png" />
 <meta name="twitter:title" content="11 Ways to Use Pacman on Manjaro Linux"/>
 <meta name="twitter:description" content="Pacman is the core package manager for arch based Linux distros like Manjaro. Learn how to use pacman to manage software on your Linux pc."/>
-
-
+<meta name="twitter:site" content="@thecredibledev"/>
+ 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "http://localhost:1313/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "11 Ways to Use Pacman on Manjaro Linux",
-      "item": "http://localhost:1313/how-to-use-pacman-on-manjaro-linux/"
-    }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position":  1 ,
+        "name": "Posts",
+        "item": "http://localhost:1313/posts/"
+      }, 
+      {
+        "@type": "ListItem",
+        "position":  2 ,
+        "name": "11 Ways to Use Pacman on Manjaro Linux",
+        "item": "http://localhost:1313/how-to-use-pacman-on-manjaro-linux/"
+      }
+    ]
+  }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "11 Ways to Use Pacman on Manjaro Linux",
-  "name": "11 Ways to Use Pacman on Manjaro Linux",
-  "description": "Pacman is the core package manager for arch based Linux distros like Manjaro. Learn how to use pacman to manage software on your Linux pc.",
-  "keywords": [
-    "linux", "manjaro", "pacman"
-  ],
-  "articleBody": "Installing software is a core function of any operating system, pacman, the package manager built into most arch based Linux distributions such as Manjaro Linux serves this purpose well. It is a powerful command-line utility that everyone who uses an Arch based Linux distro should be familiar with.\nIf you prefer a GUI over using the command line, you can also use pamac, which comes pre-installed typically. Pamac also allows you to handle Flatpaks and packages from the AUR repository, which is a nice bonus.\nPacman is the main utility you will find yourself using on Manjaro to install, update and maintain most of the software on your machine. So, it is essential to understand how to use pacman effectively to install, search, update and inventory the software installed.\nToday, we are going to break down 11 of the most common command line functions that will help you make better use of the pacman package manager on Manjaro. Let’s get into it.\nUse Pacman to Install a Software Package The most common and vital function of them all is simply to install a new software package using pacman. If we want to install Firefox, for example, this is the command we would use.\nsudo pacman -S firefox Sync Package Database in Pacman Packages are updated constantly, so the database needs to be refreshed to ensure you are getting the most up-to-date software from pacman and its repositories. Running this command will sync the databases.\nsudo pacman -Syy Sync the Pacman Database and Update Installed Packages Most likely, you are not wanting to just sync the database like with the previous command, you also want to update any out-of-date packages that you have installed. The following pacman command will do just that, it will sync the databases and check for any out-of-date packages on your system.\nsudo pacman -Syu Use Pacman to Search for Available Software Sometimes you may not know the exact package name of the software you want to install. Pacman offers the ability to search for available packages and you can also use regular expressions if that’s your thing. If we want to search for Gimp, we can use the following command.\nThis will search package names and descriptions for the keyword or expression that you enter.\nNote: You can also use the Arch website to search for packages as well.\nsudo pacman -Ss gimp You’ll notice in the output from searching for the package called Gimp, the version number is listed but to install Gimp or the XSane plugin for Gimp, we would not use the version number to install it necessarily. We would simply run “sudo pacman -S gimp” or “sudo pacman -S xsane-gimp”.\nUse Pacman to Search for Installed Packages You can also use pacman to search your Manjaro or Arch based Linux system for packages that are already installed. If we wanted to search our system to see if Gimp is installed, we can use the following command.\nsudo pacman -Qs gimp Use Pacman to Uninstall Software and Packages If you have unneeded software on your system, pacman makes it easy to uninstall and also clean up dependencies that are no longer needed as well. If we wanted to uninstall Gimp and all of the dependencies that are no longer needed we can use the following command.\nNote: Any dependencies still needed by other applications will not be removed. If you want to remove a package without cleaning up dependencies, remove the “ns” option from the command and just use “-R” instead.\nsudo pacman -Rns gimp Listing All Installed Apps with Pacman If you want to spit out a list of all of the packages installed on your system, pacman can help with that. We can also break it down further by apps you installed as opposed to packages that were installed by Manjaro for example. We can also break out just a list of packages installed from the AUR repository.\nsudo pacman -Q List User Installed Apps This command will list all of the apps you installed yourself.\nsudo pacman -Qe List Apps Installed from the AUR Repository This command will list only the software packages that were installed from the AUR repository.\nsudo pacman -Qm Use Pacman to List Orphan Packages If you want to list out all packages that are considered orphaned or no longer needed. Run the following pacman command. You could then uninstall these packages since they are no longer needed and waste hard disk space.\nsudo pacman -Qdf Clear Pacman Cache Pacman can use quite a bit of disk space from cached packages and database cache. You can easily clean this up to free up additional disk space by running the following command.\nsudo pacman -Sc Pacman Config File Options Did you know that you can customize some features of pacman? Check out the pacman config file, typically found here: /etc/pacman.conf\nIn this config file, you can configure the behavior of pacman, such as checking for available space before installing a package, color terminal output from pacman and more.\nYou can read about the full pacman config file options here in their documentation.\nGUI Frontend Package Manager Manjaro Linux and other Arch distros also come with pamac, which is the GUI frontend for package management. For those who are not comfortable with the command line yet, or simply prefer a user interface, pamac is perfect for managing packages on Linux.\nConclusion The provided examples on how to manage, update and install packages should get you started and cover most of the common uses and needs. Did I miss anything? Let me know in the comments. Meanwhile, check out a recent post about how to install Onedrive on Manjaro Linux.\n",
-  "wordCount" : "951",
-  "inLanguage": "en",
-  "image":"http://localhost:1313/images/how-to-use-pacman.png","datePublished": "2023-01-03T00:00:00Z",
-  "dateModified": "2023-01-03T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": "Adam"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/how-to-use-pacman-on-manjaro-linux/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "credibleDEV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "11 Ways to Use Pacman on Manjaro Linux",
+    "name": "11 Ways to Use Pacman on Manjaro Linux",
+    "description": "Pacman is the core package manager for arch based Linux distros like Manjaro. Learn how to use pacman to manage software on your Linux pc.",
+    "keywords": [
+      "linux", "manjaro", "pacman"
+    ],
+    "articleBody": "Installing software is a core function of any operating system, pacman, the package manager built into most arch based Linux distributions such as Manjaro Linux serves this purpose well. It is a powerful command-line utility that everyone who uses an Arch based Linux distro should be familiar with.\nIf you prefer a GUI over using the command line, you can also use pamac, which comes pre-installed typically. Pamac also allows you to handle Flatpaks and packages from the AUR repository, which is a nice bonus.\nPacman is the main utility you will find yourself using on Manjaro to install, update and maintain most of the software on your machine. So, it is essential to understand how to use pacman effectively to install, search, update and inventory the software installed.\nToday, we are going to break down 11 of the most common command line functions that will help you make better use of the pacman package manager on Manjaro. Let’s get into it.\nUse Pacman to Install a Software Package The most common and vital function of them all is simply to install a new software package using pacman. If we want to install Firefox, for example, this is the command we would use.\nsudo pacman -S firefox Sync Package Database in Pacman Packages are updated constantly, so the database needs to be refreshed to ensure you are getting the most up-to-date software from pacman and its repositories. Running this command will sync the databases.\nsudo pacman -Syy Sync the Pacman Database and Update Installed Packages Most likely, you are not wanting to just sync the database like with the previous command, you also want to update any out-of-date packages that you have installed. The following pacman command will do just that, it will sync the databases and check for any out-of-date packages on your system.\nsudo pacman -Syu Use Pacman to Search for Available Software Sometimes you may not know the exact package name of the software you want to install. Pacman offers the ability to search for available packages and you can also use regular expressions if that’s your thing. If we want to search for Gimp, we can use the following command.\nThis will search package names and descriptions for the keyword or expression that you enter.\nNote: You can also use the Arch website to search for packages as well.\nsudo pacman -Ss gimp You’ll notice in the output from searching for the package called Gimp, the version number is listed but to install Gimp or the XSane plugin for Gimp, we would not use the version number to install it necessarily. We would simply run “sudo pacman -S gimp” or “sudo pacman -S xsane-gimp”.\nUse Pacman to Search for Installed Packages You can also use pacman to search your Manjaro or Arch based Linux system for packages that are already installed. If we wanted to search our system to see if Gimp is installed, we can use the following command.\nsudo pacman -Qs gimp Use Pacman to Uninstall Software and Packages If you have unneeded software on your system, pacman makes it easy to uninstall and also clean up dependencies that are no longer needed as well. If we wanted to uninstall Gimp and all of the dependencies that are no longer needed we can use the following command.\nNote: Any dependencies still needed by other applications will not be removed. If you want to remove a package without cleaning up dependencies, remove the “ns” option from the command and just use “-R” instead.\nsudo pacman -Rns gimp Listing All Installed Apps with Pacman If you want to spit out a list of all of the packages installed on your system, pacman can help with that. We can also break it down further by apps you installed as opposed to packages that were installed by Manjaro for example. We can also break out just a list of packages installed from the AUR repository.\nsudo pacman -Q List User Installed Apps This command will list all of the apps you installed yourself.\nsudo pacman -Qe List Apps Installed from the AUR Repository This command will list only the software packages that were installed from the AUR repository.\nsudo pacman -Qm Use Pacman to List Orphan Packages If you want to list out all packages that are considered orphaned or no longer needed. Run the following pacman command. You could then uninstall these packages since they are no longer needed and waste hard disk space.\nsudo pacman -Qdf Clear Pacman Cache Pacman can use quite a bit of disk space from cached packages and database cache. You can easily clean this up to free up additional disk space by running the following command.\nsudo pacman -Sc Pacman Config File Options Did you know that you can customize some features of pacman? Check out the pacman config file, typically found here: /etc/pacman.conf\nIn this config file, you can configure the behavior of pacman, such as checking for available space before installing a package, color terminal output from pacman and more.\nYou can read about the full pacman config file options here in their documentation.\nGUI Frontend Package Manager Manjaro Linux and other Arch distros also come with pamac, which is the GUI frontend for package management. For those who are not comfortable with the command line yet, or simply prefer a user interface, pamac is perfect for managing packages on Linux.\nConclusion The provided examples on how to manage, update and install packages should get you started and cover most of the common uses and needs. Did I miss anything? Let me know in the comments. Meanwhile, check out a recent post about how to install Onedrive on Manjaro Linux.\n",
+    "wordCount" : "951",
+    "inLanguage": "en",
+    "image":"http://localhost:1313/images/how-to-use-pacman.png","datePublished": "2023-01-03T00:00:00Z",
+    "dateModified": "2023-01-03T00:00:00Z",
+    "author":{
+      "@type": "Person",
+      "name": "Adam"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/how-to-use-pacman-on-manjaro-linux/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "credibleDEV",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
     }
   }
-}
 </script>
 </head>
 
@@ -234,7 +233,7 @@
 
   </header> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman_hu12693133558548784698.webp 360w ,http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman_hu6033296085329431132.webp 480w ,http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman_hu10156270500381242918.webp 720w ,http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman_hu1897841658605018461.webp 1080w ,http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman.png 1280w" 
+        <img srcset="http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman_hu_64c3c7840830ed9a.webp 360w ,http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman_hu_4102dff4ad341bd9.webp 480w ,http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman_hu_86bb5e6ff5eaf977.webp 720w ,http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman_hu_3c2665e14abdfe23.webp 1080w ,http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/how-to-use-pacman-on-manjaro-linux/images/how-to-use-pacman.png" alt="" 
             width="1280" height="720">
         
@@ -288,7 +287,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu13740544636767014195.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu16936522621761641165.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu3683259260892299387.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu12277464938547966659.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
+        <img srcset="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_97e265340f65b073.webp 360w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_9b867061eb48bdf2.webp 480w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_f7c444903a2750ca.webp 720w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv_hu_dd09cdfdcc7e2cb4.webp 1080w ,http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/proxmox-vs-hyper-v/images/proxmox-vs-hyperv.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -297,7 +296,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu6539335563103826074.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu16918837412545336120.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu17100559237134972094.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu1345034590632022176.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
+        <img srcset="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_6bf1fb83e139ccfc.webp 360w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_bc99b4d7c34014ba.webp 480w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_37b2c2d32d72ea59.webp 720w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers_hu_7189bbe42641a93e.webp 1080w ,http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/linux-cpu-schedulers-gaming-cpu-scheduler/images/linux-cpu-schedulers.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -306,7 +305,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu3165160284146408391.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu5651687531709580528.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu1726273887330694653.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu13426876613032868380.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
+        <img srcset="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_572282925cd7ade8.webp 360w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_36946026942bd65f.webp 480w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_a16b05b0618502f7.webp 720w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet_hu_6456a9377d45a7c9.webp 1080w ,http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png 1200w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/running-battle.net-games-on-linux-using-bottles/images/bottles-linux-gaming-battlenet.png" alt="" 
             width="1200" height="628">
 </figure>
@@ -315,7 +314,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu15532328836527906099.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu13743365403606608551.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu4929739980706721992.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
+        <img srcset="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_ce09f94cccd1e77e.webp 360w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_eb75dfa994aec25c.webp 480w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro_hu_dbc7e6729f0830fc.webp 720w ,http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png 1076w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/fix-obs-studio-black-screen-on-manjaro-gnome-edition/images/obs-studio-black-screen-manjaro.png" alt="" 
             width="1076" height="472">
 </figure>
@@ -324,7 +323,7 @@
       
         <li> 
 <figure class="entry-cover">
-        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7125642981218823855.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu7519567635882629972.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu5903280163332545624.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu9899350375189823437.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
+        <img srcset="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_ea4f5036f7a0c54d.webp 360w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_b1eab4b9b9b896cd.webp 480w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_d3fb5d96a0a50bf8.webp 720w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37_hu_2540ab831f82e43d.webp 1080w ,http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png 1280w" 
             sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/9-things-to-do-after-installing-fedora-37/images/9-things-to-do-after-installing-fedora-37.png" alt="" 
             width="1280" height="720">
 </figure>
@@ -336,7 +335,11 @@
 
 
 
-  <div class="post-content"><p>Installing software is a core function of any operating system, <a href="https://archlinux.org/pacman/#_man_pages" target="_blank">pacman</a>, the package manager built into most arch based Linux distributions such as Manjaro Linux serves this purpose well. It is a powerful command-line utility that everyone who uses an Arch based Linux distro should be familiar with.</p>
+  <div class="post-content">
+
+<a class="hugo-shortcodes-bmc-button" href="https://www.buymeacoffee.com/credibledev">
+    <img src="https://img.buymeacoffee.com/button-api/?button_colour=ffdd00&amp;coffee_colour=ffffff&amp;emoji=&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;slug=credibledev&amp;text=Buy&#43;me&#43;a&#43;coffee" alt="Buy me a coffee" />
+</a><p>Installing software is a core function of any operating system, <a href="https://archlinux.org/pacman/#_man_pages" target="_blank">pacman</a>, the package manager built into most arch based Linux distributions such as Manjaro Linux serves this purpose well. It is a powerful command-line utility that everyone who uses an Arch based Linux distro should be familiar with.</p>
 <p>If you prefer a GUI over using the command line, you can also use pamac, which comes pre-installed typically. Pamac also allows you to handle Flatpaks and packages from the AUR repository, which is a nice bonus.</p>
 <p>Pacman is the main utility you will find yourself using on Manjaro to install, update and maintain most of the software on your machine. So, it is essential to understand how to use pacman effectively to install, search, update and inventory the software installed.</p>
 <p>Today, we are going to break down 11 of the most common command line functions that will help you make better use of the pacman package manager on Manjaro. Let&rsquo;s get into it.</p>
@@ -544,7 +547,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">credibleDEV</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">credibleDEV</a></span> · 
 
     <span>
         Powered by
