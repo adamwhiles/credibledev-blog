@@ -1,6 +1,6 @@
 # Hugo build artifacts
-/public/
-/resources/
+public/
+resources/
 
 # Hugo cache
 /.hugo_build.lock
@@ -17,6 +17,7 @@ Thumbs.db
 # Editor directories and files
 .vscode/
 .frontmatter/
+frontmatter.json
 .idea/
 *.swp
 *.swo
